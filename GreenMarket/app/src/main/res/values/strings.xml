@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">GreenMarket</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_ricerca">Ricerca</string>
+    <string name="title_lista_spesa">Lista spesa</string>
+    <string name="title_ricettario">Ricettario</string>
+    <string name="title_altro">Altro</string>
 </resources>

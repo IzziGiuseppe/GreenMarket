@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_ricerca"
         android:name="com.example.greenmarket.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_ricerca"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_lista_della_spesa"
         android:name="com.example.greenmarket.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_lista_spesa"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_ricettario"
+        android:name="com.example.greenmarket.ui.dashboard.DashboardFragment"
+        android:label="@string/title_ricettario"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_altro"
+        android:name="com.example.greenmarket.ui.notifications.NotificationsFragment"
+        android:label="@string/title_altro"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
