@@ -15,7 +15,7 @@ interface ProdottoDao {
     fun getAll(): Array<Prodotto>
 
     @Query("SELECT * FROM prodotto WHERE nome = :nome")
-    fun getProdottoByNome(nome: String): LiveData<Prodotto>
+    fun getProdottoByNome(nome: String): Prodotto
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     fun insert(vararg prodotto: Prodotto)
