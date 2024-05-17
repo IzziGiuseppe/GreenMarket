@@ -1,6 +1,7 @@
 package com.example.greenmarket.db.dao
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -8,6 +9,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.greenmarket.db.model.ProdottiInRicette
 
+@Dao
 interface ProdottiInRicetteDao {
     @Query("SELECT * FROM prodotti_in_ricette")
     fun getAll(): Array<ProdottiInRicette>

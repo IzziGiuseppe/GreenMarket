@@ -16,7 +16,7 @@ import java.util.Date
 )
 data class Scontrino (
     @PrimaryKey(autoGenerate = true) val _id: Int,
-    val data: Date,
+    val data: String,
     val utente: String,
     val codice_sconto: String,
     val valido: Boolean

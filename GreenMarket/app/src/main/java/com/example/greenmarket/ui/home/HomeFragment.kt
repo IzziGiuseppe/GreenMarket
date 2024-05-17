@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.greenmarket.databinding.FragmentHomeBinding
+import com.example.greenmarket.db.model.Prodotto
 
 class HomeFragment : Fragment() {
 
@@ -28,10 +29,19 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        val prod1 = Prodotto("Pera", "Ciao", 10f, "", "kg")
+        val prod2 = Prodotto("Banana", "Ciao", 10f, "", "kg")
+        val prod3 = Prodotto("Arancia", "Ciao", 10f, "", "kg")
+
+        homeViewModel.insert(prod1, prod2, prod3)
+
+        val variabile = homeViewModel.readAllStudents()
+
         val textView: TextView = binding.textHome
-        homeViewModel.prodotto.observe(viewLifecycleOwner) {
-            textView.text = it.nome
+        homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
+            textView.text = variabile.toString()
         }
+
         return root
     }
 
