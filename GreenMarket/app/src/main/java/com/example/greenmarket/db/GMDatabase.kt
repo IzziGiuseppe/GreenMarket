@@ -1,6 +1,7 @@
 package com.example.greenmarket.db
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -20,9 +21,10 @@ import com.example.greenmarket.db.model.Ricetta
 import com.example.greenmarket.db.model.Scontrino
 import com.example.greenmarket.db.model.TesseraAPunti
 import com.example.greenmarket.db.model.Utente
+import java.util.concurrent.Executors
 
 @Database(entities = [Utente::class, TesseraAPunti::class, Scontrino::class, Ricetta::class, Prodotto::class,
-    ProdottiInRicette::class, ComposizioneScontrini::class, CodiceSconto::class], version=1)
+    ProdottiInRicette::class, ComposizioneScontrini::class, CodiceSconto::class], version=2)
 abstract class GMDatabase: RoomDatabase() {
     abstract fun UtenteDao(): UtenteDao
     abstract fun TesseraAPuntiDao(): TesseraAPuntiDao
@@ -44,15 +46,32 @@ abstract class GMDatabase: RoomDatabase() {
         private var INSTANCE: GMDatabase? = null
 
         fun getInstance(context: Context): GMDatabase {
-            return INSTANCE ?: synchronized(this) {
+            Log.d("GMDatabase", "ciao")
+                return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
                     GMDatabase::class.java, "green_market_database"
                 ).allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
-                    //.addCallback()
                     .build()
                     .also { INSTANCE = it }
+            }
+        }
+
+        fun populateDatabase(context: Context) {
+            Log.d("MYDATABASECALLBACK", "mydbcb3")
+            Executors.newSingleThreadExecutor().execute {
+                Log.d("MYDATABASECALLBACK", "mydbcb4")
+                val database = getInstance(context)
+                val productDao = database.ProdottoDao()
+
+                Log.d("MYDATABASECALLBACK", "mydbcb5")
+                // Inserisci i dati iniziali
+                val product1 = Prodotto("Peperoni", "Sono peperoni", 2.99f, "", "kg")
+                val product2 = Prodotto("Zucchine", "Sono Zucchine", 1.99f, "", "kg")
+                Log.d("MYDATABASECALLBACK", "non inseriti")
+                productDao.insert(product1, product2)
+                Log.d("MYDATABASECALLBACK", "inseriti")
             }
         }
     }

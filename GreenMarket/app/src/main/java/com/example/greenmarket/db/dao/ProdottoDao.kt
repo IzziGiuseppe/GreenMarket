@@ -27,6 +27,9 @@ interface ProdottoDao {
     fun delete(prodotto: Prodotto)
 
     @Query("DELETE FROM prodotto")
-    fun deleteAllProdotti(): Array<Prodotto>
+    fun deleteAllProdotti()
+
+    @Query("SELECT COUNT(*) FROM prodotto")
+    fun getCount(): Int
 
 }

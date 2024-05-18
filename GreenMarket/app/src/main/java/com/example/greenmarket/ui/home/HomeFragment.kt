@@ -34,23 +34,18 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
-        //val prod1 = Prodotto("Zucchine", "Ciao", 10f, "", "kg")
-        //val prod2 = Prodotto("Melanzane", "Ciao", 10f, "", "kg")
-        //val prod3 = Prodotto("Carne", "Ciao", 10f, "", "kg")
-
-        homeViewModel.deleteAllProdotti()
+        //homeViewModel.deleteAllProdotti()
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        /*homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }
+        }*/
 
         val studentListObserver = Observer<Array<Prodotto>> {
             /*for(prod in it)
                 Log.d("MainActivity","${prod.nome} ${prod.descrzione} ${prod.prezzo}")*/
             val ultimo = it.size - 1
-            textView.text = it.toString()
+            textView.text = it.size.toString()
         }
         homeViewModel.listaProdotti.observe(viewLifecycleOwner, studentListObserver)
 

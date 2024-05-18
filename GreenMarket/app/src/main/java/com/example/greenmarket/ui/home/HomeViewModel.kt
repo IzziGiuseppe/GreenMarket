@@ -16,7 +16,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     private val db:GMDatabase = GMDatabase.getInstance(application)
 
-    private var _prodotto = MutableLiveData(Prodotto("Mela", "", 0f, "", ""))
+    private var _prodotto = MutableLiveData(Prodotto("", "", 0f, "", ""))
     val prodotto: LiveData<Prodotto>
         get() = _prodotto
 
