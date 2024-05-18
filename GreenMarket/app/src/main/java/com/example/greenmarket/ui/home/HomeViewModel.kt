@@ -28,7 +28,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     fun readProdotto(nome: String){
         _prodotto.value = db.ProdottoDao().getProdottoByNome(nome)    }
 
-    fun readAllStudents(){
+    fun readAllProdotti(){
         val x = db.ProdottoDao().getAll()
         _listaProdotti.value = x
     }

@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "ricetta")
 data class Ricetta (
     @PrimaryKey val nome: String,
-    val descrzione: String,
-    val prezzo: String,
+    val descrizione: String,
     val foto: String
 )

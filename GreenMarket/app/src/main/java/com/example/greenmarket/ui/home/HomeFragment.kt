@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
             textView.text = it
         }*/
 
-        homeViewModel.readAllStudents()
+        homeViewModel.readAllProdotti()
         homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
             textView.text = it.size.toString() + ", " + it[it.size-1].nome + ", " + it[it.size-2].nome +
                     ", " + it[it.size-3].nome + ", " + it[it.size-4].nome + ", " + it[it.size-5].nome +

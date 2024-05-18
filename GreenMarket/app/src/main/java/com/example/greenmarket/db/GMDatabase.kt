@@ -24,7 +24,7 @@ import com.example.greenmarket.db.model.Utente
 import java.util.concurrent.Executors
 
 @Database(entities = [Utente::class, TesseraAPunti::class, Scontrino::class, Ricetta::class, Prodotto::class,
-    ProdottiInRicette::class, ComposizioneScontrini::class, CodiceSconto::class], version=2)
+    ProdottiInRicette::class, ComposizioneScontrini::class, CodiceSconto::class], version=3)
 abstract class GMDatabase: RoomDatabase() {
     abstract fun UtenteDao(): UtenteDao
     abstract fun TesseraAPuntiDao(): TesseraAPuntiDao
@@ -72,6 +72,19 @@ abstract class GMDatabase: RoomDatabase() {
                 val product7 = Prodotto("Zucchine", "Sono zucchine", 2.99f, "", "kg")
                 val product8 = Prodotto("Funghi", "Sono funghi", 1.99f, "", "kg")
                 productDao.insert(product1, product2, product3, product4, product5, product6, product7, product8)
+
+                val ricettaDao = database.RicettaDao()
+
+                // Inserisci i dati iniziali
+                val ricetta1 = Ricetta("Pasta al sugo", "Il pranzo della domenica", "")
+                val ricetta2 = Ricetta("Pasta e zucchine", "Molto buono", "")
+                val ricetta3 = Ricetta("Pasta e melanzane", "Molto buono", "")
+                val ricetta4 = Ricetta("Pasta e verdure", "Molto buono", "")
+                val ricetta5 = Ricetta("Pasta e fagioli", "Molto buono", "")
+                val ricetta6 = Ricetta("Pasta e ceci", "Molto buono", "")
+                val ricetta7 = Ricetta("Pasta al pesto", "Molto buono", "")
+                val ricetta8 = Ricetta("Pasta e piselli", "Molto buono", "")
+                ricettaDao.insert(ricetta1, ricetta2, ricetta3, ricetta4, ricetta5, ricetta6, ricetta7, ricetta8)
             }
         }
 

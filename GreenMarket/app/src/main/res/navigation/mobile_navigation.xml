@@ -25,13 +25,13 @@
 
     <fragment
         android:id="@+id/navigation_ricettario"
-        android:name="com.example.greenmarket.ui.dashboard.DashboardFragment"
+        android:name="com.example.greenmarket.ui.ricettario.RicettarioFragment"
         android:label="@string/title_ricettario"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_ricettario" />
 
     <fragment
         android:id="@+id/navigation_altro"
-        android:name="com.example.greenmarket.ui.notifications.NotificationsFragment"
+        android:name="com.example.greenmarket.ui.altro.AltroFragment"
         android:label="@string/title_altro"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_altro" />
 </navigation>

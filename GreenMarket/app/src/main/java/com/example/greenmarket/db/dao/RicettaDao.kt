@@ -15,9 +15,9 @@ interface RicettaDao {
     fun getAll(): Array<Ricetta>
 
     @Query("SELECT * FROM ricetta WHERE nome = :nome")
-    fun getRicettaByNome(nome: String): LiveData<Ricetta>
+    fun getRicettaByNome(nome: String): Ricetta
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg ricetta: Ricetta)
 
     @Update
@@ -25,4 +25,7 @@ interface RicettaDao {
 
     @Delete
     fun delete(ricetta: Ricetta)
+
+    @Query("DELETE FROM ricetta")
+    fun deleteAllRicette()
 }
