@@ -36,5 +36,9 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         db.ProdottoDao().insert(*prodotto)
     }
 
+    fun deleteAllProdotti(){
+        db.ProdottoDao().deleteAllProdotti()
+    }
+
 
 }

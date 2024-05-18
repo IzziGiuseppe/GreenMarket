@@ -28,28 +28,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        Log.d("HomeFragment", "Ciao")
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        Log.d("HomeFragment", "Ciao")
 
-        val prod1 = Prodotto("Zucchine", "Ciao", 10f, "", "kg")
-        Log.d("HomeFragment", "Ciao3")
-        val prod2 = Prodotto("Melanzane", "Ciao", 10f, "", "kg")
-        Log.d("HomeFragment", "Ciao4")
-        val prod3 = Prodotto("Carne", "Ciao", 10f, "", "kg")
+        //val prod1 = Prodotto("Zucchine", "Ciao", 10f, "", "kg")
+        //val prod2 = Prodotto("Melanzane", "Ciao", 10f, "", "kg")
+        //val prod3 = Prodotto("Carne", "Ciao", 10f, "", "kg")
 
-        Log.d("HomeFragment", "Ciao")
-
-        homeViewModel.insert(prod1, prod2, prod3)
-
-        Log.d("HomeFragment", "Ciao5")
-
-        val variabile = homeViewModel.readAllStudents()
+        homeViewModel.deleteAllProdotti()
 
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
@@ -59,7 +49,8 @@ class HomeFragment : Fragment() {
         val studentListObserver = Observer<Array<Prodotto>> {
             /*for(prod in it)
                 Log.d("MainActivity","${prod.nome} ${prod.descrzione} ${prod.prezzo}")*/
-            textView.text = it[0].nome + ", " + it[1].nome + ", " + it[2].nome
+            val ultimo = it.size - 1
+            textView.text = it.toString()
         }
         homeViewModel.listaProdotti.observe(viewLifecycleOwner, studentListObserver)
 

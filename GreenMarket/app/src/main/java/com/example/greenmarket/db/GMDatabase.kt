@@ -50,6 +50,7 @@ abstract class GMDatabase: RoomDatabase() {
                     GMDatabase::class.java, "green_market_database"
                 ).allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
+                    //.addCallback()
                     .build()
                     .also { INSTANCE = it }
             }

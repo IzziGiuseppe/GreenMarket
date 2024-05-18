@@ -17,7 +17,7 @@ interface ProdottoDao {
     @Query("SELECT * FROM prodotto WHERE nome = :nome")
     fun getProdottoByNome(nome: String): Prodotto
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg prodotto: Prodotto)
 
     @Update
@@ -25,4 +25,8 @@ interface ProdottoDao {
 
     @Delete
     fun delete(prodotto: Prodotto)
+
+    @Query("DELETE FROM prodotto")
+    fun deleteAllProdotti(): Array<Prodotto>
+
 }
