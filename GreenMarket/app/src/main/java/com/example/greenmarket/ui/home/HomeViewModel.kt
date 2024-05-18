@@ -41,10 +41,5 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         db.ProdottoDao().deleteAllProdotti()
     }
 
-    fun popolaDB(){
-        Log.d("popoladb", "popoladb")
-        db.populateDatabase(getApplication())
-    }
-
 
 }

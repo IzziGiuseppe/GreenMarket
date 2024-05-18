@@ -41,21 +41,6 @@ abstract class GMDatabase: RoomDatabase() {
 
     abstract fun CodiceScontoDao(): CodiceScontoDao
 
-    fun populateDatabase(context: Context) {
-        Executors.newSingleThreadExecutor().execute {
-            Log.d("gmdb", "Inseriti1")
-            val database = getInstance(context)
-            val productDao = database.ProdottoDao()
-            Log.d("gmdb", "Inseriti2")
-
-            // Inserisci i dati iniziali
-            val product1 = Prodotto("Peperoni", "Sono peperoni", 2.99f, "", "kg")
-            val product2 = Prodotto("Zucchine", "Sono Zucchine", 1.99f, "", "kg")
-            productDao.insert(product1, product2)
-            Log.d("gmdb", "Inseriti")
-        }
-    }
-
     companion object {
         @Volatile
         private var INSTANCE: GMDatabase? = null
@@ -69,6 +54,24 @@ abstract class GMDatabase: RoomDatabase() {
                     .fallbackToDestructiveMigration()
                     .build()
                     .also { INSTANCE = it }
+            }
+        }
+
+        fun populateDatabase(context: Context) {
+            Executors.newSingleThreadExecutor().execute {
+                val database = getInstance(context)
+                val productDao = database.ProdottoDao()
+
+                // Inserisci i dati iniziali
+                val product1 = Prodotto("Mele", "Sono mele", 2.99f, "", "kg")
+                val product2 = Prodotto("Pere", "Sono pere", 1.99f, "", "kg")
+                val product3 = Prodotto("Banane", "Sono banane", 2.99f, "", "kg")
+                val product4 = Prodotto("Arance", "Sono arance", 1.99f, "", "kg")
+                val product5 = Prodotto("Susine", "Sono susine", 2.99f, "", "kg")
+                val product6 = Prodotto("Melanzane", "Sono melanzane", 1.99f, "", "kg")
+                val product7 = Prodotto("Zucchine", "Sono zucchine", 2.99f, "", "kg")
+                val product8 = Prodotto("Funghi", "Sono funghi", 1.99f, "", "kg")
+                productDao.insert(product1, product2, product3, product4, product5, product6, product7, product8)
             }
         }
 

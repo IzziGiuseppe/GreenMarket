@@ -36,24 +36,26 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        /*homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }*/
+
+        homeViewModel.readAllStudents()
+        homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
+            textView.text = it.size.toString() + ", " + it[it.size-1].nome + ", " + it[it.size-2].nome +
+                    ", " + it[it.size-3].nome + ", " + it[it.size-4].nome + ", " + it[it.size-5].nome +
+                    ", " + it[it.size-6].nome + ", " + it[it.size-7].nome + ", " + it[it.size-8].nome
         }
 
-        /*homeViewModel.popolaDB()
-        Log.d("gmdb", "popolati")*/
+        //homeViewModel.deleteAllProdotti()
 
-        val product1 = Prodotto("Menta", "Sono Menta", 2.99f, "", "kg")
-        val product2 = Prodotto("Basilico", "Sono Basilico", 1.99f, "", "kg")
-        homeViewModel.insert(product1, product2)
-
-        val studentListObserver = Observer<Array<Prodotto>> {
+        /*val studentListObserver = Observer<Array<Prodotto>> {
             /*for(prod in it)
                 Log.d("MainActivity","${prod.nome} ${prod.descrizione} ${prod.prezzo}")*/
             val ultimo = it.size - 1
             textView.text = it[ultimo].nome
         }
-        homeViewModel.listaProdotti.observe(viewLifecycleOwner, studentListObserver)
+        homeViewModel.listaProdotti.observe(viewLifecycleOwner, studentListObserver)*/
 
         return root
     }
