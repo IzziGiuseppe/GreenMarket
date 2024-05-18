@@ -41,12 +41,26 @@ abstract class GMDatabase: RoomDatabase() {
 
     abstract fun CodiceScontoDao(): CodiceScontoDao
 
+    fun populateDatabase(context: Context) {
+        Executors.newSingleThreadExecutor().execute {
+            Log.d("gmdb", "Inseriti1")
+            val database = getInstance(context)
+            val productDao = database.ProdottoDao()
+            Log.d("gmdb", "Inseriti2")
+
+            // Inserisci i dati iniziali
+            val product1 = Prodotto("Peperoni", "Sono peperoni", 2.99f, "", "kg")
+            val product2 = Prodotto("Zucchine", "Sono Zucchine", 1.99f, "", "kg")
+            productDao.insert(product1, product2)
+            Log.d("gmdb", "Inseriti")
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: GMDatabase? = null
 
         fun getInstance(context: Context): GMDatabase {
-            Log.d("GMDatabase", "ciao")
                 return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
@@ -58,22 +72,7 @@ abstract class GMDatabase: RoomDatabase() {
             }
         }
 
-        fun populateDatabase(context: Context) {
-            Log.d("MYDATABASECALLBACK", "mydbcb3")
-            Executors.newSingleThreadExecutor().execute {
-                Log.d("MYDATABASECALLBACK", "mydbcb4")
-                val database = getInstance(context)
-                val productDao = database.ProdottoDao()
 
-                Log.d("MYDATABASECALLBACK", "mydbcb5")
-                // Inserisci i dati iniziali
-                val product1 = Prodotto("Peperoni", "Sono peperoni", 2.99f, "", "kg")
-                val product2 = Prodotto("Zucchine", "Sono Zucchine", 1.99f, "", "kg")
-                Log.d("MYDATABASECALLBACK", "non inseriti")
-                productDao.insert(product1, product2)
-                Log.d("MYDATABASECALLBACK", "inseriti")
-            }
-        }
     }
 
 }

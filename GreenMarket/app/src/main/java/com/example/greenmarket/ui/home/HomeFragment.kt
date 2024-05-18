@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.greenmarket.databinding.FragmentHomeBinding
+import com.example.greenmarket.db.GMDatabase
 import com.example.greenmarket.db.model.Prodotto
 
 class HomeFragment : Fragment() {
@@ -34,18 +35,23 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //homeViewModel.deleteAllProdotti()
-
         val textView: TextView = binding.textHome
-        /*homeViewModel.text.observe(viewLifecycleOwner) {
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }*/
+        }
+
+        /*homeViewModel.popolaDB()
+        Log.d("gmdb", "popolati")*/
+
+        val product1 = Prodotto("Menta", "Sono Menta", 2.99f, "", "kg")
+        val product2 = Prodotto("Basilico", "Sono Basilico", 1.99f, "", "kg")
+        homeViewModel.insert(product1, product2)
 
         val studentListObserver = Observer<Array<Prodotto>> {
             /*for(prod in it)
-                Log.d("MainActivity","${prod.nome} ${prod.descrzione} ${prod.prezzo}")*/
+                Log.d("MainActivity","${prod.nome} ${prod.descrizione} ${prod.prezzo}")*/
             val ultimo = it.size - 1
-            textView.text = it.size.toString()
+            textView.text = it[ultimo].nome
         }
         homeViewModel.listaProdotti.observe(viewLifecycleOwner, studentListObserver)
 
