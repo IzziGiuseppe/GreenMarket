@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">61890797320</string>
+    <string name="google_api_key" translatable="false">AIzaSyBWZUBiRxI7N0eZ7ufrZ-YGHZ7t6mFYHsU</string>
+    <string name="google_app_id" translatable="false">1:61890797320:android:c3ed3a7ce51cab9a3056bd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWZUBiRxI7N0eZ7ufrZ-YGHZ7t6mFYHsU</string>
+    <string name="google_storage_bucket" translatable="false">greenmarket-1f99c.appspot.com</string>
+    <string name="project_id" translatable="false">greenmarket-1f99c</string>
+</resources>
