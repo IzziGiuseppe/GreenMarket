@@ -3298,6 +3298,7 @@ id alertTitle
 id aligned
 id all
 id allStates
+id altro_to_term_cond
 id always
 id androidx_window_activity_scope
 id animateToEnd
@@ -3453,7 +3454,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView2
 id immediateStop
 id included
 id indeterminate
@@ -3479,6 +3479,7 @@ id locale
 id ltr
 id m3_side_sheet
 id main
+id mappa
 id marquee
 id masked
 id match_constraint
@@ -3509,7 +3510,6 @@ id message
 id middle
 id mini
 id mobile_navigation
-id mockView
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3557,6 +3557,7 @@ id navigation_home
 id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
+id navigation_term_cond
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3905,6 +3906,7 @@ layout fragment_home
 layout fragment_lista_spesa
 layout fragment_ricerca
 layout fragment_ricettario
+layout fragment_term_cond
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_altro_view

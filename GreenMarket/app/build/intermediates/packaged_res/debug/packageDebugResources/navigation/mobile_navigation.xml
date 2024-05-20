@@ -33,5 +33,17 @@
         android:id="@+id/navigation_altro"
         android:name="com.example.greenmarket.ui.altro.AltroFragment"
         android:label="@string/title_altro"
-        tools:layout="@layout/fragment_altro" />
+        tools:layout="@layout/fragment_altro" >
+        <action
+            android:id="@+id/altro_to_term_cond"
+            app:destination="@+id/navigation_term_cond"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_term_cond"
+        android:name="com.example.greenmarket.ui.altro.termini_condizioni.TermCondFragment"
+        android:label="Termini e condizioni"
+        tools:layout="@layout/fragment_term_cond"
+        />
+
 </navigation>

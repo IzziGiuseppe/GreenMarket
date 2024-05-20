@@ -20,6 +20,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_ricerca.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-58:/layout/fragment_term_cond.xml",
+        "source": "com.example.greenmarket.app-main-61:/layout/fragment_term_cond.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_home.xml"
     },

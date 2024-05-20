@@ -3297,6 +3297,7 @@ int id alertTitle 0x7f08004a
 int id aligned 0x7f08004b
 int id all 0x7f08004c
 int id allStates 0x7f08004d
+int id altro_to_term_cond 0x7f080225
 int id always 0x7f08004e
 int id androidx_window_activity_scope 0x7f08004f
 int id animateToEnd 0x7f080050
@@ -3452,7 +3453,6 @@ int id ifRoom 0x7f0800e5
 int id ignore 0x7f0800e6
 int id ignoreRequest 0x7f0800e7
 int id image 0x7f0800e8
-int id imageView2 0x7f080223
 int id immediateStop 0x7f0800e9
 int id included 0x7f0800ea
 int id indeterminate 0x7f0800eb
@@ -3478,6 +3478,7 @@ int id locale 0x7f0800fe
 int id ltr 0x7f0800ff
 int id m3_side_sheet 0x7f080100
 int id main 0x7f080101
+int id mappa 0x7f080224
 int id marquee 0x7f080103
 int id masked 0x7f080104
 int id match_constraint 0x7f080105
@@ -3508,7 +3509,6 @@ int id message 0x7f08011d
 int id middle 0x7f08011e
 int id mini 0x7f08011f
 int id mobile_navigation 0x7f080120
-int id mockView 0x7f080222
 int id month_grid 0x7f080121
 int id month_navigation_bar 0x7f080122
 int id month_navigation_fragment_toggle 0x7f080123
@@ -3556,6 +3556,7 @@ int id navigation_home 0x7f08014c
 int id navigation_lista_della_spesa 0x7f08014d
 int id navigation_ricerca 0x7f08014e
 int id navigation_ricettario 0x7f08014f
+int id navigation_term_cond 0x7f080226
 int id never 0x7f080150
 int id neverCompleteToEnd 0x7f080151
 int id neverCompleteToStart 0x7f080152
@@ -3904,6 +3905,7 @@ int layout fragment_home 0x7f0b002f
 int layout fragment_lista_spesa 0x7f0b0030
 int layout fragment_ricerca 0x7f0b0031
 int layout fragment_ricettario 0x7f0b0032
+int layout fragment_term_cond 0x7f0b007d
 int layout ime_base_split_test_activity 0x7f0b0033
 int layout ime_secondary_split_test_activity 0x7f0b0034
 int layout item_altro_view 0x7f0b0035

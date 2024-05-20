@@ -14,13 +14,13 @@ drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_notifications_black_24dp
+id altro_to_term_cond
 id container
 id domenico_bt
 id giuseppe_bt
-id imageView2
 id main
+id mappa
 id mobile_navigation
-id mockView
 id nav_host_fragment_activity_main
 id nav_view
 id navigation_altro
@@ -28,6 +28,7 @@ id navigation_home
 id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
+id navigation_term_cond
 id nome_ricetta
 id rv
 id rv_altro
@@ -45,6 +46,7 @@ layout fragment_home
 layout fragment_lista_spesa
 layout fragment_ricerca
 layout fragment_ricettario
+layout fragment_term_cond
 layout item_altro_view
 layout item_ricetta_view
 menu bottom_nav_menu
