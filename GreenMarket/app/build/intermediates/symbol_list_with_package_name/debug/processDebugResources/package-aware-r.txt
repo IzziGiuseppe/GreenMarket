@@ -3819,9 +3819,9 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_altro
-layout fragment_dashboard
 layout fragment_home
-layout fragment_notifications
+layout fragment_lista_spesa
+layout fragment_ricerca
 layout fragment_ricettario
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity

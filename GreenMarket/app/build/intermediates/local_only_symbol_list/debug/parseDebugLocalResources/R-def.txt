@@ -32,9 +32,9 @@ id text_home
 id text_notifications
 layout activity_main
 layout fragment_altro
-layout fragment_dashboard
 layout fragment_home
-layout fragment_notifications
+layout fragment_lista_spesa
+layout fragment_ricerca
 layout fragment_ricettario
 layout item_altro_view
 layout item_ricetta_view

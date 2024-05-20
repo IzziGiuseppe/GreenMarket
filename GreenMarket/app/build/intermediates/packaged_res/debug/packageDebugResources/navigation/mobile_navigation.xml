@@ -13,15 +13,15 @@
 
     <fragment
         android:id="@+id/navigation_ricerca"
-        android:name="com.example.greenmarket.ui.dashboard.DashboardFragment"
+        android:name="com.example.greenmarket.ui.ricerca.RicercaFragment"
         android:label="@string/title_ricerca"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_ricerca" />
 
     <fragment
         android:id="@+id/navigation_lista_della_spesa"
-        android:name="com.example.greenmarket.ui.notifications.NotificationsFragment"
+        android:name="com.example.greenmarket.ui.lista_spesa.ListaSpesaFragment"
         android:label="@string/title_lista_spesa"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_lista_spesa" />
 
     <fragment
         android:id="@+id/navigation_ricettario"
