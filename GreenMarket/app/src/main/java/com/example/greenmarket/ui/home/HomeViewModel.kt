@@ -11,7 +11,7 @@ import com.example.greenmarket.db.model.Prodotto
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Giusè"
+        value = "Home"
     }
     val text: LiveData<String> = _text
 

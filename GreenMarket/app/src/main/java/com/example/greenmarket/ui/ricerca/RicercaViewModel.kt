@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class RicercaViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Adesso"
+        value = "Ricerca"
     }
     val text: LiveData<String> = _text
 }

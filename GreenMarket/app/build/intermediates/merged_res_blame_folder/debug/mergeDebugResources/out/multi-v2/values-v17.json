@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-54:/values-v17/values-v17.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-57:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\61065a5ba10353fb9ca39a08fbf6bba4\\transformed\\appcompat-1.6.1\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\5e178fd146a330a47c437648b3f50dc2\\transformed\\appcompat-1.6.1\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

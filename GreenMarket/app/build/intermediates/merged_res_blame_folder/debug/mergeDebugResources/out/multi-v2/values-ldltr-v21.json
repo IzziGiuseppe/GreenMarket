@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-54:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-57:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\61065a5ba10353fb9ca39a08fbf6bba4\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\5e178fd146a330a47c437648b3f50dc2\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
