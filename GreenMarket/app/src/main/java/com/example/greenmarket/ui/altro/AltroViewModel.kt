@@ -20,6 +20,7 @@ class AltroViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
     val menuItems: LiveData<List<AltroMenu>> = _menuItems
+    //prova
 
     fun sceltaListener(position: Int) {
         when (position) {
