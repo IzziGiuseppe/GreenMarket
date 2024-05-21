@@ -1,5 +1,6 @@
 package com.example.greenmarket.ui.altro
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -64,7 +65,15 @@ class AltroFragment : Fragment() {
     }
 
     private fun assistenza() {
-        Toast.makeText(requireContext(), "Assistenza da implementare", Toast.LENGTH_LONG).show()
+        val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:domenico.laporta.dlp@gmail.com")
+        }
+
+        try {
+            this.startActivity(Intent.createChooser(emailIntent, "Scegli un'app per email"))
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, "Non ci sono app di email installate.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun profiloUtente() {
@@ -87,7 +96,17 @@ class AltroFragment : Fragment() {
     }
 
     fun invito() {
-        Toast.makeText(requireContext(), "Invito da implementare", Toast.LENGTH_LONG).show()
+        val sendIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, "Scarica anche tu GreenMarket!")
+            setPackage("com.whatsapp")
+        }
+
+        try {
+            this.startActivity(sendIntent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, "WhatsApp non è installato.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun terminiCondizioni() {

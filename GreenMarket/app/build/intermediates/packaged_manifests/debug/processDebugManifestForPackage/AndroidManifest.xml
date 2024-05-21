@@ -50,19 +50,23 @@
         <activity
             android:name="com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity"
             android:exported="false"
-            android:label="Termini e condizioni d&apos;uso" />
+            android:label="Termini e condizioni d&apos;uso"
+            android:parentActivityName="com.example.greenmarket.MainActivity" />
         <activity
             android:name="com.example.greenmarket.ui.altro.storico.StoricoActivity"
             android:exported="false"
-            android:label="Storico scontrini" />
+            android:label="Storico scontrini"
+            android:parentActivityName="com.example.greenmarket.MainActivity" />
         <activity
             android:name="com.example.greenmarket.ui.altro.statistiche.StatsActivity"
             android:exported="false"
-            android:label="Prodotti più acquistati" />
+            android:label="Prodotti più acquistati"
+            android:parentActivityName="com.example.greenmarket.MainActivity" />
         <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity"
             android:exported="false"
-            android:label="Chi siamo" />
+            android:label="Chi siamo"
+            android:parentActivityName="com.example.greenmarket.MainActivity" />
         <activity
             android:name="com.example.greenmarket.MainActivity"
             android:exported="true"
