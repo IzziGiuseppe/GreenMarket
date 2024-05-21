@@ -48,14 +48,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.GreenMarket" >
         <activity
+            android:name="com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity"
+            android:exported="false"
+            android:label="Termini e condizioni d&apos;uso" />
+        <activity
             android:name="com.example.greenmarket.ui.altro.storico.StoricoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Storico scontrini" />
         <activity
             android:name="com.example.greenmarket.ui.altro.statistiche.StatsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Prodotti più acquistati" />
         <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Chi siamo" />
         <activity
             android:name="com.example.greenmarket.MainActivity"
             android:exported="true"

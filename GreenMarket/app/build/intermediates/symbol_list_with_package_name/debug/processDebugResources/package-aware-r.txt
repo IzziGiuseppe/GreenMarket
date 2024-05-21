@@ -3294,6 +3294,7 @@ id activity_chooser_view_content
 id activity_cs
 id activity_stats
 id activity_storico
+id activity_tc
 id add
 id adjust_height
 id adjust_width
@@ -3301,7 +3302,6 @@ id alertTitle
 id aligned
 id all
 id allStates
-id altro_to_term_cond
 id always
 id androidx_window_activity_scope
 id animateToEnd
@@ -3481,7 +3481,6 @@ id list_item
 id locale
 id ltr
 id m3_side_sheet
-id main
 id mappa
 id marquee
 id masked
@@ -3560,7 +3559,6 @@ id navigation_home
 id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
-id navigation_term_cond
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3624,6 +3622,7 @@ id row_index_key
 id rtl
 id rv
 id rv_altro
+id rv_tc
 id satellite
 id save_non_transition_alpha
 id save_overlay_view
@@ -3649,6 +3648,7 @@ id select_dialog_listview
 id selected
 id selection_type
 id sezione_altro
+id sezione_tc
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3707,6 +3707,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id terrain
+id testo_tc_txt
 id testo_txt
 id text
 id text2
@@ -3732,6 +3733,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id titolo2_txt
+id titolo_tc_txt
 id titolo_txt
 id toggle
 id top
@@ -3892,6 +3894,7 @@ layout activity_chi_siamo
 layout activity_main
 layout activity_stats
 layout activity_storico
+layout activity_term_cond
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3913,11 +3916,11 @@ layout fragment_home
 layout fragment_lista_spesa
 layout fragment_ricerca
 layout fragment_ricettario
-layout fragment_term_cond
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_altro_view
 layout item_ricetta_view
+layout item_tc_view
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

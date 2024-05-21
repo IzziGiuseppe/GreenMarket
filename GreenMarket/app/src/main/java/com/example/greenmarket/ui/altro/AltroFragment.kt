@@ -9,13 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
 import com.example.greenmarket.ui.altro.storico.StoricoActivity
+import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
 
 class AltroFragment : Fragment() {
 
@@ -57,10 +56,15 @@ class AltroFragment : Fragment() {
             3 -> stats()
             4 -> invito()
             5 -> terminiCondizioni()
-            6 -> donazione()
+            6 -> assistenza()
+            7 -> donazione()
             else ->
                 Toast.makeText(requireContext(), "No action", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun assistenza() {
+        Toast.makeText(requireContext(), "Assistenza da implementare", Toast.LENGTH_LONG).show()
     }
 
     fun profiloUtente() {
@@ -87,8 +91,8 @@ class AltroFragment : Fragment() {
     }
 
     fun terminiCondizioni() {
-        //Toast.makeText(requireContext(), "Termini e condizioni da implementare", Toast.LENGTH_LONG).show()
-        findNavController().navigate(R.id.altro_to_term_cond)
+        val intent = Intent(requireContext(), TermCondActivity::class.java)
+        startActivity(intent)
     }
 
     fun donazione() {

@@ -13,13 +13,20 @@
         android:theme="@style/Theme.GreenMarket"
         tools:targetApi="31">
         <activity
+            android:name=".ui.altro.termini_condizioni.TermCondActivity"
+            android:label="Termini e condizioni d'uso"
+            android:exported="false" />
+        <activity
             android:name=".ui.altro.storico.StoricoActivity"
+            android:label="Storico scontrini"
             android:exported="false" />
         <activity
             android:name=".ui.altro.statistiche.StatsActivity"
+            android:label="Prodotti più acquistati"
             android:exported="false" />
         <activity
             android:name=".ui.altro.chi_siamo.ChiSiamoActivity"
+            android:label="Chi siamo"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
