@@ -5,4 +5,5 @@
     <string name="title_lista_spesa">Lista spesa</string>
     <string name="title_ricettario">Ricettario</string>
     <string name="title_altro">Altro</string>
+    <string name="hint_prodotto_ricetta">Aggiungi ingrediente…</string>
 </resources>

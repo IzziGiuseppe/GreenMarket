@@ -3297,6 +3297,7 @@ int id activity_tc 0x7f08022c
 int id add 0x7f080047
 int id adjust_height 0x7f080048
 int id adjust_width 0x7f080049
+int id agg_prod_bt 0x7f080235
 int id alertTitle 0x7f08004a
 int id aligned 0x7f08004b
 int id all 0x7f08004c
@@ -3612,6 +3613,7 @@ int id ratio 0x7f080182
 int id rectangles 0x7f080183
 int id report_drawn 0x7f080184
 int id reverseSawtooth 0x7f080185
+int id ricercaProdEditText 0x7f080236
 int id right 0x7f080186
 int id rightToLeft 0x7f080187
 int id right_icon 0x7f080188
@@ -4073,6 +4075,7 @@ int string google_app_id 0x7f120049
 int string google_crash_reporting_api_key 0x7f12004a
 int string google_storage_bucket 0x7f12004b
 int string hide_bottom_view_on_scroll_behavior 0x7f12004c
+int string hint_prodotto_ricetta 0x7f1200c7
 int string icon_content_description 0x7f12004d
 int string item_view_role_description 0x7f12004e
 int string m3_exceed_max_badge_text_suffix 0x7f12004f

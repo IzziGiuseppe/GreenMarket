@@ -18,9 +18,10 @@ interface ProdottiInRicetteDao {
     fun getProdottiInRicetteByRicetta(ricetta: String): LiveData<ProdottiInRicette>
 
     @Query("SELECT * FROM prodotti_in_ricette WHERE prodotto = :prodotto")
-    fun getProdottiInRicetteByProdotto(prodotto: String): LiveData<ProdottiInRicette>
+    fun getProdottiInRicetteByProdotto(prodotto: String): Array<ProdottiInRicette>
+            //LiveData<ProdottiInRicette>
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg prodotti_in_ricette: ProdottiInRicette)
 
     @Update

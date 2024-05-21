@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
+import com.example.greenmarket.db.model.ProdottiInRicette
 import com.example.greenmarket.db.model.Ricetta
 
 class RicettarioListAdapter: RecyclerView.Adapter<RicettarioListAdapter.MyViewHolder>() {
 
-    private var ricetteList = emptyArray<Ricetta>()
+    private var ricetteList = emptyArray<ProdottiInRicette>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.nome_ricetta)
@@ -23,7 +24,7 @@ class RicettarioListAdapter: RecyclerView.Adapter<RicettarioListAdapter.MyViewHo
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentRicetta = ricetteList[position]
-        holder.textView.text = currentRicetta.nome
+        holder.textView.text = currentRicetta.ricetta
     }
 
     override fun getItemCount(): Int {
@@ -31,7 +32,7 @@ class RicettarioListAdapter: RecyclerView.Adapter<RicettarioListAdapter.MyViewHo
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(ricetta: Array<Ricetta>) {
+    fun setData(ricetta: Array<ProdottiInRicette>) {
         this.ricetteList = ricetta
         notifyDataSetChanged()
     }

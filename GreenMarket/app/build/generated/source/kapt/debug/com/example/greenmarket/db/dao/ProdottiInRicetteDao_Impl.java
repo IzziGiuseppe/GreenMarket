@@ -31,7 +31,7 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
     this.__insertionAdapterOfProdottiInRicette = new EntityInsertionAdapter<ProdottiInRicette>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `prodotti_in_ricette` (`ricetta`,`prodotto`) VALUES (?,?)";
+        return "INSERT OR IGNORE INTO `prodotti_in_ricette` (`ricetta`,`prodotto`) VALUES (?,?)";
       }
 
       @Override
@@ -205,7 +205,7 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
   }
 
   @Override
-  public LiveData<ProdottiInRicette> getProdottiInRicetteByProdotto(final String prodotto) {
+  public ProdottiInRicette[] getProdottiInRicetteByProdotto(final String prodotto) {
     final String _sql = "SELECT * FROM prodotti_in_ricette WHERE prodotto = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -214,33 +214,27 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
     } else {
       _statement.bindString(_argIndex, prodotto);
     }
-    return __db.getInvalidationTracker().createLiveData(new String[]{"prodotti_in_ricette"}, false, new Callable<ProdottiInRicette>() {
-      @Override
-      public ProdottiInRicette call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfRicetta = CursorUtil.getColumnIndexOrThrow(_cursor, "ricetta");
-          final int _cursorIndexOfProdotto = CursorUtil.getColumnIndexOrThrow(_cursor, "prodotto");
-          final ProdottiInRicette _result;
-          if(_cursor.moveToFirst()) {
-            final String _tmpRicetta;
-            _tmpRicetta = _cursor.getString(_cursorIndexOfRicetta);
-            final String _tmpProdotto;
-            _tmpProdotto = _cursor.getString(_cursorIndexOfProdotto);
-            _result = new ProdottiInRicette(_tmpRicetta,_tmpProdotto);
-          } else {
-            _result = null;
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-        }
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfRicetta = CursorUtil.getColumnIndexOrThrow(_cursor, "ricetta");
+      final int _cursorIndexOfProdotto = CursorUtil.getColumnIndexOrThrow(_cursor, "prodotto");
+      final ProdottiInRicette[] _result = new ProdottiInRicette[_cursor.getCount()];
+      int _index = 0;
+      while(_cursor.moveToNext()) {
+        final ProdottiInRicette _item;
+        final String _tmpRicetta;
+        _tmpRicetta = _cursor.getString(_cursorIndexOfRicetta);
+        final String _tmpProdotto;
+        _tmpProdotto = _cursor.getString(_cursorIndexOfProdotto);
+        _item = new ProdottiInRicette(_tmpRicetta,_tmpProdotto);
+        _result[_index] = _item;
+        _index ++;
       }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
   }
 }

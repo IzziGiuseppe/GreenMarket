@@ -41,6 +41,14 @@ class RicettarioFragment : Fragment() {
             ricetta -> adapter.setData(ricetta)
         })
 
+        binding.aggProdBt.setOnClickListener {
+            val ricettaInput = binding.ricercaProdEditText.text.toString()
+            ricettarioViewModel.ricetteByProdotto(ricettaInput)
+            ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
+                ricetta -> adapter.setData(ricetta)
+            })
+        }
+
         //ricettarioViewModel.deleteAllRicette()
 
         return root

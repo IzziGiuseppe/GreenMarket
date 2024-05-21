@@ -3298,6 +3298,7 @@ id activity_tc
 id add
 id adjust_height
 id adjust_width
+id agg_prod_bt
 id alertTitle
 id aligned
 id all
@@ -3613,6 +3614,7 @@ id ratio
 id rectangles
 id report_drawn
 id reverseSawtooth
+id ricercaProdEditText
 id right
 id rightToLeft
 id right_icon
@@ -4074,6 +4076,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
+string hint_prodotto_ricetta
 string icon_content_description
 string item_view_role_description
 string m3_exceed_max_badge_text_suffix

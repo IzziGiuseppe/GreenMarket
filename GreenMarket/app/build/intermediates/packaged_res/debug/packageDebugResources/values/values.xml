@@ -15,6 +15,7 @@
     <string name="google_app_id" translatable="false">1:61890797320:android:c3ed3a7ce51cab9a3056bd</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWZUBiRxI7N0eZ7ufrZ-YGHZ7t6mFYHsU</string>
     <string name="google_storage_bucket" translatable="false">greenmarket-1f99c.appspot.com</string>
+    <string name="hint_prodotto_ricetta">Aggiungi ingrediente…</string>
     <string name="project_id" translatable="false">greenmarket-1f99c</string>
     <string name="title_altro">Altro</string>
     <string name="title_home">Home</string>
