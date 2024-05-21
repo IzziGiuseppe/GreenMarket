@@ -48,6 +48,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.GreenMarket" >
         <activity
+            android:name="com.example.greenmarket.ui.altro.storico.StoricoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.greenmarket.ui.altro.statistiche.StatsActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity"
             android:exported="false" />
         <activity

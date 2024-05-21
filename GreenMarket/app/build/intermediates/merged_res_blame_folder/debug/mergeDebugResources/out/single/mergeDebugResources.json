@@ -8,6 +8,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-59:/layout_activity_storico.xml.flat",
+        "source": "com.example.greenmarket.app-main-61:/layout/activity_storico.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_fragment_lista_spesa.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_lista_spesa.xml"
     },
@@ -52,6 +56,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\xml\\backup_rules.xml"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_activity_stats.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_stats.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_fragment_term_cond.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_term_cond.xml"
     },
@@ -66,10 +74,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_fragment_ricerca.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_ricerca.xml"
-    },
-    {
-        "merged": "com.example.greenmarket.app-debug-59:/navigation_mobile_navigation.xml.flat",
-        "source": "com.example.greenmarket.app-main-61:/navigation/mobile_navigation.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\drawable_ic_notifications_black_24dp.xml.flat",

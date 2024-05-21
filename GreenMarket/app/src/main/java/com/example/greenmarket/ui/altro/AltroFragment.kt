@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
+import com.example.greenmarket.ui.altro.statistiche.StatsActivity
+import com.example.greenmarket.ui.altro.storico.StoricoActivity
 
 class AltroFragment : Fragment() {
 
@@ -66,7 +68,8 @@ class AltroFragment : Fragment() {
     }
 
     fun storico() {
-        Toast.makeText(requireContext(), "Storico da implementare", Toast.LENGTH_LONG).show()
+        val intent = Intent(requireContext(), StoricoActivity::class.java)
+        startActivity(intent)
     }
 
     fun chiSiamo() {
@@ -75,7 +78,8 @@ class AltroFragment : Fragment() {
     }
 
     fun stats() {
-        Toast.makeText(requireContext(), "Statistiche da implementare", Toast.LENGTH_LONG).show()
+        val intent = Intent(requireContext(), StatsActivity::class.java)
+        startActivity(intent)
     }
 
     fun invito() {

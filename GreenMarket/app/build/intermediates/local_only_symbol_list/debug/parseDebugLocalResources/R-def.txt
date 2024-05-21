@@ -14,6 +14,9 @@ drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_notifications_black_24dp
+id activity_cs
+id activity_stats
+id activity_storico
 id altro_to_term_cond
 id container
 id domenico_bt
@@ -33,6 +36,8 @@ id nome_ricetta
 id rv
 id rv_altro
 id sezione_altro
+id stats_txt
+id storico_txt
 id testo_txt
 id text_dashboard
 id text_home
@@ -41,6 +46,8 @@ id titolo2_txt
 id titolo_txt
 layout activity_chi_siamo
 layout activity_main
+layout activity_stats
+layout activity_storico
 layout fragment_altro
 layout fragment_home
 layout fragment_lista_spesa

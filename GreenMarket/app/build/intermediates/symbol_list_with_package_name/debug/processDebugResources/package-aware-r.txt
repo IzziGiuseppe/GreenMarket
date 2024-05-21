@@ -3291,6 +3291,9 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_cs
+id activity_stats
+id activity_storico
 id add
 id adjust_height
 id adjust_width
@@ -3681,8 +3684,10 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id stats_txt
 id status_bar_latest_event_content
 id stop
+id storico_txt
 id stretch
 id submenuarrow
 id submit_area
@@ -3885,6 +3890,8 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chi_siamo
 layout activity_main
+layout activity_stats
+layout activity_storico
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

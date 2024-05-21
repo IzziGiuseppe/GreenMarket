@@ -3290,6 +3290,9 @@ int id action_mode_close_button 0x7f080043
 int id action_text 0x7f080044
 int id actions 0x7f080045
 int id activity_chooser_view_content 0x7f080046
+int id activity_cs 0x7f080227
+int id activity_stats 0x7f080228
+int id activity_storico 0x7f08022a
 int id add 0x7f080047
 int id adjust_height 0x7f080048
 int id adjust_width 0x7f080049
@@ -3680,8 +3683,10 @@ int id startToEnd 0x7f0801c7
 int id startVertical 0x7f0801c8
 int id staticLayout 0x7f0801c9
 int id staticPostLayout 0x7f0801ca
+int id stats_txt 0x7f080229
 int id status_bar_latest_event_content 0x7f0801cb
 int id stop 0x7f0801cc
+int id storico_txt 0x7f08022b
 int id stretch 0x7f0801cd
 int id submenuarrow 0x7f0801ce
 int id submit_area 0x7f0801cf
@@ -3884,6 +3889,8 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_chi_siamo 0x7f0b001c
 int layout activity_main 0x7f0b001d
+int layout activity_stats 0x7f0b007e
+int layout activity_storico 0x7f0b007f
 int layout custom_dialog 0x7f0b001e
 int layout design_bottom_navigation_item 0x7f0b001f
 int layout design_bottom_sheet_dialog 0x7f0b0020
