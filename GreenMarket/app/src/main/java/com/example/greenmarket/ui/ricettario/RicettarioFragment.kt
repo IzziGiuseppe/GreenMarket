@@ -37,7 +37,7 @@ class RicettarioFragment : Fragment() {
                 val ricetta = currentRicetta.ricetta
                 ricettarioViewModel.readRicettaDettagliata(ricetta)
                 ricettarioViewModel.ricettaDettagliata.observe(viewLifecycleOwner, Observer {
-                    Toast.makeText(context, it.descrizione, Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Descrizione "+it.descrizione, Toast.LENGTH_LONG).show()
                 })
             }
         }
