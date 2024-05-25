@@ -16,12 +16,20 @@ class RicettarioViewModel(application: Application) : AndroidViewModel(applicati
     val ricetta: LiveData<ProdottiInRicette>
         get() = _ricetta
 
+    private var _ricettaDettagliata = MutableLiveData(Ricetta("", "", ""))
+    val ricettaDettagliata: LiveData<Ricetta>
+        get() = _ricettaDettagliata
+
     private var _listaRicette = MutableLiveData(arrayOf<ProdottiInRicette>())
     val listaRicette: MutableLiveData<Array<ProdottiInRicette>>
         get() = _listaRicette
 
     fun readRicetta(nome: String){
         //_ricetta.value = db.RicettaDao().getRicettaByNome(nome)
+    }
+
+    fun readRicettaDettagliata(nome: String){
+        _ricettaDettagliata.value = db.RicettaDao().getRicettaByNome(nome)
     }
 
     fun ricetteByProdotto(prod: String){

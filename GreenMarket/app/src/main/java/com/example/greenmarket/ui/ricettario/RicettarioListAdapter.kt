@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
 import com.example.greenmarket.db.model.ProdottiInRicette
-import com.example.greenmarket.db.model.Ricetta
 
-class RicettarioListAdapter: RecyclerView.Adapter<RicettarioListAdapter.MyViewHolder>() {
+class RicettarioListAdapter(
+    private val itemClickListener: (ProdottiInRicette) -> Unit
+): RecyclerView.Adapter<RicettarioListAdapter.MyViewHolder>() {
 
     private var ricetteList = emptyArray<ProdottiInRicette>()
 
@@ -25,6 +26,7 @@ class RicettarioListAdapter: RecyclerView.Adapter<RicettarioListAdapter.MyViewHo
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentRicetta = ricetteList[position]
         holder.textView.text = currentRicetta.ricetta
+        holder.itemView.setOnClickListener { itemClickListener(currentRicetta) }
     }
 
     override fun getItemCount(): Int {
