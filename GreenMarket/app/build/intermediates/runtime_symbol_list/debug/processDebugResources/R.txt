@@ -3084,6 +3084,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f070074
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f070075
 int drawable abc_textfield_search_material 0x7f070076
 int drawable abc_vector_test 0x7f070077
+int drawable amatriciana 0x7f070100
 int drawable avd_hide_password 0x7f070078
 int drawable avd_show_password 0x7f070079
 int drawable btn_checkbox_checked_mtrl 0x7f07007a
@@ -3094,6 +3095,7 @@ int drawable btn_radio_off_mtrl 0x7f07007e
 int drawable btn_radio_off_to_on_mtrl_animation 0x7f07007f
 int drawable btn_radio_on_mtrl 0x7f070080
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070081
+int drawable carbonara 0x7f070101
 int drawable common_full_open_on_phone 0x7f070082
 int drawable common_google_signin_btn_icon_dark 0x7f070083
 int drawable common_google_signin_btn_icon_dark_focused 0x7f070084
@@ -3165,6 +3167,7 @@ int drawable material_ic_keyboard_arrow_previous_black_24dp 0x7f0700c5
 int drawable material_ic_keyboard_arrow_right_black_24dp 0x7f0700c6
 int drawable material_ic_menu_arrow_down_black_24dp 0x7f0700c7
 int drawable material_ic_menu_arrow_up_black_24dp 0x7f0700c8
+int drawable mela 0x7f0700ff
 int drawable mtrl_bottomsheet_drag_handle 0x7f0700c9
 int drawable mtrl_checkbox_button 0x7f0700ca
 int drawable mtrl_checkbox_button_checked_unchecked 0x7f0700cb
@@ -3216,6 +3219,8 @@ int drawable notification_template_icon_bg 0x7f0700f8
 int drawable notification_template_icon_low_bg 0x7f0700f9
 int drawable notification_tile_bg 0x7f0700fa
 int drawable notify_panel_notification_icon_bg 0x7f0700fb
+int drawable pasta_norma 0x7f070102
+int drawable pasta_tonno 0x7f070103
 int drawable test_level_drawable 0x7f0700fc
 int drawable tooltip_frame_dark 0x7f0700fd
 int drawable tooltip_frame_light 0x7f0700fe
@@ -3431,6 +3436,7 @@ int id fixed 0x7f0800ca
 int id flip 0x7f0800cb
 int id floating 0x7f0800cc
 int id forever 0x7f0800cd
+int id foto_ricetta 0x7f08023a
 int id fragment_container_view_tag 0x7f0800ce
 int id frost 0x7f0800cf
 int id fullscreen_header 0x7f0800d0

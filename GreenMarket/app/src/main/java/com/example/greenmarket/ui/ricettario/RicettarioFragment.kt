@@ -42,12 +42,14 @@ class RicettarioFragment : Fragment() {
                 val ricetta = currentRicetta.ricetta
                 var nome = ""
                 var descrizione = ""
+                var foto = ""
                 ricettarioViewModel.readRicettaDettagliata(ricetta)
                 ricettarioViewModel.ricettaDettagliata.observe(viewLifecycleOwner) {
                     nome = it.nome
                     descrizione = it.descrizione
+                    foto = it.foto
                 }
-                startRicetta(nome, descrizione)
+                startRicetta(nome, descrizione, foto)
             }
         }
         val recyclerView = binding.rv
@@ -94,10 +96,11 @@ class RicettarioFragment : Fragment() {
         return root
     }
 
-    fun startRicetta(nome: String, descrizione: String) {
+    fun startRicetta(nome: String, descrizione: String, foto: String) {
         val intent = Intent(requireContext(), DettaglioRicettaActivity::class.java)
         intent.putExtra("nome_ricetta", nome)
         intent.putExtra("descrizione_ricetta", descrizione)
+        intent.putExtra("foto_ricetta", foto)
         startActivity(intent)
     }
 

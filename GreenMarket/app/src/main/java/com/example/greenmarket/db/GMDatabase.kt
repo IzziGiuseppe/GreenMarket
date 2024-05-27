@@ -64,7 +64,7 @@ abstract class GMDatabase: RoomDatabase() {
                 val pRDao = database.ProdottiInRicetteDao()
 
                 // Inserisci i dati iniziali
-                val product1 = Prodotto("Mele", "Sono mele", 2.99f, "", "kg")
+                val product1 = Prodotto("Mele", "Sono mele", 2.99f, "@drawable/mela.jpg", "kg")
                 val product2 = Prodotto("Pere", "Sono pere", 1.99f, "", "kg")
                 val product3 = Prodotto("Banane", "Sono banane", 2.99f, "", "kg")
                 val product4 = Prodotto("Arance", "Sono arance", 1.99f, "", "kg")
@@ -90,6 +90,11 @@ abstract class GMDatabase: RoomDatabase() {
                 productDao.insert(product9, product10, product11, product12, product13, product14, product15,
                     product16, product17, product18, product19, product20, product21, product22)
 
+                val p23 = Prodotto("Tonno", "Pesce", 7.99f, "", "kg")
+                val p24 = Prodotto("Cipolle", "Sono cipolle", 2.99f, "", "kg")
+                val p25 = Prodotto("Pecorino", "Formaggio salato", 5.99f, "", "kg")
+                productDao.insert(p23, p24, p25)
+
                 val ricettaDao = database.RicettaDao()
 
                 // Inserisci i dati iniziali
@@ -104,14 +109,18 @@ abstract class GMDatabase: RoomDatabase() {
                 ricettaDao.insert(ricetta1, ricetta2, ricetta3, ricetta4, ricetta5, ricetta6, ricetta7, ricetta8)
 
                 val ricetta9 = Ricetta("Parmigiana", "Molto buono", "")
-                val ricetta10 = Ricetta("Carbonara", "Molto buono", "")
+                val ricetta10 = Ricetta("Carbonara", "Molto buono", "@drawable/carbonara.jpg")
                 val ricetta11 = Ricetta("Spaghetti allo scoglio", "Molto buono", "")
                 val ricetta12 = Ricetta("Pan cott", "Molto buono", "")
                 val ricetta13 = Ricetta("Pane e pomodoro", "Molto buono", "")
-                val ricetta14 = Ricetta("Amatriciana", "Molto buono", "")
+                val ricetta14 = Ricetta("Amatriciana", "Molto buono", "@drawable/amatriciana.jpg")
                 val ricetta15 = Ricetta("Lasagna bianca", "Molto buono", "")
                 val ricetta16 = Ricetta("Pasta e patate", "Molto buono", "")
                 ricettaDao.insert(ricetta9, ricetta10, ricetta11, ricetta12, ricetta13, ricetta14, ricetta15, ricetta16)
+
+                val ricetta17 = Ricetta("Pasta alla norma", "Taglia le melanzane, falle cuocere in una pentola con aglio e olio e pomodorini, butta la pasta, scolala nella padella con le melanzane, termina la cottura nella padella, metti il pecorino sopra.", "@drawable/pasta_norma")
+                val ricetta18 = Ricetta("Pasta e tonno", "Fai cuocere il tonno in una padella con olio, cipolla, capperi, olive e pomodorini, butta la pasta, scolala nella padella, termina la cottura.", "@drawable/pasta_tonno")
+                ricettaDao.insert(ricetta17, ricetta18)
 
                 //Inserimento prodotti in ricette
                 val pr1 = ProdottiInRicette("Pasta al sugo", "Salsa di pomodoro")
@@ -136,6 +145,12 @@ abstract class GMDatabase: RoomDatabase() {
                 val pr20 = ProdottiInRicette("Pasta e patate", "Patate")
                 pRDao.insert(pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10,
                     pr11, pr12, pr13, pr14, pr15, pr16, pr17, pr18, pr19, pr20)
+
+                val pr21 = ProdottiInRicette("Pasta alla norma", "Melanzane")
+                val pr22 = ProdottiInRicette("Pasta alla norma", "Pecorino")
+                val pr23 = ProdottiInRicette("Pasta e tonno", "Tonno")
+                val pr24 = ProdottiInRicette("Pasta e tonno", "Cipolle")
+                pRDao.insert(pr21, pr22, pr23, pr24)
             }
         }
 

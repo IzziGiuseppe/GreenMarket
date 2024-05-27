@@ -16,6 +16,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout-v26\\activity_chi_siamo.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-59:/drawable_pasta_tonno.jpg.flat",
+        "source": "com.example.greenmarket.app-main-61:/drawable/pasta_tonno.jpg"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout-v26_activity_term_cond.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout-v26\\activity_term_cond.xml"
     },
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\drawable_carbonara.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\drawable\\carbonara.jpg"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_item_tc_view.xml.flat",
@@ -72,6 +80,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_stats.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-59:/drawable_pasta_norma.jpg.flat",
+        "source": "com.example.greenmarket.app-main-61:/drawable/pasta_norma.jpg"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_fragment_term_cond.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_term_cond.xml"
     },
@@ -92,6 +104,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_ricerca.xml"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\drawable_mela.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\drawable\\mela.jpg"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout-v26_item_tc_view.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout-v26\\item_tc_view.xml"
     },
@@ -104,12 +120,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\drawable_amatriciana.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\drawable\\amatriciana.jpg"
     },
     {
-        "merged": "com.example.greenmarket.app-debug-59:/layout_fragment_ricettario.xml.flat",
-        "source": "com.example.greenmarket.app-main-61:/layout/fragment_ricettario.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-59:\\drawable_ic_launcher_background.xml.flat",
