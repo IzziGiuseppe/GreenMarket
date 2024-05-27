@@ -22,7 +22,7 @@ public final class FragmentRicettarioBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final FloatingActionButton aggProdBt;
+  public final FloatingActionButton resetBt;
 
   @NonNull
   public final EditText ricercaProdEditText;
@@ -31,10 +31,10 @@ public final class FragmentRicettarioBinding implements ViewBinding {
   public final RecyclerView rv;
 
   private FragmentRicettarioBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FloatingActionButton aggProdBt, @NonNull EditText ricercaProdEditText,
+      @NonNull FloatingActionButton resetBt, @NonNull EditText ricercaProdEditText,
       @NonNull RecyclerView rv) {
     this.rootView = rootView;
-    this.aggProdBt = aggProdBt;
+    this.resetBt = resetBt;
     this.ricercaProdEditText = ricercaProdEditText;
     this.rv = rv;
   }
@@ -66,9 +66,9 @@ public final class FragmentRicettarioBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.agg_prod_bt;
-      FloatingActionButton aggProdBt = ViewBindings.findChildViewById(rootView, id);
-      if (aggProdBt == null) {
+      id = R.id.reset_bt;
+      FloatingActionButton resetBt = ViewBindings.findChildViewById(rootView, id);
+      if (resetBt == null) {
         break missingId;
       }
 
@@ -84,7 +84,7 @@ public final class FragmentRicettarioBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRicettarioBinding((ConstraintLayout) rootView, aggProdBt,
+      return new FragmentRicettarioBinding((ConstraintLayout) rootView, resetBt,
           ricercaProdEditText, rv);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ricercaProdEditText" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/agg_prod_bt"
+        android:id="@+id/reset_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

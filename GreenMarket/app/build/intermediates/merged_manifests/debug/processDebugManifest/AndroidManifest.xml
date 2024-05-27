@@ -49,7 +49,8 @@
         android:theme="@style/Theme.GreenMarket" >
         <activity
             android:name="com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Dettaglio ricetta" />
         <activity
             android:name="com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity"
             android:exported="false"

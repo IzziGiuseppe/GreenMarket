@@ -60,12 +60,7 @@ class RicettarioFragment : Fragment() {
             ricetta -> adapter.setData(ricetta)
         })
 
-        binding.aggProdBt.setOnClickListener {
-            /*val ricettaInput = binding.ricercaProdEditText.text.toString()
-            ricettarioViewModel.ricetteByProdotto(ricettaInput)
-            ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
-                ricetta -> adapter.setData(ricetta)
-            })*/
+        binding.resetBt.setOnClickListener {
             binding.ricercaProdEditText.setText("")
             ricettarioViewModel.readAllRicette()
             ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
@@ -82,11 +77,6 @@ class RicettarioFragment : Fragment() {
                     val x = motionEvent.rawX.toInt()
 
                     if (x >= (binding.ricercaProdEditText.right - bounds.width())) {
-                        /*binding.ricercaProdEditText.setText("")
-                        ricettarioViewModel.readAllRicette()
-                        ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
-                                ricetta -> adapter.setData(ricetta)
-                        })*/
                         val ricettaInput = binding.ricercaProdEditText.text.toString()
                         ricettarioViewModel.ricetteByProdotto(ricettaInput)
                         ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {

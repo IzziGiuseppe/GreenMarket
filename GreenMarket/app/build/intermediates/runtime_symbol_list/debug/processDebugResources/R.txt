@@ -3298,7 +3298,6 @@ int id activity_tc 0x7f08022c
 int id add 0x7f080047
 int id adjust_height 0x7f080048
 int id adjust_width 0x7f080049
-int id agg_prod_bt 0x7f080235
 int id alertTitle 0x7f08004a
 int id aligned 0x7f08004b
 int id all 0x7f08004c
@@ -3614,6 +3613,7 @@ int id radio 0x7f080181
 int id ratio 0x7f080182
 int id rectangles 0x7f080183
 int id report_drawn 0x7f080184
+int id reset_bt 0x7f080239
 int id reverseSawtooth 0x7f080185
 int id ricercaProdEditText 0x7f080236
 int id right 0x7f080186

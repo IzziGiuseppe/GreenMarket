@@ -3299,7 +3299,6 @@ id activity_tc
 id add
 id adjust_height
 id adjust_width
-id agg_prod_bt
 id alertTitle
 id aligned
 id all
@@ -3615,6 +3614,7 @@ id radio
 id ratio
 id rectangles
 id report_drawn
+id reset_bt
 id reverseSawtooth
 id ricercaProdEditText
 id right

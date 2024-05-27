@@ -19,7 +19,6 @@ id activity_dr
 id activity_stats
 id activity_storico
 id activity_tc
-id agg_prod_bt
 id container
 id descrizione_ricetta
 id domenico_bt
@@ -34,6 +33,7 @@ id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
 id nome_ricetta
+id reset_bt
 id ricercaProdEditText
 id rv
 id rv_altro
