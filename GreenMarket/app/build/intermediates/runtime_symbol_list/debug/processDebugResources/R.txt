@@ -3291,6 +3291,7 @@ int id action_text 0x7f080044
 int id actions 0x7f080045
 int id activity_chooser_view_content 0x7f080046
 int id activity_cs 0x7f080227
+int id activity_dr 0x7f080237
 int id activity_stats 0x7f080228
 int id activity_storico 0x7f08022a
 int id activity_tc 0x7f08022c
@@ -3375,6 +3376,7 @@ int id decor_content_parent 0x7f080093
 int id default_activity_button 0x7f080094
 int id deltaRelative 0x7f080095
 int id dependency_ordering 0x7f080096
+int id descrizione_ricetta 0x7f080238
 int id design_bottom_sheet 0x7f080097
 int id design_menu_item_action_area 0x7f080098
 int id design_menu_item_action_area_stub 0x7f080099
@@ -3892,6 +3894,7 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_chi_siamo 0x7f0b001c
+int layout activity_dettaglio_ricetta 0x7f0b0082
 int layout activity_main 0x7f0b001d
 int layout activity_stats 0x7f0b007e
 int layout activity_storico 0x7f0b007f

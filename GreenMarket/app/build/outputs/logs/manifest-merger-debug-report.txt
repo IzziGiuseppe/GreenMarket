@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:1-50:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\DELL\.gradle\caches\transforms-4\3529a8a3cc80eef604f1581480b760e6\transformed\navigation-common-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.6.0] C:\Users\DELL\.gradle\caches\transforms-4\19bf640507b76f2c0e510d8b3b6afd54\transformed\navigation-common-ktx-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.6.0] C:\Users\DELL\.gradle\caches\transforms-4\6e1b793c4a405a0826f0046e7c9dd79e\transformed\navigation-runtime-2.6.0\AndroidManifest.xml:17:1-22:12
@@ -107,8 +107,8 @@ MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\DELL\.grad
 	xmlns:android
 		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:5:5-45:19
-INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:5:5-45:19
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:5:5-48:19
+INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:5:5-48:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\DELL\.gradle\caches\transforms-4\1401bb08c6a35d2bec777a1eb94fc8d8\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\DELL\.gradle\caches\transforms-4\1401bb08c6a35d2bec777a1eb94fc8d8\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-4\9daabafd93f9cef20e49cc1591eb636c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -187,64 +187,70 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\DE
 		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:13:9-49
 	android:dataExtractionRules
 		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:7:9-65
+activity#com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:15:9-17:40
+	android:exported
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:17:13-37
+	android:name
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:16:13-85
 activity#com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:15:9-19:40
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:18:9-22:58
 	android:parentActivityName
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:18:13-55
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:22:13-55
 	android:label
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:17:13-55
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:21:13-60
 	android:exported
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:19:13-37
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:16:13-73
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:19:13-73
 activity#com.example.greenmarket.ui.altro.storico.StoricoActivity
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:20:9-24:40
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:23:9-27:58
 	android:parentActivityName
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:23:13-55
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:27:13-55
 	android:label
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:22:13-46
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:26:13-46
 	android:exported
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:24:13-37
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:21:13-61
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:24:13-61
 activity#com.example.greenmarket.ui.altro.statistiche.StatsActivity
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:25:9-29:40
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:28:9-32:58
 	android:parentActivityName
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:28:13-55
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:32:13-55
 	android:label
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:27:13-52
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:31:13-52
 	android:exported
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:29:13-37
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:30:13-37
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:26:13-63
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:29:13-63
 activity#com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:30:9-34:40
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:33:9-37:58
 	android:parentActivityName
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:33:13-55
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:37:13-55
 	android:label
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:32:13-38
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:36:13-38
 	android:exported
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:34:13-37
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:31:13-64
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:34:13-64
 activity#com.example.greenmarket.MainActivity
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:35:9-44:20
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:38:9-47:20
 	android:label
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:38:13-45
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:41:13-45
 	android:exported
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:37:13-36
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:40:13-36
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:36:13-41
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:39:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:39:13-43:29
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:42:13-46:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:40:17-69
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:43:17-69
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:40:25-66
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:43:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:42:17-77
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:45:17-77
 	android:name
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:42:27-74
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:45:27-74
 uses-sdk
 INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml

@@ -4,7 +4,7 @@ package com.example.greenmarket.db.dao;
 @androidx.room.Dao
 public abstract interface ProdottiInRicetteDao {
     
-    @androidx.room.Query(value = "SELECT * FROM prodotti_in_ricette")
+    @androidx.room.Query(value = "SELECT * FROM prodotti_in_ricette WHERE (Ricetta, Prodotto) IN (SELECT Ricetta, MIN(Prodotto) FROM prodotti_in_ricette GROUP BY Ricetta);")
     @org.jetbrains.annotations.NotNull
     public abstract com.example.greenmarket.db.model.ProdottiInRicette[] getAll();
     

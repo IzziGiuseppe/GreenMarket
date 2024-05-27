@@ -138,7 +138,7 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
 
   @Override
   public ProdottiInRicette[] getAll() {
-    final String _sql = "SELECT * FROM prodotti_in_ricette";
+    final String _sql = "SELECT * FROM prodotti_in_ricette WHERE (Ricetta, Prodotto) IN (SELECT Ricetta, MIN(Prodotto) FROM prodotti_in_ricette GROUP BY Ricetta);";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);

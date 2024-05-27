@@ -48,6 +48,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.GreenMarket" >
         <activity
+            android:name="com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity"
             android:exported="false"
             android:label="Termini e condizioni d&apos;uso"

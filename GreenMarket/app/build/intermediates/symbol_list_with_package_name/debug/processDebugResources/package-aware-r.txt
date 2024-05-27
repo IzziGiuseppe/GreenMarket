@@ -3292,6 +3292,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id activity_cs
+id activity_dr
 id activity_stats
 id activity_storico
 id activity_tc
@@ -3376,6 +3377,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descrizione_ricetta
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3893,6 +3895,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chi_siamo
+layout activity_dettaglio_ricetta
 layout activity_main
 layout activity_stats
 layout activity_storico

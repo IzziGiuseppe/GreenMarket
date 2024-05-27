@@ -15,9 +15,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:autofillHints=""
+        android:drawableEnd="@android:drawable/ic_menu_search"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/hint_prodotto_ricetta"
         android:inputType="text"
+        android:longClickable="false"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +43,7 @@
         android:layout_marginEnd="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@android:drawable/ic_menu_search"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
         app:layout_constraintBottom_toBottomOf="@+id/rv"
         app:layout_constraintEnd_toEndOf="parent" />
 

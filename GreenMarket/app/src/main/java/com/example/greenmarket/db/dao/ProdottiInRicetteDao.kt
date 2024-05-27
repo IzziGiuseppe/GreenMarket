@@ -11,7 +11,7 @@ import com.example.greenmarket.db.model.ProdottiInRicette
 
 @Dao
 interface ProdottiInRicetteDao {
-    @Query("SELECT * FROM prodotti_in_ricette")
+    @Query("SELECT * FROM prodotti_in_ricette WHERE (Ricetta, Prodotto) IN (SELECT Ricetta, MIN(Prodotto) FROM prodotti_in_ricette GROUP BY Ricetta);")
     fun getAll(): Array<ProdottiInRicette>
 
     @Query("SELECT * FROM prodotti_in_ricette WHERE ricetta = :ricetta")
