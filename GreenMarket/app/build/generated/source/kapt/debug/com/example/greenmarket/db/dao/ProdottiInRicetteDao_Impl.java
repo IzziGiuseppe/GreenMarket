@@ -6,6 +6,7 @@ import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -25,6 +26,8 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
   private final EntityDeletionOrUpdateAdapter<ProdottiInRicette> __deletionAdapterOfProdottiInRicette;
 
   private final EntityDeletionOrUpdateAdapter<ProdottiInRicette> __updateAdapterOfProdottiInRicette;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAllProdottiInRicette;
 
   public ProdottiInRicetteDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -98,6 +101,13 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
         }
       }
     };
+    this.__preparedStmtOfDeleteAllProdottiInRicette = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM prodotti_in_ricette";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -133,6 +143,20 @@ public final class ProdottiInRicetteDao_Impl implements ProdottiInRicetteDao {
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void deleteAllProdottiInRicette() {
+    __db.assertNotSuspendingTransaction();
+    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAllProdottiInRicette.acquire();
+    __db.beginTransaction();
+    try {
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfDeleteAllProdottiInRicette.release(_stmt);
     }
   }
 

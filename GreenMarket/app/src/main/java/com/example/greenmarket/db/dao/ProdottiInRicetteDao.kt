@@ -29,4 +29,7 @@ interface ProdottiInRicetteDao {
 
     @Delete
     fun delete(prodotti_in_ricette: ProdottiInRicette)
+
+    @Query("DELETE FROM prodotti_in_ricette")
+    fun deleteAllProdottiInRicette()
 }
