@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\activity_profilo_utente.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_profilo_utente.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\activity_registrazione.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_registrazione.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-58:/layout/activity_profilo_utente.xml",
+        "source": "com.example.greenmarket.app-main-61:/layout/activity_profilo_utente.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-58:\\layout\\activity_reset_password.xml",
+        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-61:\\layout\\activity_reset_password.xml"
+    }
+]

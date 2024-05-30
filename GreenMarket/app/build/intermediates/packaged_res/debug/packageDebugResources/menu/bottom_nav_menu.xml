@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_ricerca"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/title_ricerca" />
+
+    <item
+        android:id="@+id/navigation_lista_della_spesa"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/title_lista_spesa" />
+
+    <item
+        android:id="@+id/navigation_ricettario"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/title_ricettario" />
+
+    <item
+        android:id="@+id/navigation_altro"
+        android:icon="@android:drawable/ic_media_pause"
+        android:title="@string/title_altro" />
+
+</menu>

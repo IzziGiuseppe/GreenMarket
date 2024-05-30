@@ -1,0 +1,549 @@
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">GreenMarket</string>\r\n    <string name=\"title_home\">Home</string>\r\n    <string name=\"title_ricerca\">Ricerca</string>\r\n    <string name=\"title_lista_spesa\">Lista spesa</string>\r\n    <string name=\"title_ricettario\">Ricettario</string>\r\n    <string name=\"title_altro\">Altro</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 0a0cf4d8b9afec41cc6b87d3ba2a3b52ec2067ef)
++++ b/app/src/main/res/values/strings.xml	(date 1716203855481)
+@@ -5,4 +5,26 @@
+     <string name="title_lista_spesa">Lista spesa</string>
+     <string name="title_ricettario">Ricettario</string>
+     <string name="title_altro">Altro</string>
++    <string name="accedi">Accedi</string>
++    <string name="benuvenuto_in_greenmarket">Benuvenuto in GreenMarket!</string>
++    <string name="email">Email</string>
++    <string name="password">Password</string>
++    <string name="accediButton">Accedi</string>
++    <string name="password_dimenticata">Password dimenticata?</string>
++    <string name="resgistrati">Resgistrati</string>
++    <string name="registrati">Registrati</string>
++    <string name="nome">Nome</string>
++    <string name="continua">Continua</string>
++    <string name="cognome">Cognome</string>
++    <string name="emailRegistrazione">Email</string>
++    <string name="indirizzo">Indirizzo</string>
++    <string name="emailRegister">Email</string>
++    <string name="passwordRegister">Password</string>
++    <string name="ho_letto_e_accetto_i_termini_e_le_condizioni">Ho letto e accetto i termini e le condizioni</string>
++    <string name="hai_gi_un_account">Hai già un account?</string>
++    <string name="accediRegister">Accedi</string>
++    <string name="il_tuo_indirizzo_email">Il tuo indirizzo email</string>
++    <string name="la_tua_password">La tua password</string>
++    <string name="conferma_password">Conferma Password</string>
++    <string name="conferma_la_tua_password">Conferma la tua password</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/greenmarket/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.greenmarket\r\n\r\nimport android.os.Bundle\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.navigation.findNavController\r\nimport androidx.navigation.ui.AppBarConfiguration\r\nimport androidx.navigation.ui.setupActionBarWithNavController\r\nimport androidx.navigation.ui.setupWithNavController\r\nimport com.example.greenmarket.databinding.ActivityMainBinding\r\nimport com.example.greenmarket.db.GMDatabase\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n\r\n    private lateinit var binding: ActivityMainBinding\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n\r\n        GMDatabase.populateDatabase(this)\r\n\r\n        binding = ActivityMainBinding.inflate(layoutInflater)\r\n        setContentView(binding.root)\r\n\r\n        val navView: BottomNavigationView = binding.navView\r\n\r\n        val navController = findNavController(R.id.nav_host_fragment_activity_main)\r\n        // Passing each menu ID as a set of Ids because each\r\n        // menu should be considered as top level destinations.\r\n        val appBarConfiguration = AppBarConfiguration(\r\n            setOf(\r\n                R.id.navigation_home, R.id.navigation_ricerca, R.id.navigation_lista_della_spesa,\r\n                R.id.navigation_ricettario, R.id.navigation_altro\r\n            )\r\n        )\r\n        setupActionBarWithNavController(navController, appBarConfiguration)\r\n        navView.setupWithNavController(navController)\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/greenmarket/MainActivity.kt b/app/src/main/java/com/example/greenmarket/MainActivity.kt
+--- a/app/src/main/java/com/example/greenmarket/MainActivity.kt	(revision 0a0cf4d8b9afec41cc6b87d3ba2a3b52ec2067ef)
++++ b/app/src/main/java/com/example/greenmarket/MainActivity.kt	(date 1716194042500)
+@@ -9,14 +9,19 @@
+ import androidx.navigation.ui.setupWithNavController
+ import com.example.greenmarket.databinding.ActivityMainBinding
+ import com.example.greenmarket.db.GMDatabase
++import com.google.firebase.auth.FirebaseAuth
+ 
+ class MainActivity : AppCompatActivity() {
+ 
+     private lateinit var binding: ActivityMainBinding
++    private lateinit var auth: FirebaseAuth
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+ 
++        // Initialize Firebase Auth
++        auth = FirebaseAuth.getInstance()
++
+         GMDatabase.populateDatabase(this)
+ 
+         binding = ActivityMainBinding.inflate(layoutInflater)
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+new file mode 100644
+--- /dev/null	(date 1716200433239)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1716200433239)
+@@ -0,0 +1,108 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <TextView
++        android:id="@+id/accedi"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:layout_marginTop="248dp"
++        android:text="@string/accedi"
++        android:textColor="@color/black"
++        android:textSize="20sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <TextView
++        android:id="@+id/benvenuto"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/benuvenuto_in_greenmarket"
++        android:textColor="#AEAEAE"
++        android:textSize="16sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/accedi" />
++
++    <TextView
++        android:id="@+id/textView2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:layout_marginTop="20dp"
++        android:text="@string/email"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/benvenuto" />
++
++    <EditText
++        android:id="@+id/editTextTextEmailAddress"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:layout_marginEnd="48dp"
++        android:ems="10"
++        android:inputType="textEmailAddress"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView2" />
++
++    <TextView
++        android:id="@+id/textView3"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:layout_marginTop="4dp"
++        android:text="@string/password"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
++
++    <EditText
++        android:id="@+id/editTextTextPassword"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:layout_marginTop="1dp"
++        android:layout_marginEnd="48dp"
++        android:ems="10"
++        android:inputType="textPassword"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView3" />
++
++    <Button
++        android:id="@+id/button"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="160dp"
++        android:layout_marginTop="16dp"
++        android:text="@string/accediButton"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
++
++    <TextView
++        android:id="@+id/textView4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="@string/password_dimenticata"
++        android:textColor="#AEAEAE"
++        android:textStyle="bold"
++        tools:layout_editor_absoluteX="49dp"
++        tools:layout_editor_absoluteY="530dp" />
++
++    <TextView
++        android:id="@+id/textView5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="@string/resgistrati"
++        android:textStyle="bold"
++        tools:layout_editor_absoluteX="306dp"
++        tools:layout_editor_absoluteY="533dp" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[versions]\r\nagp = \"8.4.0\"\r\nkotlin = \"1.9.0\"\r\ncoreKtx = \"1.13.1\"\r\njunit = \"4.13.2\"\r\njunitVersion = \"1.1.5\"\r\nespressoCore = \"3.5.1\"\r\nappcompat = \"1.6.1\"\r\nmaterial = \"1.12.0\"\r\nconstraintlayout = \"2.1.4\"\r\nlifecycleLivedataKtx = \"2.7.0\"\r\nlifecycleViewmodelKtx = \"2.7.0\"\r\nnavigationFragmentKtx = \"2.6.0\"\r\nnavigationUiKtx = \"2.6.0\"\r\nroomCompiler = \"2.5.0\"\r\nroomRuntime = \"2.6.1\"\r\nlegacySupportV4 = \"1.0.0\"\r\nfragmentKtx = \"1.5.6\"\r\n\r\n[libraries]\r\nandroidx-core-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"coreKtx\" }\r\nandroidx-room-compiler = { module = \"androidx.room:room-compiler\", version.ref = \"roomRuntime\" }\r\nandroidx-room-compiler-v250 = { module = \"androidx.room:room-compiler\", version.ref = \"roomCompiler\" }\r\nandroidx-room-ktx = { module = \"androidx.room:room-ktx\", version.ref = \"roomRuntime\" }\r\nandroidx-room-runtime = { module = \"androidx.room:room-runtime\", version.ref = \"roomRuntime\" }\r\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\r\nandroidx-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"junitVersion\" }\r\nandroidx-espresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espressoCore\" }\r\nandroidx-appcompat = { group = \"androidx.appcompat\", name = \"appcompat\", version.ref = \"appcompat\" }\r\nmaterial = { group = \"com.google.android.material\", name = \"material\", version.ref = \"material\" }\r\nandroidx-constraintlayout = { group = \"androidx.constraintlayout\", name = \"constraintlayout\", version.ref = \"constraintlayout\" }\r\nandroidx-lifecycle-livedata-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-livedata-ktx\", version.ref = \"lifecycleLivedataKtx\" }\r\nandroidx-lifecycle-viewmodel-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-viewmodel-ktx\", version.ref = \"lifecycleViewmodelKtx\" }\r\nandroidx-navigation-fragment-ktx = { group = \"androidx.navigation\", name = \"navigation-fragment-ktx\", version.ref = \"navigationFragmentKtx\" }\r\nandroidx-navigation-ui-ktx = { group = \"androidx.navigation\", name = \"navigation-ui-ktx\", version.ref = \"navigationUiKtx\" }\r\nandroidx-legacy-support-v4 = { group = \"androidx.legacy\", name = \"legacy-support-v4\", version.ref = \"legacySupportV4\" }\r\nandroidx-fragment-ktx = { group = \"androidx.fragment\", name = \"fragment-ktx\", version.ref = \"fragmentKtx\" }\r\n\r\n[plugins]\r\nandroidApplication = { id = \"com.android.application\", version.ref = \"agp\" }\r\njetbrainsKotlinAndroid = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+--- a/gradle/libs.versions.toml	(revision 0a0cf4d8b9afec41cc6b87d3ba2a3b52ec2067ef)
++++ b/gradle/libs.versions.toml	(date 1716193968055)
+@@ -16,6 +16,7 @@
+ roomRuntime = "2.6.1"
+ legacySupportV4 = "1.0.0"
+ fragmentKtx = "1.5.6"
++firebaseAuthKtx = "23.0.0"
+ 
+ [libraries]
+ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+@@ -35,6 +36,7 @@
+ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+ androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+ androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
++firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+ 
+ [plugins]
+ androidApplication = { id = "com.android.application", version.ref = "agp" }
+Index: local.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>## This file must *NOT* be checked into Version Control Systems,\r\n# as it contains information specific to your local configuration.\r\n#\r\n# Location of the SDK. This is only used by Gradle.\r\n# For customization when using a Version Control System, please read the\r\n# header note.\r\n#Thu May 16 15:05:08 CEST 2024\r\nsdk.dir=C\\:\\\\Users\\\\DELL\\\\AppData\\\\Local\\\\Android\\\\Sdk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/local.properties b/local.properties
+--- a/local.properties	(revision 0a0cf4d8b9afec41cc6b87d3ba2a3b52ec2067ef)
++++ b/local.properties	(date 1716140367327)
+@@ -4,5 +4,5 @@
+ # Location of the SDK. This is only used by Gradle.
+ # For customization when using a Version Control System, please read the
+ # header note.
+-#Thu May 16 15:05:08 CEST 2024
+-sdk.dir=C\:\\Users\\DELL\\AppData\\Local\\Android\\Sdk
++#Sun May 19 19:39:27 CEST 2024
++sdk.dir=C\:\\Users\\izzig\\AppData\\Local\\Android\\Sdk
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    alias(libs.plugins.androidApplication)\r\n    alias(libs.plugins.jetbrainsKotlinAndroid)\r\n    id(\"kotlin-kapt\")\r\n    id(\"com.google.gms.google-services\")\r\n}\r\n\r\nandroid {\r\n    namespace = \"com.example.greenmarket\"\r\n    compileSdk = 34\r\n\r\n    defaultConfig {\r\n        applicationId = \"com.example.greenmarket\"\r\n        minSdk = 24\r\n        targetSdk = 34\r\n        versionCode = 1\r\n        versionName = \"1.0\"\r\n\r\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            isMinifyEnabled = false\r\n            proguardFiles(\r\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\r\n                \"proguard-rules.pro\"\r\n            )\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility = JavaVersion.VERSION_1_8\r\n        targetCompatibility = JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = \"1.8\"\r\n    }\r\n    buildFeatures {\r\n        viewBinding = true\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation(libs.androidx.core.ktx)\r\n    implementation(libs.androidx.appcompat)\r\n    implementation(libs.material)\r\n    implementation(libs.androidx.constraintlayout)\r\n    implementation(libs.androidx.lifecycle.livedata.ktx)\r\n    implementation(libs.androidx.lifecycle.viewmodel.ktx)\r\n    implementation(libs.androidx.navigation.fragment.ktx)\r\n    implementation(libs.androidx.navigation.ui.ktx)\r\n    implementation(libs.androidx.legacy.support.v4)\r\n    implementation(libs.androidx.fragment.ktx)\r\n    testImplementation(libs.junit)\r\n    androidTestImplementation(libs.androidx.junit)\r\n    androidTestImplementation(libs.androidx.espresso.core)\r\n\r\n    // Navigation Component\r\n    implementation(\"androidx.navigation:navigation-fragment-ktx:2.2.2\")\r\n    implementation(\"androidx.navigation:navigation-ui-ktx:2.2.2\")\r\n\r\n    // Room components\r\n    implementation(\"androidx.room:room-runtime:2.2.5\")\r\n    kapt(\"androidx.room:room-compiler:2.2.5\")\r\n    implementation(\"androidx.room:room-ktx:2.2.5\")\r\n    androidTestImplementation(\"androidx.room:room-testing:2.2.5\")\r\n\r\n    // Lifecycle components\r\n    implementation(\"androidx.lifecycle:lifecycle-extensions:2.2.0\")\r\n    implementation(\"androidx.lifecycle:lifecycle-common-java8:2.2.0\")\r\n    implementation(\"androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0\")\r\n\r\n    // Kotlin components\r\n    implementation(\"org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20\")\r\n    api(\"org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1\")\r\n    api(\"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1\")\r\n\r\n    //Firebase\r\n    implementation(platform(\"com.google.firebase:firebase-bom:33.0.0\"))\r\n    implementation(\"com.google.firebase:firebase-analytics\")\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision 0a0cf4d8b9afec41cc6b87d3ba2a3b52ec2067ef)
++++ b/app/build.gradle.kts	(date 1716193968094)
+@@ -52,6 +52,7 @@
+     implementation(libs.androidx.navigation.ui.ktx)
+     implementation(libs.androidx.legacy.support.v4)
+     implementation(libs.androidx.fragment.ktx)
++    implementation(libs.firebase.auth.ktx)
+     testImplementation(libs.junit)
+     androidTestImplementation(libs.androidx.junit)
+     androidTestImplementation(libs.androidx.espresso.core)
+@@ -77,6 +78,9 @@
+     api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+ 
+     //Firebase
++    // Import the BoM for the Firebase platform
+     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+     implementation("com.google.firebase:firebase-analytics")
++    implementation("com.google.firebase:firebase-auth")
++
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/greenmarket/ui/login/LoginActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/greenmarket/ui/login/LoginActivity.kt b/app/src/main/java/com/example/greenmarket/ui/login/LoginActivity.kt
+new file mode 100644
+--- /dev/null	(date 1716194687483)
++++ b/app/src/main/java/com/example/greenmarket/ui/login/LoginActivity.kt	(date 1716194687483)
+@@ -0,0 +1,91 @@
++package com.example.greenmarket.ui.login
++
++import android.os.Bundle
++import android.widget.Button
++import android.widget.EditText
++import android.widget.Toast
++import androidx.appcompat.app.AppCompatActivity
++import com.example.greenmarket.R
++import com.google.firebase.auth.FirebaseAuth
++import com.google.firebase.auth.FirebaseUser
++
++class LoginActivity : AppCompatActivity() {
++    private lateinit var auth: FirebaseAuth
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_login)
++
++        // Initialize Firebase Auth
++        auth = FirebaseAuth.getInstance()
++
++        // Get references to UI elements
++        /*
++        val emailField = findViewById<EditText>(R.id.emailField)
++        val passwordField = findViewById<EditText>(R.id.passwordField)
++        val signUpButton = findViewById<Button>(R.id.signUpButton)
++        val signInButton = findViewById<Button>(R.id.signInButton)
++
++
++        // Set up the button click listeners
++        signUpButton.setOnClickListener {
++            val email = emailField.text.toString()
++            val password = passwordField.text.toString()
++            createAccount(email, password)
++        }
++
++        signInButton.setOnClickListener {
++            val email = emailField.text.toString()
++            val password = passwordField.text.toString()
++            signIn(email, password)
++        }
++        */
++    }
++
++    private fun createAccount(email: String, password: String) {
++        auth.createUserWithEmailAndPassword(email, password)
++            .addOnCompleteListener(this) { task ->
++                if (task.isSuccessful) {
++                    val user = auth.currentUser
++                    updateUI(user)
++                } else {
++                    Toast.makeText(baseContext, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
++                    updateUI(null)
++                }
++            }
++    }
++
++    private fun signIn(email: String, password: String) {
++        auth.signInWithEmailAndPassword(email, password)
++            .addOnCompleteListener(this) { task ->
++                if (task.isSuccessful) {
++                    val user = auth.currentUser
++                    updateUI(user)
++                } else {
++                    Toast.makeText(baseContext, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
++                    updateUI(null)
++                }
++            }
++    }
++
++    private fun signOut() {
++        auth.signOut()
++        updateUI(null)
++    }
++
++    private fun updateUI(user: FirebaseUser?) {
++        if (user != null) {
++            // User is signed in
++            // Navigate to main activity or update UI accordingly
++        } else {
++            // User is signed out
++            // Show login form or other appropriate UI
++        }
++    }
++
++    override fun onStart() {
++        super.onStart()
++        val currentUser = auth.currentUser
++        updateUI(currentUser)
++    }
++}
+Index: app/src/main/res/layout/activity_registrazione.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_registrazione.xml b/app/src/main/res/layout/activity_registrazione.xml
+new file mode 100644
+--- /dev/null	(date 1716203855494)
++++ b/app/src/main/res/layout/activity_registrazione.xml	(date 1716203855494)
+@@ -0,0 +1,177 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <TextView
++        android:id="@+id/textView"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:layout_marginTop="31dp"
++        android:text="@string/registrati"
++        android:textColor="@color/black"
++        android:textSize="20sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <TextView
++        android:id="@+id/textView6"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:layout_marginTop="16dp"
++        android:text="@string/nome"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView" />
++
++    <EditText
++        android:id="@+id/editTextText"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:ems="10"
++        android:inputType="text"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView6"/>
++
++
++    <TextView
++        android:id="@+id/textView7"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/cognome"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextText"/>
++
++    <EditText
++        android:id="@+id/editTextText2"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:ems="10"
++        android:inputType="text"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView7"/>
++
++    <TextView
++        android:id="@+id/textView8"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/indirizzo"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
++
++    <EditText
++        android:id="@+id/editTextText3"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:ems="10"
++        android:inputType="text"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView8"/>
++
++    <TextView
++        android:id="@+id/textView9"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/emailRegister"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
++
++    <EditText
++        android:id="@+id/editTextTextEmailAddress2"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:ems="10"
++        android:inputType="textEmailAddress"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView9"
++        android:hint="@string/il_tuo_indirizzo_email"/>
++
++    <TextView
++        android:id="@+id/textView10"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/passwordRegister"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
++
++    <EditText
++        android:id="@+id/editTextTextPassword2"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:ems="10"
++        android:inputType="textPassword"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView10"
++        android:hint="@string/la_tua_password"/>
++
++    <TextView
++        android:id="@+id/textView11"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/conferma_password"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
++
++    <EditText
++        android:id="@+id/editTextTextPassword3"
++        android:layout_width="315dp"
++        android:layout_height="45dp"
++        android:layout_marginStart="48dp"
++        android:ems="10"
++        android:inputType="textPassword"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView11"
++        android:hint="@string/conferma_la_tua_password"/>
++
++    <CheckBox
++        android:id="@+id/checkBox"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="48dp"
++        android:text="@string/ho_letto_e_accetto_i_termini_e_le_condizioni"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
++
++    <Button
++        android:id="@+id/button2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="150dp"
++        android:text="@string/continua"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
++
++    <TextView
++        android:id="@+id/textView12"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="108dp"
++        android:layout_marginTop="8dp"
++        android:text="@string/hai_gi_un_account"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/button2" />
++
++    <TextView
++        android:id="@+id/textView13"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:text="@string/accediRegister"
++        app:layout_constraintTop_toBottomOf="@+id/button2"
++        tools:layout_editor_absoluteX="241dp" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
