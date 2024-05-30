@@ -8,16 +8,16 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\activity_stats.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-60:/layout/fragment_home.xml",
+        "source": "com.example.greenmarket.app-main-63:/layout/fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-60:\\layout\\activity_term_cond.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\activity_term_cond.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-60:\\layout\\fragment_altro.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\fragment_altro.xml"
-    },
-    {
-        "merged": "com.example.greenmarket.app-mergeDebugResources-60:/layout/fragment_ricettario.xml",
-        "source": "com.example.greenmarket.app-main-63:/layout/fragment_ricettario.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-60:\\layout\\activity_reset_password.xml",

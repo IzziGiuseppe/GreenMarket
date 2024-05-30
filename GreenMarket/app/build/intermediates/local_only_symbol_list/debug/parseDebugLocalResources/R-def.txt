@@ -21,6 +21,7 @@ id activity_dr
 id activity_stats
 id activity_storico
 id activity_tc
+id aperto_chiuso
 id benvenuto
 id buttonAccediLogin
 id buttonCancel
@@ -46,7 +47,10 @@ id editTextResetPass
 id foto_ricetta
 id giuseppe_bt
 id iconaProfiloUtente
+id imageView
 id imageViewProfile
+id linearLayout
+id linearLayout2
 id mappa
 id mobile_navigation
 id nav_host_fragment_activity_main
@@ -57,6 +61,7 @@ id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
 id nome_ricetta
+id orario_chiusura
 id reset_bt
 id ricercaProdEditText
 id rv
@@ -90,6 +95,7 @@ id textViewTornaLogin
 id text_dashboard
 id text_home
 id text_notifications
+id title_home
 id titolo2_txt
 id titolo_tc_txt
 id titolo_txt

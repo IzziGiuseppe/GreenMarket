@@ -48,10 +48,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\mipmap-xxhdpi\\ic_user_profile_adaptive_back.png"
     },
     {
-        "merged": "com.example.greenmarket.app-debug-61:/layout_fragment_ricettario.xml.flat",
-        "source": "com.example.greenmarket.app-main-63:/layout/fragment_ricettario.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -114,6 +110,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-xxxhdpi_ic_user_profile.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\mipmap-xxxhdpi\\ic_user_profile.png"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-61:/layout_fragment_home.xml.flat",
+        "source": "com.example.greenmarket.app-main-63:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-hdpi_ic_user_profile_adaptive_fore.png.flat",
