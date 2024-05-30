@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-57:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-59:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\1401bb08c6a35d2bec777a1eb94fc8d8\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\67580afc55da2c9fdabf49f6fa4cf1e5\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

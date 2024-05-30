@@ -52,7 +52,11 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.androidx.annotation)
     implementation(libs.androidx.activity)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage.ktx)
     implementation(libs.androidx.databinding.runtime)
     implementation(libs.play.services.maps)
     testImplementation(libs.junit)
@@ -80,6 +84,15 @@ dependencies {
     api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
     //Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-bom:33.0.0")
+    implementation("com.google.firebase:firebase-analytics:21.2.0")
+    implementation("com.google.firebase:firebase-auth:22.1.1")
+
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }

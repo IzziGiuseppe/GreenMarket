@@ -1,6 +1,7 @@
 package com.example.greenmarket.ui.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.greenmarket.databinding.FragmentHomeBinding
 import com.example.greenmarket.db.GMDatabase
 import com.example.greenmarket.db.model.Prodotto
+import com.example.greenmarket.ui.login.UserProfileActivity
 
 class HomeFragment : Fragment() {
 
@@ -38,6 +40,11 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+
+        binding.iconaProfiloUtente.setOnClickListener {
+            val intent = Intent(requireContext(), UserProfileActivity::class.java)
+            startActivity(intent)
         }
 
         /*homeViewModel.readAllProdotti()

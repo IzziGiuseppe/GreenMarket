@@ -39,7 +39,6 @@
             android:label="Chi siamo"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".MainActivity"
             android:name=".ui.login.ResetPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
@@ -58,6 +57,11 @@
             android:name=".ui.login.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
+
+        <activity
+            android:name=".ui.login.UserProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
