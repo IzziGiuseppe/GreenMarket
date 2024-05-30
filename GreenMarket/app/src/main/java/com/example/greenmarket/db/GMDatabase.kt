@@ -55,6 +55,7 @@ abstract class GMDatabase: RoomDatabase() {
                     .also { INSTANCE = it }
             }
         }
+        //ciao
 
         fun populateDatabase(context: Context) {
             Executors.newSingleThreadExecutor().execute {
