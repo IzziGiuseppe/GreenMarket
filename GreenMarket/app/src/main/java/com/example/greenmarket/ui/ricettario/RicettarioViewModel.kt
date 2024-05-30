@@ -37,7 +37,7 @@ class RicettarioViewModel(application: Application) : AndroidViewModel(applicati
             Toast.makeText(getApplication(), "Per favore inserire un prodotto!", Toast.LENGTH_SHORT).show()
         }
         else {
-            val prodInput = prod.substring(0, 1).uppercase() + prod.substring(1).trimEnd()
+            val prodInput = prod.trim()[0].uppercaseChar() + prod.trim().substring(1).lowercase()
             val x = db.ProdottiInRicetteDao().getProdottiInRicetteByProdotto(prodInput)
             if (x.isEmpty()) {
                 Toast.makeText(getApplication(), "Non ci sono ricette con l'ingrediente selezionato!", Toast.LENGTH_SHORT).show()
@@ -45,7 +45,6 @@ class RicettarioViewModel(application: Application) : AndroidViewModel(applicati
             else {
                 _listaRicette.value = x
             }
-            //Toast.makeText(getApplication(), prod_, Toast.LENGTH_SHORT).show()
         }
     }
 
