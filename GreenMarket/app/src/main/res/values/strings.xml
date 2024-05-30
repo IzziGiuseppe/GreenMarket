@@ -20,7 +20,8 @@
     <string name="indirizzo">Indirizzo</string>
     <string name="emailRegister">Email</string>
     <string name="passwordRegister">Password</string>
-    <string name="ho_letto_e_accetto_i_termini_e_le_condizioni">Ho letto e accetto i termini e le condizioni d\'uso</string>
+    <string name="ho_letto_e_accetto_i_termini_e_le_condizioni">Ho letto e accetto i </string>
+    <string name="termini_e_condizioni">Termini e condizioni d\'uso</string>
     <string name="hai_gi_un_account">Hai già un account?</string>
     <string name="accediRegister">Accedi</string>
     <string name="il_tuo_indirizzo_email">Il tuo indirizzo email</string>

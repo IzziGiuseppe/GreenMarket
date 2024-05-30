@@ -232,43 +232,6 @@ class UserProfileActivity : AppCompatActivity() {
             }
         }
     }
-        /*
-        // Salvataggio dell'immagine ed aggiornamento dei dati nel db Firestore
-        storageRef = storageRef.child(System.currentTimeMillis().toString())
-        currentUser?.let {user ->
-            uri?.let { uri ->
-                storageRef.putFile(uri).addOnSuccessListener {
-                    storageRef.downloadUrl
-                        .addOnSuccessListener { url ->
-                            val updatedData = mapOf(
-                                "nome" to binding.editTextNomeUP.text.toString().trim(),
-                                "cognome" to binding.editTextCognomeUP.text.toString().trim(),
-                                "indirizzo" to binding.editTextIndirizzoUP.text.toString().trim(),
-                                "foto" to url.toString()
-                            )
-                            db.collection("users").document(user.uid).set(updatedData)
-                                .addOnSuccessListener {
-                                    Toast.makeText(this, "Dati salvati con successo", Toast.LENGTH_SHORT).show()
-
-                                }
-                                .addOnFailureListener { e ->
-                                    Toast.makeText(this, "Errore nel salvataggio: ${e.message}", Toast.LENGTH_SHORT).show()
-                                }
-                        }
-                        .addOnFailureListener{
-                            Toast.makeText(this, "Errore nel download dell'URL", Toast.LENGTH_SHORT).show()
-                        }
-                }
-                    .addOnFailureListener{
-                        Toast.makeText(this, "Errore durante putFile", Toast.LENGTH_SHORT).show()
-
-                    }
-            } ?: run {
-                Toast.makeText(this, "Nessuna immagine selezionata", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-         */
 
     //Funzione per gestire l'inserimento della nuova immagine
     private fun uploadNewImage(uri: Uri, user: FirebaseUser, storageRef: StorageReference, db: FirebaseFirestore) {
@@ -310,28 +273,22 @@ class UserProfileActivity : AppCompatActivity() {
             binding.editTextNomeUP.setText(it["nome"] as String)
             binding.editTextCognomeUP.setText(it["cognome"] as String)
             binding.editTextIndirizzoUP.setText(it["indirizzo"] as String)
-            binding.imageViewProfile.setImageURI(Uri.parse(it["foto"] as String))
         }
     }
 
     //Funzione per eliminare un'account utente dal db Firestore
     private fun deleteAccount(){
-        currentUser?.let {
+        currentUser?.let {it ->
             db.collection("users").document(it.uid).delete()
-                .addOnSuccessListener {
-                    Log.d("Firestore", "Utente eliminato con successo!")
+                .addOnSuccessListener {userData ->
+                    it.delete()
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Utente eliminato con successo", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Errore durante l'eliminazione dell'utente", Toast.LENGTH_SHORT).show()
+                        }
                 }
-                .addOnFailureListener { e ->
-                    Log.w("Firestore", "Errore durante l'eliminazione dell'utente", e)
-                }
-            it.delete().addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d("UserProfileActivity", "Account eliminato.")
-                } else {
-                    Log.e("UserProfileActivity", "Errore durante l'eliminazione dell'account.", task.exception)
-                }
-            }
-
         }
     }
 

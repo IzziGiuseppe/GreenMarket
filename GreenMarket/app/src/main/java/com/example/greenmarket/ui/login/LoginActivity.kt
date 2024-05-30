@@ -34,22 +34,27 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.buttonAccediLogin.setOnClickListener{
-            val email = binding.editTextEmailLogin.text.toString()
-            val pass = binding.editTextPasswordLogin.text.toString()
+            val email = binding.editTextEmailLogin.text.toString().trim()
+            val pass = binding.editTextPasswordLogin.text.toString().trim()
 
             if(email.isNotEmpty() && pass.isNotEmpty()){
-                    firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener{
-                        if(it.isSuccessful){
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
-                        }else{
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                    firebaseAuth.signInWithEmailAndPassword(email, pass)
+                        .addOnSuccessListener{
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
                         }
-
-                    }
+                        .addOnFailureListener{
+                            Toast.makeText(this, "Errore nell'inserimento di email o password", Toast.LENGTH_SHORT).show()
+                        }
             }else{
                 Toast.makeText(this, "Compila tutti i campi", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 }

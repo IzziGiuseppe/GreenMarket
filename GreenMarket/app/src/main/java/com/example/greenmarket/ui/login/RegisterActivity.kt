@@ -4,12 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityRegistrazioneBinding
+import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -36,46 +34,50 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = binding.editTextConfirmPassword.text.toString().trim()
             val photo = "https://imgur.com/a/AJkXyR3"
 
-            if(name.isNotEmpty() && surname.isNotEmpty() && address.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()){
+            if(name.isNotEmpty() && surname.isNotEmpty() && address.isNotEmpty() && (isValidEmail(email)) && password.isNotEmpty()
+                && confirmPassword.isNotEmpty()){
                 if(password == confirmPassword){
-                    firebaseAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnSuccessListener {
-                            val userID = firebaseAuth.currentUser?.uid
-                            Log.d("UserProfileActivity", "User ID: $userID")  // Log l'ID dell'utente corrente
-                            if (userID != null) {
-                                //Salvataggio dati utente
-                                val userMap = hashMapOf(
-                                    "nome" to name,
-                                    "cognome" to surname,
-                                    "indirizzo" to address,
-                                    "foto" to photo
-                                )
-                                db.collection("users").document(userID).set(userMap)
-                                    .addOnSuccessListener{
-                                        Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
-                                        binding.editTextNome.text.clear()
-                                        binding.editTextCognome.text.clear()
-                                        binding.editTextIndirizzo.text.clear()
-                                        binding.editTextEmail.text.clear()
-                                        binding.editTextPassword.text.clear()
-                                        binding.editTextConfirmPassword.text.clear()
-                                        val intent = Intent(this, LoginActivity::class.java)
-                                        startActivity(intent)
-                                    }
-                                    .addOnFailureListener{
-                                        Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
-                                    }
+                    if(binding.checkBox.isChecked){
+                        firebaseAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnSuccessListener {
+                                val userID = firebaseAuth.currentUser?.uid
+                                Log.d("UserProfileActivity", "User ID: $userID")  // Log l'ID dell'utente corrente
+                                if (userID != null) {
+                                    //Salvataggio dati utente
+                                    val userMap = hashMapOf(
+                                        "nome" to name,
+                                        "cognome" to surname,
+                                        "indirizzo" to address,
+                                        "foto" to photo
+                                    )
+                                    db.collection("users").document(userID).set(userMap)
+                                        .addOnSuccessListener{
+                                            Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
+                                            binding.editTextNome.text.clear()
+                                            binding.editTextCognome.text.clear()
+                                            binding.editTextIndirizzo.text.clear()
+                                            binding.editTextEmail.text.clear()
+                                            binding.editTextPassword.text.clear()
+                                            binding.editTextConfirmPassword.text.clear()
+                                            val intent = Intent(this, LoginActivity::class.java)
+                                            startActivity(intent)
+                                        }
+                                        .addOnFailureListener{
+                                            Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
+                                        }
+                                }
                             }
-                        }
-                        .addOnFailureListener{
-                            Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
-                        }
-
+                            .addOnFailureListener{
+                                Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
+                            }
+                    }else{
+                        Toast.makeText(this, "Accetta termini e condizioni d'uso", Toast.LENGTH_SHORT).show()
+                    }
                 }else{
                     Toast.makeText(this, "Password non corrispondenti", Toast.LENGTH_SHORT).show()
                 }
             }else{
-                Toast.makeText(this, "Compila tutti i campi", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Compila tutti i campi correttamente", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -83,5 +85,23 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
+        binding.textViewTerminiCondizioni.setOnClickListener{
+            val intent = Intent(this, TermCondActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    //Funzione che verifica se l'email inserita è valida rispetto al formato corretto
+    private fun isValidEmail(email: String?): Boolean {
+        if (email.isNullOrEmpty()) {
+            return false
+        }
+
+        val emailPattern = "^[A-Za-z0-9+_.-]+@(.+)$"
+        val pattern = Pattern.compile(emailPattern)
+        val matcher = pattern.matcher(email)
+
+        return matcher.matches()
     }
 }
