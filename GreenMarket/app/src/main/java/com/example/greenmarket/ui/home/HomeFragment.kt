@@ -36,16 +36,16 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
-        /*homeViewModel.text.observe(viewLifecycleOwner) {
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }*/
+        }
 
-        homeViewModel.readAllProdotti()
+        /*homeViewModel.readAllProdotti()
         homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
             textView.text = it.size.toString() + ", " + it[it.size-1].nome + ", " + it[it.size-2].nome +
                     ", " + it[it.size-3].nome + ", " + it[it.size-4].nome + ", " + it[it.size-5].nome +
                     ", " + it[it.size-6].nome + ", " + it[it.size-7].nome + ", " + it[it.size-8].nome
-        }
+        }*/
 
         //homeViewModel.deleteAllProdotti()
 

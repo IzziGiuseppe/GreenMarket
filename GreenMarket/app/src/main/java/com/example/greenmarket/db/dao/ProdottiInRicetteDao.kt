@@ -11,16 +11,17 @@ import com.example.greenmarket.db.model.ProdottiInRicette
 
 @Dao
 interface ProdottiInRicetteDao {
-    @Query("SELECT * FROM prodotti_in_ricette")
+    @Query("SELECT * FROM prodotti_in_ricette WHERE (Ricetta, Prodotto) IN (SELECT Ricetta, MIN(Prodotto) FROM prodotti_in_ricette GROUP BY Ricetta);")
     fun getAll(): Array<ProdottiInRicette>
 
     @Query("SELECT * FROM prodotti_in_ricette WHERE ricetta = :ricetta")
     fun getProdottiInRicetteByRicetta(ricetta: String): LiveData<ProdottiInRicette>
 
     @Query("SELECT * FROM prodotti_in_ricette WHERE prodotto = :prodotto")
-    fun getProdottiInRicetteByProdotto(prodotto: String): LiveData<ProdottiInRicette>
+    fun getProdottiInRicetteByProdotto(prodotto: String): Array<ProdottiInRicette>
+            //LiveData<ProdottiInRicette>
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg prodotti_in_ricette: ProdottiInRicette)
 
     @Update
@@ -28,4 +29,7 @@ interface ProdottiInRicetteDao {
 
     @Delete
     fun delete(prodotti_in_ricette: ProdottiInRicette)
+
+    @Query("DELETE FROM prodotti_in_ricette")
+    fun deleteAllProdottiInRicette()
 }

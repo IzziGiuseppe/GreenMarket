@@ -1,7 +1,6 @@
 package com.example.greenmarket.db
 
 import android.content.Context
-import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -56,35 +55,33 @@ abstract class GMDatabase: RoomDatabase() {
                     .also { INSTANCE = it }
             }
         }
+        //ciao
 
         fun populateDatabase(context: Context) {
             Executors.newSingleThreadExecutor().execute {
                 val database = getInstance(context)
                 val productDao = database.ProdottoDao()
-
-                // Inserisci i dati iniziali
-                val product1 = Prodotto("Mele", "Sono mele", 2.99f, "", "kg")
-                val product2 = Prodotto("Pere", "Sono pere", 1.99f, "", "kg")
-                val product3 = Prodotto("Banane", "Sono banane", 2.99f, "", "kg")
-                val product4 = Prodotto("Arance", "Sono arance", 1.99f, "", "kg")
-                val product5 = Prodotto("Susine", "Sono susine", 2.99f, "", "kg")
-                val product6 = Prodotto("Melanzane", "Sono melanzane", 1.99f, "", "kg")
-                val product7 = Prodotto("Zucchine", "Sono zucchine", 2.99f, "", "kg")
-                val product8 = Prodotto("Funghi", "Sono funghi", 1.99f, "", "kg")
-                productDao.insert(product1, product2, product3, product4, product5, product6, product7, product8)
-
+                val pRDao = database.ProdottiInRicetteDao()
                 val ricettaDao = database.RicettaDao()
 
-                // Inserisci i dati iniziali
-                val ricetta1 = Ricetta("Pasta al sugo", "Il pranzo della domenica", "")
-                val ricetta2 = Ricetta("Pasta e zucchine", "Molto buono", "")
-                val ricetta3 = Ricetta("Pasta e melanzane", "Molto buono", "")
-                val ricetta4 = Ricetta("Pasta e verdure", "Molto buono", "")
-                val ricetta5 = Ricetta("Pasta e fagioli", "Molto buono", "")
-                val ricetta6 = Ricetta("Pasta e ceci", "Molto buono", "")
-                val ricetta7 = Ricetta("Pasta al pesto", "Molto buono", "")
-                val ricetta8 = Ricetta("Pasta e piselli", "Molto buono", "")
-                ricettaDao.insert(ricetta1, ricetta2, ricetta3, ricetta4, ricetta5, ricetta6, ricetta7, ricetta8)
+                val creationGetting = CreazioneOggetti()
+
+                val prodotti = creationGetting.getProdotti()
+                val ricette = creationGetting.getRicette()
+                val prodottiInRicette = creationGetting.getProdInRicette()
+
+                for (prodotto in prodotti) {
+                    productDao.insert(prodotto)
+                }
+
+                for (ricetta in ricette) {
+                    ricettaDao.insert(ricetta)
+                }
+
+                for (pR in prodottiInRicette) {
+                    pRDao.insert(pR)
+                }
+
             }
         }
 
