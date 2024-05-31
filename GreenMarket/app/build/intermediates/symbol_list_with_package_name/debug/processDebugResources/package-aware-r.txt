@@ -3320,6 +3320,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id aperto_chiuso
 id arc
 id asConfigured
 id async
@@ -3497,6 +3498,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imageViewProfile
 id immediateStop
 id included
@@ -3517,6 +3519,8 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
+id linearLayout2
 id listMode
 id list_item
 id locale
@@ -3629,6 +3633,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id orario_chiusura
 id outline
 id outward
 id overshoot
@@ -3793,6 +3798,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id title_home
 id title_template
 id titolo2_txt
 id titolo_tc_txt
