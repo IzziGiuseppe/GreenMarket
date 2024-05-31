@@ -4,6 +4,7 @@ package com.example.greenmarket.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -40,6 +41,12 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView orarioChiusura;
 
   @NonNull
+  public final ImageView statsProd;
+
+  @NonNull
+  public final Button tessPtBt;
+
+  @NonNull
   public final TextView textHome;
 
   @NonNull
@@ -48,7 +55,8 @@ public final class FragmentHomeBinding implements ViewBinding {
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView apertoChiuso,
       @NonNull ImageView iconaProfiloUtente, @NonNull ImageView imageView,
       @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
-      @NonNull TextView orarioChiusura, @NonNull TextView textHome, @NonNull TextView titleHome) {
+      @NonNull TextView orarioChiusura, @NonNull ImageView statsProd, @NonNull Button tessPtBt,
+      @NonNull TextView textHome, @NonNull TextView titleHome) {
     this.rootView = rootView;
     this.apertoChiuso = apertoChiuso;
     this.iconaProfiloUtente = iconaProfiloUtente;
@@ -56,6 +64,8 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.linearLayout = linearLayout;
     this.linearLayout2 = linearLayout2;
     this.orarioChiusura = orarioChiusura;
+    this.statsProd = statsProd;
+    this.tessPtBt = tessPtBt;
     this.textHome = textHome;
     this.titleHome = titleHome;
   }
@@ -123,6 +133,18 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.stats_prod;
+      ImageView statsProd = ViewBindings.findChildViewById(rootView, id);
+      if (statsProd == null) {
+        break missingId;
+      }
+
+      id = R.id.tessPt_bt;
+      Button tessPtBt = ViewBindings.findChildViewById(rootView, id);
+      if (tessPtBt == null) {
+        break missingId;
+      }
+
       id = R.id.text_home;
       TextView textHome = ViewBindings.findChildViewById(rootView, id);
       if (textHome == null) {
@@ -136,7 +158,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((ConstraintLayout) rootView, apertoChiuso, iconaProfiloUtente,
-          imageView, linearLayout, linearLayout2, orarioChiusura, textHome, titleHome);
+          imageView, linearLayout, linearLayout2, orarioChiusura, statsProd, tessPtBt, textHome,
+          titleHome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

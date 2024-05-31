@@ -69,8 +69,10 @@ id rv_altro
 id rv_tc
 id sezione_altro
 id sezione_tc
+id stats_prod
 id stats_txt
 id storico_txt
+id tessPt_bt
 id testo_tc_txt
 id testo_txt
 id textView17
