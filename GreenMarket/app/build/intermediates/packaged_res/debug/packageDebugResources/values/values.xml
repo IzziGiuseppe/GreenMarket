@@ -33,7 +33,7 @@
     <string name="google_storage_bucket" translatable="false">greenmarket-1f99c.appspot.com</string>
     <string name="hai_gi_un_account">Hai già un account?</string>
     <string name="hint_prodotto_ricetta">Aggiungi ingrediente…</string>
-    <string name="ho_letto_e_accetto_i_termini_e_le_condizioni">Ho letto e accetto i termini e le condizioni d\'uso</string>
+    <string name="ho_letto_e_accetto_i_termini_e_le_condizioni">Ho letto e accetto i </string>
     <string name="il_tuo_cognome">Il tuo cognome</string>
     <string name="il_tuo_indirizzo">Il tuo indirizzo</string>
     <string name="il_tuo_indirizzo_email">Il tuo indirizzo email</string>
@@ -57,6 +57,7 @@
     <string name="recupera_password">Recupera Password</string>
     <string name="registrati">Registrati</string>
     <string name="salva">Salva</string>
+    <string name="termini_e_condizioni">Termini e condizioni d\'uso</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_altro">Altro</string>
     <string name="title_home">Home</string>

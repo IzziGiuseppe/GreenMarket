@@ -4,7 +4,7 @@
             "outputFile": "com.example.greenmarket.app-mergeDebugResources-59:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\aeaf4ff9f68f518c7a7a4327fe7696aa\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\aeaf4ff9f68f518c7a7a4327fe7696aa\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

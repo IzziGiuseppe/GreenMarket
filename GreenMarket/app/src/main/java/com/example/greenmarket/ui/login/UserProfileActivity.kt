@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.greenmarket.databinding.ActivityProfiloUtenteBinding
@@ -103,10 +104,7 @@ class UserProfileActivity : AppCompatActivity() {
 
         // Listener per il logout
         binding.textViewLogout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()  // Chiudi l'attività corrente
+            showLogoutConfirmationDialog()
         }
 
         //Modifica i dati nel db Firestore
@@ -121,9 +119,7 @@ class UserProfileActivity : AppCompatActivity() {
 
         //Elimina un'account utente dal db Firestore
         binding.textViewEliminaAccount.setOnClickListener{
-            deleteAccount()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            showDeleteAccountConfirmationDialog()
         }
     }
 
@@ -290,6 +286,48 @@ class UserProfileActivity : AppCompatActivity() {
                         }
                 }
         }
+    }
+
+    //Funzione che mostra un messaggio di alert in fase di logout
+    private fun showLogoutConfirmationDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Conferma Logout")
+        builder.setMessage("Sei sicuro di voler uscire dall'account?")
+
+        builder.setPositiveButton("Sì") { _, _ ->
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    //Funzione che mostra un messaggio di alert in fase di eliminazione dell'account
+    private fun showDeleteAccountConfirmationDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Conferma Eliminazione Account")
+        builder.setMessage("Sei sicuro di voler eliminare l'account?")
+
+        builder.setPositiveButton("Sì") { _, _ ->
+            deleteAccount()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
 }

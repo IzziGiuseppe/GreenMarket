@@ -31,7 +31,8 @@
             android:text="Ciao Domenico!"
             android:textAlignment="center"
             android:gravity="center_vertical"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:ignore="RtlCompat" />
 
         <ImageView
             android:id="@+id/iconaProfiloUtente"

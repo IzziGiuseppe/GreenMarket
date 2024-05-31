@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
                                 startActivity(intent)
                         }
                         .addOnFailureListener{
-                            Toast.makeText(this, "Errore nell'inserimento di email o password", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Errore nell'inserimento di email/password", Toast.LENGTH_SHORT).show()
                         }
             }else{
                 Toast.makeText(this, "Compila tutti i campi", Toast.LENGTH_SHORT).show()

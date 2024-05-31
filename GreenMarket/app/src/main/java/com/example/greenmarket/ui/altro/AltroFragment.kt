@@ -16,6 +16,7 @@ import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
 import com.example.greenmarket.ui.altro.storico.StoricoActivity
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
+import com.example.greenmarket.ui.login.UserProfileActivity
 
 class AltroFragment : Fragment() {
 
@@ -76,26 +77,27 @@ class AltroFragment : Fragment() {
         }
     }
 
-    fun profiloUtente() {
-        Toast.makeText(requireContext(), "Profilo utente da implementare", Toast.LENGTH_LONG).show()
+    private fun profiloUtente() {
+        val intent = Intent(requireContext(), UserProfileActivity::class.java)
+        startActivity(intent)
     }
 
-    fun storico() {
+    private fun storico() {
         val intent = Intent(requireContext(), StoricoActivity::class.java)
         startActivity(intent)
     }
 
-    fun chiSiamo() {
+    private fun chiSiamo() {
         val intent = Intent(requireContext(), ChiSiamoActivity::class.java)
         startActivity(intent)
     }
 
-    fun stats() {
+    private fun stats() {
         val intent = Intent(requireContext(), StatsActivity::class.java)
         startActivity(intent)
     }
 
-    fun invito() {
+    private fun invito() {
         val sendIntent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
             putExtra(Intent.EXTRA_TEXT, "Scarica anche tu GreenMarket!")
@@ -109,12 +111,12 @@ class AltroFragment : Fragment() {
         }
     }
 
-    fun terminiCondizioni() {
+    private fun terminiCondizioni() {
         val intent = Intent(requireContext(), TermCondActivity::class.java)
         startActivity(intent)
     }
 
-    fun donazione() {
+    private fun donazione() {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.setData(Uri.parse("https://www.gofundme.com/it-it/"))
         startActivity(intent)
