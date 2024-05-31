@@ -46,7 +46,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9988d74-a362-42c9-9df7-360c2e814e91" name="Changes" comment="file Strings aggiornato" />
+    <list default="true" id="e9988d74-a362-42c9-9df7-360c2e814e91" name="Changes" comment="Autenticazione aggiornata" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -323,7 +323,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716387282849</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Autenticazione aggiornata">
+      <option name="closed" value="true" />
+      <created>1717142203339</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717142203339</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Autenticazione aggiornata">
+      <option name="closed" value="true" />
+      <created>1717142326733</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717142326733</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,6 +361,7 @@
     <MESSAGE value="Config1 Firebase" />
     <MESSAGE value="Login, Registrazione, Reset Password" />
     <MESSAGE value="file Strings aggiornato" />
-    <option name="LAST_COMMIT_MESSAGE" value="file Strings aggiornato" />
+    <MESSAGE value="Autenticazione aggiornata" />
+    <option name="LAST_COMMIT_MESSAGE" value="Autenticazione aggiornata" />
   </component>
 </project>
