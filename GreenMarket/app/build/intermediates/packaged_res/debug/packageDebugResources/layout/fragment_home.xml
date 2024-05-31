@@ -10,11 +10,14 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside">
 
         <ImageView
             android:id="@+id/imageView"
@@ -28,18 +31,28 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:text="Ciao Domenico!"
             android:textAlignment="center"
-            android:gravity="center_vertical"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:ignore="RtlCompat" />
 
         <ImageView
             android:id="@+id/iconaProfiloUtente"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:src="@mipmap/ic_user_profile" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -47,6 +60,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/title_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
@@ -56,7 +72,7 @@
             android:layout_weight="1"
             android:text="Aperto"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -66,9 +82,18 @@
             android:layout_weight="1"
             android:text="Chiude alle ore 8:30"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@id/title_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/title_home"
@@ -76,8 +101,40 @@
         android:layout_height="wrap_content"
         android:text="Prodotti più acquistati"
         android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/stats_prod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/stats_prod"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tessPt_bt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_home"
+        tools:ignore="MissingConstraints"
+        android:src="@android:drawable/ic_menu_crop"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/tessPt_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="20sp"
+        android:text="Tessera Punti"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stats_prod"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

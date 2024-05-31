@@ -69,8 +69,10 @@ id rv_altro
 id rv_tc
 id sezione_altro
 id sezione_tc
+id stats_prod
 id stats_txt
 id storico_txt
+id tessPt_bt
 id testo_tc_txt
 id testo_txt
 id textView17
@@ -91,6 +93,7 @@ id textViewPassword
 id textViewRecPass
 id textViewRegister
 id textViewRegistratiLogin
+id textViewTerminiCondizioni
 id textViewTornaLogin
 id text_dashboard
 id text_home
@@ -172,6 +175,7 @@ string recupara_password
 string recupera_password
 string registrati
 string salva
+string termini_e_condizioni
 string title_activity_login
 string title_altro
 string title_home

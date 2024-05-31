@@ -73,6 +73,9 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
   @NonNull
   public final TextView textViewRegister;
 
+  @NonNull
+  public final TextView textViewTerminiCondizioni;
+
   private ActivityRegistrazioneBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button buttonRegister, @NonNull CheckBox checkBox, @NonNull EditText editTextCognome,
       @NonNull EditText editTextConfirmPassword, @NonNull EditText editTextEmail,
@@ -81,7 +84,8 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
       @NonNull TextView textViewAccount, @NonNull TextView textViewCognome,
       @NonNull TextView textViewConfirmPassword, @NonNull TextView textViewEmail,
       @NonNull TextView textViewIndirizzo, @NonNull TextView textViewNome,
-      @NonNull TextView textViewPassword, @NonNull TextView textViewRegister) {
+      @NonNull TextView textViewPassword, @NonNull TextView textViewRegister,
+      @NonNull TextView textViewTerminiCondizioni) {
     this.rootView = rootView;
     this.buttonRegister = buttonRegister;
     this.checkBox = checkBox;
@@ -100,6 +104,7 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
     this.textViewNome = textViewNome;
     this.textViewPassword = textViewPassword;
     this.textViewRegister = textViewRegister;
+    this.textViewTerminiCondizioni = textViewTerminiCondizioni;
   }
 
   @Override
@@ -231,11 +236,17 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textViewTerminiCondizioni;
+      TextView textViewTerminiCondizioni = ViewBindings.findChildViewById(rootView, id);
+      if (textViewTerminiCondizioni == null) {
+        break missingId;
+      }
+
       return new ActivityRegistrazioneBinding((ConstraintLayout) rootView, buttonRegister, checkBox,
           editTextCognome, editTextConfirmPassword, editTextEmail, editTextIndirizzo, editTextNome,
           editTextPassword, textViewAccedi, textViewAccount, textViewCognome,
           textViewConfirmPassword, textViewEmail, textViewIndirizzo, textViewNome, textViewPassword,
-          textViewRegister);
+          textViewRegister, textViewTerminiCondizioni);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

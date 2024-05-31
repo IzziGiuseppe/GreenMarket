@@ -68,6 +68,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\activity_chi_siamo.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-60:/layout/activity_registrazione.xml",
+        "source": "com.example.greenmarket.app-main-63:/layout/activity_registrazione.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-60:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\fragment_home.xml"
     },
