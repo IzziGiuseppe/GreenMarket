@@ -61,7 +61,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9988d74-a362-42c9-9df7-360c2e814e91" name="Changes" comment="Autenticazione aggiornata">
+    <list default="true" id="e9988d74-a362-42c9-9df7-360c2e814e91" name="Changes" comment="Aggiunta pop-up all'autenticazione + aggiunte varie">
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/com/example/greenmarket/databinding/ActivityRegistrazioneBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/com/example/greenmarket/databinding/ActivityRegistrazioneBinding.java" afterDir="false" />
@@ -1043,7 +1043,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717142363053</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Aggiunta pop-up all'autenticazione + aggiunte varie">
+      <option name="closed" value="true" />
+      <created>1717150387260</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717150387261</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1066,6 +1074,7 @@
     <MESSAGE value="Login, Registrazione, Reset Password" />
     <MESSAGE value="file Strings aggiornato" />
     <MESSAGE value="Autenticazione aggiornata" />
-    <option name="LAST_COMMIT_MESSAGE" value="Autenticazione aggiornata" />
+    <MESSAGE value="Aggiunta pop-up all'autenticazione + aggiunte varie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta pop-up all'autenticazione + aggiunte varie" />
   </component>
 </project>
