@@ -7,12 +7,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.example.greenmarket.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,7 +21,7 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final TextView apertoChiuso;
@@ -29,7 +30,7 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView iconaProfiloUtente;
 
   @NonNull
-  public final ImageView imageView;
+  public final TextView imageDescription;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -38,10 +39,13 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final LinearLayout linearLayout2;
 
   @NonNull
+  public final ImageView logo;
+
+  @NonNull
   public final TextView orarioChiusura;
 
   @NonNull
-  public final ImageView statsProd;
+  public final ViewPager2 statsProd;
 
   @NonNull
   public final Button tessPtBt;
@@ -52,17 +56,18 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView titleHome;
 
-  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView apertoChiuso,
-      @NonNull ImageView iconaProfiloUtente, @NonNull ImageView imageView,
+  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView apertoChiuso,
+      @NonNull ImageView iconaProfiloUtente, @NonNull TextView imageDescription,
       @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
-      @NonNull TextView orarioChiusura, @NonNull ImageView statsProd, @NonNull Button tessPtBt,
-      @NonNull TextView textHome, @NonNull TextView titleHome) {
+      @NonNull ImageView logo, @NonNull TextView orarioChiusura, @NonNull ViewPager2 statsProd,
+      @NonNull Button tessPtBt, @NonNull TextView textHome, @NonNull TextView titleHome) {
     this.rootView = rootView;
     this.apertoChiuso = apertoChiuso;
     this.iconaProfiloUtente = iconaProfiloUtente;
-    this.imageView = imageView;
+    this.imageDescription = imageDescription;
     this.linearLayout = linearLayout;
     this.linearLayout2 = linearLayout2;
+    this.logo = logo;
     this.orarioChiusura = orarioChiusura;
     this.statsProd = statsProd;
     this.tessPtBt = tessPtBt;
@@ -72,7 +77,7 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -109,9 +114,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
+      id = R.id.image_description;
+      TextView imageDescription = ViewBindings.findChildViewById(rootView, id);
+      if (imageDescription == null) {
         break missingId;
       }
 
@@ -127,6 +132,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.logo;
+      ImageView logo = ViewBindings.findChildViewById(rootView, id);
+      if (logo == null) {
+        break missingId;
+      }
+
       id = R.id.orario_chiusura;
       TextView orarioChiusura = ViewBindings.findChildViewById(rootView, id);
       if (orarioChiusura == null) {
@@ -134,7 +145,7 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       id = R.id.stats_prod;
-      ImageView statsProd = ViewBindings.findChildViewById(rootView, id);
+      ViewPager2 statsProd = ViewBindings.findChildViewById(rootView, id);
       if (statsProd == null) {
         break missingId;
       }
@@ -157,9 +168,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, apertoChiuso, iconaProfiloUtente,
-          imageView, linearLayout, linearLayout2, orarioChiusura, statsProd, tessPtBt, textHome,
-          titleHome);
+      return new FragmentHomeBinding((ScrollView) rootView, apertoChiuso, iconaProfiloUtente,
+          imageDescription, linearLayout, linearLayout2, logo, orarioChiusura, statsProd, tessPtBt,
+          textHome, titleHome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

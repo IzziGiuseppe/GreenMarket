@@ -48,6 +48,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.Material3.Light" >
         <activity
+            android:name="com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiActivity"
+            android:exported="false"
+            android:label="Tessera Punti" />
+        <activity
             android:name="com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity"
             android:exported="false"
             android:label="Dettaglio ricetta" />
