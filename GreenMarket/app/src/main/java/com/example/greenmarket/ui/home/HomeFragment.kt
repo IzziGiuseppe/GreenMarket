@@ -65,6 +65,12 @@ class HomeFragment : Fragment(), OnImageClickListener {
             stato.text = it
         }
 
+        val orario: TextView = binding.orarioChiusura
+        homeViewModel.updateStatusRegularly(lifecycleScope)
+        homeViewModel.orari.observe(viewLifecycleOwner) {
+            orario.text = it
+        }
+
         val benvenuto: TextView = binding.textHome
         val immagineProfilo: ImageView = binding.iconaProfiloUtente
         homeViewModel.readNome(this, immagineProfilo)

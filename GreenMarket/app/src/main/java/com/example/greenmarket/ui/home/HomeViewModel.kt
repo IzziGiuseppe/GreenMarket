@@ -27,6 +27,11 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     }
     val text: LiveData<String> = _text
 
+    private val _orari = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val orari: LiveData<String> = _orari
+
     private val db:GMDatabase = GMDatabase.getInstance(application)
 
     private var dbf: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -111,6 +116,12 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             "Aperto"
         } else {
             "Chiuso"
+        }
+
+        _orari.value = if (currentTime in open..close) {
+            "Chiude alle $close"
+        } else {
+            "Apre alle $open"
         }
     }
 
