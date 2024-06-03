@@ -3092,6 +3092,7 @@ int drawable abc_textfield_search_material 0x7f070076
 int drawable abc_vector_test 0x7f070077
 int drawable avd_hide_password 0x7f070078
 int drawable avd_show_password 0x7f070079
+int drawable banane 0x7f070102
 int drawable btn_checkbox_checked_mtrl 0x7f07007a
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f07007b
 int drawable btn_checkbox_unchecked_mtrl 0x7f07007c
@@ -3174,6 +3175,7 @@ int drawable material_ic_keyboard_arrow_previous_black_24dp 0x7f0700c8
 int drawable material_ic_keyboard_arrow_right_black_24dp 0x7f0700c9
 int drawable material_ic_menu_arrow_down_black_24dp 0x7f0700ca
 int drawable material_ic_menu_arrow_up_black_24dp 0x7f0700cb
+int drawable mele 0x7f070103
 int drawable mtrl_bottomsheet_drag_handle 0x7f0700cc
 int drawable mtrl_checkbox_button 0x7f0700cd
 int drawable mtrl_checkbox_button_checked_unchecked 0x7f0700ce
@@ -3225,6 +3227,8 @@ int drawable notification_template_icon_bg 0x7f0700fb
 int drawable notification_template_icon_low_bg 0x7f0700fc
 int drawable notification_tile_bg 0x7f0700fd
 int drawable notify_panel_notification_icon_bg 0x7f0700fe
+int drawable pere 0x7f070104
+int drawable plus 0x7f070105
 int drawable test_level_drawable 0x7f0700ff
 int drawable tooltip_frame_dark 0x7f070100
 int drawable tooltip_frame_light 0x7f070101
@@ -3306,6 +3310,7 @@ int id activity_dr 0x7f08004a
 int id activity_stats 0x7f08004b
 int id activity_storico 0x7f08004c
 int id activity_tc 0x7f08004d
+int id activity_tess_punti 0x7f08026b
 int id add 0x7f08004e
 int id adjust_height 0x7f08004f
 int id adjust_width 0x7f080050
@@ -3373,6 +3378,7 @@ int id clip_horizontal 0x7f08008d
 int id clip_vertical 0x7f08008e
 int id clockwise 0x7f08008f
 int id closest 0x7f080090
+int id codici_sconto 0x7f08026c
 int id collapseActionView 0x7f080091
 int id compress 0x7f080092
 int id confirm_button 0x7f080093
@@ -3382,6 +3388,7 @@ int id content 0x7f080096
 int id contentPanel 0x7f080097
 int id contiguous 0x7f080098
 int id continuousVelocity 0x7f080099
+int id converti 0x7f08026d
 int id coordinator 0x7f08009a
 int id cos 0x7f08009b
 int id counterclockwise 0x7f08009c
@@ -3481,6 +3488,7 @@ int id graph_wrap 0x7f0800f9
 int id group_divider 0x7f0800fa
 int id grouping 0x7f0800fb
 int id groups 0x7f0800fc
+int id hai_speso 0x7f08026e
 int id header_title 0x7f0800fd
 int id hide_ime_id 0x7f0800fe
 int id hideable 0x7f0800ff
@@ -3497,8 +3505,10 @@ int id ifRoom 0x7f080109
 int id ignore 0x7f08010a
 int id ignoreRequest 0x7f08010b
 int id image 0x7f08010c
-int id imageView 0x7f08010d
+int id imageButton 0x7f08026f
+int id imageStatsProd 0x7f080268
 int id imageViewProfile 0x7f08010e
+int id image_description 0x7f08026a
 int id immediateStop 0x7f08010f
 int id included 0x7f080110
 int id indeterminate 0x7f080111
@@ -3523,6 +3533,7 @@ int id linearLayout2 0x7f080123
 int id listMode 0x7f080124
 int id list_item 0x7f080125
 int id locale 0x7f080126
+int id logo 0x7f080269
 int id ltr 0x7f080127
 int id m3_side_sheet 0x7f080128
 int id mappa 0x7f080129
@@ -3653,9 +3664,11 @@ int id postLayout 0x7f0801a5
 int id pressed 0x7f0801a6
 int id progress_circular 0x7f0801a7
 int id progress_horizontal 0x7f0801a8
+int id punti 0x7f080270
 int id radio 0x7f0801a9
 int id ratio 0x7f0801aa
 int id rectangles 0x7f0801ab
+int id recyclerView4 0x7f080271
 int id report_drawn 0x7f0801ac
 int id reset_bt 0x7f0801ad
 int id reverseSawtooth 0x7f0801ae
@@ -3664,6 +3677,7 @@ int id right 0x7f0801b0
 int id rightToLeft 0x7f0801b1
 int id right_icon 0x7f0801b2
 int id right_side 0x7f0801b3
+int id riscatta 0x7f080272
 int id rounded 0x7f0801b4
 int id row_index_key 0x7f0801b5
 int id rtl 0x7f0801b6
@@ -3797,6 +3811,7 @@ int id textinput_helper_text 0x7f080235
 int id textinput_placeholder 0x7f080236
 int id textinput_prefix_text 0x7f080237
 int id textinput_suffix_text 0x7f080238
+int id ti_premia 0x7f080273
 int id time 0x7f080239
 int id title 0x7f08023a
 int id titleDividerNoCustom 0x7f08023b
@@ -3826,6 +3841,8 @@ int id unlabeled 0x7f080252
 int id up 0x7f080253
 int id useLogo 0x7f080254
 int id vertical_only 0x7f080255
+int id view 0x7f080274
+int id view2 0x7f080275
 int id view_offset_helper 0x7f080256
 int id view_transition 0x7f080257
 int id view_tree_lifecycle_owner 0x7f080258
@@ -3970,6 +3987,7 @@ int layout activity_reset_password 0x7f0b0022
 int layout activity_stats 0x7f0b0023
 int layout activity_storico 0x7f0b0024
 int layout activity_term_cond 0x7f0b0025
+int layout activity_tessera_punti 0x7f0b0089
 int layout browser_actions_context_menu_page 0x7f0b0026
 int layout browser_actions_context_menu_row 0x7f0b0027
 int layout custom_dialog 0x7f0b0028
@@ -3996,6 +4014,7 @@ int layout fragment_ricettario 0x7f0b003c
 int layout ime_base_split_test_activity 0x7f0b003d
 int layout ime_secondary_split_test_activity 0x7f0b003e
 int layout item_altro_view 0x7f0b003f
+int layout item_image 0x7f0b0088
 int layout item_ricetta_view 0x7f0b0040
 int layout item_tc_view 0x7f0b0041
 int layout m3_alert_dialog 0x7f0b0042
