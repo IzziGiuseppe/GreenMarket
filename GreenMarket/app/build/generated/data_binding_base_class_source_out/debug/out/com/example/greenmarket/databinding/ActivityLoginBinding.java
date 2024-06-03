@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,6 +41,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final EditText editTextPasswordLogin;
 
   @NonNull
+  public final ImageView imageView;
+
+  @NonNull
   public final TextView textViewEmailLogin;
 
   @NonNull
@@ -51,8 +55,8 @@ public final class ActivityLoginBinding implements ViewBinding {
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull TextView PasswordLogin,
       @NonNull TextView accedi, @NonNull TextView benvenuto, @NonNull Button buttonAccediLogin,
       @NonNull EditText editTextEmailLogin, @NonNull EditText editTextPasswordLogin,
-      @NonNull TextView textViewEmailLogin, @NonNull TextView textViewPassDimenticata,
-      @NonNull TextView textViewRegistratiLogin) {
+      @NonNull ImageView imageView, @NonNull TextView textViewEmailLogin,
+      @NonNull TextView textViewPassDimenticata, @NonNull TextView textViewRegistratiLogin) {
     this.rootView = rootView;
     this.PasswordLogin = PasswordLogin;
     this.accedi = accedi;
@@ -60,6 +64,7 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.buttonAccediLogin = buttonAccediLogin;
     this.editTextEmailLogin = editTextEmailLogin;
     this.editTextPasswordLogin = editTextPasswordLogin;
+    this.imageView = imageView;
     this.textViewEmailLogin = textViewEmailLogin;
     this.textViewPassDimenticata = textViewPassDimenticata;
     this.textViewRegistratiLogin = textViewRegistratiLogin;
@@ -128,6 +133,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       id = R.id.textViewEmailLogin;
       TextView textViewEmailLogin = ViewBindings.findChildViewById(rootView, id);
       if (textViewEmailLogin == null) {
@@ -147,8 +158,8 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, PasswordLogin, accedi, benvenuto,
-          buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, textViewEmailLogin,
-          textViewPassDimenticata, textViewRegistratiLogin);
+          buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, imageView,
+          textViewEmailLogin, textViewPassDimenticata, textViewRegistratiLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

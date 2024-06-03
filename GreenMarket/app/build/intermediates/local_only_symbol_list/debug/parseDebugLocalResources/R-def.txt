@@ -57,6 +57,7 @@ id hai_speso
 id iconaProfiloUtente
 id imageButton
 id imageStatsProd
+id imageView
 id imageViewProfile
 id image_description
 id linearLayout
@@ -141,6 +142,7 @@ layout item_ricetta_view
 layout item_tc_view
 menu bottom_nav_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 mipmap ic_user_profile
 mipmap ic_user_profile_adaptive_back
