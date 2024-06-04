@@ -122,7 +122,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9988d74-a362-42c9-9df7-360c2e814e91" name="Changes" comment="Aggiunta l'icona dell'app">
+    <list default="true" id="e9988d74-a362-42c9-9df7-360c2e814e91" name="Changes" comment="Modifiche logo, bozza di layout di ricerca prodotto e info prodotto">
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dettaglio_prodotto.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.6/dependencies-accessors/45f5810edbf9d5d58425ecedd31e644053a3e9aa/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxCoreLibraryAccessors.class" beforeDir="false" />
@@ -812,7 +812,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717422790065</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Modifiche logo, bozza di layout di ricerca prodotto e info prodotto">
+      <option name="closed" value="true" />
+      <created>1717518510907</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717518510907</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -839,6 +847,7 @@
     <MESSAGE value="Aggiornata la schermata home (da aggiungere viewpager)" />
     <MESSAGE value="Aggiornata la schermata home: aggiunto ImagePagerAdapter; ora la scritta Chiuso/Aperto funziona coerentemente con l'orario di chisura/apertura; nella barra in alto viene visualizzato il nome dell'utente e l'immagine di profilo (da cui si può andare alla sezione visualizza profilo). Implementata anche l'activity della tessera punti." />
     <MESSAGE value="Aggiunta l'icona dell'app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta l'icona dell'app" />
+    <MESSAGE value="Modifiche logo, bozza di layout di ricerca prodotto e info prodotto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiche logo, bozza di layout di ricerca prodotto e info prodotto" />
   </component>
 </project>
