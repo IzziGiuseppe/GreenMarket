@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/ricercaProdEditText"
+        android:id="@+id/ricercaRicettaEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -34,7 +34,7 @@
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ricercaProdEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/ricercaRicettaEditText" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/reset_bt"

@@ -3238,6 +3238,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id LinearLayoutRegistrazione
 id META
 id NO_DEBUG
 id PasswordLogin
@@ -3532,6 +3533,9 @@ id line3
 id linear
 id linearLayout
 id linearLayout2
+id linearLayout3
+id linearLayout4
+id linearLayout5
 id listMode
 id list_item
 id locale
@@ -3672,9 +3676,11 @@ id ratio
 id rectangles
 id recyclerView4
 id report_drawn
+id resetProd
 id reset_bt
 id reverseSawtooth
-id ricercaProdEditText
+id ricercaProdottoEditText
+id ricercaRicettaEditText
 id right
 id rightToLeft
 id right_icon
@@ -3684,6 +3690,7 @@ id rounded
 id row_index_key
 id rtl
 id rv
+id rvRicercaProd
 id rv_altro
 id rv_tc
 id satellite
@@ -3801,7 +3808,6 @@ id textViewRegister
 id textViewRegistratiLogin
 id textViewTerminiCondizioni
 id textViewTornaLogin
-id text_dashboard
 id text_home
 id text_input_end_icon
 id text_input_error_icon
@@ -3980,6 +3986,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chi_siamo
+layout activity_dettaglio_prodotto
 layout activity_dettaglio_ricetta
 layout activity_login
 layout activity_main
@@ -4332,6 +4339,7 @@ string prompt_password
 string recupara_password
 string recupera_password
 string registrati
+string ricerca_prodotto
 string salva
 string search_menu_title
 string searchbar_scrolling_view_behavior
@@ -4752,6 +4760,8 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style ShapeAppearanceOverlayLogin_Cut_Top
+style ShapeAppearanceOverlayProfile_Cut_Top
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2

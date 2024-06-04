@@ -50,4 +50,5 @@
     <string name="annulla">Annulla</string>
     <string name="esci_dall_account">Esci dall\'account</string>
     <string name="elimina_account_utente">Elimina account utente</string>
+    <string name="ricerca_prodotto">Ricerca prodotto</string>
 </resources>

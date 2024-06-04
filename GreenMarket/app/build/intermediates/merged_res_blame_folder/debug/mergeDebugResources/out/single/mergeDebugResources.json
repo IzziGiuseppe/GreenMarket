@@ -28,10 +28,6 @@
         "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\activity_reset_password.xml"
     },
     {
-        "merged": "com.example.greenmarket.app-debug-61:/layout_activity_login.xml.flat",
-        "source": "com.example.greenmarket.app-main-63:/layout/activity_login.xml"
-    },
-    {
         "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-hdpi_ic_user_profile_adaptive_fore.png.flat",
         "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\mipmap-hdpi\\ic_user_profile_adaptive_fore.png"
     },
@@ -58,6 +54,10 @@
     {
         "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-xxhdpi_ic_user_profile.png.flat",
         "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\mipmap-xxhdpi\\ic_user_profile.png"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-61:/layout_fragment_ricettario.xml.flat",
+        "source": "com.example.greenmarket.app-main-63:/layout/fragment_ricettario.xml"
     },
     {
         "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\drawable_plus.png.flat",
@@ -236,6 +236,14 @@
         "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\item_tc_view.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-61:/layout_activity_dettaglio_prodotto.xml.flat",
+        "source": "com.example.greenmarket.app-main-63:/layout/activity_dettaglio_prodotto.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-61:/layout_fragment_ricerca.xml.flat",
+        "source": "com.example.greenmarket.app-main-63:/layout/fragment_ricerca.xml"
+    },
+    {
         "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\layout_fragment_ricettario.xml.flat",
         "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\layout\\fragment_ricettario.xml"
     },
@@ -266,6 +274,10 @@
     {
         "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-xxxhdpi_ic_user_profile_adaptive_back.png.flat",
         "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-63:\\mipmap-xxxhdpi\\ic_user_profile_adaptive_back.png"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-61:/layout_activity_reset_password.xml.flat",
+        "source": "com.example.greenmarket.app-main-63:/layout/activity_reset_password.xml"
     },
     {
         "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-61:\\mipmap-mdpi_ic_launcher_round.webp.flat",

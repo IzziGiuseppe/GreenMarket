@@ -9,22 +9,25 @@
         android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="31dp"
         android:text="@string/registrati"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/textViewNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
         android:text="@string/nome"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRegister" />
 
@@ -32,40 +35,48 @@
         android:id="@+id/editTextNome"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/il_tuo_nome"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCognome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNome"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
 
 
     <TextView
         android:id="@+id/textViewCognome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:text="@string/cognome"
+        app:layout_constraintBottom_toTopOf="@+id/editTextCognome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNome"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
 
     <EditText
         android:id="@+id/editTextCognome"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/il_tuo_cognome"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textViewIndirizzo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCognome"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewCognome" />
 
     <TextView
         android:id="@+id/textViewIndirizzo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:text="@string/indirizzo"
+        app:layout_constraintBottom_toTopOf="@+id/editTextIndirizzo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCognome" />
 
@@ -73,19 +84,23 @@
         android:id="@+id/editTextIndirizzo"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/il_tuo_indirizzo"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewIndirizzo"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewIndirizzo" />
 
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:text="@string/emailRegister"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextIndirizzo" />
 
@@ -93,19 +108,23 @@
         android:id="@+id/editTextEmail"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:ems="10"
+        android:hint="@string/il_tuo_indirizzo_email"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEmail"
-        android:hint="@string/il_tuo_indirizzo_email"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
     <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:text="@string/passwordRegister"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
@@ -113,10 +132,12 @@
         android:id="@+id/editTextPassword"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/la_tua_password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/textViewConfirmPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
@@ -124,8 +145,10 @@
         android:id="@+id/textViewConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:text="@string/conferma_password"
+        app:layout_constraintBottom_toTopOf="@+id/editTextConfirmPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
@@ -133,61 +156,89 @@
         android:id="@+id/editTextConfirmPassword"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/conferma_la_tua_password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayoutRegistrazione"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewConfirmPassword" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutRegistrazione"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:text="@string/ho_letto_e_accetto_i_termini_e_le_condizioni"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
-
-    <TextView
-        android:id="@+id/textViewTerminiCondizioni"
-        android:layout_width="162dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="46dp"
-        android:gravity="center_vertical"
-        android:textColorHighlight="@color/black"
-        android:text="@string/termini_e_condizioni"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/ho_letto_e_accetto_i_termini_e_le_condizioni"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+
+        <TextView
+            android:id="@+id/textViewTerminiCondizioni"
+            android:layout_width="162dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="46dp"
+            android:gravity="center_vertical"
+            android:text="@string/termini_e_condizioni"
+            android:textColorHighlight="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
         android:text="@string/continua"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutRegistrazione" />
 
-    <TextView
-        android:id="@+id/textViewAccount"
+    <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/hai_gi_un_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister">
 
-    <TextView
-        android:id="@+id/textViewAccedi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/accediRegister"
-        app:layout_constraintStart_toEndOf="@+id/textViewAccount"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+        <TextView
+            android:id="@+id/textViewAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hai_gi_un_account"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAccedi"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegister"
+            tools:layout_editor_absoluteX="108dp" />
+
+        <TextView
+            android:id="@+id/textViewAccedi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accediRegister"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAccount"
+            tools:layout_editor_absoluteX="241dp" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

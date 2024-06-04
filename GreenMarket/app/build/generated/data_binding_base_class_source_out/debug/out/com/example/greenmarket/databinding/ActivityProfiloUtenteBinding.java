@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,6 +42,9 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   public final ImageView imageViewProfile;
 
   @NonNull
+  public final LinearLayout linearLayout4;
+
+  @NonNull
   public final TextView textView17;
 
   @NonNull
@@ -55,9 +59,9 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   private ActivityProfiloUtenteBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button buttonCancel, @NonNull Button buttonSave, @NonNull EditText editTextCognomeUP,
       @NonNull EditText editTextIndirizzoUP, @NonNull EditText editTextNomeUP,
-      @NonNull ImageView imageViewProfile, @NonNull TextView textView17,
-      @NonNull TextView textViewEliminaAccount, @NonNull TextView textViewLogout,
-      @NonNull TextView textViewModProfileImage) {
+      @NonNull ImageView imageViewProfile, @NonNull LinearLayout linearLayout4,
+      @NonNull TextView textView17, @NonNull TextView textViewEliminaAccount,
+      @NonNull TextView textViewLogout, @NonNull TextView textViewModProfileImage) {
     this.rootView = rootView;
     this.buttonCancel = buttonCancel;
     this.buttonSave = buttonSave;
@@ -65,6 +69,7 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
     this.editTextIndirizzoUP = editTextIndirizzoUP;
     this.editTextNomeUP = editTextNomeUP;
     this.imageViewProfile = imageViewProfile;
+    this.linearLayout4 = linearLayout4;
     this.textView17 = textView17;
     this.textViewEliminaAccount = textViewEliminaAccount;
     this.textViewLogout = textViewLogout;
@@ -134,6 +139,12 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.linearLayout4;
+      LinearLayout linearLayout4 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout4 == null) {
+        break missingId;
+      }
+
       id = R.id.textView17;
       TextView textView17 = ViewBindings.findChildViewById(rootView, id);
       if (textView17 == null) {
@@ -159,8 +170,8 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
       }
 
       return new ActivityProfiloUtenteBinding((ConstraintLayout) rootView, buttonCancel, buttonSave,
-          editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP, imageViewProfile, textView17,
-          textViewEliminaAccount, textViewLogout, textViewModProfileImage);
+          editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP, imageViewProfile, linearLayout4,
+          textView17, textViewEliminaAccount, textViewLogout, textViewModProfileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

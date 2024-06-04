@@ -14,7 +14,7 @@
         android:layout_marginEnd="176dp"
         android:text="@string/profilo_utente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,19 +22,23 @@
         android:id="@+id/imageViewProfile"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewModProfileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_chainStyle="spread"/>
 
     <TextView
         android:id="@+id/textViewModProfileImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="-20dp"
         android:text="@string/modifica_immagine_di_profilo"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNomeUP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
@@ -42,11 +46,13 @@
         android:id="@+id/editTextNomeUP"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="text"
         android:text="@string/nome"
+        app:layout_constraintBottom_toTopOf="@+id/editTextCognomeUP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewModProfileImage" />
 
@@ -54,11 +60,13 @@
         android:id="@+id/editTextCognomeUP"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="-30dp"
         android:ems="10"
         android:inputType="text"
         android:text="@string/cognome"
+        app:layout_constraintBottom_toTopOf="@+id/editTextIndirizzoUP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomeUP" />
 
@@ -66,52 +74,63 @@
         android:id="@+id/editTextIndirizzoUP"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="text"
         android:text="@string/indirizzo"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCognomeUP" />
 
-    <Button
-        android:id="@+id/buttonSave"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/salva"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIndirizzoUP" />
-
-    <Button
-        android:id="@+id/buttonCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="52dp"
-        android:text="@string/annulla"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLogout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIndirizzoUP" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextIndirizzoUP">
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salva" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/annulla" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="-210dp"
         android:layout_marginTop="108dp"
         android:text="@string/esci_dall_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextIndirizzoUP" />
+
 
     <TextView
         android:id="@+id/textViewEliminaAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="-175dp"
         android:layout_marginTop="12dp"
         android:text="@string/elimina_account_utente"
         android:textColor="#E91E63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLogout" />
 

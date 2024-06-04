@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -41,7 +42,10 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final EditText editTextPasswordLogin;
 
   @NonNull
-  public final ImageView imageView;
+  public final ShapeableImageView imageView;
+
+  @NonNull
+  public final LinearLayout linearLayout3;
 
   @NonNull
   public final TextView textViewEmailLogin;
@@ -55,8 +59,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull TextView PasswordLogin,
       @NonNull TextView accedi, @NonNull TextView benvenuto, @NonNull Button buttonAccediLogin,
       @NonNull EditText editTextEmailLogin, @NonNull EditText editTextPasswordLogin,
-      @NonNull ImageView imageView, @NonNull TextView textViewEmailLogin,
-      @NonNull TextView textViewPassDimenticata, @NonNull TextView textViewRegistratiLogin) {
+      @NonNull ShapeableImageView imageView, @NonNull LinearLayout linearLayout3,
+      @NonNull TextView textViewEmailLogin, @NonNull TextView textViewPassDimenticata,
+      @NonNull TextView textViewRegistratiLogin) {
     this.rootView = rootView;
     this.PasswordLogin = PasswordLogin;
     this.accedi = accedi;
@@ -65,6 +70,7 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.editTextEmailLogin = editTextEmailLogin;
     this.editTextPasswordLogin = editTextPasswordLogin;
     this.imageView = imageView;
+    this.linearLayout3 = linearLayout3;
     this.textViewEmailLogin = textViewEmailLogin;
     this.textViewPassDimenticata = textViewPassDimenticata;
     this.textViewRegistratiLogin = textViewRegistratiLogin;
@@ -134,8 +140,14 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      ShapeableImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout3;
+      LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout3 == null) {
         break missingId;
       }
 
@@ -158,7 +170,7 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, PasswordLogin, accedi, benvenuto,
-          buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, imageView,
+          buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, imageView, linearLayout3,
           textViewEmailLogin, textViewPassDimenticata, textViewRegistratiLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);

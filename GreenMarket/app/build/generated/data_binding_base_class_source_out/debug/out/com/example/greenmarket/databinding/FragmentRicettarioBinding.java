@@ -25,17 +25,17 @@ public final class FragmentRicettarioBinding implements ViewBinding {
   public final FloatingActionButton resetBt;
 
   @NonNull
-  public final EditText ricercaProdEditText;
+  public final EditText ricercaRicettaEditText;
 
   @NonNull
   public final RecyclerView rv;
 
   private FragmentRicettarioBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FloatingActionButton resetBt, @NonNull EditText ricercaProdEditText,
+      @NonNull FloatingActionButton resetBt, @NonNull EditText ricercaRicettaEditText,
       @NonNull RecyclerView rv) {
     this.rootView = rootView;
     this.resetBt = resetBt;
-    this.ricercaProdEditText = ricercaProdEditText;
+    this.ricercaRicettaEditText = ricercaRicettaEditText;
     this.rv = rv;
   }
 
@@ -72,9 +72,9 @@ public final class FragmentRicettarioBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ricercaProdEditText;
-      EditText ricercaProdEditText = ViewBindings.findChildViewById(rootView, id);
-      if (ricercaProdEditText == null) {
+      id = R.id.ricercaRicettaEditText;
+      EditText ricercaRicettaEditText = ViewBindings.findChildViewById(rootView, id);
+      if (ricercaRicettaEditText == null) {
         break missingId;
       }
 
@@ -85,7 +85,7 @@ public final class FragmentRicettarioBinding implements ViewBinding {
       }
 
       return new FragmentRicettarioBinding((ConstraintLayout) rootView, resetBt,
-          ricercaProdEditText, rv);
+          ricercaRicettaEditText, rv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

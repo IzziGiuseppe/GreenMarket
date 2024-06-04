@@ -63,23 +63,23 @@ class RicettarioFragment : Fragment() {
         })
 
         binding.resetBt.setOnClickListener {
-            binding.ricercaProdEditText.setText("")
+            binding.ricercaRicettaEditText.setText("")
             ricettarioViewModel.readAllRicette()
             ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
                     ricetta -> adapter.setData(ricetta)
             })
         }
 
-        binding.ricercaProdEditText.setOnTouchListener { _, motionEvent ->
+        binding.ricercaRicettaEditText.setOnTouchListener { _, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_UP) {
-                val drawableEnd = binding.ricercaProdEditText.compoundDrawables[2]
+                val drawableEnd = binding.ricercaRicettaEditText.compoundDrawables[2]
 
                 if (drawableEnd != null) {
                     val bounds = drawableEnd.bounds
                     val x = motionEvent.rawX.toInt()
 
-                    if (x >= (binding.ricercaProdEditText.right - bounds.width())) {
-                        val ricettaInput = binding.ricercaProdEditText.text.toString()
+                    if (x >= (binding.ricercaRicettaEditText.right - bounds.width())) {
+                        val ricettaInput = binding.ricercaRicettaEditText.text.toString()
                         ricettarioViewModel.ricetteByProdotto(ricettaInput)
                         ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
                                 ricetta -> adapter.setData(ricetta)

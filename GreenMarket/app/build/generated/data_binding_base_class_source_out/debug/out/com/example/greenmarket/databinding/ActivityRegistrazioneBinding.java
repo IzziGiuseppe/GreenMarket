@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ import java.lang.String;
 public final class ActivityRegistrazioneBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final LinearLayout LinearLayoutRegistrazione;
 
   @NonNull
   public final Button buttonRegister;
@@ -45,6 +49,9 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
 
   @NonNull
   public final EditText editTextPassword;
+
+  @NonNull
+  public final LinearLayout linearLayout5;
 
   @NonNull
   public final TextView textViewAccedi;
@@ -77,16 +84,18 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
   public final TextView textViewTerminiCondizioni;
 
   private ActivityRegistrazioneBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonRegister, @NonNull CheckBox checkBox, @NonNull EditText editTextCognome,
+      @NonNull LinearLayout LinearLayoutRegistrazione, @NonNull Button buttonRegister,
+      @NonNull CheckBox checkBox, @NonNull EditText editTextCognome,
       @NonNull EditText editTextConfirmPassword, @NonNull EditText editTextEmail,
       @NonNull EditText editTextIndirizzo, @NonNull EditText editTextNome,
-      @NonNull EditText editTextPassword, @NonNull TextView textViewAccedi,
-      @NonNull TextView textViewAccount, @NonNull TextView textViewCognome,
-      @NonNull TextView textViewConfirmPassword, @NonNull TextView textViewEmail,
-      @NonNull TextView textViewIndirizzo, @NonNull TextView textViewNome,
-      @NonNull TextView textViewPassword, @NonNull TextView textViewRegister,
-      @NonNull TextView textViewTerminiCondizioni) {
+      @NonNull EditText editTextPassword, @NonNull LinearLayout linearLayout5,
+      @NonNull TextView textViewAccedi, @NonNull TextView textViewAccount,
+      @NonNull TextView textViewCognome, @NonNull TextView textViewConfirmPassword,
+      @NonNull TextView textViewEmail, @NonNull TextView textViewIndirizzo,
+      @NonNull TextView textViewNome, @NonNull TextView textViewPassword,
+      @NonNull TextView textViewRegister, @NonNull TextView textViewTerminiCondizioni) {
     this.rootView = rootView;
+    this.LinearLayoutRegistrazione = LinearLayoutRegistrazione;
     this.buttonRegister = buttonRegister;
     this.checkBox = checkBox;
     this.editTextCognome = editTextCognome;
@@ -95,6 +104,7 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
     this.editTextIndirizzo = editTextIndirizzo;
     this.editTextNome = editTextNome;
     this.editTextPassword = editTextPassword;
+    this.linearLayout5 = linearLayout5;
     this.textViewAccedi = textViewAccedi;
     this.textViewAccount = textViewAccount;
     this.textViewCognome = textViewCognome;
@@ -134,6 +144,12 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.LinearLayoutRegistrazione;
+      LinearLayout LinearLayoutRegistrazione = ViewBindings.findChildViewById(rootView, id);
+      if (LinearLayoutRegistrazione == null) {
+        break missingId;
+      }
+
       id = R.id.buttonRegister;
       Button buttonRegister = ViewBindings.findChildViewById(rootView, id);
       if (buttonRegister == null) {
@@ -179,6 +195,12 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
       id = R.id.editTextPassword;
       EditText editTextPassword = ViewBindings.findChildViewById(rootView, id);
       if (editTextPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout5;
+      LinearLayout linearLayout5 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout5 == null) {
         break missingId;
       }
 
@@ -242,11 +264,12 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegistrazioneBinding((ConstraintLayout) rootView, buttonRegister, checkBox,
-          editTextCognome, editTextConfirmPassword, editTextEmail, editTextIndirizzo, editTextNome,
-          editTextPassword, textViewAccedi, textViewAccount, textViewCognome,
-          textViewConfirmPassword, textViewEmail, textViewIndirizzo, textViewNome, textViewPassword,
-          textViewRegister, textViewTerminiCondizioni);
+      return new ActivityRegistrazioneBinding((ConstraintLayout) rootView,
+          LinearLayoutRegistrazione, buttonRegister, checkBox, editTextCognome,
+          editTextConfirmPassword, editTextEmail, editTextIndirizzo, editTextNome, editTextPassword,
+          linearLayout5, textViewAccedi, textViewAccount, textViewCognome, textViewConfirmPassword,
+          textViewEmail, textViewIndirizzo, textViewNome, textViewPassword, textViewRegister,
+          textViewTerminiCondizioni);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
