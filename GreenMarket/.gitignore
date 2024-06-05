@@ -1,1 +1,58 @@
+#Gradle
+.gradle/
+build/
+**/build/
+!gradle-wrapper.jar
+.idea/libraries
+
+# Local configuration file (sdk path, etc)
 local.properties
+
+# Log files
+*.log
+
+# Android Studio
+.idea/
+*.iws
+*.iml
+*.ipr
+.idea/caches
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/caches/build_file_checksums.ser
+
+# Keystore files
+*.jks
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Studio captures
+captures/
+
+# NDk
+obj/
+
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+libs/
