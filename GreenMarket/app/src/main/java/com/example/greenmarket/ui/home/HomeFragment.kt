@@ -97,23 +97,6 @@ class HomeFragment : Fragment(), OnImageClickListener {
             startActivity(intent)
         }
 
-        /*homeViewModel.readAllProdotti()
-        homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
-            textView.text = it.size.toString() + ", " + it[it.size-1].nome + ", " + it[it.size-2].nome +
-                    ", " + it[it.size-3].nome + ", " + it[it.size-4].nome + ", " + it[it.size-5].nome +
-                    ", " + it[it.size-6].nome + ", " + it[it.size-7].nome + ", " + it[it.size-8].nome
-        }*/
-
-        //homeViewModel.deleteAllProdotti()
-
-        /*val studentListObserver = Observer<Array<Prodotto>> {
-            /*for(prod in it)
-                Log.d("MainActivity","${prod.nome} ${prod.descrizione} ${prod.prezzo}")*/
-            val ultimo = it.size - 1
-            textView.text = it[ultimo].nome
-        }
-        homeViewModel.listaProdotti.observe(viewLifecycleOwner, studentListObserver)*/
-
         return root
     }
 

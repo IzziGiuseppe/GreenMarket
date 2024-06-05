@@ -3408,6 +3408,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descrizione_prodotto
 id descrizione_ricetta
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -3476,6 +3477,7 @@ id fixed
 id flip
 id floating
 id forever
+id foto_prodotto
 id foto_ricetta
 id fragment_container_view_tag
 id frost
@@ -3625,6 +3627,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id nome_prodotto
 id nome_ricetta
 id none
 id normal
@@ -5666,4 +5669,5 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml ga_ad_services_config
 xml image_share_filepaths

@@ -84,9 +84,9 @@ dependencies {
     api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
     //Firebase
-    implementation("com.google.firebase:firebase-bom:33.0.0")
-    implementation("com.google.firebase:firebase-analytics:21.2.0")
-    implementation("com.google.firebase:firebase-auth:22.1.1")
+    implementation("com.google.firebase:firebase-bom:33.1.0")
+    implementation("com.google.firebase:firebase-analytics:22.0.1")
+    implementation(libs.firebase.auth)
 
     //Glide
     implementation("com.github.bumptech.glide:glide:4.15.1")

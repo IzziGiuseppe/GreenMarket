@@ -38,6 +38,7 @@ id checkBox
 id codici_sconto
 id container
 id converti
+id descrizione_prodotto
 id descrizione_ricetta
 id domenico_bt
 id editTextCognome
@@ -52,6 +53,7 @@ id editTextNomeUP
 id editTextPassword
 id editTextPasswordLogin
 id editTextResetPass
+id foto_prodotto
 id foto_ricetta
 id giuseppe_bt
 id hai_speso
@@ -76,6 +78,7 @@ id navigation_home
 id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
+id nome_prodotto
 id nome_ricetta
 id orario_chiusura
 id punti

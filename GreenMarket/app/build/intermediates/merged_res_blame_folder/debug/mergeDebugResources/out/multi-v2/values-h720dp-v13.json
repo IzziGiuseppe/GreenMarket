@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-59:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-62:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\aeaf4ff9f68f518c7a7a4327fe7696aa\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\b6eb36d2fae088fe4f236a770f48bf3e\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

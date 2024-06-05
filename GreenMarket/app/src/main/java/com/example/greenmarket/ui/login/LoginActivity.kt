@@ -1,7 +1,14 @@
 package com.example.greenmarket.ui.login
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +18,9 @@ import com.example.greenmarket.MainActivity
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import java.util.Locale
 
 class LoginActivity : AppCompatActivity() {
 
@@ -22,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth.setLanguageCode(Locale.getDefault().language)
 
         binding.textViewRegistratiLogin.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
@@ -38,15 +49,40 @@ class LoginActivity : AppCompatActivity() {
             val pass = binding.editTextPasswordLogin.text.toString().trim()
 
             if(email.isNotEmpty() && pass.isNotEmpty()){
+                if (isInternetAvailable(this)) {
+                    val handler = Handler(Looper.getMainLooper())
+                    val timeoutRunnable = Runnable {
+                        // Se il timeout viene raggiunto, mostra il messaggio di errore
+                        Toast.makeText(this, "Connessione instabile. Attendere...", Toast.LENGTH_LONG).show()
+                    }
+
+                    // Posticipa il runnable del timeout di 5 secondi
+                    handler.postDelayed(timeoutRunnable, 5000)
                     firebaseAuth.signInWithEmailAndPassword(email, pass)
                         .addOnSuccessListener{
-                                val intent = Intent(this, MainActivity::class.java)
-                                startActivity(intent)
+                            handler.removeCallbacks(timeoutRunnable)
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
                         }
                         .addOnFailureListener{
-                            Toast.makeText(this, "Errore nell'inserimento di email/password", Toast.LENGTH_SHORT).show()
+                            handler.removeCallbacks(timeoutRunnable)
+                            //Toast.makeText(this, "Errore nell'inserimento di email/password", Toast.LENGTH_SHORT).show()
+                            when (it) {
+                                is FirebaseAuthInvalidCredentialsException -> {
+                                    Toast.makeText(this, "Credenziali non valide", Toast.LENGTH_SHORT).show()
+                                }
+                                is FirebaseAuthInvalidUserException -> {
+                                    Toast.makeText(this, "Utente non esistente", Toast.LENGTH_SHORT).show()
+                                }
+                                else -> {
+                                    Toast.makeText(this, "Errore nell'inserimento di email/password", Toast.LENGTH_SHORT).show()
+                                }
+                            }
                         }
-            }else{
+                } else {
+                    Toast.makeText(this, "Nessuna connessione Internet", Toast.LENGTH_SHORT).show()
+                }
+            } else {
                 Toast.makeText(this, "Compila tutti i campi", Toast.LENGTH_SHORT).show()
             }
         }
@@ -56,5 +92,18 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finishAffinity()
+    }
+
+    //funzione che controlla se il dispositivo è connesso ad internet
+    fun isInternetAvailable(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return when {
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+            else -> false
+        }
     }
 }
