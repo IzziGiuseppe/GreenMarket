@@ -48,6 +48,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.Material3.Light" >
         <activity
+            android:name="com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity"
+            android:exported="false"
+            android:label="Conferma ordine" />
+        <activity
+            android:name="com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity"
+            android:exported="false"
+            android:label="Dettaglio prodotto" />
+        <activity
             android:name="com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiActivity"
             android:exported="false"
             android:label="Tessera Punti" />
@@ -68,7 +76,7 @@
         <activity
             android:name="com.example.greenmarket.ui.altro.statistiche.StatsActivity"
             android:exported="false"
-            android:label="Prodotti più acquistati"
+            android:label="Statistiche"
             android:parentActivityName="com.example.greenmarket.MainActivity" />
         <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity"

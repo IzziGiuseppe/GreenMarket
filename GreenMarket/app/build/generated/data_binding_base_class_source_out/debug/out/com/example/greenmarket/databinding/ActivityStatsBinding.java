@@ -4,6 +4,7 @@ package com.example.greenmarket.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,13 +24,31 @@ public final class ActivityStatsBinding implements ViewBinding {
   public final ConstraintLayout activityStats;
 
   @NonNull
+  public final LinearLayout linearLayout9;
+
+  @NonNull
   public final TextView statsTxt;
 
+  @NonNull
+  public final TextView titleProdStats;
+
+  @NonNull
+  public final TextView titleQuantita;
+
+  @NonNull
+  public final View view;
+
   private ActivityStatsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout activityStats, @NonNull TextView statsTxt) {
+      @NonNull ConstraintLayout activityStats, @NonNull LinearLayout linearLayout9,
+      @NonNull TextView statsTxt, @NonNull TextView titleProdStats, @NonNull TextView titleQuantita,
+      @NonNull View view) {
     this.rootView = rootView;
     this.activityStats = activityStats;
+    this.linearLayout9 = linearLayout9;
     this.statsTxt = statsTxt;
+    this.titleProdStats = titleProdStats;
+    this.titleQuantita = titleQuantita;
+    this.view = view;
   }
 
   @Override
@@ -61,13 +80,38 @@ public final class ActivityStatsBinding implements ViewBinding {
     missingId: {
       ConstraintLayout activityStats = (ConstraintLayout) rootView;
 
+      id = R.id.linearLayout9;
+      LinearLayout linearLayout9 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout9 == null) {
+        break missingId;
+      }
+
       id = R.id.stats_txt;
       TextView statsTxt = ViewBindings.findChildViewById(rootView, id);
       if (statsTxt == null) {
         break missingId;
       }
 
-      return new ActivityStatsBinding((ConstraintLayout) rootView, activityStats, statsTxt);
+      id = R.id.title_prod_stats;
+      TextView titleProdStats = ViewBindings.findChildViewById(rootView, id);
+      if (titleProdStats == null) {
+        break missingId;
+      }
+
+      id = R.id.title_quantita;
+      TextView titleQuantita = ViewBindings.findChildViewById(rootView, id);
+      if (titleQuantita == null) {
+        break missingId;
+      }
+
+      id = R.id.view;
+      View view = ViewBindings.findChildViewById(rootView, id);
+      if (view == null) {
+        break missingId;
+      }
+
+      return new ActivityStatsBinding((ConstraintLayout) rootView, activityStats, linearLayout9,
+          statsTxt, titleProdStats, titleQuantita, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="GreenMarket ti premia!"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/hai_speso"
@@ -23,20 +23,50 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="#6750A3"
         app:layout_constraintBottom_toTopOf="@id/hai_speso"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toBottomOf="@id/ti_premia" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="#6750A3"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="#6750A3"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="#6750A3"
+        app:layout_constraintBottom_toTopOf="@id/codici_sconto"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@id/riscatta" />
 
     <TextView
         android:id="@+id/hai_speso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
         android:text="Hai speso: "
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/converti"
@@ -47,7 +77,7 @@
         android:id="@+id/converti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:text="Converti in punti"
         app:layout_constraintBottom_toTopOf="@+id/punti"
@@ -58,7 +88,7 @@
         android:id="@+id/punti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:text="Punti: "
         android:textSize="24sp"
@@ -70,22 +100,13 @@
         android:id="@+id/riscatta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
         android:text="Riscatta codici sconto"
         app:layout_constraintBottom_toTopOf="@+id/codici_sconto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/punti" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@id/codici_sconto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/riscatta" />
 
     <TextView
         android:id="@+id/codici_sconto"
@@ -116,6 +137,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView4"
         app:layout_constraintStart_toEndOf="@+id/codici_sconto"
         app:layout_constraintTop_toBottomOf="@+id/riscatta"

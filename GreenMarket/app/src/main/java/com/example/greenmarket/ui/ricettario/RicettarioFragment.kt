@@ -36,7 +36,7 @@ class RicettarioFragment : Fragment() {
         val root: View = binding.root
 
         //Recycler
-        val adapter = RicettarioListAdapter() {
+        val adapter = RicettarioListAdapter {
             currentRicetta ->
             run {
                 val ricetta = currentRicetta.ricetta

@@ -12,9 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
-import java.lang.NullPointerException;
 import java.lang.Override;
-import java.lang.String;
 
 public final class ActivityDettaglioProdottoBinding implements ViewBinding {
   @NonNull
@@ -23,23 +21,115 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
   @NonNull
   public final ConstraintLayout activityDr;
 
-  @NonNull
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
   public final TextView descrizioneProdotto;
 
-  @NonNull
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   */
+  @Nullable
+  public final TextView descrizioneRicetta;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
   public final ImageView fotoProdotto;
 
-  @NonNull
-  public final TextView nomeProdotto;
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   */
+  @Nullable
+  public final ImageView fotoRicetta;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final TextView nomePrezzoProdotto;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   */
+  @Nullable
+  public final TextView nomeProdottoItem;
 
   private ActivityDettaglioProdottoBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout activityDr, @NonNull TextView descrizioneProdotto,
-      @NonNull ImageView fotoProdotto, @NonNull TextView nomeProdotto) {
+      @NonNull ConstraintLayout activityDr, @Nullable TextView descrizioneProdotto,
+      @Nullable TextView descrizioneRicetta, @Nullable ImageView fotoProdotto,
+      @Nullable ImageView fotoRicetta, @Nullable TextView nomePrezzoProdotto,
+      @Nullable TextView nomeProdottoItem) {
     this.rootView = rootView;
     this.activityDr = activityDr;
     this.descrizioneProdotto = descrizioneProdotto;
+    this.descrizioneRicetta = descrizioneRicetta;
     this.fotoProdotto = fotoProdotto;
-    this.nomeProdotto = nomeProdotto;
+    this.fotoRicetta = fotoRicetta;
+    this.nomePrezzoProdotto = nomePrezzoProdotto;
+    this.nomeProdottoItem = nomeProdottoItem;
   }
 
   @Override
@@ -65,34 +155,22 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
 
   @NonNull
   public static ActivityDettaglioProdottoBinding bind(@NonNull View rootView) {
-    // The body of this method is generated in a way you would not otherwise write.
-    // This is done to optimize the compiled bytecode for size and performance.
-    int id;
-    missingId: {
-      ConstraintLayout activityDr = (ConstraintLayout) rootView;
+    ConstraintLayout activityDr = (ConstraintLayout) rootView;
 
-      id = R.id.descrizione_prodotto;
-      TextView descrizioneProdotto = ViewBindings.findChildViewById(rootView, id);
-      if (descrizioneProdotto == null) {
-        break missingId;
-      }
+    TextView descrizioneProdotto = ViewBindings.findChildViewById(rootView, R.id.descrizione_prodotto);
 
-      id = R.id.foto_prodotto;
-      ImageView fotoProdotto = ViewBindings.findChildViewById(rootView, id);
-      if (fotoProdotto == null) {
-        break missingId;
-      }
+    TextView descrizioneRicetta = ViewBindings.findChildViewById(rootView, R.id.descrizione_ricetta);
 
-      id = R.id.nome_prodotto;
-      TextView nomeProdotto = ViewBindings.findChildViewById(rootView, id);
-      if (nomeProdotto == null) {
-        break missingId;
-      }
+    ImageView fotoProdotto = ViewBindings.findChildViewById(rootView, R.id.foto_prodotto);
 
-      return new ActivityDettaglioProdottoBinding((ConstraintLayout) rootView, activityDr,
-          descrizioneProdotto, fotoProdotto, nomeProdotto);
-    }
-    String missingId = rootView.getResources().getResourceName(id);
-    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
+    ImageView fotoRicetta = ViewBindings.findChildViewById(rootView, R.id.foto_ricetta);
+
+    TextView nomePrezzoProdotto = ViewBindings.findChildViewById(rootView, R.id.nome_prezzo_prodotto);
+
+    TextView nomeProdottoItem = ViewBindings.findChildViewById(rootView, R.id.nome_prodotto_item);
+
+    return new ActivityDettaglioProdottoBinding((ConstraintLayout) rootView, activityDr,
+        descrizioneProdotto, descrizioneRicetta, fotoProdotto, fotoRicetta, nomePrezzoProdotto,
+        nomeProdottoItem);
   }
 }

@@ -55,11 +55,18 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
   @NonNull
   public final View view2;
 
+  @NonNull
+  public final View view3;
+
+  @NonNull
+  public final View view4;
+
   private ActivityTesseraPuntiBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityTessPunti, @NonNull TextView codiciSconto,
       @NonNull Button converti, @NonNull TextView haiSpeso, @NonNull ImageButton imageButton,
       @NonNull TextView punti, @NonNull RecyclerView recyclerView4, @NonNull Button riscatta,
-      @NonNull TextView tiPremia, @NonNull View view, @NonNull View view2) {
+      @NonNull TextView tiPremia, @NonNull View view, @NonNull View view2, @NonNull View view3,
+      @NonNull View view4) {
     this.rootView = rootView;
     this.activityTessPunti = activityTessPunti;
     this.codiciSconto = codiciSconto;
@@ -72,6 +79,8 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
     this.tiPremia = tiPremia;
     this.view = view;
     this.view2 = view2;
+    this.view3 = view3;
+    this.view4 = view4;
   }
 
   @Override
@@ -163,9 +172,21 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.view3;
+      View view3 = ViewBindings.findChildViewById(rootView, id);
+      if (view3 == null) {
+        break missingId;
+      }
+
+      id = R.id.view4;
+      View view4 = ViewBindings.findChildViewById(rootView, id);
+      if (view4 == null) {
+        break missingId;
+      }
+
       return new ActivityTesseraPuntiBinding((ConstraintLayout) rootView, activityTessPunti,
           codiciSconto, converti, haiSpeso, imageButton, punti, recyclerView4, riscatta, tiPremia,
-          view, view2);
+          view, view2, view3, view4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData
 class StatsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Prodotti più ordinati"
+        value = "Classifica prodotti più acquistati"
     }
     val text: LiveData<String> = _text
 

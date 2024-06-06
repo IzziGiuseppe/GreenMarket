@@ -207,7 +207,50 @@ public final class ProdottoDao_Impl implements ProdottoDao {
   }
 
   @Override
-  public Prodotto getProdottoByNome(final String nome) {
+  public Prodotto[] getProdottoByNome(final String nome) {
+    final String _sql = "SELECT * FROM prodotto WHERE nome = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (nome == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, nome);
+    }
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfNome = CursorUtil.getColumnIndexOrThrow(_cursor, "nome");
+      final int _cursorIndexOfDescrizione = CursorUtil.getColumnIndexOrThrow(_cursor, "descrizione");
+      final int _cursorIndexOfPrezzo = CursorUtil.getColumnIndexOrThrow(_cursor, "prezzo");
+      final int _cursorIndexOfFoto = CursorUtil.getColumnIndexOrThrow(_cursor, "foto");
+      final int _cursorIndexOfUnitaDiMisura = CursorUtil.getColumnIndexOrThrow(_cursor, "unita_di_misura");
+      final Prodotto[] _result = new Prodotto[_cursor.getCount()];
+      int _index = 0;
+      while(_cursor.moveToNext()) {
+        final Prodotto _item;
+        final String _tmpNome;
+        _tmpNome = _cursor.getString(_cursorIndexOfNome);
+        final String _tmpDescrizione;
+        _tmpDescrizione = _cursor.getString(_cursorIndexOfDescrizione);
+        final float _tmpPrezzo;
+        _tmpPrezzo = _cursor.getFloat(_cursorIndexOfPrezzo);
+        final String _tmpFoto;
+        _tmpFoto = _cursor.getString(_cursorIndexOfFoto);
+        final String _tmpUnita_di_misura;
+        _tmpUnita_di_misura = _cursor.getString(_cursorIndexOfUnitaDiMisura);
+        _item = new Prodotto(_tmpNome,_tmpDescrizione,_tmpPrezzo,_tmpFoto,_tmpUnita_di_misura);
+        _result[_index] = _item;
+        _index ++;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public Prodotto getProdottoDettagliatoByNome(final String nome) {
     final String _sql = "SELECT * FROM prodotto WHERE nome = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;

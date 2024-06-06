@@ -95,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     //funzione che controlla se il dispositivo è connesso ad internet
-    fun isInternetAvailable(context: Context): Boolean {
+    private fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val network = connectivityManager.activeNetwork ?: return false
         val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false

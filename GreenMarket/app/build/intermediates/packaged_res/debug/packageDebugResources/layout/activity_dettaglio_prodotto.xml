@@ -5,39 +5,38 @@
     android:id="@+id/activity_dr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity">
+    tools:context=".ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity">
 
-    <TextView
-        android:id="@+id/nome_prodotto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+  <TextView
+      android:id="@+id/nome_prodotto_item"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:textSize="32sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/foto_prodotto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_prodotto"
-        tools:src="" />
+  <ImageView
+      android:id="@+id/foto_ricetta"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/nome_prodotto_item"
+      tools:src="" />
 
-    <TextView
-        android:id="@+id/descrizione_prodotto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:justificationMode="inter_word"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foto_prodotto" />
+  <TextView
+      android:id="@+id/descrizione_ricetta"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:justificationMode="inter_word"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/foto_ricetta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

@@ -15,7 +15,10 @@ interface ProdottoDao {
     fun getAll(): Array<Prodotto>
 
     @Query("SELECT * FROM prodotto WHERE nome = :nome")
-    fun getProdottoByNome(nome: String): Prodotto
+    fun getProdottoByNome(nome: String): Array<Prodotto>
+
+    @Query("SELECT * FROM prodotto WHERE nome = :nome")
+    fun getProdottoDettagliatoByNome(nome: String): Prodotto
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg prodotto: Prodotto)

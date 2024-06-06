@@ -16,9 +16,17 @@
         android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
         <activity
+            android:name=".ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity"
+            android:label="Conferma ordine"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity"
+            android:exported="false"
+            android:label="Dettaglio prodotto" />
+        <activity
             android:name=".ui.home.tessera_punti.TesseraPuntiActivity"
             android:exported="false"
-            android:label="Tessera Punti"/>
+            android:label="Tessera Punti" />
         <activity
             android:name=".ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity"
             android:exported="false"
@@ -36,7 +44,7 @@
         <activity
             android:name=".ui.altro.statistiche.StatsActivity"
             android:exported="false"
-            android:label="Prodotti più acquistati"
+            android:label="Statistiche"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ui.altro.chi_siamo.ChiSiamoActivity"

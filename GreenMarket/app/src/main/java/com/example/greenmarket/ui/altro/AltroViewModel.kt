@@ -12,7 +12,7 @@ class AltroViewModel(application: Application) : AndroidViewModel(application) {
             AltroMenu("Profilo Utente"),
             AltroMenu("Storico"),
             AltroMenu("Chi siamo"),
-            AltroMenu("Classifica prodotti più acquistati"),
+            AltroMenu("Statistiche"),
             AltroMenu("Invita un amico"),
             AltroMenu("Termini e condizioni d'uso"),
             AltroMenu("Contatta l'assistenza"),
