@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-62:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-69:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\Desktop\\ProgettoProgrammazioneMobile\\GreenMarket\\GreenMarket\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "source": "C:\\Users\\izzig\\EsamePM\\GreenMarket\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "16",
                         "endColumns": "58",
-                        "endOffsets": "71"
+                        "endOffsets": "70"
                     },
                     "to": {
                         "startLines": "2",

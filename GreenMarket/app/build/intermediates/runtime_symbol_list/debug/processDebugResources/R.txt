@@ -3380,7 +3380,6 @@ int id clip_horizontal 0x7f080090
 int id clip_vertical 0x7f080091
 int id clockwise 0x7f080092
 int id closest 0x7f080093
-int id codice_sconto 0x7f0802a5
 int id codici_sconto 0x7f080094
 int id collapseActionView 0x7f080095
 int id compress 0x7f080096
@@ -3404,7 +3403,6 @@ int id customPanel 0x7f0800a7
 int id cut 0x7f0800a8
 int id dark 0x7f0800a9
 int id dataBinding 0x7f0800aa
-int id data_item 0x7f08029d
 int id date_picker_actions 0x7f0800ab
 int id decelerate 0x7f0800ac
 int id decelerateAndComplete 0x7f0800ad
@@ -3640,7 +3638,7 @@ int id neverCompleteToStart 0x7f080192
 int id noScroll 0x7f080193
 int id noState 0x7f080194
 int id nome_prezzo_prodotto 0x7f080195
-int id nome_prod_lista_spesa_item 0x7f08029e
+int id nome_prod_scontrino_item 0x7f080196
 int id nome_prodotto_item 0x7f080197
 int id nome_prodotto_stats_item 0x7f080198
 int id nome_ricetta 0x7f080199
@@ -3650,7 +3648,6 @@ int id north 0x7f08019c
 int id notification_background 0x7f08019d
 int id notification_main_column 0x7f08019e
 int id notification_main_column_container 0x7f08019f
-int id num_prodotti 0x7f08029f
 int id off 0x7f0801a0
 int id on 0x7f0801a1
 int id onInterceptTouchReturnSwipe 0x7f0801a2
@@ -3687,7 +3684,6 @@ int id pin 0x7f0801c0
 int id position 0x7f0801c1
 int id postLayout 0x7f0801c2
 int id pressed 0x7f0801c3
-int id prezzo_item 0x7f0802a0
 int id prezzo_totale 0x7f0801c4
 int id prezzo_totale_no_sconto 0x7f0801c5
 int id prezzo_totale_si_sconto 0x7f0801c6
@@ -3695,11 +3691,11 @@ int id progress_circular 0x7f0801c7
 int id progress_horizontal 0x7f0801c8
 int id punti 0x7f0801c9
 int id quantita_prod 0x7f0801ca
-int id quantita_prod_lista_spesa 0x7f0802a1
 int id quantita_prodotto_stats 0x7f0801cb
 int id radio 0x7f0801cc
 int id ratio 0x7f0801cd
 int id rectangles 0x7f0801ce
+int id recyclerView4 0x7f0801cf
 int id report_drawn 0x7f0801d0
 int id resetProd 0x7f0801d1
 int id reset_bt 0x7f0801d2
@@ -3717,10 +3713,7 @@ int id rtl 0x7f0801dd
 int id rv 0x7f0801de
 int id rvRicercaProd 0x7f0801df
 int id rv_altro 0x7f0801e0
-int id rv_codici_sconto 0x7f0802a6
-int id rv_lista_spesa 0x7f0802a2
-int id rv_prodotti_stats 0x7f0802a4
-int id rv_scontrini 0x7f0802a3
+int id rv_prod_scontrino 0x7f0801e1
 int id rv_tc 0x7f0801e2
 int id satellite 0x7f0801e3
 int id save_non_transition_alpha 0x7f0801e4
@@ -3787,6 +3780,7 @@ int id stats_prod 0x7f080220
 int id stats_txt 0x7f080221
 int id status_bar_latest_event_content 0x7f080222
 int id stop 0x7f080223
+int id storico_txt 0x7f080224
 int id stretch 0x7f080225
 int id submenuarrow 0x7f080226
 int id submit_area 0x7f080227
@@ -4062,13 +4056,11 @@ int layout fragment_ricettario 0x7f0b003f
 int layout ime_base_split_test_activity 0x7f0b0040
 int layout ime_secondary_split_test_activity 0x7f0b0041
 int layout item_altro_view 0x7f0b0042
-int layout item_codice_sconto_view 0x7f0b0091
 int layout item_image 0x7f0b0043
-int layout item_lista_spesa_view 0x7f0b008f
+int layout item_prod_scontrino 0x7f0b0044
 int layout item_prodotto_view 0x7f0b0045
 int layout item_ricetta_view 0x7f0b0046
 int layout item_stats_view 0x7f0b0047
-int layout item_storico_view 0x7f0b0090
 int layout item_tc_view 0x7f0b0048
 int layout m3_alert_dialog 0x7f0b0049
 int layout m3_alert_dialog_actions 0x7f0b004a

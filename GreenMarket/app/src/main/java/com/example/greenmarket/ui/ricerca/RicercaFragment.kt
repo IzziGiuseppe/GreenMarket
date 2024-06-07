@@ -4,11 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -29,36 +29,16 @@ class RicercaFragment : Fragment() {
     private val binding get() = _binding!!
 
     @SuppressLint("ClickableViewAccessibility")
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val ricercaViewModel =
-            ViewModelProvider(this).get(RicercaViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val ricercaViewModel = ViewModelProvider(this).get(RicercaViewModel::class.java)
 
         _binding = FragmentRicercaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //recycler
-        val adapter = RicercaListAdapter() {
-            currentProdotto ->
-            run {
-                val prodotto = currentProdotto.nome
-                var nome = ""
-                var descrizione = ""
-                var prezzo = 0f
-                var foto = ""
-                ricercaViewModel.readProdottoDettagliato(prodotto)
-                ricercaViewModel.prodotto.observe(viewLifecycleOwner) {
-                    nome = it.nome
-                    descrizione = it.descrizione
-                    prezzo = it.prezzo
-                    foto = it.foto
-                }
-                startProdotto(nome, descrizione, prezzo, foto)
-            }
+        val adapter = RicercaListAdapter { currentProdotto ->
+            currentProdotto.nome?.let { ricercaViewModel.readProdottoDettagliato(it) }
         }
+
         val recyclerView = binding.rvRicercaProd
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -68,40 +48,45 @@ class RicercaFragment : Fragment() {
         dividerItemDecoration.setDrawable(dividerDrawable)
         recyclerView.addItemDecoration(dividerItemDecoration)
 
-        //viewmodel
         ricercaViewModel.readAllProdotti()
-        ricercaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer {
-            prodotto -> adapter.setData(prodotto)
+        ricercaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer { prodotti ->
+            adapter.setData(prodotti)
         })
 
         binding.resetProd.setOnClickListener {
             binding.ricercaProdottoEditText.setText("")
             ricercaViewModel.readAllProdotti()
-            ricercaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer {
-                prodotto -> adapter.setData(prodotto)
-            })
         }
 
         binding.ricercaProdottoEditText.setOnTouchListener { _, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_UP) {
                 val drawableEnd = binding.ricercaProdottoEditText.compoundDrawables[2]
-
-                if (drawableEnd != null) {
-                    val bounds = drawableEnd.bounds
+                drawableEnd?.let {
+                    val bounds = it.bounds
                     val x = motionEvent.rawX.toInt()
-
                     if (x >= (binding.ricercaProdottoEditText.right - bounds.width())) {
                         val ricettaInput = binding.ricercaProdottoEditText.text.toString()
                         ricercaViewModel.prodottiByNome(ricettaInput)
-                        ricercaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer {
-                                prodotto -> adapter.setData(prodotto)
-                        })
                         return@setOnTouchListener true
                     }
                 }
             }
             false
         }
+
+        ricercaViewModel.prodotto.observe(viewLifecycleOwner, Observer { prodotto ->
+            prodotto?.let {
+                it.nome?.let { it1 -> it.descrizione?.let { it2 ->
+                    it.prezzo?.let { it3 ->
+                        it.foto?.let { it4 ->
+                            startProdotto(it1,
+                                it2, it3, it4
+                            )
+                        }
+                    }
+                } }
+            }
+        })
 
         return root
     }

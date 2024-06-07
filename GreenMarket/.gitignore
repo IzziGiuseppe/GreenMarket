@@ -1,6 +1,7 @@
 #Gradle
 .gradle/
 build/
+app/build/intermediates/
 **/build/
 !gradle-wrapper.jar
 .idea/libraries

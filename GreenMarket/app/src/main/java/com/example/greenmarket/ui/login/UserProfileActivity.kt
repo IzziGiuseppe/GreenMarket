@@ -231,7 +231,7 @@ class UserProfileActivity : AppCompatActivity() {
 
     //Funzione per gestire l'inserimento della nuova immagine
     private fun uploadNewImage(uri: Uri, user: FirebaseUser, storageRef: StorageReference, db: FirebaseFirestore) {
-        val userImageRef = storageRef.child("images/${user.uid}.jpg")
+        val userImageRef = storageRef.child("users/${user.uid}.jpg")
         userImageRef.putFile(uri)
             .addOnSuccessListener {
                 userImageRef.downloadUrl

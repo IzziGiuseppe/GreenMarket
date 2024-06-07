@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -14,7 +15,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
-import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -42,7 +42,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final EditText editTextPasswordLogin;
 
   @NonNull
-  public final ShapeableImageView imageView;
+  public final ImageView imageView;
 
   @NonNull
   public final LinearLayout linearLayout3;
@@ -59,7 +59,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull TextView PasswordLogin,
       @NonNull TextView accedi, @NonNull TextView benvenuto, @NonNull Button buttonAccediLogin,
       @NonNull EditText editTextEmailLogin, @NonNull EditText editTextPasswordLogin,
-      @NonNull ShapeableImageView imageView, @NonNull LinearLayout linearLayout3,
+      @NonNull ImageView imageView, @NonNull LinearLayout linearLayout3,
       @NonNull TextView textViewEmailLogin, @NonNull TextView textViewPassDimenticata,
       @NonNull TextView textViewRegistratiLogin) {
     this.rootView = rootView;
@@ -140,7 +140,7 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       id = R.id.imageView;
-      ShapeableImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }

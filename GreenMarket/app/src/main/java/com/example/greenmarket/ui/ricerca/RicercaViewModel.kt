@@ -1,54 +1,62 @@
 package com.example.greenmarket.ui.ricerca
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.greenmarket.db.GMDatabase
-import com.example.greenmarket.db.model.ProdottiInRicette
-import com.example.greenmarket.db.model.Prodotto
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Locale
 
 class RicercaViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val db: GMDatabase = GMDatabase.getInstance(application)
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Ricerca"
-    }
-    val text: LiveData<String> = _text
+    private val _prodotto = MutableLiveData<ProdottoModel>()
+    val prodotto: LiveData<ProdottoModel> = _prodotto
 
-    private var _prodotto = MutableLiveData(Prodotto("", "", 0f, "", "", ))
-    val prodotto: LiveData<Prodotto>
-        get() = _prodotto
-
-    private var _listaProdotti = MutableLiveData(arrayOf<Prodotto>())
-    val listaProdotti: MutableLiveData<Array<Prodotto>>
-        get() = _listaProdotti
+    private val _listaProdotti = MutableLiveData<List<ProdottoModel>>()
+    val listaProdotti: LiveData<List<ProdottoModel>> = _listaProdotti
 
     fun readProdottoDettagliato(nome: String) {
-        _prodotto.value = db.ProdottoDao().getProdottoDettagliatoByNome(nome)
+        db.collection("products").document(nome).get()
+            .addOnSuccessListener { document ->
+                _prodotto.value = document.toObject(ProdottoModel::class.java)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Error getting product details", exception)
+            }
     }
 
     fun prodottiByNome(nome: String) {
         if (nome.isBlank()) {
             Toast.makeText(getApplication(), "Per favore inserire un prodotto!", Toast.LENGTH_SHORT).show()
-        }
-        else {
-            val prodInput = nome.trim()[0].uppercaseChar() + nome.trim().substring(1).lowercase()
-            val x = db.ProdottoDao().getProdottoByNome(prodInput)
-            if (x.isEmpty()) {
-                Toast.makeText(getApplication(), "Non ci sono prodotti con il nome inserito!", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                _listaProdotti.value = x
-            }
+        } else {
+            val prodInput = nome.trim().capitalize(Locale.ROOT)
+            db.collection("products").whereEqualTo("nome", prodInput).get()
+                .addOnSuccessListener { documents ->
+                    val products = documents.toObjects(ProdottoModel::class.java)
+                    if (products.isEmpty()) {
+                        Toast.makeText(getApplication(), "Non ci sono prodotti con il nome inserito!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        _listaProdotti.value = products
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("Firebase", "Error getting products", exception)
+                }
         }
     }
 
     fun readAllProdotti() {
-        val x = db.ProdottoDao().getAll()
-        _listaProdotti.value = x
+        db.collection("products").get()
+            .addOnSuccessListener { documents ->
+                _listaProdotti.value = documents.toObjects(ProdottoModel::class.java)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Error getting products", exception)
+            }
     }
 }

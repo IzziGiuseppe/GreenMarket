@@ -2,6 +2,7 @@ package com.example.greenmarket.ui.ricerca.dettaglio_prodotti
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +10,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.greenmarket.R
 
 class DettaglioProdottoActivity : AppCompatActivity() {
@@ -47,13 +49,13 @@ class DettaglioProdottoActivity : AppCompatActivity() {
             descrizione.text = it
         }
 
-        if (fotoProdotto != null) {
+        if (!fotoProdotto.isNullOrEmpty()) {
             dettaglioProdottiViewModel.setFoto(fotoProdotto)
         }
         dettaglioProdottiViewModel.foto_prodotto.observe(this) {
-            val resourceName = it
-            val resourceId = resources.getIdentifier(resourceName, "drawable", packageName)
-            foto.setImageResource(resourceId)
+            Glide.with(this)
+                .load(fotoProdotto)
+                .into(foto)
         }
     }
 }

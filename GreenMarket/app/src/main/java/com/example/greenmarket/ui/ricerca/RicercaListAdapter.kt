@@ -7,21 +7,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.Prodotto
 
-class RicercaListAdapter(
-    private val itemClickListener: (Prodotto) -> Unit
-): RecyclerView.Adapter<RicercaListAdapter.MyViewHolder>() {
+class RicercaListAdapter(private val itemClickListener: (ProdottoModel) -> Unit): RecyclerView.Adapter<RicercaListAdapter.MyViewHolder>() {
 
-    private var prodottiList = emptyArray<Prodotto>()
+    private var prodottiList = emptyList<ProdottoModel>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.nome_prodotto_item)
     }
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_prodotto_view, parent, false))
     }
 
@@ -37,7 +31,7 @@ class RicercaListAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(prodotto: Array<Prodotto>) {
+    fun setData(prodotto: List<ProdottoModel>) {
         this.prodottiList = prodotto
         notifyDataSetChanged()
     }

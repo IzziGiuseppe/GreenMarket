@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-62:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-69:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\5965b708a6688392cdd7692b6cd82311\\transformed\\material-1.12.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\e8e1c7728076f5cb611277cee8f3d1d9\\transformed\\material-1.12.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
