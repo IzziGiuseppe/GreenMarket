@@ -32,19 +32,19 @@ public final class FragmentListaSpesaBinding implements ViewBinding {
   public final TextView prezzoTotale;
 
   @NonNull
-  public final RecyclerView rvProdScontrino;
+  public final RecyclerView rvListaSpesa;
 
   @NonNull
   public final View view;
 
   private FragmentListaSpesaBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button confermaOrdine, @NonNull FloatingActionButton deleteAll,
-      @NonNull TextView prezzoTotale, @NonNull RecyclerView rvProdScontrino, @NonNull View view) {
+      @NonNull TextView prezzoTotale, @NonNull RecyclerView rvListaSpesa, @NonNull View view) {
     this.rootView = rootView;
     this.confermaOrdine = confermaOrdine;
     this.deleteAll = deleteAll;
     this.prezzoTotale = prezzoTotale;
-    this.rvProdScontrino = rvProdScontrino;
+    this.rvListaSpesa = rvListaSpesa;
     this.view = view;
   }
 
@@ -93,9 +93,9 @@ public final class FragmentListaSpesaBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rv_prod_scontrino;
-      RecyclerView rvProdScontrino = ViewBindings.findChildViewById(rootView, id);
-      if (rvProdScontrino == null) {
+      id = R.id.rv_lista_spesa;
+      RecyclerView rvListaSpesa = ViewBindings.findChildViewById(rootView, id);
+      if (rvListaSpesa == null) {
         break missingId;
       }
 
@@ -106,7 +106,7 @@ public final class FragmentListaSpesaBinding implements ViewBinding {
       }
 
       return new FragmentListaSpesaBinding((ConstraintLayout) rootView, confermaOrdine, deleteAll,
-          prezzoTotale, rvProdScontrino, view);
+          prezzoTotale, rvListaSpesa, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

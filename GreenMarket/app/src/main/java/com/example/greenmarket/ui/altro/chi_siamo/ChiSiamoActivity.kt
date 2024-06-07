@@ -6,10 +6,19 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.R
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
-class ChiSiamoActivity : AppCompatActivity() {
+class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private val chiSiamoViewModel: ChiSiamoViewModel by viewModels()
+
+    private lateinit var mapView: MapView
+    private lateinit var googleMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +29,10 @@ class ChiSiamoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }*/
+
+        mapView = findViewById(R.id.mappa)
+        mapView.onCreate(savedInstanceState)
+        mapView.getMapAsync(this)
 
         val titolo: TextView = findViewById(R.id.titolo_txt)
         val testo: TextView = findViewById(R.id.testo_txt)
@@ -55,6 +68,13 @@ class ChiSiamoActivity : AppCompatActivity() {
             chiSiamoViewModel.dom_action()
         }
 
+    }
+
+    override fun onMapReady(p0: GoogleMap) {
+        googleMap = p0
+        val location = LatLng(43.0, 13.0)
+        googleMap.addMarker(MarkerOptions().position(location).title("Ancona"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
     }
 
 }

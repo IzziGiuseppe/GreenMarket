@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
@@ -27,6 +28,9 @@ public final class ActivityStatsBinding implements ViewBinding {
   public final LinearLayout linearLayout9;
 
   @NonNull
+  public final RecyclerView rvProdottiStats;
+
+  @NonNull
   public final TextView statsTxt;
 
   @NonNull
@@ -40,11 +44,12 @@ public final class ActivityStatsBinding implements ViewBinding {
 
   private ActivityStatsBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityStats, @NonNull LinearLayout linearLayout9,
-      @NonNull TextView statsTxt, @NonNull TextView titleProdStats, @NonNull TextView titleQuantita,
-      @NonNull View view) {
+      @NonNull RecyclerView rvProdottiStats, @NonNull TextView statsTxt,
+      @NonNull TextView titleProdStats, @NonNull TextView titleQuantita, @NonNull View view) {
     this.rootView = rootView;
     this.activityStats = activityStats;
     this.linearLayout9 = linearLayout9;
+    this.rvProdottiStats = rvProdottiStats;
     this.statsTxt = statsTxt;
     this.titleProdStats = titleProdStats;
     this.titleQuantita = titleQuantita;
@@ -86,6 +91,12 @@ public final class ActivityStatsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rv_prodotti_stats;
+      RecyclerView rvProdottiStats = ViewBindings.findChildViewById(rootView, id);
+      if (rvProdottiStats == null) {
+        break missingId;
+      }
+
       id = R.id.stats_txt;
       TextView statsTxt = ViewBindings.findChildViewById(rootView, id);
       if (statsTxt == null) {
@@ -111,7 +122,7 @@ public final class ActivityStatsBinding implements ViewBinding {
       }
 
       return new ActivityStatsBinding((ConstraintLayout) rootView, activityStats, linearLayout9,
-          statsTxt, titleProdStats, titleQuantita, view);
+          rvProdottiStats, statsTxt, titleProdStats, titleQuantita, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

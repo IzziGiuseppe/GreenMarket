@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.utils.widget.MockView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -31,7 +30,7 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
   public final Button giuseppeBt;
 
   @NonNull
-  public final MockView mappa;
+  public final View mappa;
 
   @NonNull
   public final TextView testoTxt;
@@ -44,7 +43,7 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
 
   private ActivityChiSiamoBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityCs, @NonNull Button domenicoBt, @NonNull Button giuseppeBt,
-      @NonNull MockView mappa, @NonNull TextView testoTxt, @NonNull TextView titolo2Txt,
+      @NonNull View mappa, @NonNull TextView testoTxt, @NonNull TextView titolo2Txt,
       @NonNull TextView titoloTxt) {
     this.rootView = rootView;
     this.activityCs = activityCs;
@@ -98,7 +97,7 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
       }
 
       id = R.id.mappa;
-      MockView mappa = ViewBindings.findChildViewById(rootView, id);
+      View mappa = ViewBindings.findChildViewById(rootView, id);
       if (mappa == null) {
         break missingId;
       }

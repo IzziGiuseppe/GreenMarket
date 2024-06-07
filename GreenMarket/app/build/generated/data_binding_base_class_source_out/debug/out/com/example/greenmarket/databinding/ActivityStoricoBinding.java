@@ -4,10 +4,10 @@ package com.example.greenmarket.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
@@ -23,13 +23,13 @@ public final class ActivityStoricoBinding implements ViewBinding {
   public final ConstraintLayout activityStorico;
 
   @NonNull
-  public final TextView storicoTxt;
+  public final RecyclerView rvScontrini;
 
   private ActivityStoricoBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout activityStorico, @NonNull TextView storicoTxt) {
+      @NonNull ConstraintLayout activityStorico, @NonNull RecyclerView rvScontrini) {
     this.rootView = rootView;
     this.activityStorico = activityStorico;
-    this.storicoTxt = storicoTxt;
+    this.rvScontrini = rvScontrini;
   }
 
   @Override
@@ -61,13 +61,13 @@ public final class ActivityStoricoBinding implements ViewBinding {
     missingId: {
       ConstraintLayout activityStorico = (ConstraintLayout) rootView;
 
-      id = R.id.storico_txt;
-      TextView storicoTxt = ViewBindings.findChildViewById(rootView, id);
-      if (storicoTxt == null) {
+      id = R.id.rv_scontrini;
+      RecyclerView rvScontrini = ViewBindings.findChildViewById(rootView, id);
+      if (rvScontrini == null) {
         break missingId;
       }
 
-      return new ActivityStoricoBinding((ConstraintLayout) rootView, activityStorico, storicoTxt);
+      return new ActivityStoricoBinding((ConstraintLayout) rootView, activityStorico, rvScontrini);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

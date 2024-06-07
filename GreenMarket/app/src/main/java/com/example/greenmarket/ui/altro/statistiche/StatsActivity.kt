@@ -1,18 +1,27 @@
 package com.example.greenmarket.ui.altro.statistiche
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
+import com.example.greenmarket.ui.altro.storico.StoricoListAdapter
+import com.example.greenmarket.ui.ricerca.RicercaViewModel
+import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 
 class StatsActivity : AppCompatActivity() {
 
     private val statsViewModel: StatsViewModel by viewModels()
+    private val ricercaViewModel: RicercaViewModel by viewModels()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,5 +39,41 @@ class StatsActivity : AppCompatActivity() {
         statsViewModel.text.observe(this) {
             text.text = it
         }
+
+        val adapter = StatsListAdapter() {
+                currentProdotto ->
+            run {
+                Toast.makeText(this, currentProdotto.nome, Toast.LENGTH_SHORT).show()
+                val prodotto = currentProdotto.nome
+                var nome = ""
+                var descrizione = ""
+                var prezzo = 0f
+                var foto = ""
+                ricercaViewModel.readProdottoDettagliato(prodotto)
+                ricercaViewModel.prodotto.observe(this) {
+                    nome = it.nome
+                    descrizione = it.descrizione
+                    prezzo = it.prezzo
+                    foto = it.foto
+                }
+                startProdotto(nome, descrizione, prezzo, foto)
+            }
+        }
+        val recyclerView = findViewById<RecyclerView>(R.id.rv_prodotti_stats)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        statsViewModel.readProdotti()
+        statsViewModel.listaProdStats.observe(this, Observer {
+                prodotto -> adapter.setData(prodotto)
+        })
+    }
+
+    fun startProdotto(nome: String, descrizione: String, prezzo: Float, foto: String) {
+        val intent = Intent(this, DettaglioProdottoActivity::class.java)
+        intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
+        intent.putExtra("descrizione_prodotto", descrizione)
+        intent.putExtra("foto_prodotto", foto)
+        startActivity(intent)
     }
 }

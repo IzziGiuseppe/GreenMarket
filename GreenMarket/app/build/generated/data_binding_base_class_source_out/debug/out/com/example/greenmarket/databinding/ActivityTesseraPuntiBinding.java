@@ -41,10 +41,10 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
   public final TextView punti;
 
   @NonNull
-  public final RecyclerView recyclerView4;
+  public final Button riscatta;
 
   @NonNull
-  public final Button riscatta;
+  public final RecyclerView rvCodiciSconto;
 
   @NonNull
   public final TextView tiPremia;
@@ -64,7 +64,7 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
   private ActivityTesseraPuntiBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityTessPunti, @NonNull TextView codiciSconto,
       @NonNull Button converti, @NonNull TextView haiSpeso, @NonNull ImageButton imageButton,
-      @NonNull TextView punti, @NonNull RecyclerView recyclerView4, @NonNull Button riscatta,
+      @NonNull TextView punti, @NonNull Button riscatta, @NonNull RecyclerView rvCodiciSconto,
       @NonNull TextView tiPremia, @NonNull View view, @NonNull View view2, @NonNull View view3,
       @NonNull View view4) {
     this.rootView = rootView;
@@ -74,8 +74,8 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
     this.haiSpeso = haiSpeso;
     this.imageButton = imageButton;
     this.punti = punti;
-    this.recyclerView4 = recyclerView4;
     this.riscatta = riscatta;
+    this.rvCodiciSconto = rvCodiciSconto;
     this.tiPremia = tiPremia;
     this.view = view;
     this.view2 = view2;
@@ -142,15 +142,15 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.recyclerView4;
-      RecyclerView recyclerView4 = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerView4 == null) {
-        break missingId;
-      }
-
       id = R.id.riscatta;
       Button riscatta = ViewBindings.findChildViewById(rootView, id);
       if (riscatta == null) {
+        break missingId;
+      }
+
+      id = R.id.rv_codici_sconto;
+      RecyclerView rvCodiciSconto = ViewBindings.findChildViewById(rootView, id);
+      if (rvCodiciSconto == null) {
         break missingId;
       }
 
@@ -185,7 +185,7 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
       }
 
       return new ActivityTesseraPuntiBinding((ConstraintLayout) rootView, activityTessPunti,
-          codiciSconto, converti, haiSpeso, imageButton, punti, recyclerView4, riscatta, tiPremia,
+          codiciSconto, converti, haiSpeso, imageButton, punti, riscatta, rvCodiciSconto, tiPremia,
           view, view2, view3, view4);
     }
     String missingId = rootView.getResources().getResourceName(id);

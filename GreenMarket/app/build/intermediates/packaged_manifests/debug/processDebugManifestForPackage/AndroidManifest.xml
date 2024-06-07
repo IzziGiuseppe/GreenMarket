@@ -47,6 +47,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Material3.Light" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB8fsVXP6cHN6qgOPRSY_TXwhkaNCUGBo0" />
+
         <activity
             android:name="com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity"
             android:exported="false"

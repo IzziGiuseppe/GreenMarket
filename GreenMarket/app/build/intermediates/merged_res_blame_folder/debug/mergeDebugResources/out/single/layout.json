@@ -8,8 +8,8 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.example.greenmarket.app-mergeDebugResources-63:/layout/item_stats_view.xml",
-        "source": "com.example.greenmarket.app-main-66:/layout/item_stats_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_lista_spesa_view.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_lista_spesa_view.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_stats.xml",
@@ -28,12 +28,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_ricetta_view.xml"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_codice_sconto_view.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_codice_sconto_view.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_dettaglio_ricetta.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\activity_dettaglio_ricetta.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\fragment_altro.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\fragment_altro.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_storico_view.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_storico_view.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\fragment_ricerca.xml",
@@ -46,10 +54,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_term_cond.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\activity_term_cond.xml"
-    },
-    {
-        "merged": "com.example.greenmarket.app-mergeDebugResources-63:/layout/activity_stats.xml",
-        "source": "com.example.greenmarket.app-main-66:/layout/activity_stats.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_main.xml",
@@ -72,6 +76,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_prod_scontrino.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-63:/layout/activity_tessera_punti.xml",
+        "source": "com.example.greenmarket.app-main-66:/layout/activity_tessera_punti.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\fragment_lista_spesa.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\fragment_lista_spesa.xml"
     },
@@ -82,6 +90,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_prodotto_view.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_prodotto_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_stats_view.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_stats_view.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_dettaglio_prodotto.xml",
