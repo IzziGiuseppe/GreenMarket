@@ -4,6 +4,7 @@ package com.example.greenmarket.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,10 +21,15 @@ public final class ItemAltroViewBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageView iconAltro;
+
+  @NonNull
   public final TextView sezioneAltro;
 
-  private ItemAltroViewBinding(@NonNull ConstraintLayout rootView, @NonNull TextView sezioneAltro) {
+  private ItemAltroViewBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView iconAltro,
+      @NonNull TextView sezioneAltro) {
     this.rootView = rootView;
+    this.iconAltro = iconAltro;
     this.sezioneAltro = sezioneAltro;
   }
 
@@ -54,13 +60,19 @@ public final class ItemAltroViewBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.icon_altro;
+      ImageView iconAltro = ViewBindings.findChildViewById(rootView, id);
+      if (iconAltro == null) {
+        break missingId;
+      }
+
       id = R.id.sezione_altro;
       TextView sezioneAltro = ViewBindings.findChildViewById(rootView, id);
       if (sezioneAltro == null) {
         break missingId;
       }
 
-      return new ItemAltroViewBinding((ConstraintLayout) rootView, sezioneAltro);
+      return new ItemAltroViewBinding((ConstraintLayout) rootView, iconAltro, sezioneAltro);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

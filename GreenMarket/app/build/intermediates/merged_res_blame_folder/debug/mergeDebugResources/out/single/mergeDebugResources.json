@@ -28,6 +28,10 @@
         "source": "com.example.greenmarket.app-main-73:/menu/bottom_nav_menu.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_chi_siamo.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/chi_siamo.png"
+    },
+    {
         "merged": "com.example.greenmarket.app-debug-71:/layout-v26_activity_term_cond.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout-v26/activity_term_cond.xml"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "com.example.greenmarket.app-debug-71:/layout_activity_dettaglio_ricetta.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/activity_dettaglio_ricetta.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_altro.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/altro.png"
     },
     {
         "merged": "com.example.greenmarket.app-debug-71:/mipmap-xxhdpi_ic_user_profile_adaptive_back.png.flat",
@@ -88,6 +96,10 @@
         "source": "com.example.greenmarket.app-main-73:/drawable/ic_launcher_background.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_storico.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/storico.png"
+    },
+    {
         "merged": "com.example.greenmarket.app-debug-71:/layout_item_prodotto_view.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/item_prodotto_view.xml"
     },
@@ -114,6 +126,10 @@
     {
         "merged": "com.example.greenmarket.app-debug-71:/layout_item_lista_spesa_view.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/item_lista_spesa_view.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_ricettario.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/ricettario.png"
     },
     {
         "merged": "com.example.greenmarket.app-debug-71:/mipmap-hdpi_ic_launcher_round.webp.flat",
@@ -164,6 +180,10 @@
         "source": "com.example.greenmarket.app-main-73:/mipmap-mdpi/ic_launcher.png"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_lista_spesa.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/lista_spesa.png"
+    },
+    {
         "merged": "com.example.greenmarket.app-debug-71:/layout_item_altro_view.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/item_altro_view.xml"
     },
@@ -208,6 +228,10 @@
         "source": "com.example.greenmarket.app-main-73:/layout-v26/activity_dettaglio_prodotto.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_term_cond.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/term_cond.png"
+    },
+    {
         "merged": "com.example.greenmarket.app-debug-71:/layout_fragment_ricettario.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/fragment_ricettario.xml"
     },
@@ -224,6 +248,10 @@
         "source": "com.example.greenmarket.app-main-73:/xml/backup_rules.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_invita.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/invita.png"
+    },
+    {
         "merged": "com.example.greenmarket.app-debug-71:/layout_fragment_lista_spesa.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/fragment_lista_spesa.xml"
     },
@@ -238,6 +266,14 @@
     {
         "merged": "com.example.greenmarket.app-debug-71:/drawable_pere.jpg.flat",
         "source": "com.example.greenmarket.app-main-73:/drawable/pere.jpg"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_stats.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/stats.png"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_assistenza.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/assistenza.png"
     },
     {
         "merged": "com.example.greenmarket.app-debug-71:/mipmap-xxhdpi_ic_user_profile.png.flat",
@@ -270,6 +306,10 @@
     {
         "merged": "com.example.greenmarket.app-debug-71:/layout_fragment_altro.xml.flat",
         "source": "com.example.greenmarket.app-main-73:/layout/fragment_altro.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/drawable_donazione.png.flat",
+        "source": "com.example.greenmarket.app-main-73:/drawable/donazione.png"
     },
     {
         "merged": "com.example.greenmarket.app-debug-71:/xml_data_extraction_rules.xml.flat",

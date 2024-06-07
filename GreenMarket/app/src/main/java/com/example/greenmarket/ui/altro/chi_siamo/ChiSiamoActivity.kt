@@ -72,8 +72,8 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(p0: GoogleMap) {
         googleMap = p0
-        val location = LatLng(43.0, 13.0)
-        googleMap.addMarker(MarkerOptions().position(location).title("Ancona"))
+        val location = LatLng(43.5989, 13.5152)
+        googleMap.addMarker(MarkerOptions().position(location).title("UNIVPM"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
     }
 

@@ -13,17 +13,17 @@
 
     <item
         android:id="@+id/navigation_lista_della_spesa"
-        android:icon="@android:drawable/ic_menu_agenda"
+        android:icon="@drawable/lista_spesa"
         android:title="@string/title_lista_spesa" />
 
     <item
         android:id="@+id/navigation_ricettario"
-        android:icon="@android:drawable/ic_menu_edit"
+        android:icon="@drawable/ricettario"
         android:title="@string/title_ricettario" />
 
     <item
         android:id="@+id/navigation_altro"
-        android:icon="@android:drawable/ic_media_pause"
+        android:icon="@drawable/altro"
         android:title="@string/title_altro" />
 
 </menu>
