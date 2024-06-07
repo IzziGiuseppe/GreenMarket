@@ -54,10 +54,10 @@ class StatsActivity : AppCompatActivity() {
                 var foto = ""
                 ricercaViewModel.readProdottoDettagliato(prodotto)
                 ricercaViewModel.prodotto.observe(this) {
-                    nome = it.nome
-                    descrizione = it.descrizione
-                    prezzo = it.prezzo
-                    foto = it.foto
+                    nome = it.nome.toString()
+                    descrizione = it.descrizione.toString()
+                    prezzo = it.prezzo!!
+                    foto = it.foto.toString()
                 }
                 startProdotto(nome, descrizione, prezzo, foto)
             }

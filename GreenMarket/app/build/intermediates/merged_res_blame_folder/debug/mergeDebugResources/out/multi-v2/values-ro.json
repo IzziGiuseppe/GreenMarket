@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.greenmarket.app-mergeDebugResources-62:/values-ro/values-ro.xml",
+            "outputFile": "com.example.greenmarket.app-mergeDebugResources-69:/values-ro/values-ro.xml",
             "map": [
                 {
                     "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\4337a71c13d8369939e0ea5dbe7b6800\\transformed\\appcompat-1.6.1\\res\\values-ro\\values-ro.xml",

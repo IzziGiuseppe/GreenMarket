@@ -16,8 +16,8 @@
         "source": "com.example.greenmarket.app-main-73:/layout/fragment_altro.xml"
     },
     {
-        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_prod_scontrino.xml",
-        "source": "com.example.greenmarket.app-main-73:/layout/item_prod_scontrino.xml"
+        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_storico_view.xml",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_storico_view.xml"
     },
     {
         "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/activity_dettaglio_ricetta.xml",
@@ -86,6 +86,14 @@
     {
         "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/activity_main.xml",
         "source": "com.example.greenmarket.app-main-73:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_codice_sconto_view.xml",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_codice_sconto_view.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_lista_spesa_view.xml",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_lista_spesa_view.xml"
     },
     {
         "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_image.xml",
