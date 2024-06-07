@@ -19,16 +19,16 @@ class StoricoViewModel(application: Application): AndroidViewModel(application) 
 
     fun readScontrini() {
         val x = arrayOf(
-            Scontrino(1, "05/06/2024", "Utente", "", true),
-            Scontrino(2, "06/06/2024", "Utente", "", true),
-            Scontrino(3, "07/06/2024", "Utente", "", true),
+            Scontrino(1, "05/06/2024", "Utente", "qwerty", true),
+            Scontrino(2, "06/06/2024", "Utente", "zxcvbn", true),
+            Scontrino(3, "07/06/2024", "Utente", "asdfgh", true),
             Scontrino(4, "08/06/2024", "Utente", "", true),
             Scontrino(5, "09/06/2024", "Utente", "", true),
             Scontrino(6, "10/06/2024", "Utente", "", true),
             Scontrino(7, "11/06/2024", "Utente", "", true),
             Scontrino(8, "12/06/2024", "Utente", "", true),
             Scontrino(9, "13/06/2024", "Utente", "", true),
-            Scontrino(10, "14/06/2024", "Utente", "", true),
+            Scontrino(10, "14/06/2024", "Utente", "poiuyt", true),
             Scontrino(11, "15/06/2024", "Utente", "", true),
             Scontrino(12, "16/06/2024", "Utente", "", true),
             Scontrino(13, "17/06/2024", "Utente", "", true),
@@ -38,11 +38,11 @@ class StoricoViewModel(application: Application): AndroidViewModel(application) 
             Scontrino(17, "21/06/2024", "Utente", "", true),
             Scontrino(18, "22/06/2024", "Utente", "", true),
             Scontrino(19, "23/06/2024", "Utente", "", true),
-            Scontrino(20, "24/06/2024", "Utente", "", true),
+            Scontrino(20, "24/06/2024", "Utente", "lkjhgf", true),
             Scontrino(21, "25/06/2024", "Utente", "", true),
             Scontrino(22, "26/06/2024", "Utente", "", true),
             Scontrino(23, "27/06/2024", "Utente", "", true),
-            Scontrino(24, "28/06/2024", "Utente", "", true)
+            Scontrino(24, "28/06/2024", "Utente", "mnbvcx", true)
         )
         _listaScontrini.value = x
     }

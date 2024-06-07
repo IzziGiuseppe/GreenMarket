@@ -47,6 +47,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Material3.Light" >
+        <activity
+            android:name="com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity"
+            android:exported="false"
+            android:label="Dettaglio scontrino"
+            android:parentActivityName="com.example.greenmarket.ui.altro.storico.StoricoActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB8fsVXP6cHN6qgOPRSY_TXwhkaNCUGBo0" />

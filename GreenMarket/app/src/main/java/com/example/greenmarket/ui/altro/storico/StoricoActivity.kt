@@ -1,6 +1,7 @@
 package com.example.greenmarket.ui.altro.storico
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.TextView
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
+import com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity
 
 class StoricoActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -35,7 +37,11 @@ class StoricoActivity : AppCompatActivity() {
         val adapter = StoricoListAdapter() {
             currentScontrino ->
             run {
-                Toast.makeText(this, currentScontrino.data, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, currentScontrino.data, Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, DettaglioScontriniActivity::class.java)
+                intent.putExtra("data_scontrino", currentScontrino.data)
+                intent.putExtra("codice_sconto", currentScontrino.codice_sconto)
+                startActivity(intent)
             }
         }
         val recyclerView = findViewById<RecyclerView>(R.id.rv_scontrini)

@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
 import com.example.greenmarket.db.model.ComposizioneScontrini
-import com.example.greenmarket.db.model.Prodotto
 
 class ListaSpesaListAdapter(
     private val itemClickListener: (ComposizioneScontrini) -> Unit
@@ -20,6 +19,7 @@ class ListaSpesaListAdapter(
         val textView = itemView.findViewById<TextView>(R.id.nome_prod_lista_spesa_item)
         val textView2 = itemView.findViewById<TextView>(R.id.quantita_prod_lista_spesa)
     }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -42,7 +42,7 @@ class ListaSpesaListAdapter(
     @SuppressLint("NotifyDataSetChanged")
     fun setData(prodListaSpesa: Array<ComposizioneScontrini>) {
         this.prodListaSpesaList = prodListaSpesa
-        notifyDataSetChanged()
+        //notifyDataSetChanged()
     }
 
 

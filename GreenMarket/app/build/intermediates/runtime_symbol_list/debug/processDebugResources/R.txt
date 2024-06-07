@@ -3391,6 +3391,7 @@ int id clip_vertical 0x7f080091
 int id clockwise 0x7f080092
 int id closest 0x7f080093
 int id codice_sconto 0x7f080094
+int id codice_sconto_dett_scontr 0x7f0802a4
 int id codici_sconto 0x7f080095
 int id collapseActionView 0x7f080096
 int id compress 0x7f080097
@@ -3414,6 +3415,7 @@ int id customPanel 0x7f0800a8
 int id cut 0x7f0800a9
 int id dark 0x7f0800aa
 int id dataBinding 0x7f0800ab
+int id data_dettaglio_scontrino 0x7f0802a5
 int id data_item 0x7f0800ac
 int id date_picker_actions 0x7f0800ad
 int id decelerate 0x7f0800ae
@@ -3424,6 +3426,7 @@ int id delete_all 0x7f0800b2
 int id delete_prod_bt 0x7f0800b3
 int id deltaRelative 0x7f0800b4
 int id dependency_ordering 0x7f0800b5
+int id descrizione 0x7f0802a6
 int id descrizione_prodotto 0x7f0800b6
 int id descrizione_ricetta 0x7f0800b7
 int id design_bottom_sheet 0x7f0800b8
@@ -3553,6 +3556,8 @@ int id line1 0x7f080133
 int id line3 0x7f080134
 int id linear 0x7f080135
 int id linearLayout 0x7f080136
+int id linearLayout10 0x7f0802a7
+int id linearLayout11 0x7f0802a8
 int id linearLayout2 0x7f080137
 int id linearLayout3 0x7f080138
 int id linearLayout4 0x7f080139
@@ -3565,8 +3570,10 @@ int id listMode 0x7f08013f
 int id list_item 0x7f080140
 int id locale 0x7f080141
 int id logo 0x7f080142
+int id logo_dettaglio_scontrini 0x7f0802a9
 int id ltr 0x7f080143
 int id m3_side_sheet 0x7f080144
+int id main 0x7f0802aa
 int id mappa 0x7f080145
 int id marquee 0x7f080146
 int id masked 0x7f080147
@@ -3651,6 +3658,7 @@ int id neverCompleteToStart 0x7f080195
 int id noScroll 0x7f080196
 int id noState 0x7f080197
 int id nome_prezzo_prodotto 0x7f080198
+int id nome_prod_dett_scontr_item 0x7f0802ab
 int id nome_prod_lista_spesa_item 0x7f080199
 int id nome_prodotto_item 0x7f08019a
 int id nome_prodotto_stats_item 0x7f08019b
@@ -3698,6 +3706,8 @@ int id pin 0x7f0801c4
 int id position 0x7f0801c5
 int id postLayout 0x7f0801c6
 int id pressed 0x7f0801c7
+int id prezzo 0x7f0802ac
+int id prezzo_dett_scontrino 0x7f0802ad
 int id prezzo_item 0x7f0801c8
 int id prezzo_totale 0x7f0801c9
 int id prezzo_totale_no_sconto 0x7f0801ca
@@ -3706,6 +3716,7 @@ int id progress_circular 0x7f0801cc
 int id progress_horizontal 0x7f0801cd
 int id punti 0x7f0801ce
 int id quantita_prod 0x7f0801cf
+int id quantita_prod_dett_scontrino 0x7f0802ae
 int id quantita_prod_lista_spesa 0x7f0801d0
 int id quantita_prodotto_stats 0x7f0801d1
 int id radio 0x7f0801d2
@@ -3729,6 +3740,7 @@ int id rv 0x7f0801e3
 int id rvRicercaProd 0x7f0801e4
 int id rv_altro 0x7f0801e5
 int id rv_codici_sconto 0x7f0801e6
+int id rv_dettaglio_scontrini 0x7f0802af
 int id rv_lista_spesa 0x7f0801e7
 int id rv_prodotti_stats 0x7f0801e8
 int id rv_scontrini 0x7f0801e9
@@ -3863,6 +3875,7 @@ int id title 0x7f080269
 int id titleDividerNoCustom 0x7f08026a
 int id title_codice_sconto 0x7f08026b
 int id title_conferma_ordine 0x7f08026c
+int id title_dettaglio_scontrino 0x7f0802b0
 int id title_home 0x7f08026d
 int id title_indirizzo 0x7f08026e
 int id title_prezzo_scontato 0x7f08026f
@@ -3894,6 +3907,7 @@ int id uniform 0x7f080288
 int id unlabeled 0x7f080289
 int id up 0x7f08028a
 int id useLogo 0x7f08028b
+int id valore_codice_sconto 0x7f0802b1
 int id valore_sconto 0x7f08028c
 int id vertical_only 0x7f08028d
 int id view 0x7f08028e
@@ -4038,6 +4052,7 @@ int layout activity_chi_siamo 0x7f0b001c
 int layout activity_conferma_ordine 0x7f0b001d
 int layout activity_dettaglio_prodotto 0x7f0b001e
 int layout activity_dettaglio_ricetta 0x7f0b001f
+int layout activity_dettaglio_scontrini 0x7f0b0091
 int layout activity_login 0x7f0b0020
 int layout activity_main 0x7f0b0021
 int layout activity_profilo_utente 0x7f0b0022
@@ -4074,6 +4089,7 @@ int layout ime_base_split_test_activity 0x7f0b0040
 int layout ime_secondary_split_test_activity 0x7f0b0041
 int layout item_altro_view 0x7f0b0042
 int layout item_codice_sconto_view 0x7f0b0043
+int layout item_dettaglio_scontrino_view 0x7f0b0092
 int layout item_image 0x7f0b0044
 int layout item_lista_spesa_view 0x7f0b0045
 int layout item_prodotto_view 0x7f0b0046
