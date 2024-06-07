@@ -27,11 +27,11 @@ class ListaSpesaListAdapter(
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_lista_spesa_view, parent, false))
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "DefaultLocale")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodListaSpesaList[position]
         holder.textView.text = currentProdotto.prodotto
-        holder.textView2.text = "Quantità: "+ currentProdotto.quantita
+        holder.textView2.text = "Quantità: "+ String.format("%.0f", currentProdotto.quantita).removeSuffix(".0")
         holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }
     }
 

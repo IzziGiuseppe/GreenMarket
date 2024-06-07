@@ -24,12 +24,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\activity_chi_siamo.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_ricetta_view.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_ricetta_view.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_codice_sconto_view.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_codice_sconto_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\item_ricetta_view.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_ricetta_view.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_dettaglio_ricetta.xml",
@@ -76,12 +76,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\item_prod_scontrino.xml"
     },
     {
-        "merged": "com.example.greenmarket.app-mergeDebugResources-63:/layout/activity_tessera_punti.xml",
-        "source": "com.example.greenmarket.app-main-66:/layout/activity_tessera_punti.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\fragment_lista_spesa.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-66:\\layout\\fragment_lista_spesa.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-63:/layout/fragment_lista_spesa.xml",
+        "source": "com.example.greenmarket.app-main-66:/layout/fragment_lista_spesa.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-63:\\layout\\activity_tessera_punti.xml",

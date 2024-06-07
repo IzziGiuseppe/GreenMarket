@@ -1,15 +1,18 @@
 package com.example.greenmarket.ui.altro.storico
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
@@ -38,6 +41,11 @@ class StoricoActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.rv_scontrini)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        val dividerDrawable = ColorDrawable(ContextCompat.getColor(this, R.color.black))
+        dividerItemDecoration.setDrawable(dividerDrawable)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
         storicoViewModel.readScontrini()
         storicoViewModel.listaScontrini.observe(this, Observer {

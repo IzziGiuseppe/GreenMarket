@@ -2,15 +2,19 @@ package com.example.greenmarket.ui.altro
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
@@ -37,7 +41,7 @@ class AltroFragment : Fragment() {
         _binding = FragmentAltroBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        altroViewModel.menuItems.observe(viewLifecycleOwner) { it ->
+        altroViewModel.menuItems.observe(viewLifecycleOwner) {
             //recycler
             val adapter = AltroListAdapter(it) {
                 position -> sceltaListener(position)
@@ -45,6 +49,11 @@ class AltroFragment : Fragment() {
             val recyclerView = binding.rvAltro
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+            val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+            val dividerDrawable = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black))
+            dividerItemDecoration.setDrawable(dividerDrawable)
+            recyclerView.addItemDecoration(dividerItemDecoration)
         }
 
         return root
