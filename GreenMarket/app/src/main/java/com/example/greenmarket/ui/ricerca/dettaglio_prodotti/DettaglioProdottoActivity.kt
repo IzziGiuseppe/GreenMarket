@@ -30,6 +30,9 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val nome: TextView = findViewById(R.id.nome_prezzo_prodotto)
         val descrizione: TextView = findViewById(R.id.descrizione_prodotto)
         val foto: ImageView = findViewById(R.id.foto_prodotto)
+        val add: ImageView = findViewById(R.id.imageViewAdd)
+        val remove: ImageView = findViewById(R.id.imageViewRemove)
+        val quantita: TextView = findViewById(R.id.textViewQuantita)
 
         val nomeProdotto = intent.getStringExtra("nome_prezzo_prodotto")
         val descrizioneProdotto = intent.getStringExtra("descrizione_prodotto")
@@ -56,6 +59,17 @@ class DettaglioProdottoActivity : AppCompatActivity() {
             Glide.with(this)
                 .load(fotoProdotto)
                 .into(foto)
+        }
+
+        add.setOnClickListener{
+            dettaglioProdottiViewModel.incrementaQuantita()
+        }
+        remove.setOnClickListener{
+            dettaglioProdottiViewModel.decrementaQuantita()
+        }
+
+        dettaglioProdottiViewModel.quantita_prodotto.observe(this) {
+            quantita.text = it.toString()
         }
     }
 }

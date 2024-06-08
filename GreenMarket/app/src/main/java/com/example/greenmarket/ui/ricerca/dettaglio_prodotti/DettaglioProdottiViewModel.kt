@@ -1,6 +1,7 @@
 package com.example.greenmarket.ui.ricerca.dettaglio_prodotti
 
 import android.app.Application
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -32,6 +33,11 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
     }
     val uM_prodotto: LiveData<String> = _uM_prodotto
 
+    private var _quantita_prodotto = MutableLiveData<Int>().apply {
+        value = 1
+    }
+    val quantita_prodotto: LiveData<Int> = _quantita_prodotto
+
     fun setNome(nome: String) {
         _nome_prodotto.value = nome
     }
@@ -50,6 +56,24 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
 
     fun setUM(uM: String) {
         _uM_prodotto.value = uM
+    }
+
+    fun incrementaQuantita() {
+        if(quantita_prodotto.value!! < 100){
+            _quantita_prodotto.value = _quantita_prodotto.value?.plus(1)
+        }else{
+            Toast.makeText(getApplication(), "La quantità non può superare 100 kg", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    fun decrementaQuantita() {
+        if(quantita_prodotto.value!! > 0){
+            _quantita_prodotto.value = _quantita_prodotto.value?.minus(1)
+        }else{
+            Toast.makeText(getApplication(), "La quantità non può essere negativa", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 }

@@ -41,6 +41,7 @@ id activity_tess_punti
 id aperto_chiuso
 id benvenuto
 id buttonAccediLogin
+id buttonAddList
 id buttonCancel
 id buttonRegister
 id buttonResetPass
@@ -84,7 +85,9 @@ id iconaProfiloUtente
 id imageButton
 id imageStatsProd
 id imageView
+id imageViewAdd
 id imageViewProfile
+id imageViewRemove
 id image_description
 id linearLayout
 id linearLayout10
@@ -164,6 +167,7 @@ id textViewModProfileImage
 id textViewNome
 id textViewPassDimenticata
 id textViewPassword
+id textViewQuantita
 id textViewRecPass
 id textViewRegister
 id textViewRegistratiLogin
@@ -220,6 +224,12 @@ layout item_stats_view
 layout item_storico_view
 layout item_tc_view
 menu bottom_nav_menu
+mipmap ic_add
+mipmap ic_add_adaptive_back
+mipmap ic_add_adaptive_fore
+mipmap ic_diff
+mipmap ic_diff_adaptive_back
+mipmap ic_diff_adaptive_fore
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
