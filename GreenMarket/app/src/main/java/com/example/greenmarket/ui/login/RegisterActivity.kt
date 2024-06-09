@@ -8,6 +8,7 @@ import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.databinding.ActivityRegistrazioneBinding
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
+import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -32,7 +33,7 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.editTextEmail.text.toString().trim()
             val password = binding.editTextPassword.text.toString().trim()
             val confirmPassword = binding.editTextConfirmPassword.text.toString().trim()
-            val photo = "https://imgur.com/a/AJkXyR3"
+            val photo = "https://firebasestorage.googleapis.com/v0/b/greenmarket-1f99c.appspot.com/o/immagine_profilo_default.jpg?alt=media&token=785fd544-696d-4d81-a51b-57fbd52f05ab"
 
             if(name.isNotEmpty() && surname.isNotEmpty() && address.isNotEmpty() && (isValidEmail(email)) && password.isNotEmpty()
                 && confirmPassword.isNotEmpty()){
@@ -50,17 +51,33 @@ class RegisterActivity : AppCompatActivity() {
                                         "indirizzo" to address,
                                         "foto" to photo
                                     )
+
+                                    val prodotti: Map<String?, Float?> = emptyMap()
+                                    //Creazione lista della spesa associata all'utente
+                                    val listaSpesa = hashMapOf(
+                                        "data" to null,
+                                        "valido" to false,
+                                        "prodotti" to prodotti
+                                    )
+
                                     db.collection("users").document(userID).set(userMap)
                                         .addOnSuccessListener{
-                                            Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
-                                            binding.editTextNome.text.clear()
-                                            binding.editTextCognome.text.clear()
-                                            binding.editTextIndirizzo.text.clear()
-                                            binding.editTextEmail.text.clear()
-                                            binding.editTextPassword.text.clear()
-                                            binding.editTextConfirmPassword.text.clear()
-                                            val intent = Intent(this, LoginActivity::class.java)
-                                            startActivity(intent)
+                                            db.collection("users").document(userID).collection("historical").document("shoppingList").set(listaSpesa)
+                                                .addOnSuccessListener{
+                                                    Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
+                                                    binding.editTextNome.text.clear()
+                                                    binding.editTextCognome.text.clear()
+                                                    binding.editTextIndirizzo.text.clear()
+                                                    binding.editTextEmail.text.clear()
+                                                    binding.editTextPassword.text.clear()
+                                                    binding.editTextConfirmPassword.text.clear()
+                                                    val intent = Intent(this, LoginActivity::class.java)
+                                                    startActivity(intent)
+                                                }
+                                                .addOnFailureListener{
+                                                    Toast.makeText(this, "Errore durante la creazione della lista della spesa", Toast.LENGTH_SHORT).show()
+                                                }
+
                                         }
                                         .addOnFailureListener{
                                             Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()

@@ -1,10 +1,13 @@
 package com.example.greenmarket.ui.ricerca.dettaglio_prodotti
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +15,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.greenmarket.R
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaFragment
 
 class DettaglioProdottoActivity : AppCompatActivity() {
 
@@ -33,6 +37,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val add: ImageView = findViewById(R.id.imageViewAdd)
         val remove: ImageView = findViewById(R.id.imageViewRemove)
         val quantita: TextView = findViewById(R.id.textViewQuantita)
+        val addList: Button = findViewById(R.id.buttonAddList)
 
         val nomeProdotto = intent.getStringExtra("nome_prezzo_prodotto")
         val descrizioneProdotto = intent.getStringExtra("descrizione_prodotto")
@@ -71,5 +76,10 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         dettaglioProdottiViewModel.quantita_prodotto.observe(this) {
             quantita.text = it.toString()
         }
+
+        addList.setOnClickListener{
+            dettaglioProdottiViewModel.inserimentoProdottoInListaSpesa()
+        }
+
     }
 }

@@ -93,7 +93,10 @@ class RicercaFragment : Fragment() {
 
     fun startProdotto(nome: String, descrizione: String, prezzo: Float, foto: String) {
         val intent = Intent(requireContext(), DettaglioProdottoActivity::class.java)
+        /*MOMENTANEAMENTE COMMENTATO
         intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
+         */
+        intent.putExtra("nome_prezzo_prodotto", nome)
         intent.putExtra("descrizione_prodotto", descrizione)
         intent.putExtra("foto_prodotto", foto)
         startActivity(intent)

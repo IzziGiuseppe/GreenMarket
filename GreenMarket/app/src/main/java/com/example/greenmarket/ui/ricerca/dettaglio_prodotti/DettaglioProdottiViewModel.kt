@@ -5,8 +5,19 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.greenmarket.ui.lista_spesa.ListaDellaSpesaModel
+import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 
 class DettaglioProdottiViewModel(application: Application): AndroidViewModel(application) {
+
+    //Inizializzo il db
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+    //Inizializzo l'utente
+    private val currentUser = FirebaseAuth.getInstance().currentUser
 
     private var _nome_prodotto = MutableLiveData<String>().apply {
         value = "Nome prodotto"
@@ -33,10 +44,10 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
     }
     val uM_prodotto: LiveData<String> = _uM_prodotto
 
-    private var _quantita_prodotto = MutableLiveData<Int>().apply {
-        value = 1
+    private var _quantita_prodotto = MutableLiveData<Float>().apply {
+        value = 0.5f
     }
-    val quantita_prodotto: LiveData<Int> = _quantita_prodotto
+    val quantita_prodotto: LiveData<Float> = _quantita_prodotto
 
     fun setNome(nome: String) {
         _nome_prodotto.value = nome
@@ -60,20 +71,38 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
 
     fun incrementaQuantita() {
         if(quantita_prodotto.value!! < 100){
-            _quantita_prodotto.value = _quantita_prodotto.value?.plus(1)
+            _quantita_prodotto.value = _quantita_prodotto.value?.plus(0.5f)
         }else{
-            Toast.makeText(getApplication(), "La quantità non può superare 100 kg", Toast.LENGTH_SHORT).show()
+            Toast.makeText(getApplication(), "La quantità non può superare 100.0 kg", Toast.LENGTH_SHORT).show()
         }
 
     }
 
     fun decrementaQuantita() {
         if(quantita_prodotto.value!! > 0){
-            _quantita_prodotto.value = _quantita_prodotto.value?.minus(1)
+            _quantita_prodotto.value = _quantita_prodotto.value?.minus(0.5f)
         }else{
             Toast.makeText(getApplication(), "La quantità non può essere negativa", Toast.LENGTH_SHORT).show()
         }
 
+    }
+
+    fun inserimentoProdottoInListaSpesa() {
+
+        val updates = mapOf(
+            "prodotti.${nome_prodotto.value}" to quantita_prodotto.value
+        )
+
+        currentUser?.let {
+            db.collection("users").document(it.uid).collection("historical").document("shoppingList").update(updates)
+                .addOnSuccessListener {
+                    Toast.makeText(getApplication(), "Prodotto aggiunto alla Lista della spesa", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener{
+                    Toast.makeText(getApplication(), "Errore: Prodotto non aggiunto alla Lista della spesa", Toast.LENGTH_SHORT).show()
+                }
+
+        }
     }
 
 }

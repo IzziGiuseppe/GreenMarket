@@ -28,13 +28,8 @@ class ListaSpesaFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val listaSpesaViewModel =
-            ViewModelProvider(this).get(ListaSpesaViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val listaSpesaViewModel = ViewModelProvider(this).get(ListaSpesaViewModel::class.java)
 
         _binding = FragmentListaSpesaBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -72,6 +67,7 @@ class ListaSpesaFragment : Fragment() {
             val intent = Intent(requireContext(), ConfermaOrdineActivity::class.java)
             startActivity(intent)
         }
+
         return root
     }
 
