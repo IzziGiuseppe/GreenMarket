@@ -3092,6 +3092,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable altro
+drawable angoli_arrotondati_item
 drawable assistenza
 drawable avd_hide_password
 drawable avd_show_password
@@ -3517,6 +3518,8 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id github_domenico
+id github_giuseppe
 id giuseppe_bt
 id glide_custom_view_target_tag
 id gone
@@ -3544,6 +3547,7 @@ id ignore
 id ignoreRequest
 id image
 id imageButton
+id imageSplash
 id imageStatsProd
 id imageView
 id imageViewAdd
@@ -3575,6 +3579,7 @@ id linear
 id linearLayout
 id linearLayout10
 id linearLayout11
+id linearLayout12
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -3583,6 +3588,8 @@ id linearLayout6
 id linearLayout7
 id linearLayout8
 id linearLayout9
+id linkedin_domenico
+id linkedin_giuseppe
 id listMode
 id list_item
 id locale
@@ -3706,6 +3713,8 @@ id open_search_view_toolbar
 id open_search_view_toolbar_container
 id orario_chiusura
 id outline
+id outlook_domenico
+id outlook_giuseppe
 id outward
 id overshoot
 id packed
@@ -3729,6 +3738,7 @@ id prezzo_item
 id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto
+id progressBar_login
 id progress_circular
 id progress_horizontal
 id punti
@@ -4076,6 +4086,7 @@ layout activity_main
 layout activity_profilo_utente
 layout activity_registrazione
 layout activity_reset_password
+layout activity_splash
 layout activity_stats
 layout activity_storico
 layout activity_term_cond

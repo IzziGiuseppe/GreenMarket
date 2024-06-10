@@ -32,10 +32,10 @@ class TesseraPuntiActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        /*val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         val dividerDrawable = ColorDrawable(ContextCompat.getColor(this, R.color.black))
         dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)
+        recyclerView.addItemDecoration(dividerItemDecoration)*/
 
         tesseraPuntiViewModel.readCodiciSconto()
         tesseraPuntiViewModel.listaCodiciSconto.observe(this, Observer {

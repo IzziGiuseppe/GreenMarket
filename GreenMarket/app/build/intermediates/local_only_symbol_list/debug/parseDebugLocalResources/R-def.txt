@@ -10,6 +10,7 @@ color white
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 drawable altro
+drawable angoli_arrotondati_item
 drawable assistenza
 drawable banane
 drawable chi_siamo
@@ -88,11 +89,14 @@ id edit_codice_sconto
 id edit_indirizzo
 id foto_prodotto
 id foto_ricetta
+id github_domenico
+id github_giuseppe
 id giuseppe_bt
 id hai_speso
 id icon_altro
 id iconaProfiloUtente
 id imageButton
+id imageSplash
 id imageStatsProd
 id imageView
 id imageViewAdd
@@ -105,6 +109,7 @@ id image_description
 id linearLayout
 id linearLayout10
 id linearLayout11
+id linearLayout12
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -113,6 +118,8 @@ id linearLayout6
 id linearLayout7
 id linearLayout8
 id linearLayout9
+id linkedin_domenico
+id linkedin_giuseppe
 id logo
 id logo_dettaglio_scontrini
 id main
@@ -133,12 +140,15 @@ id nome_prodotto_stats_item
 id nome_ricetta
 id num_prodotti
 id orario_chiusura
+id outlook_domenico
+id outlook_giuseppe
 id prezzo
 id prezzo_dett_scontrino
 id prezzo_item
 id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto
+id progressBar_login
 id punti
 id quantita_prod_dett_scontrino
 id quantita_prod_lista_spesa
@@ -217,6 +227,7 @@ layout activity_main
 layout activity_profilo_utente
 layout activity_registrazione
 layout activity_reset_password
+layout activity_splash
 layout activity_stats
 layout activity_storico
 layout activity_term_cond

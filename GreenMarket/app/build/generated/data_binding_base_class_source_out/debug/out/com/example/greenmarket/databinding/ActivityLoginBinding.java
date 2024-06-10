@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,6 +49,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final LinearLayout linearLayout3;
 
   @NonNull
+  public final ProgressBar progressBarLogin;
+
+  @NonNull
   public final TextView textViewEmailLogin;
 
   @NonNull
@@ -60,8 +64,8 @@ public final class ActivityLoginBinding implements ViewBinding {
       @NonNull TextView accedi, @NonNull TextView benvenuto, @NonNull Button buttonAccediLogin,
       @NonNull EditText editTextEmailLogin, @NonNull EditText editTextPasswordLogin,
       @NonNull ImageView imageView, @NonNull LinearLayout linearLayout3,
-      @NonNull TextView textViewEmailLogin, @NonNull TextView textViewPassDimenticata,
-      @NonNull TextView textViewRegistratiLogin) {
+      @NonNull ProgressBar progressBarLogin, @NonNull TextView textViewEmailLogin,
+      @NonNull TextView textViewPassDimenticata, @NonNull TextView textViewRegistratiLogin) {
     this.rootView = rootView;
     this.PasswordLogin = PasswordLogin;
     this.accedi = accedi;
@@ -71,6 +75,7 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.editTextPasswordLogin = editTextPasswordLogin;
     this.imageView = imageView;
     this.linearLayout3 = linearLayout3;
+    this.progressBarLogin = progressBarLogin;
     this.textViewEmailLogin = textViewEmailLogin;
     this.textViewPassDimenticata = textViewPassDimenticata;
     this.textViewRegistratiLogin = textViewRegistratiLogin;
@@ -151,6 +156,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar_login;
+      ProgressBar progressBarLogin = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarLogin == null) {
+        break missingId;
+      }
+
       id = R.id.textViewEmailLogin;
       TextView textViewEmailLogin = ViewBindings.findChildViewById(rootView, id);
       if (textViewEmailLogin == null) {
@@ -171,7 +182,7 @@ public final class ActivityLoginBinding implements ViewBinding {
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, PasswordLogin, accedi, benvenuto,
           buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, imageView, linearLayout3,
-          textViewEmailLogin, textViewPassDimenticata, textViewRegistratiLogin);
+          progressBarLogin, textViewEmailLogin, textViewPassDimenticata, textViewRegistratiLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,18 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
+import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.greenmarket.MainActivity
-import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -34,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseAuth.setLanguageCode(Locale.getDefault().language)
 
+        val progressBar = binding.progressBarLogin
+
         binding.textViewRegistratiLogin.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
@@ -50,6 +47,10 @@ class LoginActivity : AppCompatActivity() {
 
             if(email.isNotEmpty() && pass.isNotEmpty()){
                 if (isInternetAvailable(this)) {
+
+                    binding.buttonAccediLogin.visibility = View.GONE
+                    progressBar.visibility = View.VISIBLE
+
                     val handler = Handler(Looper.getMainLooper())
                     val timeoutRunnable = Runnable {
                         // Se il timeout viene raggiunto, mostra il messaggio di errore
@@ -63,9 +64,12 @@ class LoginActivity : AppCompatActivity() {
                             handler.removeCallbacks(timeoutRunnable)
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
+                            finish()
                         }
                         .addOnFailureListener{
                             handler.removeCallbacks(timeoutRunnable)
+                            binding.buttonAccediLogin.visibility = View.VISIBLE
+                            binding.progressBarLogin.visibility = View.GONE
                             //Toast.makeText(this, "Errore nell'inserimento di email/password", Toast.LENGTH_SHORT).show()
                             when (it) {
                                 is FirebaseAuthInvalidCredentialsException -> {

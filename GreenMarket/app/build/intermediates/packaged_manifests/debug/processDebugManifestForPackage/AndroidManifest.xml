@@ -98,9 +98,10 @@
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name="com.example.greenmarket.ui.login.LoginActivity"
+            android:name="com.example.greenmarket.SplashActivity"
             android:exported="true"
             android:label="GreenMarket"
+            android:noHistory="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -108,6 +109,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.greenmarket.ui.login.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name="com.example.greenmarket.ui.login.RegisterActivity"
             android:exported="false"

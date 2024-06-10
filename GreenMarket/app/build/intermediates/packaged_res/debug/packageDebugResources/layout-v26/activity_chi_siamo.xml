@@ -85,6 +85,110 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mappa" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_image_giuseppe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titolo_soci">
+
+                <ImageView
+                    android:id="@+id/imageViewGiuseppe"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/giuseppe" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/linkedin_giuseppe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Linkedin" />
+
+            <Button
+                android:id="@+id/github_giuseppe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GitHub" />
+
+            <Button
+                android:id="@+id/outlook_giuseppe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Outlook" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_image_domenico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titolo_soci">
+
+                <ImageView
+                    android:id="@+id/imageViewDomenico"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/domenico"
+                    app:layout_constraintVertical_chainStyle="spread" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/linkedin_domenico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Linkedin" />
+
+            <Button
+                android:id="@+id/github_domenico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GitHub" />
+
+            <Button
+                android:id="@+id/outlook_domenico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Outlook" />
+        </LinearLayout>
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/card_image_peppe"
         android:layout_width="wrap_content"
@@ -108,6 +212,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -116,47 +221,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_image_peppe">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_image_giuseppe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titolo_soci">
 
-            <ImageView
-                android:id="@+id/imageViewGiuseppe"
-                android:src="@drawable/giuseppe"
-                android:layout_width="150dp"
-                android:layout_height="150dp" />
 
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_image_domenico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:padding="4dp"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titolo_soci">
-
-            <ImageView
-                android:id="@+id/imageViewDomenico"
-                android:src="@drawable/domenico"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:layout_constraintVertical_chainStyle="spread" />
-
-        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

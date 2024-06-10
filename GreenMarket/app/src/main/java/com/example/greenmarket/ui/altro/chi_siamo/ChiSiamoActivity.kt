@@ -1,8 +1,13 @@
 package com.example.greenmarket.ui.altro.chi_siamo
 
+import android.annotation.SuppressLint
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.R
@@ -20,6 +25,7 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mapView: MapView
     private lateinit var googleMap: GoogleMap
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
@@ -37,8 +43,12 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
         val titolo: TextView = findViewById(R.id.titolo_txt)
         val testo: TextView = findViewById(R.id.testo_txt)
         val titolo2: TextView = findViewById(R.id.titolo2_txt)
-        //val giusBt: Button = findViewById(R.id.giuseppe_bt)
-        //val domBt: Button = findViewById(R.id.domenico_bt)
+        val giusBtLinkedin: Button = findViewById(R.id.linkedin_giuseppe)
+        val domBtLinkedin: Button = findViewById(R.id.linkedin_domenico)
+        val giusBtGitHub: Button = findViewById(R.id.github_giuseppe)
+        val domBtGitHub: Button = findViewById(R.id.github_domenico)
+        val giusBtOutlook: Button = findViewById(R.id.outlook_giuseppe)
+        val domBtOutlook: Button = findViewById(R.id.outlook_domenico)
 
         chiSiamoViewModel.storia_azienda.observe(this) {
             titolo.text = it
@@ -52,21 +62,53 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
             titolo2.text = it
         }
 
-        /*chiSiamoViewModel.giuse.observe(this) {
-            giusBt.text = it
+        giusBtLinkedin.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.linkedin.com/feed/"))
+            startActivity(intent)
         }
 
-        chiSiamoViewModel.dom.observe(this) {
-            domBt.text = it
+        domBtLinkedin.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.linkedin.com/feed/"))
+            startActivity(intent)
         }
 
-        giusBt.setOnClickListener {
-            chiSiamoViewModel.giuse_action()
+        giusBtGitHub.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.univpm.com/"))
+            startActivity(intent)
         }
 
-        domBt.setOnClickListener {
-            chiSiamoViewModel.dom_action()
-        }*/
+        domBtGitHub.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://github.com/domenicolaporta00"))
+            startActivity(intent)
+        }
+
+        giusBtOutlook.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:s1094052@studenti.univpm.it")
+            }
+
+            try {
+                this.startActivity(Intent.createChooser(emailIntent, "Scegli un'app per email"))
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(this, "Non ci sono app di email installate.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        domBtOutlook.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:s1095492@studenti.univpm.it")
+            }
+
+            try {
+                this.startActivity(Intent.createChooser(emailIntent, "Scegli un'app per email"))
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(this, "Non ci sono app di email installate.", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 
