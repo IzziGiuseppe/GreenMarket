@@ -37,8 +37,8 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
         val titolo: TextView = findViewById(R.id.titolo_txt)
         val testo: TextView = findViewById(R.id.testo_txt)
         val titolo2: TextView = findViewById(R.id.titolo2_txt)
-        val giusBt: Button = findViewById(R.id.giuseppe_bt)
-        val domBt: Button = findViewById(R.id.domenico_bt)
+        //val giusBt: Button = findViewById(R.id.giuseppe_bt)
+        //val domBt: Button = findViewById(R.id.domenico_bt)
 
         chiSiamoViewModel.storia_azienda.observe(this) {
             titolo.text = it
@@ -52,7 +52,7 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
             titolo2.text = it
         }
 
-        chiSiamoViewModel.giuse.observe(this) {
+        /*chiSiamoViewModel.giuse.observe(this) {
             giusBt.text = it
         }
 
@@ -66,7 +66,7 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
 
         domBt.setOnClickListener {
             chiSiamoViewModel.dom_action()
-        }
+        }*/
 
     }
 

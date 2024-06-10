@@ -131,7 +131,7 @@
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/rv_codici_sconto"
         app:layout_constraintStart_toEndOf="@+id/codici_sconto"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
         app:srcCompat="@android:drawable/ic_dialog_info"
         app:tint="@color/black" />
 

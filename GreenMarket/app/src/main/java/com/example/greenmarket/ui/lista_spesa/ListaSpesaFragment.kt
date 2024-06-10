@@ -57,9 +57,9 @@ class ListaSpesaFragment : Fragment() {
         val deleteBT: FloatingActionButton = binding.deleteAll
         deleteBT.setOnClickListener {
             listaSpesaViewModel.deleteListaSpesa()
-            listaSpesaViewModel.listaSpesa.observe(viewLifecycleOwner, Observer {
+            /*listaSpesaViewModel.listaSpesa.observe(viewLifecycleOwner, Observer {
                     prodListaSpesa -> adapter.setData(prodListaSpesa)
-            })
+            })*/
         }
 
         val confermaBT: Button = binding.confermaOrdine

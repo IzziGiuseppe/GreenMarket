@@ -13,7 +13,9 @@ drawable altro
 drawable assistenza
 drawable banane
 drawable chi_siamo
+drawable domenico
 drawable donazione
+drawable giuseppe
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
@@ -22,6 +24,7 @@ drawable ic_notifications_black_24dp
 drawable invita
 drawable lista_spesa
 drawable mele
+drawable peppe
 drawable pere
 drawable plus
 drawable ricettario
@@ -46,6 +49,13 @@ id buttonCancel
 id buttonRegister
 id buttonResetPass
 id buttonSave
+id card_image
+id card_image2
+id card_image_domenico
+id card_image_giuseppe
+id card_image_peppe
+id card_image_profilo
+id card_image_ricetta
 id checkBox
 id codice_sconto
 id codice_sconto_dett_scontr
@@ -86,6 +96,9 @@ id imageButton
 id imageStatsProd
 id imageView
 id imageViewAdd
+id imageViewDomenico
+id imageViewGiuseppe
+id imageViewPeppe
 id imageViewProfile
 id imageViewRemove
 id image_description
@@ -127,7 +140,6 @@ id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto
 id punti
-id quantita_prod
 id quantita_prod_dett_scontrino
 id quantita_prod_lista_spesa
 id quantita_prodotto_stats
@@ -186,6 +198,7 @@ id title_prod_stats
 id title_quantita
 id title_valore_sconto
 id titolo2_txt
+id titolo_soci
 id titolo_tc_txt
 id titolo_txt
 id valore_codice_sconto

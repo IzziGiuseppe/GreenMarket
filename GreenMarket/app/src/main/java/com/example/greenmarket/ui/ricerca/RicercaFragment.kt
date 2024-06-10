@@ -74,19 +74,22 @@ class RicercaFragment : Fragment() {
             false
         }
 
-        ricercaViewModel.prodotto.observe(viewLifecycleOwner, Observer { prodotto ->
+        ricercaViewModel.prodotto.observe(viewLifecycleOwner) { prodotto ->
             prodotto?.let {
-                it.nome?.let { it1 -> it.descrizione?.let { it2 ->
-                    it.prezzo?.let { it3 ->
-                        it.foto?.let { it4 ->
-                            startProdotto(it1,
-                                it2, it3, it4
-                            )
+                it.nome?.let { it1 ->
+                    it.descrizione?.let { it2 ->
+                        it.prezzo?.let { it3 ->
+                            it.foto?.let { it4 ->
+                                startProdotto(
+                                    it1,
+                                    it2, it3, it4
+                                )
+                            }
                         }
                     }
-                } }
+                }
             }
-        })
+        }
 
         return root
     }

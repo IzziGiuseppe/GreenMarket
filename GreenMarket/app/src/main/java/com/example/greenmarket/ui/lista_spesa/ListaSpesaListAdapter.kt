@@ -42,7 +42,7 @@ class ListaSpesaListAdapter(
     @SuppressLint("NotifyDataSetChanged")
     fun setData(prodListaSpesa: Array<ComposizioneScontrini>) {
         this.prodListaSpesaList = prodListaSpesa
-        //notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 
 

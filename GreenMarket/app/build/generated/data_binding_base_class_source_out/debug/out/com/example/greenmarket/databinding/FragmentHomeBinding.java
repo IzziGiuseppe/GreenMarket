@@ -11,6 +11,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager2.widget.ViewPager2;
@@ -25,6 +26,12 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public final TextView apertoChiuso;
+
+  @NonNull
+  public final CardView cardImage;
+
+  @NonNull
+  public final CardView cardImage2;
 
   @NonNull
   public final ImageView iconaProfiloUtente;
@@ -57,12 +64,15 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView titleHome;
 
   private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView apertoChiuso,
+      @NonNull CardView cardImage, @NonNull CardView cardImage2,
       @NonNull ImageView iconaProfiloUtente, @NonNull TextView imageDescription,
       @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
       @NonNull ImageView logo, @NonNull TextView orarioChiusura, @NonNull ViewPager2 statsProd,
       @NonNull Button tessPtBt, @NonNull TextView textHome, @NonNull TextView titleHome) {
     this.rootView = rootView;
     this.apertoChiuso = apertoChiuso;
+    this.cardImage = cardImage;
+    this.cardImage2 = cardImage2;
     this.iconaProfiloUtente = iconaProfiloUtente;
     this.imageDescription = imageDescription;
     this.linearLayout = linearLayout;
@@ -105,6 +115,18 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.aperto_chiuso;
       TextView apertoChiuso = ViewBindings.findChildViewById(rootView, id);
       if (apertoChiuso == null) {
+        break missingId;
+      }
+
+      id = R.id.card_image;
+      CardView cardImage = ViewBindings.findChildViewById(rootView, id);
+      if (cardImage == null) {
+        break missingId;
+      }
+
+      id = R.id.card_image2;
+      CardView cardImage2 = ViewBindings.findChildViewById(rootView, id);
+      if (cardImage2 == null) {
         break missingId;
       }
 
@@ -168,9 +190,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, apertoChiuso, iconaProfiloUtente,
-          imageDescription, linearLayout, linearLayout2, logo, orarioChiusura, statsProd, tessPtBt,
-          textHome, titleHome);
+      return new FragmentHomeBinding((ScrollView) rootView, apertoChiuso, cardImage, cardImage2,
+          iconaProfiloUtente, imageDescription, linearLayout, linearLayout2, logo, orarioChiusura,
+          statsProd, tessPtBt, textHome, titleHome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

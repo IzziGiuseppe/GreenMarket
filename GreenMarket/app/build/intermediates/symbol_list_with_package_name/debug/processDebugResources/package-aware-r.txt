@@ -3129,7 +3129,9 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable domenico
 drawable donazione
+drawable giuseppe
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3234,6 +3236,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable peppe
 drawable pere
 drawable plus
 drawable ricettario
@@ -3373,6 +3376,13 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
+id card_image
+id card_image2
+id card_image_domenico
+id card_image_giuseppe
+id card_image_peppe
+id card_image_profilo
+id card_image_ricetta
 id carryVelocity
 id center
 id centerCrop
@@ -3537,6 +3547,9 @@ id imageButton
 id imageStatsProd
 id imageView
 id imageViewAdd
+id imageViewDomenico
+id imageViewGiuseppe
+id imageViewPeppe
 id imageViewProfile
 id imageViewRemove
 id image_description
@@ -3719,7 +3732,6 @@ id prezzo_totale_si_sconto
 id progress_circular
 id progress_horizontal
 id punti
-id quantita_prod
 id quantita_prod_dett_scontrino
 id quantita_prod_lista_spesa
 id quantita_prodotto_stats
@@ -3890,6 +3902,7 @@ id title_quantita
 id title_template
 id title_valore_sconto
 id titolo2_txt
+id titolo_soci
 id titolo_tc_txt
 id titolo_txt
 id toggle
