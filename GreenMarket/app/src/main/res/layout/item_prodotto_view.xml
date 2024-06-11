@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="24sp">
+    android:background="@drawable/angoli_arrotondati_item"
+    android:layout_margin="8dp"
+    android:padding="18sp">
 
 
     <TextView
@@ -12,26 +14,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@id/quantita_prod"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_chainStyle="spread_inside" />
-
-    <EditText
-        android:id="@+id/quantita_prod"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:drawableEnd="@android:drawable/ic_input_add"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:hint="quantità (kg)"
-        android:inputType="number"
-        android:longClickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/nome_prodotto_item"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

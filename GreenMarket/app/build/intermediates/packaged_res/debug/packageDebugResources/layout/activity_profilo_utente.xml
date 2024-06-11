@@ -9,26 +9,34 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="176dp"
         android:text="@string/profilo_utente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_image_profilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        android:padding="4dp"
+        app:cardBackgroundColor="@android:color/white">
+
     <ImageView
         android:id="@+id/imageViewProfile"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="25dp"
         app:layout_constraintBottom_toTopOf="@+id/textViewModProfileImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
         app:layout_constraintVertical_chainStyle="spread"/>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textViewModProfileImage"
@@ -40,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/card_image_profilo" />
 
     <EditText
         android:id="@+id/editTextNomeUP"
@@ -101,6 +109,7 @@
             android:text="@string/salva" />
 
         <Button
+            android:layout_marginStart="24dp"
             android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

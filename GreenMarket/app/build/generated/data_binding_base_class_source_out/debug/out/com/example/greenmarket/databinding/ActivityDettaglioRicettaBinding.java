@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -22,6 +23,22 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout activityDr;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final CardView cardImageRicetta;
 
   @NonNull
   public final TextView descrizioneRicetta;
@@ -46,10 +63,12 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
   public final TextView nomeRicetta;
 
   private ActivityDettaglioRicettaBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout activityDr, @NonNull TextView descrizioneRicetta,
-      @Nullable ImageView fotoRicetta, @NonNull TextView nomeRicetta) {
+      @NonNull ConstraintLayout activityDr, @Nullable CardView cardImageRicetta,
+      @NonNull TextView descrizioneRicetta, @Nullable ImageView fotoRicetta,
+      @NonNull TextView nomeRicetta) {
     this.rootView = rootView;
     this.activityDr = activityDr;
+    this.cardImageRicetta = cardImageRicetta;
     this.descrizioneRicetta = descrizioneRicetta;
     this.fotoRicetta = fotoRicetta;
     this.nomeRicetta = nomeRicetta;
@@ -84,6 +103,9 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
     missingId: {
       ConstraintLayout activityDr = (ConstraintLayout) rootView;
 
+      id = R.id.card_image_ricetta;
+      CardView cardImageRicetta = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.descrizione_ricetta;
       TextView descrizioneRicetta = ViewBindings.findChildViewById(rootView, id);
       if (descrizioneRicetta == null) {
@@ -100,7 +122,7 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
       }
 
       return new ActivityDettaglioRicettaBinding((ConstraintLayout) rootView, activityDr,
-          descrizioneRicetta, fotoRicetta, nomeRicetta);
+          cardImageRicetta, descrizioneRicetta, fotoRicetta, nomeRicetta);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

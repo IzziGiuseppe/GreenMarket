@@ -17,9 +17,9 @@
         tools:targetApi="31">
         <activity
             android:name=".ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity"
+            android:exported="false"
             android:label="Dettaglio scontrino"
-            android:parentActivityName=".ui.altro.storico.StoricoActivity"
-            android:exported="false" />
+            android:parentActivityName=".ui.altro.storico.StoricoActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -66,7 +66,8 @@
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".SplashActivity"
+            android:noHistory="true"
             android:exported="true"
             android:label="GreenMarket"
             android:theme="@style/Theme.Material3.Light.NoActionBar">
@@ -76,6 +77,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".ui.login.RegisterActivity"
             android:exported="false"

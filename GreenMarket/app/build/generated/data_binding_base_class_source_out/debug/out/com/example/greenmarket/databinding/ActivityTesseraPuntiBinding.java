@@ -35,7 +35,7 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
   public final TextView haiSpeso;
 
   @NonNull
-  public final ImageButton imageButton;
+  public final ImageButton infoCS;
 
   @NonNull
   public final TextView punti;
@@ -63,7 +63,7 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
 
   private ActivityTesseraPuntiBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityTessPunti, @NonNull TextView codiciSconto,
-      @NonNull Button converti, @NonNull TextView haiSpeso, @NonNull ImageButton imageButton,
+      @NonNull Button converti, @NonNull TextView haiSpeso, @NonNull ImageButton infoCS,
       @NonNull TextView punti, @NonNull Button riscatta, @NonNull RecyclerView rvCodiciSconto,
       @NonNull TextView tiPremia, @NonNull View view, @NonNull View view2, @NonNull View view3,
       @NonNull View view4) {
@@ -72,7 +72,7 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
     this.codiciSconto = codiciSconto;
     this.converti = converti;
     this.haiSpeso = haiSpeso;
-    this.imageButton = imageButton;
+    this.infoCS = infoCS;
     this.punti = punti;
     this.riscatta = riscatta;
     this.rvCodiciSconto = rvCodiciSconto;
@@ -130,9 +130,9 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageButton;
-      ImageButton imageButton = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton == null) {
+      id = R.id.infoCS;
+      ImageButton infoCS = ViewBindings.findChildViewById(rootView, id);
+      if (infoCS == null) {
         break missingId;
       }
 
@@ -185,8 +185,8 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
       }
 
       return new ActivityTesseraPuntiBinding((ConstraintLayout) rootView, activityTessPunti,
-          codiciSconto, converti, haiSpeso, imageButton, punti, riscatta, rvCodiciSconto, tiPremia,
-          view, view2, view3, view4);
+          codiciSconto, converti, haiSpeso, infoCS, punti, riscatta, rvCodiciSconto, tiPremia, view,
+          view2, view3, view4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

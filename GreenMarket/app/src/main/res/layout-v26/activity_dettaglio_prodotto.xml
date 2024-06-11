@@ -16,6 +16,18 @@
       android:textSize="32sp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+  
+  <androidx.cardview.widget.CardView
+      android:id="@+id/card_image"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/nome_prezzo_prodotto"
+      app:cardCornerRadius="16dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:padding="4dp"
+      app:cardBackgroundColor="@android:color/white">
 
   <TextView
       android:id="@+id/prezzo_prodotto"
@@ -31,11 +43,11 @@
       android:id="@+id/foto_prodotto"
       android:layout_width="150dp"
       android:layout_height="150dp"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="8dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/nome_prodotto"
       tools:src="" />
+
+  </androidx.cardview.widget.CardView>
 
   <TextView
       android:id="@+id/descrizione_prodotto"
@@ -47,57 +59,55 @@
       android:justificationMode="inter_word"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/foto_prodotto" />
+      app:layout_constraintTop_toBottomOf="@+id/card_image" />
 
   <Button
       android:id="@+id/buttonAddList"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="167dp"
-      android:layout_marginEnd="154dp"
-      android:layout_marginBottom="56dp"
+      android:layout_marginBottom="32dp"
       android:text="Aggiungi alla lista della spesa"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.547"
       app:layout_constraintStart_toStartOf="parent" />
 
-  <TextView
-      android:id="@+id/textViewQuantita"
-      android:layout_width="40dp"
-      android:layout_height="30dp"
-      android:layout_marginBottom="12dp"
-      android:gravity="center"
-      android:text="1"
-      android:textAlignment="center"
-      android:textSize="24sp"
-      app:layout_constraintBottom_toTopOf="@+id/buttonAddList"
-      app:layout_constraintEnd_toStartOf="@+id/imageViewAdd"
-      app:layout_constraintHorizontal_bias="0.607"
-      app:layout_constraintStart_toEndOf="@+id/imageViewRemove" />
-
-  <ImageView
-      android:id="@+id/imageViewAdd"
-      android:layout_width="30dp"
-      android:layout_height="30dp"
-      android:layout_marginStart="11dp"
-      android:layout_marginEnd="138dp"
-      android:layout_marginBottom="13dp"
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:orientation="horizontal"
       app:layout_constraintBottom_toTopOf="@+id/buttonAddList"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/textViewQuantita"
-      app:srcCompat="@mipmap/ic_add" />
-
-  <ImageView
-      android:id="@+id/imageViewRemove"
-      android:layout_width="30dp"
-      android:layout_height="30dp"
-      android:layout_marginStart="155dp"
-      android:layout_marginEnd="6dp"
-      android:layout_marginBottom="12dp"
-      app:layout_constraintBottom_toTopOf="@+id/buttonAddList"
-      app:layout_constraintEnd_toStartOf="@+id/textViewQuantita"
       app:layout_constraintStart_toStartOf="parent"
-      app:srcCompat="@mipmap/ic_diff" />
+      app:layout_constraintTop_toBottomOf="@+id/descrizione_prodotto"
+      app:layout_constraintVertical_bias="1.0">
+
+    <ImageView
+        android:id="@+id/imageViewRemove"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_diff" />
+
+    <TextView
+        android:id="@+id/textViewQuantita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageViewAdd"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_add" />
+
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

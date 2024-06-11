@@ -3092,6 +3092,8 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable altro
+drawable angoli_arrotondati_edit_text
+drawable angoli_arrotondati_item
 drawable assistenza
 drawable avd_hide_password
 drawable avd_show_password
@@ -3129,7 +3131,9 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable domenico
 drawable donazione
+drawable giuseppe
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3234,6 +3238,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable peppe
 drawable pere
 drawable plus
 drawable ricettario
@@ -3373,6 +3378,13 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
+id card_image
+id card_image2
+id card_image_domenico
+id card_image_giuseppe
+id card_image_peppe
+id card_image_profilo
+id card_image_ricetta
 id carryVelocity
 id center
 id centerCrop
@@ -3507,6 +3519,8 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id github_domenico
+id github_giuseppe
 id giuseppe_bt
 id glide_custom_view_target_tag
 id gone
@@ -3533,10 +3547,13 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton
+id imageSplash
 id imageStatsProd
 id imageView
 id imageViewAdd
+id imageViewDomenico
+id imageViewGiuseppe
+id imageViewPeppe
 id imageViewProfile
 id imageViewRemove
 id image_description
@@ -3544,6 +3561,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id infoCS
 id invisible
 id inward
 id italic
@@ -3562,6 +3580,7 @@ id linear
 id linearLayout
 id linearLayout10
 id linearLayout11
+id linearLayout12
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -3570,6 +3589,8 @@ id linearLayout6
 id linearLayout7
 id linearLayout8
 id linearLayout9
+id linkedin_domenico
+id linkedin_giuseppe
 id listMode
 id list_item
 id locale
@@ -3693,6 +3714,8 @@ id open_search_view_toolbar
 id open_search_view_toolbar_container
 id orario_chiusura
 id outline
+id outlook_domenico
+id outlook_giuseppe
 id outward
 id overshoot
 id packed
@@ -3717,10 +3740,10 @@ id prezzo_prodotto
 id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto
+id progressBar_login
 id progress_circular
 id progress_horizontal
 id punti
-id quantita_prod
 id quantita_prod_dett_scontrino
 id quantita_prod_lista_spesa
 id quantita_prodotto_stats
@@ -3891,6 +3914,7 @@ id title_quantita
 id title_template
 id title_valore_sconto
 id titolo2_txt
+id titolo_soci
 id titolo_tc_txt
 id titolo_txt
 id toggle
@@ -4064,6 +4088,7 @@ layout activity_main
 layout activity_profilo_utente
 layout activity_registrazione
 layout activity_reset_password
+layout activity_splash
 layout activity_stats
 layout activity_storico
 layout activity_term_cond

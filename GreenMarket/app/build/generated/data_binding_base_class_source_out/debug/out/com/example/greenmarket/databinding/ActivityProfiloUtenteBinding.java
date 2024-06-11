@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -28,6 +29,9 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
 
   @NonNull
   public final Button buttonSave;
+
+  @NonNull
+  public final CardView cardImageProfilo;
 
   @NonNull
   public final EditText editTextCognomeUP;
@@ -57,14 +61,16 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   public final TextView textViewModProfileImage;
 
   private ActivityProfiloUtenteBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonCancel, @NonNull Button buttonSave, @NonNull EditText editTextCognomeUP,
-      @NonNull EditText editTextIndirizzoUP, @NonNull EditText editTextNomeUP,
-      @NonNull ImageView imageViewProfile, @NonNull LinearLayout linearLayout4,
-      @NonNull TextView textView17, @NonNull TextView textViewEliminaAccount,
-      @NonNull TextView textViewLogout, @NonNull TextView textViewModProfileImage) {
+      @NonNull Button buttonCancel, @NonNull Button buttonSave, @NonNull CardView cardImageProfilo,
+      @NonNull EditText editTextCognomeUP, @NonNull EditText editTextIndirizzoUP,
+      @NonNull EditText editTextNomeUP, @NonNull ImageView imageViewProfile,
+      @NonNull LinearLayout linearLayout4, @NonNull TextView textView17,
+      @NonNull TextView textViewEliminaAccount, @NonNull TextView textViewLogout,
+      @NonNull TextView textViewModProfileImage) {
     this.rootView = rootView;
     this.buttonCancel = buttonCancel;
     this.buttonSave = buttonSave;
+    this.cardImageProfilo = cardImageProfilo;
     this.editTextCognomeUP = editTextCognomeUP;
     this.editTextIndirizzoUP = editTextIndirizzoUP;
     this.editTextNomeUP = editTextNomeUP;
@@ -112,6 +118,12 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
       id = R.id.buttonSave;
       Button buttonSave = ViewBindings.findChildViewById(rootView, id);
       if (buttonSave == null) {
+        break missingId;
+      }
+
+      id = R.id.card_image_profilo;
+      CardView cardImageProfilo = ViewBindings.findChildViewById(rootView, id);
+      if (cardImageProfilo == null) {
         break missingId;
       }
 
@@ -170,8 +182,9 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
       }
 
       return new ActivityProfiloUtenteBinding((ConstraintLayout) rootView, buttonCancel, buttonSave,
-          editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP, imageViewProfile, linearLayout4,
-          textView17, textViewEliminaAccount, textViewLogout, textViewModProfileImage);
+          cardImageProfilo, editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP,
+          imageViewProfile, linearLayout4, textView17, textViewEliminaAccount, textViewLogout,
+          textViewModProfileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

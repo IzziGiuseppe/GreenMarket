@@ -1,27 +1,17 @@
 package com.example.greenmarket.ui.lista_spesa
 
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.OptIn
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.media3.common.util.Log
-import androidx.media3.common.util.UnstableApi
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentListaSpesaBinding
-import com.example.greenmarket.databinding.ItemListaSpesaViewBinding
 import com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -33,48 +23,37 @@ class ListaSpesaFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    @OptIn(UnstableApi::class)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val listaSpesaViewModel = ViewModelProvider(this).get(ListaSpesaViewModel::class.java)
 
         _binding = FragmentListaSpesaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val adapter = ListaSpesaListAdapter(
-            itemClickListener = {
-                item -> item.nome.let { listaSpesaViewModel.readProdottoDettagliato(it) }
-            },
-            imageClickListener = {
-                item -> item.nome.let { listaSpesaViewModel.deleteProdByNome(it) }
+        val adapter = ListaSpesaListAdapter() {
+            currentProdotto ->
+            run {
+                Toast.makeText(context, currentProdotto.prodotto + currentProdotto.quantita, Toast.LENGTH_SHORT).show()
             }
-        )
-
-
+        }
         val recyclerView = binding.rvListaSpesa
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        /*val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         val dividerDrawable = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black))
         dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)
-
+        recyclerView.addItemDecoration(dividerItemDecoration)*/
 
         listaSpesaViewModel.readListaSpesa()
         listaSpesaViewModel.listaSpesa.observe(viewLifecycleOwner, Observer {
-                prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
-        })
-
-        listaSpesaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer {
-            prodListaSpesa -> adapter.setData(prodListaSpesa)
-            listaSpesaViewModel.readPrezzoTotale()
+                prodListaSpesa -> adapter.setData(prodListaSpesa)
         })
 
         val deleteBT: FloatingActionButton = binding.deleteAll
         deleteBT.setOnClickListener {
             listaSpesaViewModel.deleteListaSpesa()
             /*listaSpesaViewModel.listaSpesa.observe(viewLifecycleOwner, Observer {
-                    prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
+                    prodListaSpesa -> adapter.setData(prodListaSpesa)
             })*/
         }
 
@@ -84,29 +63,11 @@ class ListaSpesaFragment : Fragment() {
             startActivity(intent)
         }
 
-        val totaleTV: TextView = binding.prezzoTotale
-        //listaSpesaViewModel.readPrezzoTotale()
-        listaSpesaViewModel.prezzo_totale_view.observe(viewLifecycleOwner) {
-            totaleTV.text = it
-        }
-
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun listaProdotti(map: Map<String?, List<Float>?>) : List<ProdottoInListaModel>{
-
-        val listaProdotti = mutableListOf<ProdottoInListaModel>()
-        map.forEach { (key, value) ->
-            val prodotto = key?.let { ProdottoInListaModel(it, value?.get(0) ?: 0.5f, value?.get(1) ?: 0f, value?.get(2) ?: 0f) }
-            if (prodotto != null) {
-                listaProdotti.add(prodotto)
-            }
-        }
-        return listaProdotti
     }
 }

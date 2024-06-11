@@ -2,22 +2,15 @@ package com.example.greenmarket.ui.altro.statistiche
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.ui.altro.storico.StoricoListAdapter
 import com.example.greenmarket.ui.ricerca.RicercaViewModel
 import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 
@@ -66,10 +59,10 @@ class StatsActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        /*val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         val dividerDrawable = ColorDrawable(ContextCompat.getColor(this, R.color.black))
         dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)
+        recyclerView.addItemDecoration(dividerItemDecoration)*/
 
         statsViewModel.readProdotti()
         statsViewModel.listaProdStats.observe(this, Observer {

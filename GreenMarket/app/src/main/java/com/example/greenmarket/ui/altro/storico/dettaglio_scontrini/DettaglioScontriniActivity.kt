@@ -1,14 +1,11 @@
 package com.example.greenmarket.ui.altro.storico.dettaglio_scontrini
 
 import android.annotation.SuppressLint
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
@@ -46,10 +43,10 @@ class DettaglioScontriniActivity : AppCompatActivity() {
         rv.adapter = adapter
         rv.layoutManager = LinearLayoutManager(this)
 
-        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        /*val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         val dividerDrawable = ColorDrawable(ContextCompat.getColor(this, R.color.black))
         dividerItemDecoration.setDrawable(dividerDrawable)
-        rv.addItemDecoration(dividerItemDecoration)
+        rv.addItemDecoration(dividerItemDecoration)*/
 
         //dettaglioScontriniViewModel.readCodiceSconto()
         dettaglioScontriniViewModel.readListaSpesa()
