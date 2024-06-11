@@ -10,6 +10,7 @@ color white
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 drawable altro
+drawable angoli_arrotondati_edit_text
 drawable angoli_arrotondati_item
 drawable assistenza
 drawable banane
@@ -95,7 +96,6 @@ id giuseppe_bt
 id hai_speso
 id icon_altro
 id iconaProfiloUtente
-id imageButton
 id imageSplash
 id imageStatsProd
 id imageView
@@ -106,6 +106,7 @@ id imageViewPeppe
 id imageViewProfile
 id imageViewRemove
 id image_description
+id infoCS
 id linearLayout
 id linearLayout10
 id linearLayout11

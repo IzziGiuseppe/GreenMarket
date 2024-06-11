@@ -30,13 +30,17 @@ public final class FragmentRicercaBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvRicercaProd;
 
+  @NonNull
+  public final View view;
+
   private FragmentRicercaBinding(@NonNull ConstraintLayout rootView,
       @NonNull FloatingActionButton resetProd, @NonNull EditText ricercaProdottoEditText,
-      @NonNull RecyclerView rvRicercaProd) {
+      @NonNull RecyclerView rvRicercaProd, @NonNull View view) {
     this.rootView = rootView;
     this.resetProd = resetProd;
     this.ricercaProdottoEditText = ricercaProdottoEditText;
     this.rvRicercaProd = rvRicercaProd;
+    this.view = view;
   }
 
   @Override
@@ -84,8 +88,14 @@ public final class FragmentRicercaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.view;
+      View view = ViewBindings.findChildViewById(rootView, id);
+      if (view == null) {
+        break missingId;
+      }
+
       return new FragmentRicercaBinding((ConstraintLayout) rootView, resetProd,
-          ricercaProdottoEditText, rvRicercaProd);
+          ricercaProdottoEditText, rvRicercaProd, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

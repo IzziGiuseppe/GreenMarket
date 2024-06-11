@@ -3092,6 +3092,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable altro
+drawable angoli_arrotondati_edit_text
 drawable angoli_arrotondati_item
 drawable assistenza
 drawable avd_hide_password
@@ -3546,7 +3547,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton
 id imageSplash
 id imageStatsProd
 id imageView
@@ -3561,6 +3561,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id infoCS
 id invisible
 id inward
 id italic
