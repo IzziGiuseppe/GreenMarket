@@ -1,4 +1,4 @@
-#Tue Jun 11 19:16:32 CEST 2024
+#Tue Jun 11 19:28:23 CEST 2024
 base.0=C\:\\Users\\izzig\\EsamePM\\GreenMarket\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\izzig\\EsamePM\\GreenMarket\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\izzig\\EsamePM\\GreenMarket\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex

@@ -3682,6 +3682,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id nome_prezzo_prodotto
 id nome_prod_dett_scontr_item
 id nome_prod_lista_spesa_item
 id nome_prodotto
