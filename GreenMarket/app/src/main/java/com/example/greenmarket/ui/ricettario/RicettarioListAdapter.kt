@@ -10,10 +10,9 @@ import com.example.greenmarket.R
 import com.example.greenmarket.db.model.ProdottiInRicette
 
 class RicettarioListAdapter(
-    private val itemClickListener: (ProdottiInRicette) -> Unit
-): RecyclerView.Adapter<RicettarioListAdapter.MyViewHolder>() {
+    private val itemClickListener: (RicettaModel) -> Unit): RecyclerView.Adapter<RicettarioListAdapter.MyViewHolder>() {
 
-    private var ricetteList = emptyArray<ProdottiInRicette>()
+    private var ricetteList = emptyList<RicettaModel>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.nome_ricetta)
@@ -25,7 +24,7 @@ class RicettarioListAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentRicetta = ricetteList[position]
-        holder.textView.text = currentRicetta.ricetta
+        holder.textView.text = currentRicetta.nome
         holder.itemView.setOnClickListener { itemClickListener(currentRicetta) }
     }
 
@@ -34,7 +33,7 @@ class RicettarioListAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(ricetta: Array<ProdottiInRicette>) {
+    fun setData(ricetta: List<RicettaModel>) {
         this.ricetteList = ricetta
         notifyDataSetChanged()
     }

@@ -1,6 +1,7 @@
 package com.example.greenmarket.ui.ricettario
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -8,56 +9,64 @@ import androidx.lifecycle.MutableLiveData
 import com.example.greenmarket.db.GMDatabase
 import com.example.greenmarket.db.model.ProdottiInRicette
 import com.example.greenmarket.db.model.Ricetta
+import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Locale
 
 class RicettarioViewModel(application: Application) : AndroidViewModel(application) {
-    private val db: GMDatabase = GMDatabase.getInstance(application)
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    private var _ricetta = MutableLiveData(ProdottiInRicette("", ""))
-    val ricetta: LiveData<ProdottiInRicette>
-        get() = _ricetta
+    private var _ricetta = MutableLiveData<RicettaModel>()
+    val ricetta: LiveData<RicettaModel> = _ricetta
 
     private var _ricettaDettagliata = MutableLiveData(Ricetta("", "", ""))
     val ricettaDettagliata: LiveData<Ricetta>
         get() = _ricettaDettagliata
 
-    private var _listaRicette = MutableLiveData(arrayOf<ProdottiInRicette>())
-    val listaRicette: MutableLiveData<Array<ProdottiInRicette>>
-        get() = _listaRicette
+    private var _listaRicette = MutableLiveData<List<RicettaModel>>()
+    val listaRicette: LiveData<List<RicettaModel>> = _listaRicette
 
     fun readRicetta(nome: String){
         //_ricetta.value = db.RicettaDao().getRicettaByNome(nome)
     }
 
     fun readRicettaDettagliata(nome: String){
-        _ricettaDettagliata.value = db.RicettaDao().getRicettaByNome(nome)
+        db.collection("recipes").document(nome).get()
+            .addOnSuccessListener { document ->
+                _ricetta.value = document.toObject(RicettaModel::class.java)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Error getting product details", exception)
+            }
     }
 
-    fun ricetteByProdotto(prod: String){
+    fun ricetteByProdotto(prod: String) {
         if (prod.isBlank()) {
             Toast.makeText(getApplication(), "Per favore inserire un prodotto!", Toast.LENGTH_SHORT).show()
+        } else {
+            val prodottoInput = prod.trim().capitalize(Locale.ROOT)
+            db.collection("recipes").whereArrayContains("ingredienti", prodottoInput).get()
+                .addOnSuccessListener { documents ->
+                    val ricetta = documents.toObjects(RicettaModel::class.java)
+                    if (ricetta.isEmpty()) {
+                        Toast.makeText(getApplication(), "Non ci sono ricette corrispondenti al prodotto inserito!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        _listaRicette.value = ricetta
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("Firebase", "Error getting products", exception)
+                }
         }
-        else {
-            val prodInput = prod.trim()[0].uppercaseChar() + prod.trim().substring(1).lowercase()
-            val x = db.ProdottiInRicetteDao().getProdottiInRicetteByProdotto(prodInput)
-            if (x.isEmpty()) {
-                Toast.makeText(getApplication(), "Non ci sono ricette con l'ingrediente selezionato!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun readAllRicette() {
+        db.collection("recipes").get()
+            .addOnSuccessListener { documents ->
+                _listaRicette.value = documents.toObjects(RicettaModel::class.java)
             }
-            else {
-                _listaRicette.value = x
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Error getting products", exception)
             }
-        }
-    }
-
-    fun readAllRicette(){
-        val x = db.ProdottiInRicetteDao().getAll()
-        _listaRicette.value = x
-    }
-
-    fun insert(vararg ricetta: Ricetta){
-        db.RicettaDao().insert(*ricetta)
-    }
-
-    fun deleteAllRicette(){
-        db.RicettaDao().deleteAllRicette()
     }
 }

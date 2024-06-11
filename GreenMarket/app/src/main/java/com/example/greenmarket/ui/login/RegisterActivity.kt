@@ -52,7 +52,7 @@ class RegisterActivity : AppCompatActivity() {
                                         "foto" to photo
                                     )
 
-                                    val prodotti: Map<String?, Float?> = emptyMap()
+                                    val prodotti: Map<String?, List<Float>?> = emptyMap()
                                     //Creazione lista della spesa associata all'utente
                                     val listaSpesa = hashMapOf(
                                         "data" to null,

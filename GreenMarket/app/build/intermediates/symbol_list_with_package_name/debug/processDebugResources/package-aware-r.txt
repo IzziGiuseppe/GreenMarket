@@ -3661,9 +3661,9 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
-id nome_prezzo_prodotto
 id nome_prod_dett_scontr_item
 id nome_prod_lista_spesa_item
+id nome_prodotto
 id nome_prodotto_item
 id nome_prodotto_stats_item
 id nome_ricetta
@@ -3713,6 +3713,7 @@ id pressed
 id prezzo
 id prezzo_dett_scontrino
 id prezzo_item
+id prezzo_prodotto
 id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto

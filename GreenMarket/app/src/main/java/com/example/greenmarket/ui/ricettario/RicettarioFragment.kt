@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentRicettarioBinding
+import com.example.greenmarket.ui.ricerca.RicercaListAdapter
 import com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity
 
 class RicettarioFragment : Fragment() {
@@ -28,34 +29,16 @@ class RicettarioFragment : Fragment() {
     private val binding get() = _binding!!
 
     @SuppressLint("ClickableViewAccessibility")
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        val ricettarioViewModel =
-            ViewModelProvider(this).get(RicettarioViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val ricettarioViewModel = ViewModelProvider(this).get(RicettarioViewModel::class.java)
 
         _binding = FragmentRicettarioBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //Recycler
-        val adapter = RicettarioListAdapter {
-            currentRicetta ->
-            run {
-                val ricetta = currentRicetta.ricetta
-                var nome = ""
-                var descrizione = ""
-                var foto = ""
-                ricettarioViewModel.readRicettaDettagliata(ricetta)
-                ricettarioViewModel.ricettaDettagliata.observe(viewLifecycleOwner) {
-                    nome = it.nome
-                    descrizione = it.descrizione
-                    foto = it.foto
-                }
-                startRicetta(nome, descrizione, foto)
-            }
+        val adapter = RicettarioListAdapter { currentRicetta ->
+            currentRicetta.nome?.let { ricettarioViewModel.readRicettaDettagliata(it) }
         }
+
         val recyclerView = binding.rv
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -74,9 +57,11 @@ class RicettarioFragment : Fragment() {
         binding.resetBt.setOnClickListener {
             binding.ricercaRicettaEditText.setText("")
             ricettarioViewModel.readAllRicette()
+            /* NON SO SE SERVE
             ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
                     ricetta -> adapter.setData(ricetta)
             })
+            */
         }
 
         binding.ricercaRicettaEditText.setOnTouchListener { _, motionEvent ->
@@ -100,16 +85,32 @@ class RicettarioFragment : Fragment() {
             false
         }
 
-        //ricettarioViewModel.deleteAllRicette()
+        ricettarioViewModel.ricetta.observe(viewLifecycleOwner) { ricetta ->
+            ricetta?.let {
+                it.nome?.let { it1 ->
+                    it.descrizione?.let { it2 ->
+                        it.foto?.let { it3 ->
+                            it.ingredienti?.let { it4 ->
+                                startRicetta(
+                                    it1,
+                                    it2, it3, it4
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         return root
     }
 
-    fun startRicetta(nome: String, descrizione: String, foto: String) {
+    fun startRicetta(nome: String, descrizione: String, foto: String, ingredienti: List<String>) {
         val intent = Intent(requireContext(), DettaglioRicettaActivity::class.java)
         intent.putExtra("nome_ricetta", nome)
         intent.putExtra("descrizione_ricetta", descrizione)
         intent.putExtra("foto_ricetta", foto)
+        intent.putExtra("ingredienti_ricetta", ingredienti.toTypedArray())
         startActivity(intent)
     }
 

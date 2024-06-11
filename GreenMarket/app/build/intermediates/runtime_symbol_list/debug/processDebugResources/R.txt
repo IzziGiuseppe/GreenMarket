@@ -3660,9 +3660,9 @@ int id neverCompleteToEnd 0x7f08019e
 int id neverCompleteToStart 0x7f08019f
 int id noScroll 0x7f0801a0
 int id noState 0x7f0801a1
-int id nome_prezzo_prodotto 0x7f0801a2
 int id nome_prod_dett_scontr_item 0x7f0801a3
 int id nome_prod_lista_spesa_item 0x7f0801a4
+int id nome_prodotto 0x7f0802b6
 int id nome_prodotto_item 0x7f0801a5
 int id nome_prodotto_stats_item 0x7f0801a6
 int id nome_ricetta 0x7f0801a7
@@ -3712,6 +3712,7 @@ int id pressed 0x7f0801d2
 int id prezzo 0x7f0801d3
 int id prezzo_dett_scontrino 0x7f0801d4
 int id prezzo_item 0x7f0801d5
+int id prezzo_prodotto 0x7f0802b7
 int id prezzo_totale 0x7f0801d6
 int id prezzo_totale_no_sconto 0x7f0801d7
 int id prezzo_totale_si_sconto 0x7f0801d8

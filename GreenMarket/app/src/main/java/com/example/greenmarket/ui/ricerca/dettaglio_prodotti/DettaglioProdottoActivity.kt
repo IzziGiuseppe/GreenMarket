@@ -1,21 +1,14 @@
 package com.example.greenmarket.ui.ricerca.dettaglio_prodotti
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.greenmarket.R
-import com.example.greenmarket.ui.lista_spesa.ListaSpesaFragment
 
 class DettaglioProdottoActivity : AppCompatActivity() {
 
@@ -23,15 +16,10 @@ class DettaglioProdottoActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
         setContentView(R.layout.activity_dettaglio_prodotto)
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
 
-        val nome: TextView = findViewById(R.id.nome_prezzo_prodotto)
+        val nome: TextView = findViewById(R.id.nome_prodotto)
+        val prezzo: TextView = findViewById(R.id.prezzo_prodotto)
         val descrizione: TextView = findViewById(R.id.descrizione_prodotto)
         val foto: ImageView = findViewById(R.id.foto_prodotto)
         val add: ImageView = findViewById(R.id.imageViewAdd)
@@ -39,7 +27,8 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val quantita: TextView = findViewById(R.id.textViewQuantita)
         val addList: Button = findViewById(R.id.buttonAddList)
 
-        val nomeProdotto = intent.getStringExtra("nome_prezzo_prodotto")
+        val nomeProdotto = intent.getStringExtra("nome_prodotto")
+        val prezzoProdotto = intent.getFloatExtra("prezzo_prodotto", 0f)
         val descrizioneProdotto = intent.getStringExtra("descrizione_prodotto")
         val fotoProdotto = intent.getStringExtra("foto_prodotto")
 
@@ -48,6 +37,11 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         }
         dettaglioProdottiViewModel.nome_prodotto.observe(this) {
             nome.text = it
+        }
+
+        dettaglioProdottiViewModel.setPrezzo(prezzoProdotto)
+        dettaglioProdottiViewModel.prezzo_prodotto.observe(this) {
+            prezzo.text = it.toString()
         }
 
         if (descrizioneProdotto != null) {

@@ -74,19 +74,22 @@ class RicercaFragment : Fragment() {
             false
         }
 
-        ricercaViewModel.prodotto.observe(viewLifecycleOwner, Observer { prodotto ->
+        ricercaViewModel.prodotto.observe(viewLifecycleOwner) { prodotto ->
             prodotto?.let {
-                it.nome?.let { it1 -> it.descrizione?.let { it2 ->
-                    it.prezzo?.let { it3 ->
-                        it.foto?.let { it4 ->
-                            startProdotto(it1,
-                                it2, it3, it4
-                            )
+                it.nome?.let { it1 ->
+                    it.descrizione?.let { it2 ->
+                        it.prezzo?.let { it3 ->
+                            it.foto?.let { it4 ->
+                                startProdotto(
+                                    it1,
+                                    it2, it3, it4
+                                )
+                            }
                         }
                     }
-                } }
+                }
             }
-        })
+        }
 
         return root
     }
@@ -96,7 +99,8 @@ class RicercaFragment : Fragment() {
         /*MOMENTANEAMENTE COMMENTATO
         intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
          */
-        intent.putExtra("nome_prezzo_prodotto", nome)
+        intent.putExtra("nome_prodotto", nome)
+        intent.putExtra("prezzo_prodotto", prezzo)
         intent.putExtra("descrizione_prodotto", descrizione)
         intent.putExtra("foto_prodotto", foto)
         startActivity(intent)

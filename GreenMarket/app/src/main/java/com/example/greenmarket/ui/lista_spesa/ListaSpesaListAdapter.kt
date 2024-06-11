@@ -4,20 +4,23 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
 import com.example.greenmarket.db.model.ComposizioneScontrini
 
 class ListaSpesaListAdapter(
-    private val itemClickListener: (ComposizioneScontrini) -> Unit
+    private val itemClickListener: (ProdottoInListaModel) -> Unit,
+    private val imageClickListener: (ProdottoInListaModel) -> Unit
 ): RecyclerView.Adapter<ListaSpesaListAdapter.MyViewHolder>() {
 
-    private var prodListaSpesaList = emptyArray<ComposizioneScontrini>()
+    private var prodListaSpesaList = emptyList<ProdottoInListaModel>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.nome_prod_lista_spesa_item)
         val textView2 = itemView.findViewById<TextView>(R.id.quantita_prod_lista_spesa)
+        val imageView = itemView.findViewById<ImageView>(R.id.delete_prod_bt)
     }
 
     override fun onCreateViewHolder(
@@ -30,8 +33,9 @@ class ListaSpesaListAdapter(
     @SuppressLint("SetTextI18n", "DefaultLocale")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodListaSpesaList[position]
-        holder.textView.text = currentProdotto.prodotto
-        holder.textView2.text = "Quantità: "+ String.format("%.0f", currentProdotto.quantita).removeSuffix(".0")
+        holder.textView.text = currentProdotto.nome + " €" + currentProdotto.prezzo
+        holder.textView2.text = "Quantità: " + formatFloat(currentProdotto.quantita) + " " + currentProdotto.prezzoTotale
+        holder.imageView.setOnClickListener{ imageClickListener(currentProdotto)}
         holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }
     }
 
@@ -40,10 +44,18 @@ class ListaSpesaListAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(prodListaSpesa: Array<ComposizioneScontrini>) {
+    fun setData(prodListaSpesa: List<ProdottoInListaModel>) {
         this.prodListaSpesaList = prodListaSpesa
-        //notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 
+    //Gestisce il formato delle quantità con valore .0
+    private fun formatFloat(value: Float): String {
+        return if(value == value.toInt().toFloat()){
+            value.toInt().toString()
+        }else{
+            value.toString()
+        }
+    }
 
 }

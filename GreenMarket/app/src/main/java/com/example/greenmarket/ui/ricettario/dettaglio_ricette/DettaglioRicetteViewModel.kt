@@ -22,6 +22,11 @@ class DettaglioRicetteViewModel(application: Application) : AndroidViewModel(app
     }
     val foto_ricetta: LiveData<String> = _foto_ricetta
 
+    private var _ingredienti_ricetta = MutableLiveData<List<String>>().apply {
+        value = listOf("Ingrediente 1", "Ingrediente 2", "Ingrediente 3")
+    }
+    val ingredienti_ricetta: LiveData<List<String>> = _ingredienti_ricetta
+
     fun setNome(nome: String) {
         _nome_ricetta.value = nome
     }
@@ -32,5 +37,9 @@ class DettaglioRicetteViewModel(application: Application) : AndroidViewModel(app
 
     fun setFoto(foto: String) {
         _foto_ricetta.value = foto
+    }
+
+    fun setIngredienti(ingredienti: List<String>) {
+        // TODO
     }
 }

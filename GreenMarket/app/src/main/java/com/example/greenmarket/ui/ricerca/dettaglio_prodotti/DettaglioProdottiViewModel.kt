@@ -49,6 +49,11 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
     }
     val quantita_prodotto: LiveData<Float> = _quantita_prodotto
 
+    private var _prezzo_totale = MutableLiveData<Float>().apply {
+        value = 0f
+    }
+    val prezzo_totale: LiveData<Float> = _prezzo_totale
+
     fun setNome(nome: String) {
         _nome_prodotto.value = nome
     }
@@ -88,9 +93,15 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
     }
 
     fun inserimentoProdottoInListaSpesa() {
+        _prezzo_totale.value = _quantita_prodotto.value?.times(_prezzo_prodotto.value!!)
+        val infoProdotto = listOf(
+            _quantita_prodotto.value,
+            _prezzo_prodotto.value,
+            _prezzo_totale.value
+        )
 
         val updates = mapOf(
-            "prodotti.${nome_prodotto.value}" to quantita_prodotto.value
+            "prodotti.${_nome_prodotto.value}" to infoProdotto
         )
 
         currentUser?.let {
@@ -101,7 +112,6 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
                 .addOnFailureListener{
                     Toast.makeText(getApplication(), "Errore: Prodotto non aggiunto alla Lista della spesa", Toast.LENGTH_SHORT).show()
                 }
-
         }
     }
 
