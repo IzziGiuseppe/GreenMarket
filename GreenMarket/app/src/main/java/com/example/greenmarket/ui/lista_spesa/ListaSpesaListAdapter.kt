@@ -35,7 +35,7 @@ class ListaSpesaListAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodListaSpesaList[position]
         holder.textView.text = currentProdotto.nome + " €" + currentProdotto.prezzo
-        holder.textView2.text = "Quantità: " + formatFloat(currentProdotto.quantita) + "\n" +
+        holder.textView2.text = "Quantità: " + formatFloat(currentProdotto.quantita) + "kg\n" +
                 "Prezzo totale: €${"%.2f".format(currentProdotto.prezzoTotale)}"
         holder.imageView.setOnClickListener{ imageClickListener(currentProdotto)}
         holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }

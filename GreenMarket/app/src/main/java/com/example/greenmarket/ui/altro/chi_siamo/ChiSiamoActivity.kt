@@ -116,7 +116,7 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
         googleMap = p0
         val location = LatLng(43.5855532, 13.5151101)
         googleMap.addMarker(MarkerOptions().position(location).title("UNIVPM"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12f))
     }
 
 }
