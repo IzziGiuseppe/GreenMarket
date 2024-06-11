@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 import com.example.greenmarket.ui.ricerca.ProdottoModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.sql.Timestamp
 
 class ListaSpesaViewModel : ViewModel() {
@@ -125,7 +127,7 @@ class ListaSpesaViewModel : ViewModel() {
                 totale += i.prezzoTotale
             }
         }
-
-        _prezzo_totale_view.value = "Totale: $totale"
+        val totaleArrotondato = BigDecimal(totale).setScale(2, RoundingMode.DOWN)
+        _prezzo_totale_view.value = "Totale: €$totaleArrotondato"
     }
 }

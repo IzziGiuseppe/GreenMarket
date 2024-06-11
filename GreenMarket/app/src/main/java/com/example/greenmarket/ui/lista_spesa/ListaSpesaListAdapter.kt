@@ -8,7 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.ComposizioneScontrini
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class ListaSpesaListAdapter(
     private val itemClickListener: (ProdottoInListaModel) -> Unit,
@@ -34,7 +35,8 @@ class ListaSpesaListAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodListaSpesaList[position]
         holder.textView.text = currentProdotto.nome + " €" + currentProdotto.prezzo
-        holder.textView2.text = "Quantità: " + formatFloat(currentProdotto.quantita)
+        holder.textView2.text = "Quantità: " + formatFloat(currentProdotto.quantita) + "\n" +
+                "Prezzo totale: €${"%.2f".format(currentProdotto.prezzoTotale)}"
         holder.imageView.setOnClickListener{ imageClickListener(currentProdotto)}
         holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }
     }

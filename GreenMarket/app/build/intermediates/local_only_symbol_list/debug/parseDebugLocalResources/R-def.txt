@@ -133,7 +133,6 @@ id navigation_home
 id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
-id nome_prezzo_prodotto
 id nome_prod_dett_scontr_item
 id nome_prod_lista_spesa_item
 id nome_prodotto

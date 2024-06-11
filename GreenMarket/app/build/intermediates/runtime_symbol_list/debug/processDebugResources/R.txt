@@ -3681,7 +3681,6 @@ int id neverCompleteToEnd 0x7f0801ae
 int id neverCompleteToStart 0x7f0801af
 int id noScroll 0x7f0801b0
 int id noState 0x7f0801b1
-int id nome_prezzo_prodotto 0x7f0801b2
 int id nome_prod_dett_scontr_item 0x7f0801b3
 int id nome_prod_lista_spesa_item 0x7f0801b4
 int id nome_prodotto 0x7f0801b5
