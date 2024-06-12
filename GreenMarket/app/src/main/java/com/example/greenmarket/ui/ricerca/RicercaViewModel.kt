@@ -58,4 +58,8 @@ class RicercaViewModel(application: Application) : AndroidViewModel(application)
                 Log.e("Firebase", "Error getting products", exception)
             }
     }
+
+    fun resetProdotto() {
+        _prodotto.value = ProdottoModel()
+    }
 }

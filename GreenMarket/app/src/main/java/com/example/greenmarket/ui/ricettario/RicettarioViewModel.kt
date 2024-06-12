@@ -69,4 +69,8 @@ class RicettarioViewModel(application: Application) : AndroidViewModel(applicati
                 Log.e("Firebase", "Error getting products", exception)
             }
     }
+
+    fun resetRicetta() {
+        _ricetta.value = RicettaModel()
+    }
 }

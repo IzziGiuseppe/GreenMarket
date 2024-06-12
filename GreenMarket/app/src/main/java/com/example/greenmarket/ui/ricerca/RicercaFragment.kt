@@ -78,6 +78,7 @@ class RicercaFragment : Fragment() {
                                     it1,
                                     it2, it3, it4
                                 )
+                                ricercaViewModel.resetProdotto()
                             }
                         }
                     }

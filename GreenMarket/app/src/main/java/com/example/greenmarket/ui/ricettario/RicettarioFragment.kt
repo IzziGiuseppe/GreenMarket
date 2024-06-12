@@ -95,6 +95,7 @@ class RicettarioFragment : Fragment() {
                                     it1,
                                     it2, it3, it4
                                 )
+                                ricettarioViewModel.resetRicetta()
                             }
                         }
                     }
