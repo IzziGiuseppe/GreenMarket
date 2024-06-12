@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,9 +35,11 @@ class ListaSpesaFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var listaSpesaViewModel: ListaSpesaViewModel
+
     @OptIn(UnstableApi::class)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val listaSpesaViewModel = ViewModelProvider(this).get(ListaSpesaViewModel::class.java)
+        listaSpesaViewModel = ViewModelProvider(this).get(ListaSpesaViewModel::class.java)
 
         _binding = FragmentListaSpesaBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -68,6 +71,7 @@ class ListaSpesaFragment : Fragment() {
 
         listaSpesaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer {
             prodListaSpesa -> adapter.setData(prodListaSpesa)
+            Log.d("AIUTOOOOOOOOOO", "$prodListaSpesa")
             listaSpesaViewModel.readPrezzoTotale()
         })
 
@@ -104,8 +108,7 @@ class ListaSpesaFragment : Fragment() {
 
         val confermaBT: Button = binding.confermaOrdine
         confermaBT.setOnClickListener {
-            val intent = Intent(requireContext(), ConfermaOrdineActivity::class.java)
-            startActivity(intent)
+            startConfermaOrdine(listaSpesaViewModel.prezzo_totale_view.value)
         }
 
         val totaleTV: TextView = binding.prezzoTotale
@@ -128,6 +131,20 @@ class ListaSpesaFragment : Fragment() {
         intent.putExtra("foto_prodotto", foto)
         intent.putExtra("quantita_prodotto", quantita)
         startActivity(intent)
+    }
+
+    private fun startConfermaOrdine(prezzoTotale: String?) {
+        val intent = Intent(requireContext(), ConfermaOrdineActivity::class.java)
+        if (prezzoTotale != null) {
+            intent.putExtra("prezzo_totale", Regex("\\d+(\\.\\d+)?").find(prezzoTotale)?.value)
+        }
+        startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Rileggi la lista della spesa quando il frammento torna visibile
+        listaSpesaViewModel.readListaSpesa()
     }
 
     override fun onDestroyView() {

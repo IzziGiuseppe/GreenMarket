@@ -50,6 +50,12 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
   public final TextView tiPremia;
 
   @NonNull
+  public final TextView valorePunti;
+
+  @NonNull
+  public final TextView valoreSpesa;
+
+  @NonNull
   public final View view;
 
   @NonNull
@@ -65,8 +71,8 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
       @NonNull ConstraintLayout activityTessPunti, @NonNull TextView codiciSconto,
       @NonNull Button converti, @NonNull TextView haiSpeso, @NonNull ImageButton infoCS,
       @NonNull TextView punti, @NonNull Button riscatta, @NonNull RecyclerView rvCodiciSconto,
-      @NonNull TextView tiPremia, @NonNull View view, @NonNull View view2, @NonNull View view3,
-      @NonNull View view4) {
+      @NonNull TextView tiPremia, @NonNull TextView valorePunti, @NonNull TextView valoreSpesa,
+      @NonNull View view, @NonNull View view2, @NonNull View view3, @NonNull View view4) {
     this.rootView = rootView;
     this.activityTessPunti = activityTessPunti;
     this.codiciSconto = codiciSconto;
@@ -77,6 +83,8 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
     this.riscatta = riscatta;
     this.rvCodiciSconto = rvCodiciSconto;
     this.tiPremia = tiPremia;
+    this.valorePunti = valorePunti;
+    this.valoreSpesa = valoreSpesa;
     this.view = view;
     this.view2 = view2;
     this.view3 = view3;
@@ -160,6 +168,18 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.valore_punti;
+      TextView valorePunti = ViewBindings.findChildViewById(rootView, id);
+      if (valorePunti == null) {
+        break missingId;
+      }
+
+      id = R.id.valore_spesa;
+      TextView valoreSpesa = ViewBindings.findChildViewById(rootView, id);
+      if (valoreSpesa == null) {
+        break missingId;
+      }
+
       id = R.id.view;
       View view = ViewBindings.findChildViewById(rootView, id);
       if (view == null) {
@@ -185,8 +205,8 @@ public final class ActivityTesseraPuntiBinding implements ViewBinding {
       }
 
       return new ActivityTesseraPuntiBinding((ConstraintLayout) rootView, activityTessPunti,
-          codiciSconto, converti, haiSpeso, infoCS, punti, riscatta, rvCodiciSconto, tiPremia, view,
-          view2, view3, view4);
+          codiciSconto, converti, haiSpeso, infoCS, punti, riscatta, rvCodiciSconto, tiPremia,
+          valorePunti, valoreSpesa, view, view2, view3, view4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

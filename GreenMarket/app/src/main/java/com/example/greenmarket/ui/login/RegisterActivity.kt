@@ -60,24 +60,34 @@ class RegisterActivity : AppCompatActivity() {
                                         "prodotti" to prodotti
                                     )
 
+                                    val tesseraPunti = hashMapOf(
+                                        "saldo" to 0f,
+                                        "punti" to 0
+                                    )
+
                                     db.collection("users").document(userID).set(userMap)
                                         .addOnSuccessListener{
+                                            binding.editTextNome.text.clear()
+                                            binding.editTextCognome.text.clear()
+                                            binding.editTextIndirizzo.text.clear()
+                                            binding.editTextEmail.text.clear()
+                                            binding.editTextPassword.text.clear()
+                                            binding.editTextConfirmPassword.text.clear()
                                             db.collection("users").document(userID).collection("historical").document("shoppingList").set(listaSpesa)
                                                 .addOnSuccessListener{
-                                                    Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
-                                                    binding.editTextNome.text.clear()
-                                                    binding.editTextCognome.text.clear()
-                                                    binding.editTextIndirizzo.text.clear()
-                                                    binding.editTextEmail.text.clear()
-                                                    binding.editTextPassword.text.clear()
-                                                    binding.editTextConfirmPassword.text.clear()
-                                                    val intent = Intent(this, LoginActivity::class.java)
-                                                    startActivity(intent)
+                                                    db.collection("users").document(userID).collection("pointCard").document("wallet").set(tesseraPunti)
+                                                        .addOnSuccessListener{
+                                                            Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
+                                                            val intent = Intent(this, LoginActivity::class.java)
+                                                            startActivity(intent)
+                                                        }
+                                                        .addOnFailureListener{
+                                                            Toast.makeText(this, "Errore durante la creazione della tessera a punti", Toast.LENGTH_SHORT).show()
+                                                        }
                                                 }
                                                 .addOnFailureListener{
                                                     Toast.makeText(this, "Errore durante la creazione della lista della spesa", Toast.LENGTH_SHORT).show()
                                                 }
-
                                         }
                                         .addOnFailureListener{
                                             Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
