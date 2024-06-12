@@ -7,23 +7,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.OptIn
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentListaSpesaBinding
-import com.example.greenmarket.databinding.ItemListaSpesaViewBinding
 import com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity
+import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ListaSpesaFragment : Fragment() {
 
@@ -43,7 +44,7 @@ class ListaSpesaFragment : Fragment() {
         val adapter = ListaSpesaListAdapter(
             itemClickListener = {
                 item -> item.nome.let { listaSpesaViewModel.readProdottoDettagliato(it) }
-            },
+                listaSpesaViewModel.setQuantita(item.quantita) },
             imageClickListener = {
                 item -> item.nome.let { listaSpesaViewModel.deleteProdByNome(it) }
             }
@@ -70,6 +71,29 @@ class ListaSpesaFragment : Fragment() {
             listaSpesaViewModel.readPrezzoTotale()
         })
 
+        //listaSpesaViewModel.quantita.observe(viewLifecycleOwner) {}
+
+        listaSpesaViewModel.prodotto.observe(viewLifecycleOwner) {
+            prodotto ->
+            prodotto?.let {
+                it.nome?.let { it1 ->
+                    it.descrizione?.let { it2 ->
+                        it.prezzo?.let { it3 ->
+                            it.foto?.let { it4 ->
+                                listaSpesaViewModel.quantita.value?.let { it5 ->
+                                    startProdotto(
+                                        it1,
+                                        it2, it3, it4, it5
+                                    )
+                                }
+                                listaSpesaViewModel.resetProdotto()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         val deleteBT: FloatingActionButton = binding.deleteAll
         deleteBT.setOnClickListener {
             listaSpesaViewModel.deleteListaSpesa()
@@ -91,6 +115,19 @@ class ListaSpesaFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun startProdotto(nome: String, descrizione: String, prezzo: Float, foto: String, quantita: Float) {
+        val intent = Intent(requireContext(), DettaglioProdottoActivity::class.java)
+        /*MOMENTANEAMENTE COMMENTATO
+        intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
+         */
+        intent.putExtra("nome_prodotto", nome)
+        intent.putExtra("prezzo_prodotto", prezzo)
+        intent.putExtra("descrizione_prodotto", descrizione)
+        intent.putExtra("foto_prodotto", foto)
+        intent.putExtra("quantita_prodotto", quantita)
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

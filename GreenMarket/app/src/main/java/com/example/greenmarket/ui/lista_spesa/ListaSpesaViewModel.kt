@@ -1,11 +1,15 @@
 package com.example.greenmarket.ui.lista_spesa
 
+import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal
@@ -39,6 +43,9 @@ class ListaSpesaViewModel : ViewModel() {
     private val _prodotto = MutableLiveData<ProdottoModel>()
     val prodotto: LiveData<ProdottoModel> = _prodotto
 
+    private val _quantita = MutableLiveData<Float>()
+    val quantita: LiveData<Float> = _quantita
+
     fun readProdottoDettagliato(nome: String) {
         db.collection("products").document(nome).get()
             .addOnSuccessListener { document ->
@@ -47,6 +54,10 @@ class ListaSpesaViewModel : ViewModel() {
             .addOnFailureListener { exception ->
                 Log.e("Firebase", "Error getting product details", exception)
             }
+    }
+
+    fun setQuantita(quantita: Float) {
+        _quantita.value = quantita
     }
 
     fun readListaSpesa() {
@@ -129,5 +140,9 @@ class ListaSpesaViewModel : ViewModel() {
         }
         val totaleArrotondato = BigDecimal(totale).setScale(2, RoundingMode.DOWN)
         _prezzo_totale_view.value = "Totale: €$totaleArrotondato"
+    }
+
+    fun resetProdotto() {
+        _prodotto.value = ProdottoModel()
     }
 }

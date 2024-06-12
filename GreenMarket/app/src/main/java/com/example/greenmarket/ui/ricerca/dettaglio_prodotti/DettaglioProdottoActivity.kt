@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -31,6 +32,8 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val prezzoProdotto = intent.getFloatExtra("prezzo_prodotto", 0f)
         val descrizioneProdotto = intent.getStringExtra("descrizione_prodotto")
         val fotoProdotto = intent.getStringExtra("foto_prodotto")
+        val quantitaProdotto = intent.getFloatExtra("quantita_prodotto", 0.5f)
+        Toast.makeText(this, "1. $quantitaProdotto", Toast.LENGTH_SHORT).show()
 
         if (nomeProdotto != null) {
             dettaglioProdottiViewModel.setNome(nomeProdotto)
@@ -67,6 +70,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
             dettaglioProdottiViewModel.decrementaQuantita()
         }
 
+        dettaglioProdottiViewModel.setQuantita(quantitaProdotto)
         dettaglioProdottiViewModel.quantita_prodotto.observe(this) {
             quantita.text = it.toString()
         }

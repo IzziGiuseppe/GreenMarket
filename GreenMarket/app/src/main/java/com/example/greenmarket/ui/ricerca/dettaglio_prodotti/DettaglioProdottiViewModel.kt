@@ -74,6 +74,10 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
         _uM_prodotto.value = uM
     }
 
+    fun setQuantita(quantita: Float){
+        _quantita_prodotto.value = quantita
+    }
+
     fun incrementaQuantita() {
         if(quantita_prodotto.value!! < 100){
             _quantita_prodotto.value = _quantita_prodotto.value?.plus(0.5f)
