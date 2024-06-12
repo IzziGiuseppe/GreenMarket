@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -94,38 +93,6 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
    * <p>
    * Present:
    * <ul>
-   *   <li>layout-v26/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button githubDomenico;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-v26/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button githubGiuseppe;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
    *   <li>layout/</li>
    * </ul>
    *
@@ -183,55 +150,7 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
    * </ul>
    */
   @Nullable
-  public final ImageView imageViewPeppe;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-v26/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final LinearLayout linearLayout12;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-v26/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button linkedinDomenico;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-v26/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button linkedinGiuseppe;
+  public final ImageView imageViewSocio;
 
   @NonNull
   public final View mappa;
@@ -250,7 +169,7 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
    * </ul>
    */
   @Nullable
-  public final Button outlookDomenico;
+  public final TextView nomeDomenico;
 
   /**
    * This binding is not available in all configurations.
@@ -266,7 +185,23 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
    * </ul>
    */
   @Nullable
-  public final Button outlookGiuseppe;
+  public final TextView nomeGiuseppe;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final TextView nomePeppe;
 
   @NonNull
   public final TextView testoTxt;
@@ -327,32 +262,26 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
 
   private ActivityChiSiamoBinding(@NonNull View rootView, @NonNull View activityCs,
       @Nullable CardView cardImageDomenico, @Nullable CardView cardImageGiuseppe,
-      @Nullable CardView cardImagePeppe, @Nullable Button domenicoBt,
-      @Nullable Button githubDomenico, @Nullable Button githubGiuseppe, @Nullable Button giuseppeBt,
+      @Nullable CardView cardImagePeppe, @Nullable Button domenicoBt, @Nullable Button giuseppeBt,
       @Nullable ImageView imageViewDomenico, @Nullable ImageView imageViewGiuseppe,
-      @Nullable ImageView imageViewPeppe, @Nullable LinearLayout linearLayout12,
-      @Nullable Button linkedinDomenico, @Nullable Button linkedinGiuseppe, @NonNull View mappa,
-      @Nullable Button outlookDomenico, @Nullable Button outlookGiuseppe,
-      @NonNull TextView testoTxt, @NonNull TextView titolo2Txt, @Nullable TextView titoloSoci,
-      @NonNull TextView titoloTxt, @Nullable View view, @Nullable View view2) {
+      @Nullable ImageView imageViewSocio, @NonNull View mappa, @Nullable TextView nomeDomenico,
+      @Nullable TextView nomeGiuseppe, @Nullable TextView nomePeppe, @NonNull TextView testoTxt,
+      @NonNull TextView titolo2Txt, @Nullable TextView titoloSoci, @NonNull TextView titoloTxt,
+      @Nullable View view, @Nullable View view2) {
     this.rootView = rootView;
     this.activityCs = activityCs;
     this.cardImageDomenico = cardImageDomenico;
     this.cardImageGiuseppe = cardImageGiuseppe;
     this.cardImagePeppe = cardImagePeppe;
     this.domenicoBt = domenicoBt;
-    this.githubDomenico = githubDomenico;
-    this.githubGiuseppe = githubGiuseppe;
     this.giuseppeBt = giuseppeBt;
     this.imageViewDomenico = imageViewDomenico;
     this.imageViewGiuseppe = imageViewGiuseppe;
-    this.imageViewPeppe = imageViewPeppe;
-    this.linearLayout12 = linearLayout12;
-    this.linkedinDomenico = linkedinDomenico;
-    this.linkedinGiuseppe = linkedinGiuseppe;
+    this.imageViewSocio = imageViewSocio;
     this.mappa = mappa;
-    this.outlookDomenico = outlookDomenico;
-    this.outlookGiuseppe = outlookGiuseppe;
+    this.nomeDomenico = nomeDomenico;
+    this.nomeGiuseppe = nomeGiuseppe;
+    this.nomePeppe = nomePeppe;
     this.testoTxt = testoTxt;
     this.titolo2Txt = titolo2Txt;
     this.titoloSoci = titoloSoci;
@@ -402,12 +331,6 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
       id = R.id.domenico_bt;
       Button domenicoBt = ViewBindings.findChildViewById(rootView, id);
 
-      id = R.id.github_domenico;
-      Button githubDomenico = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.github_giuseppe;
-      Button githubGiuseppe = ViewBindings.findChildViewById(rootView, id);
-
       id = R.id.giuseppe_bt;
       Button giuseppeBt = ViewBindings.findChildViewById(rootView, id);
 
@@ -417,17 +340,8 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
       id = R.id.imageViewGiuseppe;
       ImageView imageViewGiuseppe = ViewBindings.findChildViewById(rootView, id);
 
-      id = R.id.imageViewPeppe;
-      ImageView imageViewPeppe = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.linearLayout12;
-      LinearLayout linearLayout12 = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.linkedin_domenico;
-      Button linkedinDomenico = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.linkedin_giuseppe;
-      Button linkedinGiuseppe = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.imageViewSocio;
+      ImageView imageViewSocio = ViewBindings.findChildViewById(rootView, id);
 
       id = R.id.mappa;
       View mappa = ViewBindings.findChildViewById(rootView, id);
@@ -435,11 +349,14 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.outlook_domenico;
-      Button outlookDomenico = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.nome_domenico;
+      TextView nomeDomenico = ViewBindings.findChildViewById(rootView, id);
 
-      id = R.id.outlook_giuseppe;
-      Button outlookGiuseppe = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.nome_giuseppe;
+      TextView nomeGiuseppe = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.nome_peppe;
+      TextView nomePeppe = ViewBindings.findChildViewById(rootView, id);
 
       id = R.id.testo_txt;
       TextView testoTxt = ViewBindings.findChildViewById(rootView, id);
@@ -469,10 +386,9 @@ public final class ActivityChiSiamoBinding implements ViewBinding {
       View view2 = ViewBindings.findChildViewById(rootView, id);
 
       return new ActivityChiSiamoBinding(rootView, activityCs, cardImageDomenico, cardImageGiuseppe,
-          cardImagePeppe, domenicoBt, githubDomenico, githubGiuseppe, giuseppeBt, imageViewDomenico,
-          imageViewGiuseppe, imageViewPeppe, linearLayout12, linkedinDomenico, linkedinGiuseppe,
-          mappa, outlookDomenico, outlookGiuseppe, testoTxt, titolo2Txt, titoloSoci, titoloTxt,
-          view, view2);
+          cardImagePeppe, domenicoBt, giuseppeBt, imageViewDomenico, imageViewGiuseppe,
+          imageViewSocio, mappa, nomeDomenico, nomeGiuseppe, nomePeppe, testoTxt, titolo2Txt,
+          titoloSoci, titoloTxt, view, view2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

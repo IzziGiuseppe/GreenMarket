@@ -6,11 +6,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.R
+import com.example.greenmarket.ui.altro.chi_siamo.soci.SociActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
@@ -43,12 +46,8 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
         val titolo: TextView = findViewById(R.id.titolo_txt)
         val testo: TextView = findViewById(R.id.testo_txt)
         val titolo2: TextView = findViewById(R.id.titolo2_txt)
-        val giusBtLinkedin: Button = findViewById(R.id.linkedin_giuseppe)
-        val domBtLinkedin: Button = findViewById(R.id.linkedin_domenico)
-        val giusBtGitHub: Button = findViewById(R.id.github_giuseppe)
-        val domBtGitHub: Button = findViewById(R.id.github_domenico)
-        val giusBtOutlook: Button = findViewById(R.id.outlook_giuseppe)
-        val domBtOutlook: Button = findViewById(R.id.outlook_domenico)
+        val giuseppe: ImageView = findViewById(R.id.imageViewGiuseppe)
+        val domenico: ImageView = findViewById(R.id.imageViewDomenico)
 
         chiSiamoViewModel.storia_azienda.observe(this) {
             titolo.text = it
@@ -62,52 +61,20 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
             titolo2.text = it
         }
 
-        giusBtLinkedin.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.setData(Uri.parse("https://www.linkedin.com/feed/"))
-            startActivity(intent)
+        giuseppe.setOnClickListener {
+            startSoci("https://www.linkedin.com/feed/",
+                "https://github.com/IzziGiuseppe",
+                "mailto:s1094052@studenti.univpm.it",
+                "Giuseppe Izzi",
+                "@drawable/giuseppe")
         }
 
-        domBtLinkedin.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.setData(Uri.parse("https://www.linkedin.com/feed/"))
-            startActivity(intent)
-        }
-
-        giusBtGitHub.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.setData(Uri.parse("https://www.univpm.com/"))
-            startActivity(intent)
-        }
-
-        domBtGitHub.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.setData(Uri.parse("https://github.com/domenicolaporta00"))
-            startActivity(intent)
-        }
-
-        giusBtOutlook.setOnClickListener {
-            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:s1094052@studenti.univpm.it")
-            }
-
-            try {
-                this.startActivity(Intent.createChooser(emailIntent, "Scegli un'app per email"))
-            } catch (e: ActivityNotFoundException) {
-                Toast.makeText(this, "Non ci sono app di email installate.", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        domBtOutlook.setOnClickListener {
-            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:s1095492@studenti.univpm.it")
-            }
-
-            try {
-                this.startActivity(Intent.createChooser(emailIntent, "Scegli un'app per email"))
-            } catch (e: ActivityNotFoundException) {
-                Toast.makeText(this, "Non ci sono app di email installate.", Toast.LENGTH_SHORT).show()
-            }
+        domenico.setOnClickListener {
+            startSoci("https://www.linkedin.com/feed/",
+                "https://github.com/domenicolaporta00",
+                "mailto:s1095492@studenti.univpm.it",
+                "Domenico La Porta",
+                "@drawable/domenico")
         }
 
     }
@@ -117,6 +84,16 @@ class ChiSiamoActivity : AppCompatActivity(), OnMapReadyCallback {
         val location = LatLng(43.5855532, 13.5151101)
         googleMap.addMarker(MarkerOptions().position(location).title("UNIVPM"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12f))
+    }
+
+    fun startSoci(linkedin: String, github: String, outlook: String, socio: String, foto: String) {
+        val intent = Intent(this, SociActivity::class.java)
+        intent.putExtra("linkedin", linkedin)
+        intent.putExtra("github", github)
+        intent.putExtra("outlook", outlook)
+        intent.putExtra("socio", socio)
+        intent.putExtra("foto", foto)
+        startActivity(intent)
     }
 
 }

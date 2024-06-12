@@ -8,10 +8,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_dettaglio_prodotto.xml"
     },
     {
-        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout-v26/activity_dettaglio_prodotto.xml",
-        "source": "com.example.greenmarket.app-main-73:/layout-v26/activity_dettaglio_prodotto.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-70:\\layout-v26\\activity_term_cond.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_term_cond.xml"
     },
@@ -22,5 +18,9 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-mergeDebugResources-70:\\layout-v26\\activity_dettaglio_ricetta.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_dettaglio_ricetta.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout-v26/activity_chi_siamo.xml",
+        "source": "com.example.greenmarket.app-main-73:/layout-v26/activity_chi_siamo.xml"
     }
 ]

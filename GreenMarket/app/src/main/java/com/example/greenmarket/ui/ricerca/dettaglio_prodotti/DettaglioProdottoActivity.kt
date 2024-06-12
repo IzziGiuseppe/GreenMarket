@@ -10,11 +10,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.greenmarket.R
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 
 class DettaglioProdottoActivity : AppCompatActivity() {
 
     private val dettaglioProdottiViewModel: DettaglioProdottiViewModel by viewModels()
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dettaglio_prodotto)
@@ -33,7 +34,6 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val descrizioneProdotto = intent.getStringExtra("descrizione_prodotto")
         val fotoProdotto = intent.getStringExtra("foto_prodotto")
         val quantitaProdotto = intent.getFloatExtra("quantita_prodotto", 0.5f)
-        Toast.makeText(this, "1. $quantitaProdotto", Toast.LENGTH_SHORT).show()
 
         if (nomeProdotto != null) {
             dettaglioProdottiViewModel.setNome(nomeProdotto)
@@ -44,7 +44,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
 
         dettaglioProdottiViewModel.setPrezzo(prezzoProdotto)
         dettaglioProdottiViewModel.prezzo_prodotto.observe(this) {
-            prezzo.text = it.toString()
+            prezzo.text = "€$it"
         }
 
         if (descrizioneProdotto != null) {

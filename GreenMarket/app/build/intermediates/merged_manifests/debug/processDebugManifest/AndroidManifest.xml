@@ -48,6 +48,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.Material3.Light" >
         <activity
+            android:name="com.example.greenmarket.ui.altro.chi_siamo.soci.SociActivity"
+            android:exported="false"
+            android:parentActivityName="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity" />
+        <activity
             android:name="com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity"
             android:exported="false"
             android:label="Dettaglio scontrino"

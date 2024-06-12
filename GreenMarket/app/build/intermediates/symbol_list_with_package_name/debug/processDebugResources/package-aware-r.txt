@@ -3133,6 +3133,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable domenico
 drawable donazione
+drawable git
 drawable giuseppe
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3164,6 +3165,7 @@ drawable ic_password
 drawable ic_search_black_24
 drawable indeterminate_static
 drawable invita
+drawable linkedin
 drawable lista_spesa
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3238,6 +3240,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable outlook
 drawable peppe
 drawable pere
 drawable plus
@@ -3519,8 +3522,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
-id github_domenico
-id github_giuseppe
+id git_text
 id giuseppe_bt
 id glide_custom_view_target_tag
 id gone
@@ -3553,10 +3555,13 @@ id imageView
 id imageViewAdd
 id imageViewDomenico
 id imageViewGiuseppe
-id imageViewPeppe
 id imageViewProfile
 id imageViewRemove
+id imageViewSocio
 id image_description
+id image_git
+id image_linkedin
+id image_outlook
 id immediateStop
 id included
 id indeterminate
@@ -3580,7 +3585,6 @@ id linear
 id linearLayout
 id linearLayout10
 id linearLayout11
-id linearLayout12
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -3589,8 +3593,7 @@ id linearLayout6
 id linearLayout7
 id linearLayout8
 id linearLayout9
-id linkedin_domenico
-id linkedin_giuseppe
+id linkedin_text
 id listMode
 id list_item
 id locale
@@ -3682,12 +3685,16 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id nome_domenico
+id nome_giuseppe
+id nome_peppe
 id nome_prod_dett_scontr_item
 id nome_prod_lista_spesa_item
 id nome_prodotto
 id nome_prodotto_item
 id nome_prodotto_stats_item
 id nome_ricetta
+id nome_socio
 id none
 id normal
 id north
@@ -3714,8 +3721,7 @@ id open_search_view_toolbar
 id open_search_view_toolbar_container
 id orario_chiusura
 id outline
-id outlook_domenico
-id outlook_giuseppe
+id outlook_text
 id outward
 id overshoot
 id packed
@@ -4088,6 +4094,7 @@ layout activity_main
 layout activity_profilo_utente
 layout activity_registrazione
 layout activity_reset_password
+layout activity_soci
 layout activity_splash
 layout activity_stats
 layout activity_storico
