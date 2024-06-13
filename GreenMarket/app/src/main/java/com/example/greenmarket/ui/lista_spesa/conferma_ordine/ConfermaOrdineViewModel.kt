@@ -24,6 +24,10 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
     }
     val prezzo_totale: LiveData<String> = _prezzo_totale
 
+    private var _listaCodiciSconto= MutableLiveData(listOf<String>())
+    val listaCodiciSconto: MutableLiveData<List<String>>
+        get() = _listaCodiciSconto
+
     @OptIn(UnstableApi::class)
     fun setPrezzoTotale(prezzoTotale: String) {
         _prezzo_totale.value = prezzoTotale
@@ -46,6 +50,27 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                 }
         }
 
+    }
+
+    fun readCodiciSconto() {
+        currentUser?.let {
+            db.collection("users").document(it.uid).collection("pointCard").document("coupons")
+                .get()
+                .addOnSuccessListener { document ->
+                    val vect = document.get("codici sconto") as? List<String>
+                    if (vect != null) {
+                        if (vect.isEmpty()) {
+                            _listaCodiciSconto.value = listOf("Non ci sono codici sconto a disposizione")
+                        }
+                        else {
+                            val mutableVect = vect.toMutableList()
+                            mutableVect.add(0, "-")
+                            _listaCodiciSconto.value = mutableVect
+                        }
+
+                    }
+                }
+        }
     }
 
     fun deleteListaSpesa() {

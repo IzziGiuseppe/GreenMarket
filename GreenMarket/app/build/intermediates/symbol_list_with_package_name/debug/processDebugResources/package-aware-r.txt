@@ -3094,6 +3094,7 @@ drawable abc_vector_test
 drawable altro
 drawable angoli_arrotondati_edit_text
 drawable angoli_arrotondati_item
+drawable angoli_arrotondati_spinner
 drawable assistenza
 drawable avd_hide_password
 drawable avd_show_password

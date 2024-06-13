@@ -73,7 +73,7 @@ class TesseraPuntiViewModel(application: Application): AndroidViewModel(applicat
     }
 
     fun riscattaCodiceSconto(){
-        var listaCS = mutableListOf<String>()
+        val listaCS = mutableListOf<String>()
         if(_punti.value!! >= 5){
             val codici_sconto_generati = _punti.value?.div(5)
             _punti.value = _punti.value?.rem(5)

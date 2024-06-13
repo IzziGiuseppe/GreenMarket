@@ -1,18 +1,18 @@
 package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.greenmarket.R
-import com.example.greenmarket.databinding.ActivityConfermaOrdineBinding
-import com.example.greenmarket.databinding.FragmentListaSpesaBinding
-import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottiViewModel
+import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiViewModel
 
 class ConfermaOrdineActivity : AppCompatActivity() {
     //private var _binding: ActivityConfermaOrdineBinding? = null
@@ -22,13 +22,36 @@ class ConfermaOrdineActivity : AppCompatActivity() {
     //private val binding get() = _binding!!
 
     private val confermaOrdineViewModel: ConfermaOrdineViewModel by viewModels()
+    private val tesseraPuntiViewModel: TesseraPuntiViewModel by viewModels()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conferma_ordine)
 
         val confermaBT: Button = findViewById(R.id.conferma_ordine_totale)
         val prezzoTotale: TextView = findViewById(R.id.prezzo_totale_no_sconto)
+
+        val editTextCS: Spinner = findViewById(R.id.edit_codice_sconto)
+        confermaOrdineViewModel.readCodiciSconto()
+        confermaOrdineViewModel.listaCodiciSconto.observe(this) {
+            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, it)
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            editTextCS.adapter = adapter
+        }
+
+        editTextCS.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                if (position != 0) { // Ignora il primo elemento "Select a Language"
+                    val selectedItem = parent.getItemAtPosition(position).toString()
+                    Toast.makeText(this@ConfermaOrdineActivity, "Selected: $selectedItem", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Do nothing
+            }
+        }
 
         val prezzoTotaleLista = intent.getStringExtra("prezzo_totale")
 

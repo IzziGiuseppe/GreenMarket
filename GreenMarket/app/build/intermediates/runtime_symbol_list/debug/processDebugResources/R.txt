@@ -3093,6 +3093,7 @@ int drawable abc_vector_test 0x7f070077
 int drawable altro 0x7f070078
 int drawable angoli_arrotondati_edit_text 0x7f070079
 int drawable angoli_arrotondati_item 0x7f07007a
+int drawable angoli_arrotondati_spinner 0x7f070118
 int drawable assistenza 0x7f07007b
 int drawable avd_hide_password 0x7f07007c
 int drawable avd_show_password 0x7f07007d

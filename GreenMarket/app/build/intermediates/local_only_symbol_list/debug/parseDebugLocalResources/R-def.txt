@@ -12,6 +12,7 @@ dimen activity_vertical_margin
 drawable altro
 drawable angoli_arrotondati_edit_text
 drawable angoli_arrotondati_item
+drawable angoli_arrotondati_spinner
 drawable assistenza
 drawable banane
 drawable chi_siamo
