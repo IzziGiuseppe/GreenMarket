@@ -12,7 +12,7 @@ import com.example.greenmarket.db.model.CodiceSconto
 class CodiciScontoListAdapter(
 ): RecyclerView.Adapter<CodiciScontoListAdapter.MyViewHolder>() {
 
-    private var listCodiciSconto = emptyArray<CodiceSconto>()
+    private var listCodiciSconto = emptyList<String>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.codice_sconto)
@@ -30,7 +30,7 @@ class CodiciScontoListAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentCodiceSconto = listCodiciSconto[position]
-        holder.textView.text = currentCodiceSconto.codice
+        holder.textView.text = currentCodiceSconto
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +38,7 @@ class CodiciScontoListAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(cs: Array<CodiceSconto>) {
+    fun setData(cs: List<String>) {
         this.listCodiciSconto = cs
         notifyDataSetChanged()
     }

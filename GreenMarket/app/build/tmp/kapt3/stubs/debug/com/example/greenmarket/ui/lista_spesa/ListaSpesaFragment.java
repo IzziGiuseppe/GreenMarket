@@ -5,7 +5,7 @@ public final class ListaSpesaFragment extends androidx.fragment.app.Fragment {
     @org.jetbrains.annotations.Nullable
     private com.example.greenmarket.databinding.FragmentListaSpesaBinding _binding;
     private com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel listaSpesaViewModel;
-
+    
     public ListaSpesaFragment() {
         super();
     }
@@ -29,11 +29,11 @@ public final class ListaSpesaFragment extends androidx.fragment.app.Fragment {
     
     private final void startConfermaOrdine(java.lang.String prezzoTotale) {
     }
-
+    
     @java.lang.Override
     public void onResume() {
     }
-
+    
     @java.lang.Override
     public void onDestroyView() {
     }

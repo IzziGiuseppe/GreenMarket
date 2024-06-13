@@ -42,7 +42,7 @@ class ConfermaOrdineActivity : AppCompatActivity() {
         confermaBT.setOnClickListener {
             confermaOrdineViewModel.aggiornaSaldo()
             //Implementare la funzione che gestisce la creazione di una scontrino
-            confermaOrdineViewModel.deleteListaSpesa()
+            //confermaOrdineViewModel.deleteListaSpesa()
 
             Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
             finish()

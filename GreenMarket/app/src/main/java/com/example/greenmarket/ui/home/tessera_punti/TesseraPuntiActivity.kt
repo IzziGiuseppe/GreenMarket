@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -31,6 +32,8 @@ class TesseraPuntiActivity : AppCompatActivity() {
 
         val saldo: TextView = findViewById(R.id.valore_spesa)
         val punti: TextView = findViewById(R.id.valore_punti)
+        val converti: Button = findViewById(R.id.converti)
+        val riscatta: Button = findViewById(R.id.riscatta)
 
         val adapter = CodiciScontoListAdapter()
         val recyclerView = findViewById<RecyclerView>(R.id.rv_codici_sconto)
@@ -38,17 +41,27 @@ class TesseraPuntiActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         tesseraPuntiViewModel.readCodiciSconto()
-        tesseraPuntiViewModel.listaCodiciSconto.observe(this, Observer {
-                cs -> adapter.setData(cs)
-        })
+        tesseraPuntiViewModel.listaCodiciSconto.observe(this) { cs ->
+            adapter.setData(cs)
+        }
 
         tesseraPuntiViewModel.readTesseraPunti()
-        tesseraPuntiViewModel.saldo.observe(this, Observer {
-                saldo.text = "€$it"
-        })
-        tesseraPuntiViewModel.punti.observe(this, Observer {
+        tesseraPuntiViewModel.saldo.observe(this) {
+            saldo.text = "€$it"
+        }
+        tesseraPuntiViewModel.punti.observe(this) {
             punti.text = it.toString()
-        })
+        }
+
+        converti.setOnClickListener{
+            tesseraPuntiViewModel.convertiSaldo()
+        }
+
+        riscatta.setOnClickListener{
+            tesseraPuntiViewModel.riscattaCodiceSconto()
+        }
+
+
 
         val infoCS = findViewById<ImageButton>(R.id.infoCS)
         infoCS.setOnClickListener {
