@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:text="Hai speso: "
+        android:text="Hai speso:"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/converti"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,8 +86,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="Punti: "
+        android:layout_marginTop="8dp"
+        android:text="Punti:"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/riscatta"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,6 +137,29 @@
         app:layout_constraintTop_toBottomOf="@+id/view3"
         app:srcCompat="@android:drawable/ic_dialog_info"
         app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/valore_spesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="€50"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/converti"
+        app:layout_constraintStart_toEndOf="@+id/hai_speso"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/valore_punti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/riscatta"
+        app:layout_constraintStart_toEndOf="@+id/punti"
+        app:layout_constraintTop_toBottomOf="@+id/converti" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

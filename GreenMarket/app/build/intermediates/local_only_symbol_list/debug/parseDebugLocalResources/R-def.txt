@@ -224,7 +224,9 @@ id titolo_tc_txt
 id titolo_txt
 id uM_prodotto
 id valore_codice_sconto
+id valore_punti
 id valore_sconto
+id valore_spesa
 id view
 id view2
 id view3

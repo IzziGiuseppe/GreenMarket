@@ -3948,7 +3948,9 @@ id unlabeled
 id up
 id useLogo
 id valore_codice_sconto
+id valore_punti
 id valore_sconto
+id valore_spesa
 id vertical_only
 id view
 id view2

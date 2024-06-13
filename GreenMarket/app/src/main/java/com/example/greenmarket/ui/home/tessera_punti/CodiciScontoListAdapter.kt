@@ -37,9 +37,10 @@ class CodiciScontoListAdapter(
         return listCodiciSconto.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(cs: Array<CodiceSconto>) {
         this.listCodiciSconto = cs
-        //notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 
 

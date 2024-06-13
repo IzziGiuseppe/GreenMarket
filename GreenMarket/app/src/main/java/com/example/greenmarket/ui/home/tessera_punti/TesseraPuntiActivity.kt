@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -21,33 +22,32 @@ import com.example.greenmarket.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class TesseraPuntiActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
+    val tesseraPuntiViewModel: TesseraPuntiViewModel by viewModels()
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        val tesseraPuntiViewModel: TesseraPuntiViewModel by viewModels()
-
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
         setContentView(R.layout.activity_tessera_punti)
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
+
+        val saldo: TextView = findViewById(R.id.valore_spesa)
+        val punti: TextView = findViewById(R.id.valore_punti)
 
         val adapter = CodiciScontoListAdapter()
         val recyclerView = findViewById<RecyclerView>(R.id.rv_codici_sconto)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        /*val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-        val dividerDrawable = ColorDrawable(ContextCompat.getColor(this, R.color.black))
-        dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)*/
-
         tesseraPuntiViewModel.readCodiciSconto()
         tesseraPuntiViewModel.listaCodiciSconto.observe(this, Observer {
                 cs -> adapter.setData(cs)
+        })
+
+        tesseraPuntiViewModel.readTesseraPunti()
+        tesseraPuntiViewModel.saldo.observe(this, Observer {
+                saldo.text = "€$it"
+        })
+        tesseraPuntiViewModel.punti.observe(this, Observer {
+            punti.text = it.toString()
         })
 
         val infoCS = findViewById<ImageButton>(R.id.infoCS)
