@@ -172,7 +172,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword">
 
@@ -180,22 +179,16 @@
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="@string/ho_letto_e_accetto_i_termini_e_le_condizioni"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+            android:text="@string/ho_letto_e_accetto_i_termini_e_le_condizioni" />
 
         <TextView
             android:id="@+id/textViewTerminiCondizioni"
-            android:layout_width="162dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:gravity="center_vertical"
             android:text="@string/termini_e_condizioni"
-            android:textColorHighlight="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/checkBox"
-            app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+            android:textColorHighlight="@color/black" />
 
     </LinearLayout>
 
@@ -204,6 +197,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/continua"
+        android:backgroundTint="@android:color/holo_green_light"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

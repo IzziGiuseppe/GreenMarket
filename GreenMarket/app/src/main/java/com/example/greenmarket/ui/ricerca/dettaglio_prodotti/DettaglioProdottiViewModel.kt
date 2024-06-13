@@ -1,6 +1,7 @@
 package com.example.greenmarket.ui.ricerca.dettaglio_prodotti
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -10,6 +11,7 @@ import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.math.floor
 
 class DettaglioProdottiViewModel(application: Application): AndroidViewModel(application) {
 
@@ -97,7 +99,14 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
     }
 
     fun inserimentoProdottoInListaSpesa() {
-        _prezzo_totale.value = _quantita_prodotto.value?.times(_prezzo_prodotto.value!!)
+        _prezzo_totale.value = _quantita_prodotto.value?.let { quantita ->
+            _prezzo_prodotto.value?.let { prezzo ->
+                val totale = quantita * prezzo
+                // Arrotondare per difetto alle prime due cifre decimali
+                (floor(totale * 100) / 100)
+            }
+        }
+        Log.d("AAAAAAAAAAAAAAAAAAAAAAAAAA", _prezzo_totale.value.toString())
         val infoProdotto = listOf(
             _quantita_prodotto.value,
             _prezzo_prodotto.value,

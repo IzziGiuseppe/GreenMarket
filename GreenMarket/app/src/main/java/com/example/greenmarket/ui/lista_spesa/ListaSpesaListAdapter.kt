@@ -34,7 +34,7 @@ class ListaSpesaListAdapter(
         val currentProdotto = prodListaSpesaList[position]
         holder.textView.text = currentProdotto.nome + " €" + currentProdotto.prezzo
         holder.textView2.text = "Quantità: " + formatFloat(currentProdotto.quantita) + "kg\n" +
-                "Prezzo totale: €${"%.2f".format(currentProdotto.prezzoTotale)}"
+                "Prezzo totale: €${currentProdotto.prezzoTotale}"
         holder.imageView.setOnClickListener{ imageClickListener(currentProdotto)}
         holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }
     }

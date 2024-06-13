@@ -3446,6 +3446,7 @@ id dependency_ordering
 id descrizione
 id descrizione_prodotto
 id descrizione_ricetta
+id descrizione_title
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3585,6 +3586,7 @@ id linear
 id linearLayout
 id linearLayout10
 id linearLayout11
+id linearLayout12
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -3790,6 +3792,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id scrool_view_descrizione
 id search_badge
 id search_bar
 id search_button
@@ -3938,6 +3941,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id uM_prodotto
 id unchecked
 id uniform
 id unlabeled

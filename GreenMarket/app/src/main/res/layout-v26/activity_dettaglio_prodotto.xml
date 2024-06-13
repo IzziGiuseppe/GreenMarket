@@ -13,53 +13,96 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:layout_marginTop="8dp"
-      android:textSize="32sp"
+      android:textSize="48sp"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toBottomOf="@+id/card_image" />
 
   <TextView
       android:id="@+id/prezzo_prodotto"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:textSize="32sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/uM_prodotto" />
+
+  <TextView
+      android:id="@+id/uM_prodotto"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:layout_marginTop="8dp"
-      android:textSize="32sp"
-      app:layout_constraintStart_toEndOf="@+id/nome_prodotto"
-      app:layout_constraintTop_toTopOf="parent" />
+      android:text="1kg"
+      android:textColor="#787878"
+      android:textSize="16sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/nome_prodotto" />
+
+  <TextView
+      android:id="@+id/descrizione_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="Descrizione"
+      android:textSize="24sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout12" />
+
+  <View
+      android:id="@+id/view"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:background="?android:attr/listDivider"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/descrizione_title" />
 
   <androidx.cardview.widget.CardView
       android:id="@+id/card_image"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/nome_prodotto"
-      app:cardCornerRadius="16dp"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="8dp"
+      android:layout_marginTop="16dp"
       android:padding="4dp"
-      app:cardBackgroundColor="@android:color/white">
+      app:cardBackgroundColor="@android:color/white"
+      app:cardCornerRadius="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
     <ImageView
-      android:id="@+id/foto_prodotto"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/nome_prodotto"
-      tools:src="" />
+        android:id="@+id/foto_prodotto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_prodotto"
+        tools:src="" />
 
   </androidx.cardview.widget.CardView>
 
-  <TextView
-      android:id="@+id/descrizione_prodotto"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+  <ScrollView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
       android:layout_marginStart="16dp"
       android:layout_marginTop="8dp"
       android:layout_marginEnd="16dp"
-      android:justificationMode="inter_word"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toTopOf="@+id/buttonAddList"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/card_image" />
+      app:layout_constraintTop_toBottomOf="@+id/view">
+
+    <TextView
+        android:id="@+id/descrizione_prodotto"
+        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word" />
+  </ScrollView>
 
   <Button
       android:id="@+id/buttonAddList"
@@ -67,20 +110,20 @@
       android:layout_height="wrap_content"
       android:layout_marginBottom="32dp"
       android:text="Aggiungi alla lista della spesa"
+      android:backgroundTint="@android:color/holo_green_light"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
 
   <LinearLayout
+      android:id="@+id/linearLayout12"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="24dp"
       android:orientation="horizontal"
-      app:layout_constraintBottom_toTopOf="@+id/buttonAddList"
-      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/descrizione_prodotto"
-      app:layout_constraintVertical_bias="1.0">
+      app:layout_constraintTop_toBottomOf="@+id/uM_prodotto">
 
     <ImageView
         android:id="@+id/imageViewRemove"

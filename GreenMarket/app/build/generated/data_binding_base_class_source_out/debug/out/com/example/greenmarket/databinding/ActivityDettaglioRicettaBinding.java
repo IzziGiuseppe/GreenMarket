@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -57,21 +58,73 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
    * </ul>
    */
   @Nullable
+  public final TextView descrizioneTitle;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
   public final ImageView fotoRicetta;
 
   @NonNull
   public final TextView nomeRicetta;
 
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final ScrollView scroolViewDescrizione;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final View view;
+
   private ActivityDettaglioRicettaBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityDr, @Nullable CardView cardImageRicetta,
-      @NonNull TextView descrizioneRicetta, @Nullable ImageView fotoRicetta,
-      @NonNull TextView nomeRicetta) {
+      @NonNull TextView descrizioneRicetta, @Nullable TextView descrizioneTitle,
+      @Nullable ImageView fotoRicetta, @NonNull TextView nomeRicetta,
+      @Nullable ScrollView scroolViewDescrizione, @Nullable View view) {
     this.rootView = rootView;
     this.activityDr = activityDr;
     this.cardImageRicetta = cardImageRicetta;
     this.descrizioneRicetta = descrizioneRicetta;
+    this.descrizioneTitle = descrizioneTitle;
     this.fotoRicetta = fotoRicetta;
     this.nomeRicetta = nomeRicetta;
+    this.scroolViewDescrizione = scroolViewDescrizione;
+    this.view = view;
   }
 
   @Override
@@ -112,6 +165,9 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.descrizione_title;
+      TextView descrizioneTitle = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.foto_ricetta;
       ImageView fotoRicetta = ViewBindings.findChildViewById(rootView, id);
 
@@ -121,8 +177,15 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.scrool_view_descrizione;
+      ScrollView scroolViewDescrizione = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.view;
+      View view = ViewBindings.findChildViewById(rootView, id);
+
       return new ActivityDettaglioRicettaBinding((ConstraintLayout) rootView, activityDr,
-          cardImageRicetta, descrizioneRicetta, fotoRicetta, nomeRicetta);
+          cardImageRicetta, descrizioneRicetta, descrizioneTitle, fotoRicetta, nomeRicetta,
+          scroolViewDescrizione, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

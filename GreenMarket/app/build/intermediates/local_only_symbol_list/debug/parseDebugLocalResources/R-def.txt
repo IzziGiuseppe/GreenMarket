@@ -76,6 +76,7 @@ id delete_prod_bt
 id descrizione
 id descrizione_prodotto
 id descrizione_ricetta
+id descrizione_title
 id domenico_bt
 id editTextCognome
 id editTextCognomeUP
@@ -115,6 +116,7 @@ id infoCS
 id linearLayout
 id linearLayout10
 id linearLayout11
+id linearLayout12
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -175,6 +177,7 @@ id rv_lista_spesa
 id rv_prodotti_stats
 id rv_scontrini
 id rv_tc
+id scrool_view_descrizione
 id sezione_altro
 id sezione_tc
 id stats_prod
@@ -219,6 +222,7 @@ id titolo2_txt
 id titolo_soci
 id titolo_tc_txt
 id titolo_txt
+id uM_prodotto
 id valore_codice_sconto
 id valore_sconto
 id view

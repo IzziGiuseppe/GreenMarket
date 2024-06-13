@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -101,6 +102,22 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
    * </ul>
    */
   @Nullable
+  public final TextView descrizioneTitle;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
   public final ImageView fotoProdotto;
 
   /**
@@ -150,6 +167,22 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
    */
   @Nullable
   public final ImageView imageViewRemove;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final LinearLayout linearLayout12;
 
   /**
    * This binding is not available in all configurations.
@@ -215,28 +248,65 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
   @Nullable
   public final TextView textViewQuantita;
 
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final TextView uMProdotto;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final View view;
+
   private ActivityDettaglioProdottoBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityDr, @Nullable Button buttonAddList,
       @Nullable CardView cardImage, @Nullable TextView descrizioneProdotto,
-      @Nullable TextView descrizioneRicetta, @Nullable ImageView fotoProdotto,
-      @Nullable ImageView fotoRicetta, @Nullable ImageView imageViewAdd,
-      @Nullable ImageView imageViewRemove, @Nullable TextView nomeProdotto,
+      @Nullable TextView descrizioneRicetta, @Nullable TextView descrizioneTitle,
+      @Nullable ImageView fotoProdotto, @Nullable ImageView fotoRicetta,
+      @Nullable ImageView imageViewAdd, @Nullable ImageView imageViewRemove,
+      @Nullable LinearLayout linearLayout12, @Nullable TextView nomeProdotto,
       @Nullable TextView nomeProdottoItem, @Nullable TextView prezzoProdotto,
-      @Nullable TextView textViewQuantita) {
+      @Nullable TextView textViewQuantita, @Nullable TextView uMProdotto, @Nullable View view) {
     this.rootView = rootView;
     this.activityDr = activityDr;
     this.buttonAddList = buttonAddList;
     this.cardImage = cardImage;
     this.descrizioneProdotto = descrizioneProdotto;
     this.descrizioneRicetta = descrizioneRicetta;
+    this.descrizioneTitle = descrizioneTitle;
     this.fotoProdotto = fotoProdotto;
     this.fotoRicetta = fotoRicetta;
     this.imageViewAdd = imageViewAdd;
     this.imageViewRemove = imageViewRemove;
+    this.linearLayout12 = linearLayout12;
     this.nomeProdotto = nomeProdotto;
     this.nomeProdottoItem = nomeProdottoItem;
     this.prezzoProdotto = prezzoProdotto;
     this.textViewQuantita = textViewQuantita;
+    this.uMProdotto = uMProdotto;
+    this.view = view;
   }
 
   @Override
@@ -272,6 +342,8 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
 
     TextView descrizioneRicetta = ViewBindings.findChildViewById(rootView, R.id.descrizione_ricetta);
 
+    TextView descrizioneTitle = ViewBindings.findChildViewById(rootView, R.id.descrizione_title);
+
     ImageView fotoProdotto = ViewBindings.findChildViewById(rootView, R.id.foto_prodotto);
 
     ImageView fotoRicetta = ViewBindings.findChildViewById(rootView, R.id.foto_ricetta);
@@ -279,6 +351,8 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
     ImageView imageViewAdd = ViewBindings.findChildViewById(rootView, R.id.imageViewAdd);
 
     ImageView imageViewRemove = ViewBindings.findChildViewById(rootView, R.id.imageViewRemove);
+
+    LinearLayout linearLayout12 = ViewBindings.findChildViewById(rootView, R.id.linearLayout12);
 
     TextView nomeProdotto = ViewBindings.findChildViewById(rootView, R.id.nome_prodotto);
 
@@ -288,9 +362,13 @@ public final class ActivityDettaglioProdottoBinding implements ViewBinding {
 
     TextView textViewQuantita = ViewBindings.findChildViewById(rootView, R.id.textViewQuantita);
 
+    TextView uMProdotto = ViewBindings.findChildViewById(rootView, R.id.uM_prodotto);
+
+    View view = ViewBindings.findChildViewById(rootView, R.id.view);
+
     return new ActivityDettaglioProdottoBinding((ConstraintLayout) rootView, activityDr,
-        buttonAddList, cardImage, descrizioneProdotto, descrizioneRicetta, fotoProdotto,
-        fotoRicetta, imageViewAdd, imageViewRemove, nomeProdotto, nomeProdottoItem, prezzoProdotto,
-        textViewQuantita);
+        buttonAddList, cardImage, descrizioneProdotto, descrizioneRicetta, descrizioneTitle,
+        fotoProdotto, fotoRicetta, imageViewAdd, imageViewRemove, linearLayout12, nomeProdotto,
+        nomeProdottoItem, prezzoProdotto, textViewQuantita, uMProdotto, view);
   }
 }

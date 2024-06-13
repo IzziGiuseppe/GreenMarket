@@ -138,7 +138,7 @@ class ListaSpesaViewModel : ViewModel() {
                 totale += i.prezzoTotale
             }
         }
-        val totaleArrotondato = BigDecimal(totale).setScale(2, RoundingMode.DOWN)
+        val totaleArrotondato = BigDecimal(totale).setScale(2, RoundingMode.UP)
         _prezzo_totale_view.value = "Totale: €$totaleArrotondato"
     }
 
