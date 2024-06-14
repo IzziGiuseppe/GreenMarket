@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -43,13 +44,16 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   public final EditText editTextNomeUP;
 
   @NonNull
+  public final FloatingActionButton floatingActionButtonModFoto;
+
+  @NonNull
   public final ImageView imageViewProfile;
 
   @NonNull
-  public final LinearLayout linearLayout4;
+  public final LinearLayout linearLayout14;
 
   @NonNull
-  public final TextView textView17;
+  public final LinearLayout linearLayout4;
 
   @NonNull
   public final TextView textViewEliminaAccount;
@@ -58,15 +62,22 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   public final TextView textViewLogout;
 
   @NonNull
-  public final TextView textViewModProfileImage;
+  public final TextView titleCognome;
+
+  @NonNull
+  public final TextView titleIndirizzoProfilo;
+
+  @NonNull
+  public final TextView titleNome;
 
   private ActivityProfiloUtenteBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button buttonCancel, @NonNull Button buttonSave, @NonNull CardView cardImageProfilo,
       @NonNull EditText editTextCognomeUP, @NonNull EditText editTextIndirizzoUP,
-      @NonNull EditText editTextNomeUP, @NonNull ImageView imageViewProfile,
-      @NonNull LinearLayout linearLayout4, @NonNull TextView textView17,
-      @NonNull TextView textViewEliminaAccount, @NonNull TextView textViewLogout,
-      @NonNull TextView textViewModProfileImage) {
+      @NonNull EditText editTextNomeUP, @NonNull FloatingActionButton floatingActionButtonModFoto,
+      @NonNull ImageView imageViewProfile, @NonNull LinearLayout linearLayout14,
+      @NonNull LinearLayout linearLayout4, @NonNull TextView textViewEliminaAccount,
+      @NonNull TextView textViewLogout, @NonNull TextView titleCognome,
+      @NonNull TextView titleIndirizzoProfilo, @NonNull TextView titleNome) {
     this.rootView = rootView;
     this.buttonCancel = buttonCancel;
     this.buttonSave = buttonSave;
@@ -74,12 +85,15 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
     this.editTextCognomeUP = editTextCognomeUP;
     this.editTextIndirizzoUP = editTextIndirizzoUP;
     this.editTextNomeUP = editTextNomeUP;
+    this.floatingActionButtonModFoto = floatingActionButtonModFoto;
     this.imageViewProfile = imageViewProfile;
+    this.linearLayout14 = linearLayout14;
     this.linearLayout4 = linearLayout4;
-    this.textView17 = textView17;
     this.textViewEliminaAccount = textViewEliminaAccount;
     this.textViewLogout = textViewLogout;
-    this.textViewModProfileImage = textViewModProfileImage;
+    this.titleCognome = titleCognome;
+    this.titleIndirizzoProfilo = titleIndirizzoProfilo;
+    this.titleNome = titleNome;
   }
 
   @Override
@@ -145,21 +159,27 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.floatingActionButtonModFoto;
+      FloatingActionButton floatingActionButtonModFoto = ViewBindings.findChildViewById(rootView, id);
+      if (floatingActionButtonModFoto == null) {
+        break missingId;
+      }
+
       id = R.id.imageViewProfile;
       ImageView imageViewProfile = ViewBindings.findChildViewById(rootView, id);
       if (imageViewProfile == null) {
         break missingId;
       }
 
-      id = R.id.linearLayout4;
-      LinearLayout linearLayout4 = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout4 == null) {
+      id = R.id.linearLayout14;
+      LinearLayout linearLayout14 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout14 == null) {
         break missingId;
       }
 
-      id = R.id.textView17;
-      TextView textView17 = ViewBindings.findChildViewById(rootView, id);
-      if (textView17 == null) {
+      id = R.id.linearLayout4;
+      LinearLayout linearLayout4 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout4 == null) {
         break missingId;
       }
 
@@ -175,16 +195,28 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textViewModProfileImage;
-      TextView textViewModProfileImage = ViewBindings.findChildViewById(rootView, id);
-      if (textViewModProfileImage == null) {
+      id = R.id.title_cognome;
+      TextView titleCognome = ViewBindings.findChildViewById(rootView, id);
+      if (titleCognome == null) {
+        break missingId;
+      }
+
+      id = R.id.title_indirizzo_profilo;
+      TextView titleIndirizzoProfilo = ViewBindings.findChildViewById(rootView, id);
+      if (titleIndirizzoProfilo == null) {
+        break missingId;
+      }
+
+      id = R.id.title_nome;
+      TextView titleNome = ViewBindings.findChildViewById(rootView, id);
+      if (titleNome == null) {
         break missingId;
       }
 
       return new ActivityProfiloUtenteBinding((ConstraintLayout) rootView, buttonCancel, buttonSave,
           cardImageProfilo, editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP,
-          imageViewProfile, linearLayout4, textView17, textViewEliminaAccount, textViewLogout,
-          textViewModProfileImage);
+          floatingActionButtonModFoto, imageViewProfile, linearLayout14, linearLayout4,
+          textViewEliminaAccount, textViewLogout, titleCognome, titleIndirizzoProfilo, titleNome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

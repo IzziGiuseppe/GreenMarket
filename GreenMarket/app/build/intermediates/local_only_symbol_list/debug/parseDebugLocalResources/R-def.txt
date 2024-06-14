@@ -94,6 +94,7 @@ id editTextPasswordLogin
 id editTextResetPass
 id edit_codice_sconto
 id edit_indirizzo
+id floatingActionButtonModFoto
 id foto_prodotto
 id foto_ricetta
 id git_text
@@ -119,6 +120,8 @@ id linearLayout
 id linearLayout10
 id linearLayout11
 id linearLayout12
+id linearLayout13
+id linearLayout14
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -188,7 +191,6 @@ id stats_txt
 id tessPt_bt
 id testo_tc_txt
 id testo_txt
-id textView17
 id textViewAccedi
 id textViewAccount
 id textViewCognome
@@ -212,10 +214,13 @@ id textViewTornaLogin
 id text_home
 id ti_premia
 id title_codice_sconto
+id title_cognome
 id title_conferma_ordine
 id title_dettaglio_scontrino
 id title_home
 id title_indirizzo
+id title_indirizzo_profilo
+id title_nome
 id title_prezzo_scontato
 id title_prezzo_totale
 id title_prod_stats

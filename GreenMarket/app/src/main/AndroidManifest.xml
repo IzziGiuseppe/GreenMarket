@@ -48,23 +48,19 @@
         <activity
             android:name=".ui.altro.termini_condizioni.TermCondActivity"
             android:exported="false"
-            android:label="Termini e condizioni d&apos;uso"
-            android:parentActivityName=".MainActivity" />
+            android:label="Termini e condizioni d&apos;uso" />
         <activity
             android:name=".ui.altro.storico.StoricoActivity"
             android:exported="false"
-            android:label="Storico scontrini"
-            android:parentActivityName=".MainActivity" />
+            android:label="Storico scontrini" />
         <activity
             android:name=".ui.altro.statistiche.StatsActivity"
             android:exported="false"
-            android:label="Statistiche"
-            android:parentActivityName=".MainActivity" />
+            android:label="Statistiche" />
         <activity
             android:name=".ui.altro.chi_siamo.ChiSiamoActivity"
             android:exported="false"
-            android:label="Chi siamo"
-            android:parentActivityName=".MainActivity" />
+            android:label="Chi siamo" />
         <activity
             android:name=".ui.login.ResetPasswordActivity"
             android:exported="false"
@@ -92,7 +88,7 @@
         <activity
             android:name=".ui.login.UserProfileActivity"
             android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+            android:label="Profilo utente" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

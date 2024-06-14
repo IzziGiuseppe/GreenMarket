@@ -3517,6 +3517,7 @@ id fitXY
 id fixed
 id flip
 id floating
+id floatingActionButtonModFoto
 id forever
 id foto_prodotto
 id foto_ricetta
@@ -3589,6 +3590,8 @@ id linearLayout
 id linearLayout10
 id linearLayout11
 id linearLayout12
+id linearLayout13
+id linearLayout14
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -3879,7 +3882,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView17
 id textViewAccedi
 id textViewAccount
 id textViewCognome
@@ -3915,10 +3917,13 @@ id time
 id title
 id titleDividerNoCustom
 id title_codice_sconto
+id title_cognome
 id title_conferma_ordine
 id title_dettaglio_scontrino
 id title_home
 id title_indirizzo
+id title_indirizzo_profilo
+id title_nome
 id title_prezzo_scontato
 id title_prezzo_totale
 id title_prod_stats

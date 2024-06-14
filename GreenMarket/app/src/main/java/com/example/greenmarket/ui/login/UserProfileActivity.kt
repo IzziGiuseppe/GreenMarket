@@ -98,7 +98,7 @@ class UserProfileActivity : AppCompatActivity() {
         }
 
         // Listener per la scelta dell'immagine
-        binding.textViewModProfileImage.setOnClickListener {
+        binding.floatingActionButtonModFoto.setOnClickListener {
             galleryImage.launch("image/*")
         }
 
