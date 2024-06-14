@@ -324,9 +324,9 @@ ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenM
 	android:name
 		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:29:13-58
 activity#com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity
-ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:32:9-35:47
+ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:32:9-35:48
 	android:label
-		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:35:13-44
+		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:35:13-45
 	android:exported
 		ADDED from C:\Users\DELL\Desktop\ProgettoProgrammazioneMobile\GreenMarket\GreenMarket\app\src\main\AndroidManifest.xml:34:13-37
 	android:name

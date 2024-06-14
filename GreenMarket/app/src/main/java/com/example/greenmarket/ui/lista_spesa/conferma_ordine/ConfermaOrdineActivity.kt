@@ -1,18 +1,25 @@
 package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.greenmarket.MainActivity
 import com.example.greenmarket.R
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiViewModel
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaFragment
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class ConfermaOrdineActivity : AppCompatActivity() {
     //private var _binding: ActivityConfermaOrdineBinding? = null
@@ -22,15 +29,22 @@ class ConfermaOrdineActivity : AppCompatActivity() {
     //private val binding get() = _binding!!
 
     private val confermaOrdineViewModel: ConfermaOrdineViewModel by viewModels()
-    private val tesseraPuntiViewModel: TesseraPuntiViewModel by viewModels()
+    private val listaSpesaViewModel: ListaSpesaViewModel by viewModels()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conferma_ordine)
 
+        val prezzoTotaleLista = intent.getStringExtra("prezzo_totale")
+
         val confermaBT: Button = findViewById(R.id.conferma_ordine_totale)
         val prezzoTotale: TextView = findViewById(R.id.prezzo_totale_no_sconto)
+        val valoreSconto: TextView = findViewById(R.id.valore_sconto)
+        val prezzoScontato: TextView = findViewById(R.id.prezzo_totale_si_sconto)
+        val editIndirizzo: EditText = findViewById(R.id.edit_indirizzo)
+
+        var codiceScontoUtilizzato: String
 
         val editTextCS: Spinner = findViewById(R.id.edit_codice_sconto)
         confermaOrdineViewModel.readCodiciSconto()
@@ -42,9 +56,24 @@ class ConfermaOrdineActivity : AppCompatActivity() {
 
         editTextCS.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                if (position != 0) { // Ignora il primo elemento "Select a Language"
+                if (position != 0) { // Ignora il primo elemento
                     val selectedItem = parent.getItemAtPosition(position).toString()
-                    Toast.makeText(this@ConfermaOrdineActivity, "Selected: $selectedItem", Toast.LENGTH_SHORT).show()
+                    confermaOrdineViewModel.setCodiceSconto(selectedItem)
+                    //Toast.makeText(this@ConfermaOrdineActivity, "Selected: $selectedItem", Toast.LENGTH_SHORT).show()
+                    if (prezzoTotaleLista != null) {
+                        val valSconto = BigDecimal(((prezzoTotaleLista.toFloat() * 5)/100).toString()).setScale(2, RoundingMode.HALF_DOWN)
+                        val prezzoScontatoFinale = BigDecimal((prezzoTotaleLista.toFloat() - valSconto.toFloat()).toString()).setScale(2, RoundingMode.HALF_DOWN)
+                        confermaOrdineViewModel.setValoreSconto("€$valSconto")
+                        confermaOrdineViewModel.setPrezzoScontato(prezzoScontatoFinale.toString())
+                    }
+                }
+                else {
+                    confermaOrdineViewModel.setValoreSconto("-")
+                    confermaOrdineViewModel.prezzo_totale.value?.let {
+                        confermaOrdineViewModel.setPrezzoScontato(
+                            it
+                        )
+                    }
                 }
             }
 
@@ -53,8 +82,6 @@ class ConfermaOrdineActivity : AppCompatActivity() {
             }
         }
 
-        val prezzoTotaleLista = intent.getStringExtra("prezzo_totale")
-
         if (prezzoTotaleLista != null) {
             confermaOrdineViewModel.setPrezzoTotale(prezzoTotaleLista)
         }
@@ -62,10 +89,30 @@ class ConfermaOrdineActivity : AppCompatActivity() {
             prezzoTotale.text = "€$it"
         }
 
+        confermaOrdineViewModel.valore_sconto.observe(this) {
+            valoreSconto.text = it
+        }
+
+        confermaOrdineViewModel.prezzo_scontato.observe(this) {
+            prezzoScontato.text = "€$it"
+        }
+
+        confermaOrdineViewModel.readVia()
+        confermaOrdineViewModel.via.observe(this) {
+            editIndirizzo.setText(it)
+        }
+
         confermaBT.setOnClickListener {
             confermaOrdineViewModel.aggiornaSaldo()
+            confermaOrdineViewModel.codice_sconto.observe(this) {
+                codiceScontoUtilizzato = it
+                if (codiceScontoUtilizzato != "-") {
+                    confermaOrdineViewModel.deleteCodiceSconto(codiceScontoUtilizzato)
+                }
+            }
             //Implementare la funzione che gestisce la creazione di una scontrino
             //confermaOrdineViewModel.deleteListaSpesa()
+            listaSpesaViewModel.deleteListaSpesa()
 
             Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
             finish()

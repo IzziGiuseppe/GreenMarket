@@ -1,15 +1,23 @@
 package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
+import android.annotation.SuppressLint
 import android.app.Application
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.OptIn
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
+import com.bumptech.glide.Glide
+import com.example.greenmarket.ui.home.HomeFragment
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.text.Format
 
 class ConfermaOrdineViewModel(application: Application): AndroidViewModel(application){
@@ -20,17 +28,49 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
     val tessera_punti: LiveData<TesseraPuntiModel> = _tessera_punti
 
     private var _prezzo_totale = MutableLiveData<String>().apply {
-        value = "€0.00"
+        value = ""
     }
     val prezzo_totale: LiveData<String> = _prezzo_totale
+
+    private var _valore_sconto = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val valore_sconto: LiveData<String> = _valore_sconto
+
+    private var _prezzo_scontato = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val prezzo_scontato: LiveData<String> = _prezzo_scontato
 
     private var _listaCodiciSconto= MutableLiveData(listOf<String>())
     val listaCodiciSconto: MutableLiveData<List<String>>
         get() = _listaCodiciSconto
 
+    private var _codice_sconto = MutableLiveData<String>().apply {
+        value = "-"
+    }
+    val codice_sconto: LiveData<String> = _codice_sconto
+
+    private var _via = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val via: LiveData<String> = _via
+
     @OptIn(UnstableApi::class)
     fun setPrezzoTotale(prezzoTotale: String) {
         _prezzo_totale.value = prezzoTotale
+    }
+
+    fun setValoreSconto(valoreSconto: String) {
+        _valore_sconto.value = valoreSconto
+    }
+
+    fun setPrezzoScontato(prezzoScontato: String) {
+        _prezzo_scontato.value = prezzoScontato
+    }
+
+    fun setCodiceSconto(cs: String) {
+        _codice_sconto.value = cs
     }
 
     @OptIn(UnstableApi::class)
@@ -39,17 +79,48 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
             db.collection("users").document(it.uid).collection("pointCard").document("wallet").get()
                 .addOnSuccessListener {document ->
                     _tessera_punti.value = document.toObject(TesseraPuntiModel::class.java)
-                    val saldo = _prezzo_totale.value?.toFloat()?.plus(_tessera_punti.value?.saldo!!)
+                    val saldo = _prezzo_scontato.value?.toFloat()?.plus(_tessera_punti.value?.saldo!!)
+                    val saldoArrotondato = BigDecimal(saldo.toString()).setScale(2, RoundingMode.HALF_DOWN)
 
                     val updates = hashMapOf(
                         "punti" to _tessera_punti.value?.punti,
-                        "saldo" to saldo
+                        "saldo" to saldoArrotondato.toFloat()
                     )
                     db.collection("users").document(it.uid).collection("pointCard").document("wallet")
                         .set(updates)
                 }
         }
 
+    }
+
+    fun readVia() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        // Ottenere l'ID dell'utente corrente
+        if (currentUser != null) {
+            val userID = currentUser.uid
+            android.util.Log.d("UserProfileActivity", "User ID: $userID")  // Log l'ID dell'utente corrente
+
+            db.collection("users").document(userID).get()
+                .addOnSuccessListener {
+                    if (it != null && it.exists()) {
+                        val indirizzo = it.getString("indirizzo")
+                        _via.value = "$indirizzo"
+                    } else {
+                        // Documento non trovato
+                        android.util.Log.w("UserProfileActivity", "Documento non trovato")
+                        Toast.makeText(getApplication(), "Dati non visualizzabili", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .addOnFailureListener {
+                    // Gestisci l'errore
+                    android.util.Log.e("UserProfileActivity", "Errore nel caricamento dei dati")
+                    Toast.makeText(getApplication(), "Errore nel caricamento dei dati", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            // Utente non loggato
+            android.util.Log.w("UserProfileActivity", "Utente non loggato")
+            Toast.makeText(getApplication(), "Utente non loggato", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun readCodiciSconto() {
@@ -73,7 +144,28 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
-    fun deleteListaSpesa() {
+    @OptIn(UnstableApi::class)
+    //funzione che elimina il codice sconto utilizzato dalla lista dei codici sconto disponibili
+    fun deleteCodiceSconto(cs: String) {
+        if (_listaCodiciSconto.value?.contains(cs) == true) {
+            currentUser.let {
+                it?.let { it1 ->
+                    db.collection("users").document(it1.uid).collection("pointCard").document("coupons").update("codici sconto", FieldValue.arrayRemove(cs))
+                        .addOnSuccessListener {
+                            Log.d("Buono", "Elemento rimosso con successo dalla lista")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.w("Errore", "Errore nella rimozione dell'elemento", e)
+                        }
+                }
+            }
+        }
+        else {
+            Log.d("CODICE SCONTO ELIMINATO", "C'è stato un problema")
+        }
+    }
+
+    /*fun deleteListaSpesa() {
         //Svuotiamo la lista della spesa nel database
         val prodotti: Map<String?, List<Float>?> = emptyMap()
         //Creazione lista della spesa associata all'utente
@@ -87,5 +179,5 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
             db.collection("users").document(it.uid).collection("historical")
                 .document("shoppingList").update(updates)
         }
-    }
+    }*/
 }

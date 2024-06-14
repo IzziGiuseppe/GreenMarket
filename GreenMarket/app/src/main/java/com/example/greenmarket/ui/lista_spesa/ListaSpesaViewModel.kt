@@ -15,6 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.sql.Timestamp
+import kotlin.math.floor
 
 class ListaSpesaViewModel : ViewModel() {
 
@@ -132,14 +133,13 @@ class ListaSpesaViewModel : ViewModel() {
     }
 
     fun readPrezzoTotale(){
-        var totale = 0.0
+        var totale = BigDecimal("0.0")
         if (listaProdotti.value != null) {
             for( i in listaProdotti.value!!){
-                totale += i.prezzoTotale
+                totale = totale.add(BigDecimal(i.prezzoTotale.toString())).setScale(2, RoundingMode.HALF_UP)
             }
         }
-        val totaleArrotondato = BigDecimal(totale).setScale(2, RoundingMode.UP)
-        _prezzo_totale_view.value = "Totale: €$totaleArrotondato"
+        _prezzo_totale_view.value = "Totale: €$totale"
     }
 
     fun resetProdotto() {

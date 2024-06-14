@@ -22,7 +22,7 @@ class RicercaListAdapter(private val itemClickListener: (ProdottoModel) -> Unit)
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodottiList[position]
-        holder.textView.text = currentProdotto.nome + " $" + currentProdotto.prezzo
+        holder.textView.text = currentProdotto.nome + " €" + currentProdotto.prezzo
         holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }
     }
 

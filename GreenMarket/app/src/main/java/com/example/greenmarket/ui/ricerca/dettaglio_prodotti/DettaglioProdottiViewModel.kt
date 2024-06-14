@@ -106,7 +106,6 @@ class DettaglioProdottiViewModel(application: Application): AndroidViewModel(app
                 (floor(totale * 100) / 100)
             }
         }
-        Log.d("AAAAAAAAAAAAAAAAAAAAAAAAAA", _prezzo_totale.value.toString())
         val infoProdotto = listOf(
             _quantita_prodotto.value,
             _prezzo_prodotto.value,

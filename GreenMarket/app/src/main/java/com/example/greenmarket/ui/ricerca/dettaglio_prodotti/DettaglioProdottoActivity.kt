@@ -77,6 +77,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
 
         addList.setOnClickListener{
             dettaglioProdottiViewModel.inserimentoProdottoInListaSpesa()
+            finish()
         }
 
     }

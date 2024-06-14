@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth
 class TesseraPuntiActivity : AppCompatActivity() {
 
     val tesseraPuntiViewModel: TesseraPuntiViewModel by viewModels()
-    @SuppressLint("MissingInflatedId", "SetTextI18n")
+    @SuppressLint("MissingInflatedId", "SetTextI18n", "DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tessera_punti)
@@ -47,7 +47,8 @@ class TesseraPuntiActivity : AppCompatActivity() {
 
         tesseraPuntiViewModel.readTesseraPunti()
         tesseraPuntiViewModel.saldo.observe(this) {
-            saldo.text = "€$it"
+            saldo.text = "€"+String.format("%.2f", it)
+
         }
         tesseraPuntiViewModel.punti.observe(this) {
             punti.text = it.toString()

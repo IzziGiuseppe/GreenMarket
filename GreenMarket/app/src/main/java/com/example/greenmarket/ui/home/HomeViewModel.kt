@@ -78,7 +78,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 .addOnSuccessListener {
                     if (it != null && it.exists()) {
                         val name = it.getString("nome")
-                        _text.value = "Ciao $name \uD83D\uDC4B "
+                        _text.value = "Ciao $name \uD83D\uDC4B"
                         val photo = it.getString("foto")
 
                         if (!photo.isNullOrEmpty()) {
@@ -97,7 +97,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 .addOnFailureListener {
                     // Gestisci l'errore
                     Log.e("UserProfileActivity", "Errore nel caricamento dei dati")
-                    Toast.makeText(getApplication(), "Errore nel caricamneto dei dati", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getApplication(), "Errore nel caricamento dei dati", Toast.LENGTH_SHORT).show()
                 }
         } else {
             // Utente non loggato

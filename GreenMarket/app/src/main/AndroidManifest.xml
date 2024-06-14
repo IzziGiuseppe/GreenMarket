@@ -32,7 +32,7 @@
         <activity
             android:name=".ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity"
             android:exported="false"
-            android:label="Conferma ordine" />
+            android:label="Dettaglio ordine" />
         <activity
             android:name=".ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity"
             android:exported="false"

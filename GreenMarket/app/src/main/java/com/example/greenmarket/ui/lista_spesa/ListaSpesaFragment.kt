@@ -134,11 +134,17 @@ class ListaSpesaFragment : Fragment() {
     }
 
     private fun startConfermaOrdine(prezzoTotale: String?) {
-        val intent = Intent(requireContext(), ConfermaOrdineActivity::class.java)
-        if (prezzoTotale != null) {
-            intent.putExtra("prezzo_totale", Regex("\\d+(\\.\\d+)?").find(prezzoTotale)?.value)
+        if (prezzoTotale == "Totale: €0.0") {
+            Toast.makeText(context, "Lista della spesa vuota!", Toast.LENGTH_SHORT).show()
         }
-        startActivity(intent)
+        else
+        {
+            val intent = Intent(requireContext(), ConfermaOrdineActivity::class.java)
+            if (prezzoTotale != null) {
+                intent.putExtra("prezzo_totale", Regex("\\d+(\\.\\d+)?").find(prezzoTotale)?.value)
+            }
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {

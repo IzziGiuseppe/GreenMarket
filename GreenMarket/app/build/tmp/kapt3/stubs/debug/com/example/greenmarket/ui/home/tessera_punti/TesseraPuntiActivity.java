@@ -15,7 +15,7 @@ public final class TesseraPuntiActivity extends androidx.appcompat.app.AppCompat
     }
     
     @java.lang.Override
-    @android.annotation.SuppressLint(value = {"MissingInflatedId", "SetTextI18n"})
+    @android.annotation.SuppressLint(value = {"MissingInflatedId", "SetTextI18n", "DefaultLocale"})
     protected void onCreate(@org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
     }
