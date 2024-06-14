@@ -3382,6 +3382,7 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
+id cardView
 id card_image
 id card_image2
 id card_image_domenico
@@ -3602,6 +3603,7 @@ id list_item
 id locale
 id logo
 id logo_dettaglio_scontrini
+id logo_in_card
 id ltr
 id m3_side_sheet
 id main
@@ -3956,7 +3958,6 @@ id vertical_only
 id view
 id view2
 id view3
-id view4
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner

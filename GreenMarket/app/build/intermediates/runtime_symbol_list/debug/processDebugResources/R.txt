@@ -3381,6 +3381,7 @@ int id cache_measures 0x7f08007e
 int id callMeasure 0x7f08007f
 int id cancel_action 0x7f080080
 int id cancel_button 0x7f080081
+int id cardView 0x7f0802d3
 int id card_image 0x7f080082
 int id card_image2 0x7f080083
 int id card_image_domenico 0x7f080084
@@ -3601,6 +3602,7 @@ int id list_item 0x7f08015a
 int id locale 0x7f08015b
 int id logo 0x7f08015c
 int id logo_dettaglio_scontrini 0x7f08015d
+int id logo_in_card 0x7f0802d4
 int id ltr 0x7f08015e
 int id m3_side_sheet 0x7f08015f
 int id main 0x7f080160
@@ -3955,7 +3957,6 @@ int id vertical_only 0x7f0802bc
 int id view 0x7f0802bd
 int id view2 0x7f0802be
 int id view3 0x7f0802bf
-int id view4 0x7f0802c0
 int id view_offset_helper 0x7f0802c1
 int id view_transition 0x7f0802c2
 int id view_tree_lifecycle_owner 0x7f0802c3

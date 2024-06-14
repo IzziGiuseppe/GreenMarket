@@ -152,10 +152,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile.png"
     },
     {
-        "merged": "com.example.greenmarket.app-debug-71:/layout_item_altro_view.xml.flat",
-        "source": "com.example.greenmarket.app-main-73:/layout/item_altro_view.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_dashboard_black_24dp.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_dashboard_black_24dp.xml"
     },
@@ -458,6 +454,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/layout_activity_tessera_punti.xml.flat",
+        "source": "com.example.greenmarket.app-main-73:/layout/activity_tessera_punti.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",

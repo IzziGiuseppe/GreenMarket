@@ -55,6 +55,7 @@ id buttonCancel
 id buttonRegister
 id buttonResetPass
 id buttonSave
+id cardView
 id card_image
 id card_image2
 id card_image_domenico
@@ -129,6 +130,7 @@ id linearLayout9
 id linkedin_text
 id logo
 id logo_dettaglio_scontrini
+id logo_in_card
 id main
 id mappa
 id mobile_navigation
@@ -231,7 +233,6 @@ id valore_spesa
 id view
 id view2
 id view3
-id view4
 layout activity_chi_siamo
 layout activity_conferma_ordine
 layout activity_dettaglio_prodotto
