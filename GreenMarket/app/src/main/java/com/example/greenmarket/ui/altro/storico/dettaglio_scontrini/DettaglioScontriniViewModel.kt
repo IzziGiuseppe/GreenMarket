@@ -4,45 +4,61 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.greenmarket.db.model.ComposizioneScontrini
+import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
+import com.google.firebase.firestore.FirebaseFirestore
+import java.sql.Timestamp
 
 class DettaglioScontriniViewModel : ViewModel() {
 
-    private var _listaProdDettScontr = MutableLiveData(arrayOf<ComposizioneScontrini>())
-    val listaProdDettScontr: MutableLiveData<Array<ComposizioneScontrini>>
-        get() = _listaProdDettScontr
+    private var _data_scontrino = MutableLiveData<String>().apply {
+        value = "1970-01-01 00:00:00"
+    }
+    val data_scontrino: LiveData<String> = _data_scontrino
+
+    private var _totale_scontrino = MutableLiveData<Float>().apply {
+        value = 0f
+    }
+    val totale_scontrino: LiveData<Float> = _totale_scontrino
+
+    private var _lista_prodotti_scontrino = MutableLiveData(listOf<ProdottoInListaModel>())
+    val lista_prodotti_scontrino: MutableLiveData<List<ProdottoInListaModel>>
+        get() = _lista_prodotti_scontrino
 
     private var _codiceSconto = MutableLiveData<String>().apply {
         value = "-"
     }
     val codiceSconto: LiveData<String> = _codiceSconto
 
-    fun readListaSpesa() {
-        val x = arrayOf(
-            ComposizioneScontrini(1, "Mele", 3f),
-            ComposizioneScontrini(1, "Pere", 2f),
-            ComposizioneScontrini(1, "Banane", 2f),
-            ComposizioneScontrini(1, "Arance", 3f),
-            ComposizioneScontrini(1, "Noci", 2f),
-            ComposizioneScontrini(1, "Cicorie", 2f),
-            ComposizioneScontrini(1, "Ananas", 3f),
-            ComposizioneScontrini(1, "Menta", 2f),
-            ComposizioneScontrini(1, "Pasta", 2f),
-            ComposizioneScontrini(1, "Pomodoro", 3f),
-            ComposizioneScontrini(1, "Mozzarella", 2f),
-            ComposizioneScontrini(1, "Carota", 2f),
-            ComposizioneScontrini(1, "Melanzane", 3f),
-            ComposizioneScontrini(1, "Zucchine", 2f),
-            ComposizioneScontrini(1, "Cipolle", 2f),
-            ComposizioneScontrini(1, "Porro", 3f),
-            ComposizioneScontrini(1, "Aglio", 2f),
-            ComposizioneScontrini(1, "Peperoni", 2f)
-        )
-        _listaProdDettScontr.value = x
+    fun setData(data: String?) {
+        _data_scontrino.value = data
+    }
+
+    fun setTotale(totale: Float) {
+        _totale_scontrino.value = totale
+    }
+
+    fun setListaProdotti(lista: List<ProdottoInListaModel>) {
+        _lista_prodotti_scontrino.value = lista
+    }
+    fun readListaProdottiInScontrino() {
+
     }
 
     fun readCodiceSconto() {
         val x = "bfewvfce"
         _codiceSconto.value = x
+    }
+
+    fun listaProdotti(map: Map<String, List<Float>>) : List<ProdottoInListaModel>{
+        val listaProdotti = mutableListOf<ProdottoInListaModel>()
+        map.forEach { (key, value) ->
+            val prodotto =
+                ProdottoInListaModel(
+                    key, value.get(0) ?: 0.5f, value.get(1) ?: 0f, value.get(2)
+                    ?: 0f)
+            listaProdotti.add(prodotto)
+        }
+        return listaProdotti
     }
 
 }

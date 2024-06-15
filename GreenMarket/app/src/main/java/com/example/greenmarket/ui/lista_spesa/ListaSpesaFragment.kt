@@ -1,31 +1,23 @@
 package com.example.greenmarket.ui.lista_spesa
 
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.OptIn
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentListaSpesaBinding
 import com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity
-import com.example.greenmarket.ui.ricerca.ProdottoModel
 import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.firestore.FirebaseFirestore
 
 class ListaSpesaFragment : Fragment() {
 
@@ -53,29 +45,19 @@ class ListaSpesaFragment : Fragment() {
             }
         )
 
-
         val recyclerView = binding.rvListaSpesa
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        /*val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        val dividerDrawable = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black))
-        dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)*/
-
-
         listaSpesaViewModel.readListaSpesa()
-        listaSpesaViewModel.listaSpesa.observe(viewLifecycleOwner, Observer {
+        listaSpesaViewModel.lista_spesa.observe(viewLifecycleOwner, Observer {
                 prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
         })
 
-        listaSpesaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer {
+        listaSpesaViewModel.lista_prodotti.observe(viewLifecycleOwner, Observer {
             prodListaSpesa -> adapter.setData(prodListaSpesa)
-            Log.d("AIUTOOOOOOOOOO", "$prodListaSpesa")
             listaSpesaViewModel.readPrezzoTotale()
         })
-
-        //listaSpesaViewModel.quantita.observe(viewLifecycleOwner) {}
 
         listaSpesaViewModel.prodotto.observe(viewLifecycleOwner) {
             prodotto ->

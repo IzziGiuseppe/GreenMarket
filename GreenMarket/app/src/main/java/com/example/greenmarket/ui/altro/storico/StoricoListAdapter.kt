@@ -9,12 +9,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
 import com.example.greenmarket.db.model.Scontrino
+import com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.ScontrinoModel
 
 class StoricoListAdapter(
-    private val itemClickListener: (Scontrino) -> Unit
+    private val itemClickListener: (ScontrinoModel) -> Unit
 ): RecyclerView.Adapter<StoricoListAdapter.MyViewHolder>() {
 
-    private var listScontrini = emptyArray<Scontrino>()
+    private var listScontrini = emptyList<ScontrinoModel>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.data_item)
@@ -22,10 +23,7 @@ class StoricoListAdapter(
         val textView3 = itemView.findViewById<TextView>(R.id.prezzo_item)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_storico_view, parent, false)
         )
@@ -34,9 +32,9 @@ class StoricoListAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentScontrino = listScontrini[position]
-        holder.textView.text = currentScontrino.data
-        holder.textView2.text = "5 prodotti"
-        holder.textView3.text = "$30"
+        holder.textView.text = currentScontrino.data.toString()
+        holder.textView2.text = currentScontrino.prodotti.size.toString()
+        holder.textView3.text = currentScontrino.totale.toString()
         holder.itemView.setOnClickListener { itemClickListener(currentScontrino) }
     }
 
@@ -45,7 +43,7 @@ class StoricoListAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(scontrino: Array<Scontrino>) {
+    fun setData(scontrino: List<ScontrinoModel>) {
         this.listScontrini = scontrino
         notifyDataSetChanged()
     }

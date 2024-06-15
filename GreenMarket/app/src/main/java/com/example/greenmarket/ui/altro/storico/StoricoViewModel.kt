@@ -1,50 +1,57 @@
 package com.example.greenmarket.ui.altro.storico
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.greenmarket.db.model.Scontrino
+import com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.ScontrinoModel
+import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
+import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import java.sql.Timestamp
 
 class StoricoViewModel(application: Application): AndroidViewModel(application) {
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val currentUser = FirebaseAuth.getInstance().currentUser
 
     private val _text = MutableLiveData<String>().apply {
         value = "Storico scontrini"
     }
     val text: LiveData<String> = _text
 
-    private var _listaScontrini = MutableLiveData(arrayOf<Scontrino>())
-    val listaScontrini: MutableLiveData<Array<Scontrino>>
-        get() = _listaScontrini
+    private var _lista_scontrini = MutableLiveData<List<ScontrinoModel>>()
+    val lista_scontrini: MutableLiveData<List<ScontrinoModel>>
+        get() = _lista_scontrini
+
+    private var _scontrino = MutableLiveData<ScontrinoModel>()
+    val scontrino: MutableLiveData<ScontrinoModel>
+        get() = _scontrino
 
     fun readScontrini() {
-        val x = arrayOf(
-            Scontrino(1, "05/06/2024", "Utente", "qwerty", true),
-            Scontrino(2, "06/06/2024", "Utente", "zxcvbn", true),
-            Scontrino(3, "07/06/2024", "Utente", "asdfgh", true),
-            Scontrino(4, "08/06/2024", "Utente", "", true),
-            Scontrino(5, "09/06/2024", "Utente", "", true),
-            Scontrino(6, "10/06/2024", "Utente", "", true),
-            Scontrino(7, "11/06/2024", "Utente", "", true),
-            Scontrino(8, "12/06/2024", "Utente", "", true),
-            Scontrino(9, "13/06/2024", "Utente", "", true),
-            Scontrino(10, "14/06/2024", "Utente", "poiuyt", true),
-            Scontrino(11, "15/06/2024", "Utente", "", true),
-            Scontrino(12, "16/06/2024", "Utente", "", true),
-            Scontrino(13, "17/06/2024", "Utente", "", true),
-            Scontrino(14, "18/06/2024", "Utente", "", true),
-            Scontrino(15, "19/06/2024", "Utente", "", true),
-            Scontrino(16, "20/06/2024", "Utente", "", true),
-            Scontrino(17, "21/06/2024", "Utente", "", true),
-            Scontrino(18, "22/06/2024", "Utente", "", true),
-            Scontrino(19, "23/06/2024", "Utente", "", true),
-            Scontrino(20, "24/06/2024", "Utente", "lkjhgf", true),
-            Scontrino(21, "25/06/2024", "Utente", "", true),
-            Scontrino(22, "26/06/2024", "Utente", "", true),
-            Scontrino(23, "27/06/2024", "Utente", "", true),
-            Scontrino(24, "28/06/2024", "Utente", "mnbvcx", true)
-        )
-        _listaScontrini.value = x
+        currentUser?.let {
+            db.collection("users").document(it.uid).collection("historical").whereEqualTo("valido", true).get()
+                .addOnSuccessListener { documents ->
+                    _lista_scontrini.value = documents.toObjects(ScontrinoModel::class.java)
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("Firebase", "Error getting product details", exception)
+                }
+        }
+    }
+
+    fun readScontrinoDettagliato(data: String){
+        for(i in _lista_scontrini.value!!){
+            if(i.data == data){
+                _scontrino.value = i
+            }
+        }
+    }
+
+    fun resetScontrino() {
+        _scontrino.value = ScontrinoModel()
     }
 
 }
