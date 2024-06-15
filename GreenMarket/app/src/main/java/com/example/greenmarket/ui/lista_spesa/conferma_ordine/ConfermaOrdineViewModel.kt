@@ -2,9 +2,11 @@ package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.os.Build
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.OptIn
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,9 +15,12 @@ import androidx.media3.common.util.UnstableApi
 import com.bumptech.glide.Glide
 import com.example.greenmarket.ui.home.HomeFragment
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiModel
+import com.example.greenmarket.ui.lista_spesa.ListaDellaSpesaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.Format
@@ -31,6 +36,17 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         value = ""
     }
     val prezzo_totale: LiveData<String> = _prezzo_totale
+
+    private var _listaSpesa = MutableLiveData<ListaDellaSpesaModel>()
+    val listaSpesa: MutableLiveData<ListaDellaSpesaModel>
+        get() = _listaSpesa
+
+    private var _scotrnino = MutableLiveData<String>().apply {
+        value = "Scontrino"
+    }
+    val scontrino: LiveData<String> = _scotrnino
+
+
 
     private var _valore_sconto = MutableLiveData<String>().apply {
         value = ""
@@ -93,6 +109,47 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
 
     }
 
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun creaScontrino() {
+        currentUser.let {
+            db.collection("users").document(currentUser?.uid!!).collection("historical")
+                .document("shoppingList").get()
+                .addOnSuccessListener { documents ->
+                    _listaSpesa.value = documents.toObject(ListaDellaSpesaModel::class.java)
+                    val dataScontrino = getCurrentDateTime()
+                    val nuovoScontrino = hashMapOf(
+                        "data" to dataScontrino,
+                        "valido" to true,
+                        "prodotti" to _listaSpesa.value?.prodotti,
+                        "totale" to _prezzo_totale.value?.toFloat()!!
+                    )
+
+                    if (it != null) {
+                        db.collection("users").document(it.uid).collection("historical")
+                            .document(dataScontrino).set(nuovoScontrino)
+                            .addOnSuccessListener {
+                                deleteListaSpesa()
+                            }
+                            .addOnFailureListener{
+                                Toast.makeText(getApplication(), "Errore durante lo svuotamente della lista della spesa", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                }
+        }
+    }
+
+    private fun deleteListaSpesa() {
+        //Svuotiamo la lista della spesa nel database
+        val prodotti: Map<String?, List<Float>?> = emptyMap()
+        //Creazione lista della spesa associata all'utente
+        val updates = hashMapOf(
+            "data" to null,
+            "valido" to false,
+            "prodotti" to prodotti
+        )
+    }
     fun readVia() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         // Ottenere l'ID dell'utente corrente
@@ -165,19 +222,11 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
-    /*fun deleteListaSpesa() {
-        //Svuotiamo la lista della spesa nel database
-        val prodotti: Map<String?, List<Float>?> = emptyMap()
-        //Creazione lista della spesa associata all'utente
-        val updates = hashMapOf(
-            "data" to null,
-            "valido" to false,
-            "prodotti" to prodotti
-        )
-
-        currentUser?.let {
-            db.collection("users").document(it.uid).collection("historical")
-                .document("shoppingList").update(updates)
-        }
-    }*/
+    //Funzione che calcola la data e l'ora attuale
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getCurrentDateTime(): String {
+        val currentDateTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        return currentDateTime.format(formatter)
+    }
 }

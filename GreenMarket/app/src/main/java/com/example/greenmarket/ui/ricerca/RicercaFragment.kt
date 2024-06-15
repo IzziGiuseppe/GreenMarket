@@ -37,11 +37,6 @@ class RicercaFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        /*val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        val dividerDrawable = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black))
-        dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)*/
-
         ricercaViewModel.readAllProdotti()
         ricercaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer { prodotti ->
             adapter.setData(prodotti)

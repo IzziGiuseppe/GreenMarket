@@ -8,10 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
 import com.example.greenmarket.db.model.ComposizioneScontrini
+import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
 
 class DettaglioScontriniListAdapter(): RecyclerView.Adapter<DettaglioScontriniListAdapter.MyViewHolder>() {
 
-    private var prodDettScontrList = emptyArray<ComposizioneScontrini>()
+    private var prodDettScontrList = emptyList<ProdottoInListaModel>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.nome_prod_dett_scontr_item)
@@ -19,10 +20,7 @@ class DettaglioScontriniListAdapter(): RecyclerView.Adapter<DettaglioScontriniLi
         val textView3 = itemView.findViewById<TextView>(R.id.prezzo_dett_scontrino)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_dettaglio_scontrino_view, parent, false)
@@ -30,23 +28,21 @@ class DettaglioScontriniListAdapter(): RecyclerView.Adapter<DettaglioScontriniLi
     }
 
     @SuppressLint("DefaultLocale", "SetTextI18n")
-    override fun onBindViewHolder(
-        holder: MyViewHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodDettScontrList[position]
-        holder.textView.text = currentProdotto.prodotto
+        holder.textView.text = currentProdotto.nome
         holder.textView2.text = "Quantità: "+ String.format("%.0f", currentProdotto.quantita).removeSuffix(".0")
-        holder.textView3.text = "5"
+        holder.textView3.text = currentProdotto.prezzoTotale.toString()
     }
 
     override fun getItemCount(): Int {
         return prodDettScontrList.size
     }
 
-    fun setData(prodDettScontr: Array<ComposizioneScontrini>) {
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(prodDettScontr: List<ProdottoInListaModel>) {
         this.prodDettScontrList = prodDettScontr
-        //notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 
 

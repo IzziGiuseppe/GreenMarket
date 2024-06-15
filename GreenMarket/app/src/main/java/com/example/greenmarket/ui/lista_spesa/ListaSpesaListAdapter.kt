@@ -22,10 +22,7 @@ class ListaSpesaListAdapter(
         val imageView = itemView.findViewById<ImageView>(R.id.delete_prod_bt)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_lista_spesa_view, parent, false))
     }
 
