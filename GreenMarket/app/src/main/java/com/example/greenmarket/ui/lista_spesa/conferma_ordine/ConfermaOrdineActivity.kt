@@ -3,7 +3,6 @@ package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 import android.content.Intent
 import android.os.Build
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView

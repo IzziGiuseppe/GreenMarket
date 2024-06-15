@@ -3,7 +3,6 @@ package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 import android.annotation.SuppressLint
 import android.app.Application
 import android.os.Build
-import android.widget.Toast
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.OptIn
@@ -142,6 +141,15 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
     }
 
     private fun deleteListaSpesa() {
+        //Svuotiamo la lista della spesa nel database
+        val prodotti: Map<String?, List<Float>?> = emptyMap()
+        //Creazione lista della spesa associata all'utente
+        val updates = hashMapOf(
+            "data" to null,
+            "valido" to false,
+            "prodotti" to prodotti
+        )
+    }
     fun readVia() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         // Ottenere l'ID dell'utente corrente
@@ -199,8 +207,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         if (_listaCodiciSconto.value?.contains(cs) == true) {
             currentUser.let {
                 it?.let { it1 ->
-                    db.collection("users").document(it1.uid).collection("pointCard")
-                        .document("coupons").update("codici sconto", FieldValue.arrayRemove(cs))
+                    db.collection("users").document(it1.uid).collection("pointCard").document("coupons").update("codici sconto", FieldValue.arrayRemove(cs))
                         .addOnSuccessListener {
                             Log.d("Buono", "Elemento rimosso con successo dalla lista")
                         }
@@ -209,11 +216,17 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                         }
                 }
             }
-        } else {
+        }
+        else {
             Log.d("CODICE SCONTO ELIMINATO", "C'è stato un problema")
         }
     }
 
+    //Funzione che calcola la data e l'ora attuale
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getCurrentDateTime(): String {
+        val currentDateTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        return currentDateTime.format(formatter)
     }
-
 }
