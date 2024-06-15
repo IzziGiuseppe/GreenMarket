@@ -3384,6 +3384,7 @@ int id cancel_button 0x7f080081
 int id cardView 0x7f0802d3
 int id card_image 0x7f080082
 int id card_image2 0x7f080083
+int id card_image3 0x7f0802e0
 int id card_image_domenico 0x7f080084
 int id card_image_giuseppe 0x7f080085
 int id card_image_peppe 0x7f080086
@@ -3561,10 +3562,11 @@ int id imageViewGiuseppe 0x7f080130
 int id imageViewProfile 0x7f080131
 int id imageViewRemove 0x7f080132
 int id imageViewSocio 0x7f080133
-int id image_description 0x7f080134
 int id image_git 0x7f080135
 int id image_linkedin 0x7f080136
+int id image_nome 0x7f0802dc
 int id image_outlook 0x7f080137
+int id image_prezzo 0x7f0802dd
 int id immediateStop 0x7f080138
 int id included 0x7f080139
 int id indeterminate 0x7f08013a
@@ -3591,6 +3593,8 @@ int id linearLayout11 0x7f08014e
 int id linearLayout12 0x7f08014f
 int id linearLayout13 0x7f0802db
 int id linearLayout14 0x7f0802d6
+int id linearLayout15 0x7f0802da
+int id linearLayout16 0x7f0802e1
 int id linearLayout2 0x7f080150
 int id linearLayout3 0x7f080151
 int id linearLayout4 0x7f080152
@@ -3769,6 +3773,8 @@ int id reset_bt 0x7f0801fd
 int id reverseSawtooth 0x7f0801fe
 int id ricercaProdottoEditText 0x7f0801ff
 int id ricercaRicettaEditText 0x7f080200
+int id ricetta_nome 0x7f0802e2
+int id ricette_consigliate 0x7f0802e3
 int id right 0x7f080201
 int id rightToLeft 0x7f080202
 int id right_icon 0x7f080203
@@ -3791,6 +3797,7 @@ int id save_non_transition_alpha 0x7f080213
 int id save_overlay_view 0x7f080214
 int id sawtooth 0x7f080215
 int id scale 0x7f080216
+int id scopri_subito 0x7f0802de
 int id screen 0x7f080217
 int id scroll 0x7f080218
 int id scrollIndicatorDown 0x7f080219
@@ -3808,6 +3815,8 @@ int id search_mag_icon 0x7f080224
 int id search_plate 0x7f080225
 int id search_src_text 0x7f080226
 int id search_voice_btn 0x7f080227
+int id see_all 0x7f0802df
+int id see_all_ricette 0x7f0802e4
 int id select_dialog_listview 0x7f080228
 int id selected 0x7f080229
 int id selection_type 0x7f08022a
@@ -3927,6 +3936,7 @@ int id title_prezzo_scontato 0x7f080299
 int id title_prezzo_totale 0x7f08029a
 int id title_prod_stats 0x7f08029b
 int id title_quantita 0x7f08029c
+int id title_ricette_home 0x7f0802e5
 int id title_template 0x7f08029d
 int id title_valore_sconto 0x7f08029e
 int id titolo2_txt 0x7f08029f

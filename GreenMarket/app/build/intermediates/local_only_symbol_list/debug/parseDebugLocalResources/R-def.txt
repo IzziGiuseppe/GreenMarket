@@ -58,6 +58,7 @@ id buttonSave
 id cardView
 id card_image
 id card_image2
+id card_image3
 id card_image_domenico
 id card_image_giuseppe
 id card_image_peppe
@@ -111,10 +112,11 @@ id imageViewGiuseppe
 id imageViewProfile
 id imageViewRemove
 id imageViewSocio
-id image_description
 id image_git
 id image_linkedin
+id image_nome
 id image_outlook
+id image_prezzo
 id infoCS
 id linearLayout
 id linearLayout10
@@ -122,6 +124,8 @@ id linearLayout11
 id linearLayout12
 id linearLayout13
 id linearLayout14
+id linearLayout15
+id linearLayout16
 id linearLayout2
 id linearLayout3
 id linearLayout4
@@ -173,6 +177,8 @@ id resetProd
 id reset_bt
 id ricercaProdottoEditText
 id ricercaRicettaEditText
+id ricetta_nome
+id ricette_consigliate
 id riscatta
 id rv
 id rvRicercaProd
@@ -183,7 +189,10 @@ id rv_lista_spesa
 id rv_prodotti_stats
 id rv_scontrini
 id rv_tc
+id scopri_subito
 id scrool_view_descrizione
+id see_all
+id see_all_ricette
 id sezione_altro
 id sezione_tc
 id stats_prod
@@ -225,6 +234,7 @@ id title_prezzo_scontato
 id title_prezzo_totale
 id title_prod_stats
 id title_quantita
+id title_ricette_home
 id title_valore_sconto
 id titolo2_txt
 id titolo_soci

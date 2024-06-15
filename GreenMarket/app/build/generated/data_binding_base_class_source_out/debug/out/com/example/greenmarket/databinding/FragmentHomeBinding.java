@@ -34,13 +34,28 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final CardView cardImage2;
 
   @NonNull
+  public final CardView cardImage3;
+
+  @NonNull
+  public final CardView cardView;
+
+  @NonNull
   public final ImageView iconaProfiloUtente;
 
   @NonNull
-  public final TextView imageDescription;
+  public final TextView imageNome;
+
+  @NonNull
+  public final TextView imagePrezzo;
 
   @NonNull
   public final LinearLayout linearLayout;
+
+  @NonNull
+  public final LinearLayout linearLayout15;
+
+  @NonNull
+  public final LinearLayout linearLayout16;
 
   @NonNull
   public final LinearLayout linearLayout2;
@@ -50,6 +65,21 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public final TextView orarioChiusura;
+
+  @NonNull
+  public final TextView ricettaNome;
+
+  @NonNull
+  public final ViewPager2 ricetteConsigliate;
+
+  @NonNull
+  public final TextView scopriSubito;
+
+  @NonNull
+  public final TextView seeAll;
+
+  @NonNull
+  public final TextView seeAllRicette;
 
   @NonNull
   public final ViewPager2 statsProd;
@@ -63,26 +93,58 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView titleHome;
 
+  @NonNull
+  public final TextView titleRicetteHome;
+
+  @NonNull
+  public final View view;
+
+  @NonNull
+  public final View view2;
+
+  @NonNull
+  public final View view3;
+
   private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView apertoChiuso,
-      @NonNull CardView cardImage, @NonNull CardView cardImage2,
-      @NonNull ImageView iconaProfiloUtente, @NonNull TextView imageDescription,
-      @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
-      @NonNull ImageView logo, @NonNull TextView orarioChiusura, @NonNull ViewPager2 statsProd,
-      @NonNull Button tessPtBt, @NonNull TextView textHome, @NonNull TextView titleHome) {
+      @NonNull CardView cardImage, @NonNull CardView cardImage2, @NonNull CardView cardImage3,
+      @NonNull CardView cardView, @NonNull ImageView iconaProfiloUtente,
+      @NonNull TextView imageNome, @NonNull TextView imagePrezzo,
+      @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout15,
+      @NonNull LinearLayout linearLayout16, @NonNull LinearLayout linearLayout2,
+      @NonNull ImageView logo, @NonNull TextView orarioChiusura, @NonNull TextView ricettaNome,
+      @NonNull ViewPager2 ricetteConsigliate, @NonNull TextView scopriSubito,
+      @NonNull TextView seeAll, @NonNull TextView seeAllRicette, @NonNull ViewPager2 statsProd,
+      @NonNull Button tessPtBt, @NonNull TextView textHome, @NonNull TextView titleHome,
+      @NonNull TextView titleRicetteHome, @NonNull View view, @NonNull View view2,
+      @NonNull View view3) {
     this.rootView = rootView;
     this.apertoChiuso = apertoChiuso;
     this.cardImage = cardImage;
     this.cardImage2 = cardImage2;
+    this.cardImage3 = cardImage3;
+    this.cardView = cardView;
     this.iconaProfiloUtente = iconaProfiloUtente;
-    this.imageDescription = imageDescription;
+    this.imageNome = imageNome;
+    this.imagePrezzo = imagePrezzo;
     this.linearLayout = linearLayout;
+    this.linearLayout15 = linearLayout15;
+    this.linearLayout16 = linearLayout16;
     this.linearLayout2 = linearLayout2;
     this.logo = logo;
     this.orarioChiusura = orarioChiusura;
+    this.ricettaNome = ricettaNome;
+    this.ricetteConsigliate = ricetteConsigliate;
+    this.scopriSubito = scopriSubito;
+    this.seeAll = seeAll;
+    this.seeAllRicette = seeAllRicette;
     this.statsProd = statsProd;
     this.tessPtBt = tessPtBt;
     this.textHome = textHome;
     this.titleHome = titleHome;
+    this.titleRicetteHome = titleRicetteHome;
+    this.view = view;
+    this.view2 = view2;
+    this.view3 = view3;
   }
 
   @Override
@@ -130,21 +192,51 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.card_image3;
+      CardView cardImage3 = ViewBindings.findChildViewById(rootView, id);
+      if (cardImage3 == null) {
+        break missingId;
+      }
+
+      id = R.id.cardView;
+      CardView cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
       id = R.id.iconaProfiloUtente;
       ImageView iconaProfiloUtente = ViewBindings.findChildViewById(rootView, id);
       if (iconaProfiloUtente == null) {
         break missingId;
       }
 
-      id = R.id.image_description;
-      TextView imageDescription = ViewBindings.findChildViewById(rootView, id);
-      if (imageDescription == null) {
+      id = R.id.image_nome;
+      TextView imageNome = ViewBindings.findChildViewById(rootView, id);
+      if (imageNome == null) {
+        break missingId;
+      }
+
+      id = R.id.image_prezzo;
+      TextView imagePrezzo = ViewBindings.findChildViewById(rootView, id);
+      if (imagePrezzo == null) {
         break missingId;
       }
 
       id = R.id.linearLayout;
       LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout15;
+      LinearLayout linearLayout15 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout15 == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout16;
+      LinearLayout linearLayout16 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout16 == null) {
         break missingId;
       }
 
@@ -163,6 +255,36 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.orario_chiusura;
       TextView orarioChiusura = ViewBindings.findChildViewById(rootView, id);
       if (orarioChiusura == null) {
+        break missingId;
+      }
+
+      id = R.id.ricetta_nome;
+      TextView ricettaNome = ViewBindings.findChildViewById(rootView, id);
+      if (ricettaNome == null) {
+        break missingId;
+      }
+
+      id = R.id.ricette_consigliate;
+      ViewPager2 ricetteConsigliate = ViewBindings.findChildViewById(rootView, id);
+      if (ricetteConsigliate == null) {
+        break missingId;
+      }
+
+      id = R.id.scopri_subito;
+      TextView scopriSubito = ViewBindings.findChildViewById(rootView, id);
+      if (scopriSubito == null) {
+        break missingId;
+      }
+
+      id = R.id.see_all;
+      TextView seeAll = ViewBindings.findChildViewById(rootView, id);
+      if (seeAll == null) {
+        break missingId;
+      }
+
+      id = R.id.see_all_ricette;
+      TextView seeAllRicette = ViewBindings.findChildViewById(rootView, id);
+      if (seeAllRicette == null) {
         break missingId;
       }
 
@@ -190,9 +312,35 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.title_ricette_home;
+      TextView titleRicetteHome = ViewBindings.findChildViewById(rootView, id);
+      if (titleRicetteHome == null) {
+        break missingId;
+      }
+
+      id = R.id.view;
+      View view = ViewBindings.findChildViewById(rootView, id);
+      if (view == null) {
+        break missingId;
+      }
+
+      id = R.id.view2;
+      View view2 = ViewBindings.findChildViewById(rootView, id);
+      if (view2 == null) {
+        break missingId;
+      }
+
+      id = R.id.view3;
+      View view3 = ViewBindings.findChildViewById(rootView, id);
+      if (view3 == null) {
+        break missingId;
+      }
+
       return new FragmentHomeBinding((ScrollView) rootView, apertoChiuso, cardImage, cardImage2,
-          iconaProfiloUtente, imageDescription, linearLayout, linearLayout2, logo, orarioChiusura,
-          statsProd, tessPtBt, textHome, titleHome);
+          cardImage3, cardView, iconaProfiloUtente, imageNome, imagePrezzo, linearLayout,
+          linearLayout15, linearLayout16, linearLayout2, logo, orarioChiusura, ricettaNome,
+          ricetteConsigliate, scopriSubito, seeAll, seeAllRicette, statsProd, tessPtBt, textHome,
+          titleHome, titleRicetteHome, view, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -58,7 +58,7 @@
     <string name="registrati">Registrati</string>
     <string name="ricerca_prodotto">Ricerca prodotto</string>
     <string name="salva">Salva</string>
-    <string name="termini_e_condizioni">Termini e condizioni d\'uso</string>
+    <string name="termini_e_condizioni"> Termini e condizioni d\'uso</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_altro">Altro</string>
     <string name="title_home">Home</string>

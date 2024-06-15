@@ -14,6 +14,8 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.FragmentHomeBinding
@@ -31,11 +33,25 @@ class HomeFragment : Fragment(), OnImageClickListener {
 
     private val imageList = listOf(R.drawable.mele, R.drawable.pere, R.drawable.banane, R.drawable.plus)
 
-    private val descriptions = listOf(
-        "Mele, alta qualità e frescezza garantita",
-        "Pere, gustose e nutrienti",
-        "Banane, ideali per uno spuntino veloce",
-        "Clicca per scoprire la classifica completa"
+    private val prezzi = listOf(
+        "€1.99",
+        "€2.49",
+        "€1.79",
+        ""
+    )
+
+    private val nomi = listOf(
+        "Mele",
+        "Pere",
+        "Banane",
+        "Scopri di più"
+    )
+
+    private val nomiRicette = listOf(
+        "Parmigiana",
+        "Carbonara",
+        "Amatriciana",
+        "Scopri di più"
     )
 
     private lateinit var adapter: ImagePagerAdapter
@@ -88,7 +104,16 @@ class HomeFragment : Fragment(), OnImageClickListener {
         binding.statsProd.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                binding.imageDescription.text = descriptions[position]
+                binding.imagePrezzo.text = prezzi[position]
+                binding.imageNome.text = nomi[position]
+            }
+        })
+
+        binding.ricetteConsigliate.adapter = adapter
+        binding.ricetteConsigliate.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.ricettaNome.text = nomiRicette[position]
             }
         })
 
