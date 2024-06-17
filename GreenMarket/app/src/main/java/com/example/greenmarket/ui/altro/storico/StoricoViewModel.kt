@@ -34,7 +34,7 @@ class StoricoViewModel(application: Application): AndroidViewModel(application) 
         currentUser?.let {
             db.collection("users").document(it.uid).collection("historical").whereEqualTo("valido", true).get()
                 .addOnSuccessListener { documents ->
-                    _lista_scontrini.value = documents.toObjects(ScontrinoModel::class.java)
+                    _lista_scontrini.value = documents.toObjects(ScontrinoModel::class.java).sortedByDescending { it.data }
                 }
                 .addOnFailureListener { exception ->
                     Log.e("Firebase", "Error getting product details", exception)

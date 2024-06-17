@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.greenmarket.ui.home.HomeFragment
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiModel
 import com.example.greenmarket.ui.lista_spesa.ListaDellaSpesaModel
+import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -41,12 +42,18 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
     val listaSpesa: MutableLiveData<ListaDellaSpesaModel>
         get() = _listaSpesa
 
+    private var _lista_prodotti = MutableLiveData<List<ProdottoInListaModel>>()
+    val lista_prodotti: MutableLiveData<List<ProdottoInListaModel>>
+        get() = _lista_prodotti
+
+    private var _statistiche = MutableLiveData<Map<String, Float>>()
+    val statistiche: LiveData<Map<String, Float>>
+        get() = _statistiche
+
     private var _scotrnino = MutableLiveData<String>().apply {
         value = "Scontrino"
     }
     val scontrino: LiveData<String> = _scotrnino
-
-
 
     private var _valore_sconto = MutableLiveData<String>().apply {
         value = ""
@@ -110,7 +117,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
     }
 
 
-
+    @OptIn(UnstableApi::class)
     @RequiresApi(Build.VERSION_CODES.O)
     fun creaScontrino() {
         currentUser.let {
@@ -118,18 +125,44 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                 .document("shoppingList").get()
                 .addOnSuccessListener { documents ->
                     _listaSpesa.value = documents.toObject(ListaDellaSpesaModel::class.java)
+                    _lista_prodotti.value = _listaSpesa.value?.let { it1 -> listaProdotti(it1.prodotti) }
                     val dataScontrino = getCurrentDateTime()
+                    var prezzo_scontato = 0f
+                    val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
+                    if(_codice_sconto.value != "-"){
+                        prezzo_scontato = _prezzo_totale.value?.toFloat()?.minus(sconto!!)!!
+                    }else{
+                        prezzo_scontato = _prezzo_totale.value?.toFloat()!!
+                    }
                     val nuovoScontrino = hashMapOf(
                         "data" to dataScontrino,
                         "valido" to true,
                         "prodotti" to _listaSpesa.value?.prodotti,
-                        "totale" to _prezzo_totale.value?.toFloat()!!
+                        "totale" to prezzo_scontato,
+                        "codiceSconto" to _codice_sconto.value,
+                        "valoreSconto" to _valore_sconto.value
                     )
 
                     if (it != null) {
                         db.collection("users").document(it.uid).collection("historical")
                             .document(dataScontrino).set(nuovoScontrino)
                             .addOnSuccessListener {
+                                //Gestiamo le statistiche
+                                db.collection("users").document(currentUser.uid).collection("stats").document("prodotti_piu_acquistati").get()
+                                    .addOnSuccessListener { document->
+                                        val prodottiMap = document.data
+                                        if (prodottiMap != null) {
+                                            for(prodotto in _lista_prodotti.value!!){
+                                                for((key, value) in prodottiMap){
+                                                    if (key == prodotto.nome && value is Number) {
+                                                        var floatValue = value.toFloat()
+                                                        floatValue += prodotto.quantita
+                                                        db.collection("users").document(currentUser.uid).collection("stats").document("prodotti_piu_acquistati").update(prodotto.nome, floatValue)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 deleteListaSpesa()
                             }
                             .addOnFailureListener{
@@ -137,6 +170,8 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                             }
                     }
                 }
+
+
         }
     }
 
@@ -149,6 +184,11 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
             "valido" to false,
             "prodotti" to prodotti
         )
+
+        currentUser?.let {
+            db.collection("users").document(it.uid).collection("historical")
+                .document("shoppingList").update(updates)
+        }
     }
     fun readVia() {
         val currentUser = FirebaseAuth.getInstance().currentUser
@@ -228,5 +268,16 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         val currentDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
         return currentDateTime.format(formatter)
+    }
+
+    private fun listaProdotti(map: Map<String?, List<Float>?>) : List<ProdottoInListaModel>{
+        val listaProdotti = mutableListOf<ProdottoInListaModel>()
+        map.forEach { (key, value) ->
+            val prodotto = key?.let { ProdottoInListaModel(it, value?.get(0) ?: 0.5f, value?.get(1) ?: 0f, value?.get(2) ?: 0f) }
+            if (prodotto != null) {
+                listaProdotti.add(prodotto)
+            }
+        }
+        return listaProdotti
     }
 }

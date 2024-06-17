@@ -7,6 +7,7 @@ import android.widget.Toast
 import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.databinding.ActivityRegistrazioneBinding
+import com.example.greenmarket.ui.altro.statistiche.ProdottoInStatsModel
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
 import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
 import com.google.firebase.auth.FirebaseAuth
@@ -65,6 +66,32 @@ class RegisterActivity : AppCompatActivity() {
                                         "punti" to 0
                                     )
 
+                                    //Statistiche
+                                    val mele = ProdottoInStatsModel("Mele", 0f)
+                                    val banane = ProdottoInStatsModel("Banane", 0f)
+                                    val pomodori = ProdottoInStatsModel("Pomodori", 0f)
+                                    val carote = ProdottoInStatsModel("Carote", 0f)
+                                    val pere = ProdottoInStatsModel("Pere", 0f)
+                                    val melanzane = ProdottoInStatsModel("Melanzane", 0f)
+                                    val spinaci = ProdottoInStatsModel("Spinaci", 0f)
+                                    val limoni = ProdottoInStatsModel("Limoni", 0f)
+                                    val arance = ProdottoInStatsModel("Arance", 0f)
+                                    val patate = ProdottoInStatsModel("Patate", 0f)
+
+                                    val prodottiStats = mapOf(
+                                        "Mele" to mele.quantitaTot,
+                                        "Banane" to banane.quantitaTot,
+                                        "Pomodori" to pomodori.quantitaTot,
+                                        "Carote" to carote.quantitaTot,
+                                        "Pere" to pere.quantitaTot,
+                                        "Melanzane" to melanzane.quantitaTot,
+                                        "Spinaci" to spinaci.quantitaTot,
+                                        "Limoni" to limoni.quantitaTot,
+                                        "Arance" to arance.quantitaTot,
+                                        "Patate" to patate.quantitaTot
+
+                                    )
+
                                     db.collection("users").document(userID).set(userMap)
                                         .addOnSuccessListener{
                                             binding.editTextNome.text.clear()
@@ -77,6 +104,7 @@ class RegisterActivity : AppCompatActivity() {
                                                 .addOnSuccessListener{
                                                     db.collection("users").document(userID).collection("pointCard").document("wallet").set(tesseraPunti)
                                                         .addOnSuccessListener{
+                                                            db.collection("users").document(userID).collection("stats").document("top_selling_products").set(prodottiStats)
                                                             Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
                                                             val intent = Intent(this, LoginActivity::class.java)
                                                             startActivity(intent)

@@ -1,6 +1,5 @@
 package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
-import android.content.Intent
 import android.os.Build
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,21 +11,13 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.example.greenmarket.MainActivity
 import com.example.greenmarket.R
-import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiViewModel
-import com.example.greenmarket.ui.lista_spesa.ListaSpesaFragment
 import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 import java.math.BigDecimal
 import java.math.RoundingMode
-import com.example.greenmarket.databinding.ActivityConfermaOrdineBinding
-import com.example.greenmarket.databinding.FragmentListaSpesaBinding
-import com.example.greenmarket.ui.ricerca.RicercaFragment
-import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottiViewModel
 
 class ConfermaOrdineActivity : AppCompatActivity() {
     //private var _binding: ActivityConfermaOrdineBinding? = null
@@ -119,9 +110,6 @@ class ConfermaOrdineActivity : AppCompatActivity() {
                 }
             }
             //Implementare la funzione che gestisce la creazione di una scontrino
-            //confermaOrdineViewModel.deleteListaSpesa()
-            listaSpesaViewModel.deleteListaSpesa()
-
             confermaOrdineViewModel.creaScontrino()
             Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
             finish()

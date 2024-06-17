@@ -5,16 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.greenmarket.R
-import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 
 class DettaglioProdottoActivity : AppCompatActivity() {
 
-    private val dettaglioProdottiViewModel: DettaglioProdottiViewModel by viewModels()
+    private val dettaglioProdottoViewModel: DettaglioProdottoViewModel by viewModels()
     @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,47 +34,47 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val quantitaProdotto = intent.getFloatExtra("quantita_prodotto", 0.5f)
 
         if (nomeProdotto != null) {
-            dettaglioProdottiViewModel.setNome(nomeProdotto)
+            dettaglioProdottoViewModel.setNome(nomeProdotto)
         }
-        dettaglioProdottiViewModel.nome_prodotto.observe(this) {
+        dettaglioProdottoViewModel.nome_prodotto.observe(this) {
             nome.text = it
         }
 
-        dettaglioProdottiViewModel.setPrezzo(prezzoProdotto)
-        dettaglioProdottiViewModel.prezzo_prodotto.observe(this) {
+        dettaglioProdottoViewModel.setPrezzo(prezzoProdotto)
+        dettaglioProdottoViewModel.prezzo_prodotto.observe(this) {
             prezzo.text = "€$it"
         }
 
         if (descrizioneProdotto != null) {
-            dettaglioProdottiViewModel.setDescrizione(descrizioneProdotto)
+            dettaglioProdottoViewModel.setDescrizione(descrizioneProdotto)
         }
-        dettaglioProdottiViewModel.descrizione_prodotto.observe(this) {
+        dettaglioProdottoViewModel.descrizione_prodotto.observe(this) {
             descrizione.text = it
         }
 
         if (!fotoProdotto.isNullOrEmpty()) {
-            dettaglioProdottiViewModel.setFoto(fotoProdotto)
+            dettaglioProdottoViewModel.setFoto(fotoProdotto)
         }
-        dettaglioProdottiViewModel.foto_prodotto.observe(this) {
+        dettaglioProdottoViewModel.foto_prodotto.observe(this) {
             Glide.with(this)
                 .load(fotoProdotto)
                 .into(foto)
         }
 
         add.setOnClickListener{
-            dettaglioProdottiViewModel.incrementaQuantita()
+            dettaglioProdottoViewModel.incrementaQuantita()
         }
         remove.setOnClickListener{
-            dettaglioProdottiViewModel.decrementaQuantita()
+            dettaglioProdottoViewModel.decrementaQuantita()
         }
 
-        dettaglioProdottiViewModel.setQuantita(quantitaProdotto)
-        dettaglioProdottiViewModel.quantita_prodotto.observe(this) {
+        dettaglioProdottoViewModel.setQuantita(quantitaProdotto)
+        dettaglioProdottoViewModel.quantita_prodotto.observe(this) {
             quantita.text = it.toString()
         }
 
         addList.setOnClickListener{
-            dettaglioProdottiViewModel.inserimentoProdottoInListaSpesa()
+            dettaglioProdottoViewModel.inserimentoProdottoInListaSpesa()
             finish()
         }
 

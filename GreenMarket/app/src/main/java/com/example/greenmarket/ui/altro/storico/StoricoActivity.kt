@@ -38,22 +38,17 @@ class StoricoActivity : AppCompatActivity() {
         })
 
         storicoViewModel.scontrino.observe(this) { scontrino ->
-            Log.d("DOMEEEEEE", "EEEEEEEEEEEEE")
             scontrino?.let {
-                startProdotto(it.data, it.prodotti, it.totale)
+                startProdotto(it.data, it.prodotti, it.totale, it.codiceSconto, it.valoreSconto)
             }
             //storicoViewModel.resetScontrino()
         }
     }
 
     @OptIn(UnstableApi::class)
-    private fun startProdotto(data: String, prodotti: Map<String?, List<Float>?>, totale: Float) {
+    private fun startProdotto(data: String, prodotti: Map<String?, List<Float>?>, totale: Float, codiceSconto: String, valoreSconto: String) {
         val intent = Intent(this, DettaglioScontriniActivity::class.java)
         intent.putExtra("data", data)
-        Log.d("AIUTOOOOOOOOOO", "000000000000000000")
-
-
-        Log.d("Map", prodotti.toString())
         // Passaggio della Map
         val bundle = Bundle()
         for ((key, value) in prodotti) {
@@ -61,10 +56,11 @@ class StoricoActivity : AppCompatActivity() {
                 bundle.putFloatArray(key, value.toFloatArray())
             }
         }
-
-
         intent.putExtra("map_bundle", bundle)
-
+        intent.putExtra("codice_sconto", codiceSconto)
+        Log.d("AAAAAAAAAAAAA", codiceSconto)
+        intent.putExtra("valore_sconto", valoreSconto)
+        Log.d("BBBBBBBBBBBBB", valoreSconto)
         intent.putExtra("totale", totale)
         startActivity(intent)
     }

@@ -28,23 +28,15 @@ class DettaglioScontriniActivity : AppCompatActivity() {
         val data: TextView = findViewById(R.id.data_dettaglio_scontrino)
         val totale: TextView = findViewById(R.id.prezzo_totale)
 
-        val codiceSconto = intent.getStringExtra("codice_sconto")
-        if (codiceSconto == "") {
-            cs.text = "Codice sconto: -"
-            valCS.text = "-"
-        } else {
-            cs.text = "Codice sconto: $codiceSconto"
-        }
-
         val dataScontrino = intent.getStringExtra("data")
         val totaleScontrino = intent.getFloatExtra("totale", 0f)
-
-
         // Recupero mappa
         val bundle = intent.getBundleExtra("map_bundle")
         val prodottiScontrino: Map<String, List<Float>> = bundle?.keySet()?.associateWith { key ->
             bundle.getFloatArray(key)?.toList() ?: emptyList()
         } ?: emptyMap()
+        val codiceScontoScontrino = intent.getStringExtra("codice_sconto")
+        val valoreCodiceScontoScontrino = intent.getStringExtra("valore_sconto")
 
 
         if (dataScontrino != null) {
@@ -53,18 +45,37 @@ class DettaglioScontriniActivity : AppCompatActivity() {
 
         dettaglioScontriniViewModel.data_scontrino.observe(this) { dataValue ->
             data.text = dataValue
-            Log.d("Cazz", "Data osservata: $dataValue")
         }
 
         dettaglioScontriniViewModel.setTotale(totaleScontrino)
         dettaglioScontriniViewModel.totale_scontrino.observe(this) { totaleValue ->
             totale.text = totaleValue.toString()
-            Log.d("Cazz2", "Totale osservato: $totaleValue")
         }
 
 
         if (prodottiScontrino.isNotEmpty()) {
             dettaglioScontriniViewModel.setListaProdotti(dettaglioScontriniViewModel.listaProdotti(prodottiScontrino))
+        }
+
+        if(codiceScontoScontrino != null) {
+            dettaglioScontriniViewModel.setCodiceSconto(codiceScontoScontrino)
+        }
+
+        dettaglioScontriniViewModel.codice_sconto.observe(this) { codiceScontoValue ->
+            if (codiceScontoScontrino == "-") {
+                cs.text = "Codice sconto: -"
+                valCS.text = "-"
+            } else {
+                cs.text = "Codice sconto: $codiceScontoValue"
+            }
+        }
+
+        if(valoreCodiceScontoScontrino != null) {
+            dettaglioScontriniViewModel.setValoreCodiceSconto(valoreCodiceScontoScontrino)
+        }
+
+        dettaglioScontriniViewModel.valore_codice_sconto.observe(this) { valoreCodiceScontoValue ->
+            valCS.text = valoreCodiceScontoValue
         }
 
 
@@ -75,7 +86,6 @@ class DettaglioScontriniActivity : AppCompatActivity() {
 
         dettaglioScontriniViewModel.lista_prodotti_scontrino.observe(this) { prodotti ->
             adapter.setData(prodotti)
-            Log.d("Cazz3", "Lista prodotti osservata: $prodotti")
         }
 
 

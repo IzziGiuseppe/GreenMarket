@@ -1,5 +1,6 @@
 package com.example.greenmarket.ui.altro.statistiche
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +10,9 @@ import com.example.greenmarket.R
 import com.example.greenmarket.db.model.Prodotto
 import com.example.greenmarket.db.model.Scontrino
 
-class StatsListAdapter(
-    private val itemClickListener: (Prodotto) -> Unit
-): RecyclerView.Adapter<StatsListAdapter.MyViewHolder>() {
+class StatsListAdapter(): RecyclerView.Adapter<StatsListAdapter.MyViewHolder>() {
 
-    private var listProdStats = emptyArray<Prodotto>()
+    private var listProdStats = emptyList<ProdottoInStatsModel>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.nome_prodotto_stats_item)
@@ -28,16 +27,16 @@ class StatsListAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = listProdStats[position]
         holder.textView.text = currentProdotto.nome
-        holder.textView2.text = position.toString()
-        holder.itemView.setOnClickListener { itemClickListener(currentProdotto) }
+        holder.textView2.text = currentProdotto.quantitaTot.toString()
     }
 
     override fun getItemCount(): Int {
         return listProdStats.size
     }
 
-    fun setData(prodotto: Array<Prodotto>) {
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(prodotto: List<ProdottoInStatsModel>) {
         this.listProdStats = prodotto
-        //notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 }

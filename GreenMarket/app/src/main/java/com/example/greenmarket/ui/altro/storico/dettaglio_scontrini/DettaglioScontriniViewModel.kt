@@ -24,10 +24,15 @@ class DettaglioScontriniViewModel : ViewModel() {
     val lista_prodotti_scontrino: MutableLiveData<List<ProdottoInListaModel>>
         get() = _lista_prodotti_scontrino
 
-    private var _codiceSconto = MutableLiveData<String>().apply {
+    private var _codice_sconto = MutableLiveData<String>().apply {
         value = "-"
     }
-    val codiceSconto: LiveData<String> = _codiceSconto
+    val codice_sconto: LiveData<String> = _codice_sconto
+
+    private var _valore_codice_sconto = MutableLiveData<String>().apply {
+        value = "€0.00"
+    }
+    val valore_codice_sconto: LiveData<String> = _valore_codice_sconto
 
     fun setData(data: String?) {
         _data_scontrino.value = data
@@ -40,13 +45,12 @@ class DettaglioScontriniViewModel : ViewModel() {
     fun setListaProdotti(lista: List<ProdottoInListaModel>) {
         _lista_prodotti_scontrino.value = lista
     }
-    fun readListaProdottiInScontrino() {
-
+    fun setCodiceSconto(codiceScontoScontrino: String) {
+        _codice_sconto.value = codiceScontoScontrino
     }
 
-    fun readCodiceSconto() {
-        val x = "bfewvfce"
-        _codiceSconto.value = x
+    fun setValoreCodiceSconto(valoreCodiceScontoScontrino: String) {
+        _valore_codice_sconto.value = valoreCodiceScontoScontrino
     }
 
     fun listaProdotti(map: Map<String, List<Float>>) : List<ProdottoInListaModel>{
