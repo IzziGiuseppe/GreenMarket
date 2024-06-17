@@ -4,7 +4,7 @@
             "outputFile": "com.example.greenmarket.app-mergeDebugResources-69:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\4337a71c13d8369939e0ea5dbe7b6800\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\4337a71c13d8369939e0ea5dbe7b6800\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\9c4f500e7697d62a60d80c0b0f3f4f9a\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\9c4f500e7697d62a60d80c0b0f3f4f9a\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\e8e1c7728076f5cb611277cee8f3d1d9\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\izzig\\.gradle\\caches\\transforms-4\\e8e1c7728076f5cb611277cee8f3d1d9\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

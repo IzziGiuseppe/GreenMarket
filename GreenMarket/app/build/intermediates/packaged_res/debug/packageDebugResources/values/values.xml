@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="colorAccent">#FF99CC00</color>
+    <color name="colorPrimary">#FF99CC00</color>
+    <color name="colorPrimaryDark">#FF99CC00</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="your_status_bar_color">#FF99CC00</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="accedi">Accedi</string>
@@ -67,6 +71,12 @@
     <string name="title_ricettario">Ricettario</string>
     <string name="torna_al_login">Torna al Login</string>
     <string name="welcome">"Welcome !"</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/your_status_bar_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
     <style name="ShapeAppearanceOverlayLogin.Cut.Top" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">32dp</item>

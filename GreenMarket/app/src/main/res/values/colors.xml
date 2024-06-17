@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#FF99CC00</color>
+    <color name="colorPrimaryDark">#FF99CC00</color>
+    <color name="colorAccent">#FF99CC00</color>
+    <color name="your_status_bar_color">#FF99CC00</color>
 </resources>
