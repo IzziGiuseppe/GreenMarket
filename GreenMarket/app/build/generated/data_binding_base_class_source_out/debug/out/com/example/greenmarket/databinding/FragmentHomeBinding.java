@@ -12,9 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import androidx.viewpager2.widget.ViewPager2;
 import com.example.greenmarket.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -31,22 +31,10 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final CardView cardImage;
 
   @NonNull
-  public final CardView cardImage2;
-
-  @NonNull
-  public final CardView cardImage3;
-
-  @NonNull
   public final CardView cardView;
 
   @NonNull
   public final ImageView iconaProfiloUtente;
-
-  @NonNull
-  public final TextView imageNome;
-
-  @NonNull
-  public final TextView imagePrezzo;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -67,22 +55,13 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView orarioChiusura;
 
   @NonNull
-  public final TextView ricettaNome;
+  public final RecyclerView recyclerViewProdHomeeee;
 
   @NonNull
-  public final ViewPager2 ricetteConsigliate;
+  public final RecyclerView rvRicetteHome;
 
   @NonNull
   public final TextView scopriSubito;
-
-  @NonNull
-  public final TextView seeAll;
-
-  @NonNull
-  public final TextView seeAllRicette;
-
-  @NonNull
-  public final ViewPager2 statsProd;
 
   @NonNull
   public final Button tessPtBt;
@@ -106,38 +85,28 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final View view3;
 
   private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView apertoChiuso,
-      @NonNull CardView cardImage, @NonNull CardView cardImage2, @NonNull CardView cardImage3,
-      @NonNull CardView cardView, @NonNull ImageView iconaProfiloUtente,
-      @NonNull TextView imageNome, @NonNull TextView imagePrezzo,
-      @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout15,
-      @NonNull LinearLayout linearLayout16, @NonNull LinearLayout linearLayout2,
-      @NonNull ImageView logo, @NonNull TextView orarioChiusura, @NonNull TextView ricettaNome,
-      @NonNull ViewPager2 ricetteConsigliate, @NonNull TextView scopriSubito,
-      @NonNull TextView seeAll, @NonNull TextView seeAllRicette, @NonNull ViewPager2 statsProd,
-      @NonNull Button tessPtBt, @NonNull TextView textHome, @NonNull TextView titleHome,
-      @NonNull TextView titleRicetteHome, @NonNull View view, @NonNull View view2,
-      @NonNull View view3) {
+      @NonNull CardView cardImage, @NonNull CardView cardView,
+      @NonNull ImageView iconaProfiloUtente, @NonNull LinearLayout linearLayout,
+      @NonNull LinearLayout linearLayout15, @NonNull LinearLayout linearLayout16,
+      @NonNull LinearLayout linearLayout2, @NonNull ImageView logo,
+      @NonNull TextView orarioChiusura, @NonNull RecyclerView recyclerViewProdHomeeee,
+      @NonNull RecyclerView rvRicetteHome, @NonNull TextView scopriSubito, @NonNull Button tessPtBt,
+      @NonNull TextView textHome, @NonNull TextView titleHome, @NonNull TextView titleRicetteHome,
+      @NonNull View view, @NonNull View view2, @NonNull View view3) {
     this.rootView = rootView;
     this.apertoChiuso = apertoChiuso;
     this.cardImage = cardImage;
-    this.cardImage2 = cardImage2;
-    this.cardImage3 = cardImage3;
     this.cardView = cardView;
     this.iconaProfiloUtente = iconaProfiloUtente;
-    this.imageNome = imageNome;
-    this.imagePrezzo = imagePrezzo;
     this.linearLayout = linearLayout;
     this.linearLayout15 = linearLayout15;
     this.linearLayout16 = linearLayout16;
     this.linearLayout2 = linearLayout2;
     this.logo = logo;
     this.orarioChiusura = orarioChiusura;
-    this.ricettaNome = ricettaNome;
-    this.ricetteConsigliate = ricetteConsigliate;
+    this.recyclerViewProdHomeeee = recyclerViewProdHomeeee;
+    this.rvRicetteHome = rvRicetteHome;
     this.scopriSubito = scopriSubito;
-    this.seeAll = seeAll;
-    this.seeAllRicette = seeAllRicette;
-    this.statsProd = statsProd;
     this.tessPtBt = tessPtBt;
     this.textHome = textHome;
     this.titleHome = titleHome;
@@ -186,18 +155,6 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.card_image2;
-      CardView cardImage2 = ViewBindings.findChildViewById(rootView, id);
-      if (cardImage2 == null) {
-        break missingId;
-      }
-
-      id = R.id.card_image3;
-      CardView cardImage3 = ViewBindings.findChildViewById(rootView, id);
-      if (cardImage3 == null) {
-        break missingId;
-      }
-
       id = R.id.cardView;
       CardView cardView = ViewBindings.findChildViewById(rootView, id);
       if (cardView == null) {
@@ -207,18 +164,6 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.iconaProfiloUtente;
       ImageView iconaProfiloUtente = ViewBindings.findChildViewById(rootView, id);
       if (iconaProfiloUtente == null) {
-        break missingId;
-      }
-
-      id = R.id.image_nome;
-      TextView imageNome = ViewBindings.findChildViewById(rootView, id);
-      if (imageNome == null) {
-        break missingId;
-      }
-
-      id = R.id.image_prezzo;
-      TextView imagePrezzo = ViewBindings.findChildViewById(rootView, id);
-      if (imagePrezzo == null) {
         break missingId;
       }
 
@@ -258,39 +203,21 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ricetta_nome;
-      TextView ricettaNome = ViewBindings.findChildViewById(rootView, id);
-      if (ricettaNome == null) {
+      id = R.id.recyclerViewProdHomeeee;
+      RecyclerView recyclerViewProdHomeeee = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewProdHomeeee == null) {
         break missingId;
       }
 
-      id = R.id.ricette_consigliate;
-      ViewPager2 ricetteConsigliate = ViewBindings.findChildViewById(rootView, id);
-      if (ricetteConsigliate == null) {
+      id = R.id.rv_ricette_home;
+      RecyclerView rvRicetteHome = ViewBindings.findChildViewById(rootView, id);
+      if (rvRicetteHome == null) {
         break missingId;
       }
 
       id = R.id.scopri_subito;
       TextView scopriSubito = ViewBindings.findChildViewById(rootView, id);
       if (scopriSubito == null) {
-        break missingId;
-      }
-
-      id = R.id.see_all;
-      TextView seeAll = ViewBindings.findChildViewById(rootView, id);
-      if (seeAll == null) {
-        break missingId;
-      }
-
-      id = R.id.see_all_ricette;
-      TextView seeAllRicette = ViewBindings.findChildViewById(rootView, id);
-      if (seeAllRicette == null) {
-        break missingId;
-      }
-
-      id = R.id.stats_prod;
-      ViewPager2 statsProd = ViewBindings.findChildViewById(rootView, id);
-      if (statsProd == null) {
         break missingId;
       }
 
@@ -336,10 +263,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, apertoChiuso, cardImage, cardImage2,
-          cardImage3, cardView, iconaProfiloUtente, imageNome, imagePrezzo, linearLayout,
-          linearLayout15, linearLayout16, linearLayout2, logo, orarioChiusura, ricettaNome,
-          ricetteConsigliate, scopriSubito, seeAll, seeAllRicette, statsProd, tessPtBt, textHome,
+      return new FragmentHomeBinding((ScrollView) rootView, apertoChiuso, cardImage, cardView,
+          iconaProfiloUtente, linearLayout, linearLayout15, linearLayout16, linearLayout2, logo,
+          orarioChiusura, recyclerViewProdHomeeee, rvRicetteHome, scopriSubito, tessPtBt, textHome,
           titleHome, titleRicetteHome, view, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);

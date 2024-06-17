@@ -58,7 +58,6 @@ id buttonSave
 id cardView
 id card_image
 id card_image2
-id card_image3
 id card_image_domenico
 id card_image_giuseppe
 id card_image_peppe
@@ -98,6 +97,7 @@ id edit_indirizzo
 id floatingActionButtonModFoto
 id foto_prodotto
 id foto_ricetta
+id foto_ricetta_home
 id git_text
 id giuseppe_bt
 id hai_speso
@@ -157,6 +157,7 @@ id nome_prodotto
 id nome_prodotto_item
 id nome_prodotto_stats_item
 id nome_ricetta
+id nome_ricetta_home
 id nome_socio
 id num_prodotti
 id orario_chiusura
@@ -173,12 +174,11 @@ id punti
 id quantita_prod_dett_scontrino
 id quantita_prod_lista_spesa
 id quantita_prodotto_stats
+id recyclerViewProdHomeeee
 id resetProd
 id reset_bt
 id ricercaProdottoEditText
 id ricercaRicettaEditText
-id ricetta_nome
-id ricette_consigliate
 id riscatta
 id rv
 id rvRicercaProd
@@ -187,12 +187,11 @@ id rv_codici_sconto
 id rv_dettaglio_scontrini
 id rv_lista_spesa
 id rv_prodotti_stats
+id rv_ricette_home
 id rv_scontrini
 id rv_tc
 id scopri_subito
 id scrool_view_descrizione
-id see_all
-id see_all_ricette
 id sezione_altro
 id sezione_tc
 id stats_prod
@@ -274,8 +273,10 @@ layout item_codice_sconto_view
 layout item_dettaglio_scontrino_view
 layout item_image
 layout item_lista_spesa_view
+layout item_prodotti_home
 layout item_prodotto_view
 layout item_ricetta_view
+layout item_ricette_home
 layout item_stats_view
 layout item_storico_view
 layout item_tc_view

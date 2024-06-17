@@ -172,7 +172,7 @@ class UserProfileActivity : AppCompatActivity() {
                         Toast.makeText(this, "Errore nell'aggiornamento dei dati", Toast.LENGTH_SHORT).show()
                     }
             } else {
-                Toast.makeText(this, "Nessun dato da aggiornare", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Nessun dato anagrafico da aggiornare", Toast.LENGTH_SHORT).show()
             }
 
             uri?.let { imageUri ->

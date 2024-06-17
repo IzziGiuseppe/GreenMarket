@@ -12,6 +12,8 @@ import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
 import com.example.greenmarket.db.GMDatabase
 import com.example.greenmarket.db.model.Prodotto
+import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.ui.ricettario.RicettaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
@@ -19,6 +21,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.time.LocalTime
 import java.time.LocalDateTime
+import kotlin.random.Random
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -40,30 +43,40 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val prodotto: LiveData<Prodotto>
         get() = _prodotto
 
-    private var _listaProdotti = MutableLiveData(arrayOf<Prodotto>())
-    val listaProdotti: MutableLiveData<Array<Prodotto>>
+    private var _listaProdotti = MutableLiveData(listOf<ProdottoModel>())
+    val listaProdotti: MutableLiveData<List<ProdottoModel>>
         get() = _listaProdotti
+
+    private var _listaRicette = MutableLiveData<List<RicettaModel>>()
+    val listaRicette: MutableLiveData<List<RicettaModel>> = _listaRicette
 
     private val _status = MutableLiveData<String>().apply {
         value = ""
     }
     var status: LiveData<String> = _status
 
-    fun readProdotto(nome: String){
-        //_prodotto.value = db.ProdottoDao().getProdottoByNome(nome)
-    }
-
-    fun readAllProdotti(){
-        val x = db.ProdottoDao().getAll()
-        _listaProdotti.value = x
-    }
-
     fun insert(vararg prodotto: Prodotto){
         db.ProdottoDao().insert(*prodotto)
     }
 
-    fun deleteAllProdotti(){
-        db.ProdottoDao().deleteAllProdotti()
+    fun readRicetteRandom() {
+        dbf.collection("recipes").get()
+            .addOnSuccessListener { documents ->
+                _listaRicette.value = documents.toObjects(RicettaModel::class.java).randomElements(2)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Error getting products", exception)
+            }
+    }
+
+    fun readProdottiRandom() {
+        dbf.collection("products").get()
+            .addOnSuccessListener { documents ->
+                _listaProdotti.value = documents.toObjects(ProdottoModel::class.java).randomElements(3)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Error getting products", exception)
+            }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -134,6 +147,10 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 delay(30000) // aggiorna ogni trenta secondi
             }
         }
+    }
+
+    fun <T> List<T>.randomElements(n: Int): List<T> {
+        return this.shuffled().take(n)
     }
 
 

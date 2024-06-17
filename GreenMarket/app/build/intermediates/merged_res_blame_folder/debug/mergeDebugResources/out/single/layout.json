@@ -8,6 +8,10 @@
         "source": "com.example.greenmarket.app-main-73:/layout/activity_stats.xml"
     },
     {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_prodotti_home.xml",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_prodotti_home.xml"
+    },
+    {
         "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_stats_view.xml",
         "source": "com.example.greenmarket.app-main-73:/layout/item_stats_view.xml"
     },
@@ -102,6 +106,10 @@
     {
         "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/activity_main.xml",
         "source": "com.example.greenmarket.app-main-73:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_ricette_home.xml",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_ricette_home.xml"
     },
     {
         "merged": "com.example.greenmarket.app-mergeDebugResources-70:/layout/item_codice_sconto_view.xml",

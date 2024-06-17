@@ -3385,7 +3385,6 @@ id cancel_button
 id cardView
 id card_image
 id card_image2
-id card_image3
 id card_image_domenico
 id card_image_giuseppe
 id card_image_peppe
@@ -3522,6 +3521,7 @@ id floatingActionButtonModFoto
 id forever
 id foto_prodotto
 id foto_ricetta
+id foto_ricetta_home
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3706,6 +3706,7 @@ id nome_prodotto
 id nome_prodotto_item
 id nome_prodotto_stats_item
 id nome_ricetta
+id nome_ricetta_home
 id nome_socio
 id none
 id normal
@@ -3768,14 +3769,13 @@ id quantita_prodotto_stats
 id radio
 id ratio
 id rectangles
+id recyclerViewProdHomeeee
 id report_drawn
 id resetProd
 id reset_bt
 id reverseSawtooth
 id ricercaProdottoEditText
 id ricercaRicettaEditText
-id ricetta_nome
-id ricette_consigliate
 id right
 id rightToLeft
 id right_icon
@@ -3791,6 +3791,7 @@ id rv_codici_sconto
 id rv_dettaglio_scontrini
 id rv_lista_spesa
 id rv_prodotti_stats
+id rv_ricette_home
 id rv_scontrini
 id rv_tc
 id satellite
@@ -3816,8 +3817,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id see_all
-id see_all_ricette
 id select_dialog_listview
 id selected
 id selection_type
@@ -4153,8 +4152,10 @@ layout item_codice_sconto_view
 layout item_dettaglio_scontrino_view
 layout item_image
 layout item_lista_spesa_view
+layout item_prodotti_home
 layout item_prodotto_view
 layout item_ricetta_view
+layout item_ricette_home
 layout item_stats_view
 layout item_storico_view
 layout item_tc_view

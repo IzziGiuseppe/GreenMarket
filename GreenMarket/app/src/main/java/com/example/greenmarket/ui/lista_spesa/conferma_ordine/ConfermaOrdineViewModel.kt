@@ -1,9 +1,7 @@
 package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.os.Build
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.OptIn
 import androidx.annotation.RequiresApi
@@ -12,19 +10,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
-import com.bumptech.glide.Glide
-import com.example.greenmarket.ui.home.HomeFragment
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiModel
 import com.example.greenmarket.ui.lista_spesa.ListaDellaSpesaModel
 import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.math.BigDecimal
 import java.math.RoundingMode
-import java.text.Format
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class ConfermaOrdineViewModel(application: Application): AndroidViewModel(application){
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()

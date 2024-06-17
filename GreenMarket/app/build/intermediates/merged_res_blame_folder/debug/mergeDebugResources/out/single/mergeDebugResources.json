@@ -72,6 +72,10 @@
         "source": "com.example.greenmarket.app-main-73:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.greenmarket.app-debug-71:/layout_item_prodotti_home.xml.flat",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_prodotti_home.xml"
+    },
+    {
         "merged": "com.example.greenmarket.app-debug-71:/drawable_storico.png.flat",
         "source": "com.example.greenmarket.app-main-73:/drawable/storico.png"
     },
@@ -166,6 +170,10 @@
     {
         "merged": "com.example.greenmarket.app-debug-71:/drawable_git.png.flat",
         "source": "com.example.greenmarket.app-main-73:/drawable/git.png"
+    },
+    {
+        "merged": "com.example.greenmarket.app-debug-71:/layout_item_ricette_home.xml.flat",
+        "source": "com.example.greenmarket.app-main-73:/layout/item_ricette_home.xml"
     },
     {
         "merged": "com.example.greenmarket.app-debug-71:/mipmap-mdpi_ic_add_adaptive_fore.png.flat",

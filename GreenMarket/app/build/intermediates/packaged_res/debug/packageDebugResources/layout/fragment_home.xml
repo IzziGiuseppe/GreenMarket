@@ -163,6 +163,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewProdHomeeee" />
+
         <LinearLayout
             android:id="@+id/linearLayout15"
             android:layout_width="match_parent"
@@ -176,172 +188,56 @@
 
             <TextView
                 android:id="@+id/title_home"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prodotti più acquistati"
-                android:textAlignment="center"
+                android:text="Prodotti in evidenza"
+                android:textAlignment="textStart"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/see_all"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="bottom"
-                android:text="Scopri di più"
-                android:textAlignment="textEnd"
-                android:textSize="16sp"
-                tools:ignore="RtlCompat" />
         </LinearLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_image2"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProdHomeeee"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="16dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/stats_prod"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:visibility="visible"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    tools:ignore="MissingConstraints"
-                    tools:visibility="visible">
-
-                </androidx.viewpager2.widget.ViewPager2>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:id="@+id/image_nome"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nome"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/image_prezzo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Prezzo"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <View
-            android:id="@+id/view3"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout16"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_image2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout15" />
 
         <LinearLayout
             android:id="@+id/linearLayout16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_image2">
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewProdHomeeee">
 
             <TextView
                 android:id="@+id/title_ricette_home"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="GreenMarket ti consiglia"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/see_all_ricette"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:text="Scopri di più"
-                android:textAlignment="textEnd"
-                android:textSize="16sp"
-                tools:ignore="RtlCompat" />
 
         </LinearLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_image3"
-            android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ricette_home"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:padding="4dp"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="16dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout16">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/ricette_consigliate"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:visibility="visible"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    tools:ignore="MissingConstraints"
-                    tools:visibility="visible">
-
-                </androidx.viewpager2.widget.ViewPager2>
-
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:id="@+id/ricetta_nome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Nome"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout16" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -31,7 +31,7 @@ class TermCondViewModel : ViewModel() {
                 "GreenMarket si riserva il diritto di modificare o aggiornare questi Termini e Condizioni in qualsiasi momento senza preavviso. Si consiglia agli utenti di rivedere periodicamente i Termini e Condizioni per essere al corrente di eventuali modifiche.\n" +
                 "\n" +
                 "Contatti\n" +
-                "Per domande o commenti sui presenti Termini e Condizioni, vi preghiamo di contattarci all'indirizzo email [indirizzo email] o tramite il nostro servizio di assistenza clienti.\n" +
+                "Per domande o commenti sui presenti Termini e Condizioni, vi preghiamo di contattarci all'indirizzo email domenico.laporta.dlp@gmail.com o tramite il nostro servizio di assistenza clienti.\n" +
                 "Accettando questi Termini e Condizioni, confermate di aver letto, compreso e accettato di essere vincolati da tutte le disposizioni qui contenute.\n" +
                 "" +
                 "Ultimo aggiornamento: Maggio 2024")
