@@ -95,14 +95,12 @@
             android:label="Chi siamo" />
         <activity
             android:name="com.example.greenmarket.ui.login.ResetPasswordActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name="com.example.greenmarket.SplashActivity"
             android:exported="true"
             android:label="GreenMarket"
-            android:noHistory="true"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" >
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -111,12 +109,10 @@
         </activity>
         <activity
             android:name="com.example.greenmarket.ui.login.LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name="com.example.greenmarket.ui.login.RegisterActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name="com.example.greenmarket.ui.login.UserProfileActivity"
             android:exported="false"

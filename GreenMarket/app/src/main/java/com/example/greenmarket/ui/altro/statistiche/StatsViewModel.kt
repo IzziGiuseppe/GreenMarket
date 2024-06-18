@@ -33,13 +33,12 @@ class StatsViewModel(application: Application) : AndroidViewModel(application) {
     @OptIn(UnstableApi::class)
     fun readProdotti() {
         currentUser?.let {
-            db.collection("users").document(it.uid).collection("stats").document("prodotti_piu_acquistati").get()
+            db.collection("users").document(it.uid).collection("stats").document("top_selling_products").get()
                 .addOnSuccessListener {document->
                     val prodottiMap = document.data
                     if (prodottiMap != null) {
                         val lista = _listaProdStats.value ?: mutableListOf()
                         for((key,value) in prodottiMap){
-                            Log.d("PROBLE", "MAAAAAAAAAAAAAAAAAAAAA")
                             if(value is Number){
                                 val valueFloat = value.toFloat()
                                 val prodotto = ProdottoInStatsModel(key, valueFloat)
@@ -49,7 +48,6 @@ class StatsViewModel(application: Application) : AndroidViewModel(application) {
                         }
                         val listaOrdinata = lista.sortedByDescending { it.quantitaTot }.toMutableList()
                         _listaProdStats.value = listaOrdinata
-                        Log.d("STATISTICHE", "$lista")
                     }
                 }
                 .addOnFailureListener { exception ->

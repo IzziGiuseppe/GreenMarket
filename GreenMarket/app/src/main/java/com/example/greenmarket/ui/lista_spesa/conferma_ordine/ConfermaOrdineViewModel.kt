@@ -149,7 +149,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                             .document(dataScontrino).set(nuovoScontrino)
                             .addOnSuccessListener {
                                 //Gestiamo le statistiche
-                                db.collection("users").document(currentUser.uid).collection("stats").document("prodotti_piu_acquistati").get()
+                                db.collection("users").document(currentUser.uid).collection("stats").document("top_selling_products").get()
                                     .addOnSuccessListener { document->
                                         val prodottiMap = document.data
                                         if (prodottiMap != null) {
@@ -158,7 +158,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                                                     if (key == prodotto.nome && value is Number) {
                                                         var floatValue = value.toFloat()
                                                         floatValue += prodotto.quantita
-                                                        db.collection("users").document(currentUser.uid).collection("stats").document("prodotti_piu_acquistati").update(prodotto.nome, floatValue)
+                                                        db.collection("users").document(currentUser.uid).collection("stats").document("top_selling_products").update(prodotto.nome, floatValue)
                                                     }
                                                 }
                                             }

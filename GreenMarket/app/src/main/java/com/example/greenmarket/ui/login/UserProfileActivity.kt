@@ -3,7 +3,10 @@ package com.example.greenmarket.ui.login
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -77,23 +80,20 @@ class UserProfileActivity : AppCompatActivity() {
                                 .load(photo)
                                 .into(binding.imageViewProfile)
                         } else {
-                            Log.d("UserProfileActivity", "Nessuna immagine trovata per l'utente.")
+                            Toast.makeText(this, "Nessuna immagine trovata per l'utente", Toast.LENGTH_SHORT).show()
                         }
                         originalData = it.data
                     } else {
                         // Documento non trovato
-                        Log.w("UserProfileActivity", "Documento non trovato")
                         Toast.makeText(this, "Dati non visualizzabili", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnFailureListener {
                     // Gestisci l'errore
-                    Log.e("UserProfileActivity", "Errore nel caricamento dei dati")
                     Toast.makeText(this, "Errore nel caricamneto dei dati", Toast.LENGTH_SHORT).show()
                 }
         } else {
             // Utente non loggato
-            Log.w("UserProfileActivity", "Utente non loggato")
             Toast.makeText(this, "Utente non loggato", Toast.LENGTH_SHORT).show()
         }
 
@@ -126,53 +126,48 @@ class UserProfileActivity : AppCompatActivity() {
 
     //Funzione per aggiornare i dati nel db Firestore
     private fun saveData() {
-        val nome = binding.editTextNomeUP.text.toString().trim()
-        val cognome = binding.editTextCognomeUP.text.toString().trim()
-        val indirizzo = binding.editTextIndirizzoUP.text.toString().trim()
+        val nome = binding.editTextNomeUP
+        val cognome = binding.editTextCognomeUP
+        val indirizzo = binding.editTextIndirizzoUP
+
+        nome.addTextChangedListener(createTextWatcher { validateInputField(nome) })
+        cognome.addTextChangedListener(createTextWatcher { validateInputField(cognome) })
+        indirizzo.addTextChangedListener(createTextWatcher { validateAddress(indirizzo) })
+
+        val isFirstNameValid = validateInputField(nome)
+        val isLastNameValid = validateInputField(cognome)
+        val isAddressValid = validateAddress(indirizzo)
 
         currentUser?.let { user ->
             val updates = mutableMapOf<String, Any>()
             updates.clear()
             originalData?.let { original ->
-                if (original["nome"] != nome && nome.isNotEmpty()) {
-                    updates["nome"] = nome
-                } else if (nome.isEmpty()) {
-                    Toast.makeText(this, "Inserisci il tuo nome", Toast.LENGTH_SHORT).show()
-                    return
+                if (original["nome"] != nome.text.toString() && isFirstNameValid) {
+                    updates["nome"] = nome.text.toString()
                 }
 
-                if (original["cognome"] != cognome && cognome.isNotEmpty()) {
-                    updates["cognome"] = cognome
-                } else if (cognome.isEmpty()) {
-                    Toast.makeText(this, "Inserisci il tuo cognome", Toast.LENGTH_SHORT).show()
-                    return
+                if (original["cognome"] != cognome.text.toString() && isLastNameValid) {
+                    updates["cognome"] = cognome.text.toString()
                 }
 
-                if (original["indirizzo"] != indirizzo && indirizzo.isNotEmpty()) {
-                    updates["indirizzo"] = indirizzo
-                } else if (indirizzo.isEmpty()) {
-                    Toast.makeText(this, "Inserisci il tuo indirizzo", Toast.LENGTH_SHORT).show()
-                    return
+                if (original["indirizzo"] != indirizzo.text.toString() && isAddressValid) {
+                    updates["indirizzo"] = indirizzo.text.toString()
                 }
             }
 
-            //COMPAIONO DEI MESSAGGI IN MODO NON COERENTE
-            Log.d("UserProfileActivity", "Aggiornamenti: $updates")
-
-
-            if (updates.isNotEmpty()) {
-                db.collection("users").document(user.uid).update(updates)
-                    .addOnSuccessListener {
-                        Toast.makeText(this, "Dati aggiornati con successo", Toast.LENGTH_SHORT).show()
-                        updates.clear()
-                        Log.d("UserProfileActivity", "Aggiornamenti: $updates")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.e("UserProfileActivity", "Errore nell'aggiornamento dei dati", e)
-                        Toast.makeText(this, "Errore nell'aggiornamento dei dati", Toast.LENGTH_SHORT).show()
-                    }
-            } else {
-                Toast.makeText(this, "Nessun dato anagrafico da aggiornare", Toast.LENGTH_SHORT).show()
+            originalData?.let { original ->
+                if (updates.isNotEmpty() && original["nome"] != nome.text.toString() && original["cognome"] != cognome.text.toString() && original["indirizzo"] != indirizzo.text.toString()) {
+                    db.collection("users").document(user.uid).update(updates)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Dati aggiornati con successo", Toast.LENGTH_SHORT).show()
+                            updates.clear()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Errore nell'aggiornamento dei dati", Toast.LENGTH_SHORT).show()
+                        }
+                } else {
+                    Toast.makeText(this, "Nessun dato anagrafico da aggiornare", Toast.LENGTH_SHORT).show()
+                }
             }
 
             uri?.let { imageUri ->
@@ -330,4 +325,47 @@ class UserProfileActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun createTextWatcher(validationFunction: () -> Boolean): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                validationFunction()
+            }
+        }
+    }
+
+    //Funzione che verifica se il nome inserito è valido
+    private fun validateInputField(editText: EditText): Boolean {
+        val inputField = editText.text.toString().trim()
+        return if (inputField.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        } else if (!inputField.matches(Regex("^[A-Za-zàèéìòù'\\s]+$"))) {
+            editText.error = "Campo non valido"
+            false
+        } else if (inputField.length > 30) {
+            editText.error = "Il campo può contenere al massimo 30 caratteri"
+            false
+        } else {
+            true
+        }
+    }
+
+    //Funzione che verifica se l'indirizzo inserito è valido
+    private fun validateAddress(editText: EditText): Boolean {
+        val address = editText.text.toString().trim()
+        return if (address.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        }else if (!address.matches(Regex("^[A-Za-zàèéìòù0-9,.'\\s]+$"))) {
+            editText.error = "Campo non valido"
+            false
+        } else if(address.length > 30){
+            editText.error = "Il campo può contenere al massimo 30 caratteri"
+            false
+        } else{
+            true
+        }
+    }
 }

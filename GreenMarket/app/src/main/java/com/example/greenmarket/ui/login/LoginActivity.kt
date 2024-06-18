@@ -7,7 +7,10 @@ import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.MainActivity
@@ -41,13 +44,18 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val email = binding.editTextEmailLogin
+        val pass = binding.editTextPasswordLogin
+
+        email.addTextChangedListener(createTextWatcher { validateEmail(email) })
+        pass.addTextChangedListener(createTextWatcher { validatePassword(pass) })
+
         binding.buttonAccediLogin.setOnClickListener{
-            val email = binding.editTextEmailLogin.text.toString().trim()
-            val pass = binding.editTextPasswordLogin.text.toString().trim()
+            val isEmailValid = validateEmail(email)
+            val isPasswordValid = validatePassword(pass)
 
-            if(email.isNotEmpty() && pass.isNotEmpty()){
+            if(isEmailValid && isPasswordValid){
                 if (isInternetAvailable(this)) {
-
                     binding.buttonAccediLogin.visibility = View.GONE
                     progressBar.visibility = View.VISIBLE
 
@@ -59,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
 
                     // Posticipa il runnable del timeout di 5 secondi
                     handler.postDelayed(timeoutRunnable, 5000)
-                    firebaseAuth.signInWithEmailAndPassword(email, pass)
+                    firebaseAuth.signInWithEmailAndPassword(email.text.toString(), pass.text.toString())
                         .addOnSuccessListener{
                             handler.removeCallbacks(timeoutRunnable)
                             val intent = Intent(this, MainActivity::class.java)
@@ -108,6 +116,48 @@ class LoginActivity : AppCompatActivity() {
             activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
             activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
             else -> false
+        }
+    }
+
+    //Crea un TextWatcher generico che accetta una funzione di validazione e la esegue ogni volta che il testo cambia.
+    private fun createTextWatcher(validationFunction: () -> Boolean): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                validationFunction()
+            }
+        }
+    }
+
+    //Funzione che verifica se l'email inserita è valida
+    private fun validateEmail(editText: EditText): Boolean {
+        val email = editText.text.toString().trim()
+        return if (email.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editText.error = "Email non valida"
+            false
+        } else if(email.length > 30){
+            editText.error = "L'email può contenere al massimo 30 caratteri"
+            false
+        } else {
+            true
+        }
+    }
+
+    //Funzione che verifica se la password inserita è valida
+    private fun validatePassword(editText: EditText): Boolean {
+        val password = editText.text.toString().trim()
+        return if (password.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        } else if (password.length < 8) {
+            editText.error = "La password deve contenere almeno 8 caratteri"
+            false
+        } else {
+            true
         }
     }
 }

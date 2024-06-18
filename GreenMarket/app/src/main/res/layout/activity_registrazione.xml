@@ -41,7 +41,7 @@
             android:background="@drawable/angoli_arrotondati_edit_text"
             android:ems="10"
             android:hint="@string/il_tuo_nome"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:padding="10dp" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:background="@drawable/angoli_arrotondati_edit_text"
             android:ems="10"
             android:hint="@string/il_tuo_cognome"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:padding="10dp" />
 
         <TextView

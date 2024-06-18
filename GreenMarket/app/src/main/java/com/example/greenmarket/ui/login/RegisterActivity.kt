@@ -2,7 +2,12 @@ package com.example.greenmarket.ui.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.InputFilter
+import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
@@ -27,23 +32,37 @@ class RegisterActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        binding.buttonRegister.setOnClickListener{
-            val name = binding.editTextNome.text.toString().trim()
-            val surname = binding.editTextCognome.text.toString().trim()
-            val address = binding.editTextIndirizzo.text.toString().trim()
-            val email = binding.editTextEmail.text.toString().trim()
-            val password = binding.editTextPassword.text.toString().trim()
-            val confirmPassword = binding.editTextConfirmPassword.text.toString().trim()
-            val photo = "https://firebasestorage.googleapis.com/v0/b/greenmarket-1f99c.appspot.com/o/immagine_profilo_default.jpg?alt=media&token=785fd544-696d-4d81-a51b-57fbd52f05ab"
+        val name = binding.editTextNome
+        val surname = binding.editTextCognome
+        val address = binding.editTextIndirizzo
+        val email = binding.editTextEmail
+        val password = binding.editTextPassword
+        val confirmPassword = binding.editTextConfirmPassword
+        val photo = "https://firebasestorage.googleapis.com/v0/b/greenmarket-1f99c.appspot.com/o/immagine_profilo_default.jpg?alt=media&token=785fd544-696d-4d81-a51b-57fbd52f05ab"
 
-            if(name.isNotEmpty() && surname.isNotEmpty() && address.isNotEmpty() && (isValidEmail(email)) && password.isNotEmpty()
-                && confirmPassword.isNotEmpty()){
+        //Aggiunge il TextWatcher a ciascun campo di testo in modo che venga validato in tempo reale
+        name.addTextChangedListener(createTextWatcher { validateInputField(name) })
+        surname.addTextChangedListener(createTextWatcher { validateInputField(surname) })
+        address.addTextChangedListener(createTextWatcher { validateAddress(address) })
+        email.addTextChangedListener(createTextWatcher { validateEmail(email) })
+        password.addTextChangedListener(createTextWatcher { validatePassword(password) })
+
+        binding.buttonRegister.setOnClickListener{
+            //Controlliamo i campi del form di registrazione
+            val isFirstNameValid = validateInputField(name)
+            val isLastNameValid = validateInputField(surname)
+            val isAddressValid = validateAddress(address)
+            val isEmailValid = validateEmail(email)
+            val isPasswordValid = validatePassword(password)
+            val isConfirmPasswordValid = validatePassword(confirmPassword)
+
+            if(isFirstNameValid && isLastNameValid && isAddressValid && isEmailValid && isPasswordValid
+                && isConfirmPasswordValid){
                 if(password == confirmPassword){
                     if(binding.checkBox.isChecked){
-                        firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        firebaseAuth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                             .addOnSuccessListener {
                                 val userID = firebaseAuth.currentUser?.uid
-                                Log.d("UserProfileActivity", "User ID: $userID")  // Log l'ID dell'utente corrente
                                 if (userID != null) {
                                     //Salvataggio dati utente
                                     val userMap = hashMapOf(
@@ -92,6 +111,11 @@ class RegisterActivity : AppCompatActivity() {
 
                                     )
 
+                                    val coupons = mutableListOf<String>()
+                                    val setCS = hashMapOf(
+                                        "codici sconto" to coupons
+                                    )
+
                                     db.collection("users").document(userID).set(userMap)
                                         .addOnSuccessListener{
                                             binding.editTextNome.text.clear()
@@ -104,10 +128,21 @@ class RegisterActivity : AppCompatActivity() {
                                                 .addOnSuccessListener{
                                                     db.collection("users").document(userID).collection("pointCard").document("wallet").set(tesseraPunti)
                                                         .addOnSuccessListener{
-                                                            db.collection("users").document(userID).collection("stats").document("top_selling_products").set(prodottiStats)
-                                                            Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
-                                                            val intent = Intent(this, LoginActivity::class.java)
-                                                            startActivity(intent)
+                                                            db.collection("users").document(userID).collection("pointCard").document("coupons").set(setCS)
+                                                                .addOnSuccessListener {
+                                                                    db.collection("users").document(userID).collection("stats").document("top_selling_products").set(prodottiStats)
+                                                                        .addOnSuccessListener {
+                                                                            Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
+                                                                            val intent = Intent(this, LoginActivity::class.java)
+                                                                            startActivity(intent)
+                                                                        }
+                                                                        .addOnFailureListener{
+                                                                            Toast.makeText(this, "Errore durante la creazione delle statistiche", Toast.LENGTH_SHORT).show()
+                                                                        }
+                                                                }
+                                                                .addOnFailureListener{
+                                                                    Toast.makeText(this, "Errore durante la creazione dei coupon", Toast.LENGTH_SHORT).show()
+                                                                }
                                                         }
                                                         .addOnFailureListener{
                                                             Toast.makeText(this, "Errore durante la creazione della tessera a punti", Toast.LENGTH_SHORT).show()
@@ -147,16 +182,80 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    //Funzione che verifica se l'email inserita è valida rispetto al formato corretto
-    private fun isValidEmail(email: String?): Boolean {
-        if (email.isNullOrEmpty()) {
-            return false
+    //Crea un TextWatcher generico che accetta una funzione di validazione e la esegue ogni volta che il testo cambia.
+    private fun createTextWatcher(validationFunction: () -> Boolean): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                validationFunction()
+            }
         }
-
-        val emailPattern = "^[A-Za-z0-9+_.-]+@(.+)$"
-        val pattern = Pattern.compile(emailPattern)
-        val matcher = pattern.matcher(email)
-
-        return matcher.matches()
     }
+
+    //Funzione che verifica se il nome inserito è valido
+    private fun validateInputField(editText: EditText): Boolean {
+        val inputField = editText.text.toString().trim()
+        return if (inputField.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        } else if (!inputField.matches(Regex("^[A-Za-zàèéìòù'\\s]+$"))) {
+            editText.error = "Campo non valido"
+            false
+        } else if (inputField.length > 30) {
+            editText.error = "Il campo può contenere al massimo 30 caratteri"
+            false
+        } else {
+            true
+        }
+    }
+
+    //Funzione che verifica se l'indirizzo inserito è valido
+    private fun validateAddress(editText: EditText): Boolean {
+        val address = editText.text.toString().trim()
+        return if (address.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        }else if (!address.matches(Regex("^[A-Za-zàèéìòù0-9,.'\\s]+$"))) {
+            editText.error = "Campo non valido"
+            false
+        } else if(address.length > 30){
+            editText.error = "Il campo può contenere al massimo 30 caratteri"
+            false
+        } else{
+            true
+        }
+    }
+
+    //Funzione che verifica se l'email inserita è valida
+    private fun validateEmail(editText: EditText): Boolean {
+        val email = editText.text.toString().trim()
+        return if (email.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editText.error = "Email non valida"
+            false
+        } else if(email.length > 30){
+            editText.error = "L'email può contenere al massimo 30 caratteri"
+            false
+        } else {
+            true
+        }
+    }
+
+    //Funzione che verifica se la password inserita è valida
+    private fun validatePassword(editText: EditText): Boolean {
+        val password = editText.text.toString().trim()
+        return if (password.isEmpty()) {
+            editText.error = "Questo campo è obbligatorio"
+            false
+        } else if (password.length < 8) {
+            editText.error = "La password deve contenere almeno 8 caratteri"
+            false
+        } else {
+            true
+        }
+    }
+
 }

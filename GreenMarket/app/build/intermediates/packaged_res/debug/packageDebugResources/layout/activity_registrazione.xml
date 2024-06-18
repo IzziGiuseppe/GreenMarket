@@ -41,7 +41,7 @@
             android:background="@drawable/angoli_arrotondati_edit_text"
             android:ems="10"
             android:hint="@string/il_tuo_nome"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:padding="10dp" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:background="@drawable/angoli_arrotondati_edit_text"
             android:ems="10"
             android:hint="@string/il_tuo_cognome"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:padding="10dp" />
 
         <TextView
@@ -142,14 +142,14 @@
 
             <CheckBox
                 android:id="@+id/checkBox"
-                android:layout_marginEnd="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="@string/ho_letto_e_accetto_i_termini_e_le_condizioni" />
 
             <TextView
                 android:id="@+id/textViewTerminiCondizioni"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:text="@string/termini_e_condizioni"
@@ -159,23 +159,23 @@
 
         <Button
             android:id="@+id/buttonRegister"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:backgroundTint="@android:color/holo_green_light"
             android:text="@string/continua" />
 
         <LinearLayout
             android:id="@+id/linearLayout5"
-            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/textViewAccount"
-                android:layout_marginEnd="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:text="@string/hai_gi_un_account"
                 app:layout_constraintBottom_toTopOf="@+id/textViewAccedi"
                 app:layout_constraintTop_toBottomOf="@+id/buttonRegister"
