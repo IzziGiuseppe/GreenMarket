@@ -15,9 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.altro.chi_siamo.soci.SociActivity"
-            android:parentActivityName=".ui.altro.chi_siamo.ChiSiamoActivity"
+            android:name=".NoInternetActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.altro.chi_siamo.soci.SociActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.altro.chi_siamo.ChiSiamoActivity" />
         <activity
             android:name=".ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity"
             android:exported="false"
