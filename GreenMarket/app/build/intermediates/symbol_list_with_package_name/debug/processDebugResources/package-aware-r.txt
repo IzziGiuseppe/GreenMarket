@@ -3103,6 +3103,7 @@ drawable assistenza
 drawable avd_hide_password
 drawable avd_show_password
 drawable banane
+drawable bird_dino
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3111,6 +3112,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cactus_dino
 drawable chi_siamo
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -3136,6 +3138,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dino
 drawable domenico
 drawable donazione
 drawable git
@@ -3364,6 +3367,8 @@ id beginOnFirstDraw
 id beginning
 id benvenuto
 id bestChoice
+id bird_dino
+id bird_dino2
 id blocking
 id bottom
 id bounce
@@ -3382,7 +3387,9 @@ id buttonPanel
 id buttonRegister
 id buttonResetPass
 id buttonSave
+id buttonUP
 id cache_measures
+id cactus_dino
 id callMeasure
 id cancel_action
 id cancel_button
@@ -3460,6 +3467,7 @@ id design_menu_item_text
 id design_navigation_view
 id dialog_button
 id dimensions
+id dino
 id direct
 id disableHome
 id disableIntraAutoTransition
@@ -3701,6 +3709,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id no_connessione
 id nome_domenico
 id nome_giuseppe
 id nome_peppe
@@ -4117,6 +4126,7 @@ layout activity_dettaglio_ricetta
 layout activity_dettaglio_scontrini
 layout activity_login
 layout activity_main
+layout activity_no_internet
 layout activity_profilo_utente
 layout activity_registrazione
 layout activity_reset_password

@@ -19,7 +19,10 @@ drawable angoli_arrotondati_item
 drawable angoli_arrotondati_spinner
 drawable assistenza
 drawable banane
+drawable bird_dino
+drawable cactus_dino
 drawable chi_siamo
+drawable dino
 drawable domenico
 drawable donazione
 drawable git
@@ -53,12 +56,16 @@ id activity_tc
 id activity_tess_punti
 id aperto_chiuso
 id benvenuto
+id bird_dino
+id bird_dino2
 id buttonAccediLogin
 id buttonAddList
 id buttonCancel
 id buttonRegister
 id buttonResetPass
 id buttonSave
+id buttonUP
+id cactus_dino
 id cardView
 id card_image
 id card_image2
@@ -83,6 +90,7 @@ id descrizione
 id descrizione_prodotto
 id descrizione_ricetta
 id descrizione_title
+id dino
 id domenico_bt
 id editTextCognome
 id editTextCognomeUP
@@ -152,6 +160,7 @@ id navigation_home
 id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
+id no_connessione
 id nome_domenico
 id nome_giuseppe
 id nome_peppe
@@ -258,6 +267,7 @@ layout activity_dettaglio_ricetta
 layout activity_dettaglio_scontrini
 layout activity_login
 layout activity_main
+layout activity_no_internet
 layout activity_profilo_utente
 layout activity_registrazione
 layout activity_reset_password

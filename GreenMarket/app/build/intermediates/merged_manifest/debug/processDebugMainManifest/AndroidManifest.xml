@@ -48,6 +48,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.greenmarket.NoInternetActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.soci.SociActivity"
             android:exported="false"
             android:parentActivityName="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity" />
