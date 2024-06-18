@@ -111,6 +111,7 @@
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:backgroundTint="@android:color/holo_green_light"
             android:text="@string/salva" />
 
@@ -119,6 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:textColor="@color/white"
             android:backgroundTint="@android:color/holo_green_light"
             android:text="@string/annulla" />
 

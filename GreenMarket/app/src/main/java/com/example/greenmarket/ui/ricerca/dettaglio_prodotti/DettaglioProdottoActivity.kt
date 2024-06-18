@@ -33,6 +33,10 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val fotoProdotto = intent.getStringExtra("foto_prodotto")
         val quantitaProdotto = intent.getFloatExtra("quantita_prodotto", 0.5f)
 
+        if (intent.getBooleanExtra("to_modify", false)) {
+            addList.text = "Modifica quantità"
+        }
+
         if (nomeProdotto != null) {
             dettaglioProdottoViewModel.setNome(nomeProdotto)
         }

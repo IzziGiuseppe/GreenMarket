@@ -110,6 +110,7 @@
       android:layout_height="wrap_content"
       android:layout_marginBottom="32dp"
       android:text="Aggiungi alla lista della spesa"
+      android:textColor="@color/white"
       android:backgroundTint="@android:color/holo_green_light"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"

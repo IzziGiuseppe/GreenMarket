@@ -105,9 +105,7 @@ class ListaSpesaFragment : Fragment() {
 
     private fun startProdotto(nome: String, descrizione: String, prezzo: Float, foto: String, quantita: Float) {
         val intent = Intent(requireContext(), DettaglioProdottoActivity::class.java)
-        /*MOMENTANEAMENTE COMMENTATO
-        intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
-         */
+        intent.putExtra("to_modify", true)
         intent.putExtra("nome_prodotto", nome)
         intent.putExtra("prezzo_prodotto", prezzo)
         intent.putExtra("descrizione_prodotto", descrizione)

@@ -122,18 +122,24 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                     _listaSpesa.value = documents.toObject(ListaDellaSpesaModel::class.java)
                     _lista_prodotti.value = _listaSpesa.value?.let { it1 -> listaProdotti(it1.prodotti) }
                     val dataScontrino = getCurrentDateTime()
-                    var prezzo_scontato = 0f
+                    val prezzo_scontato: Float
                     val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
+                    val scontoArrotondato = BigDecimal(sconto.toString()).setScale(2, RoundingMode.HALF_EVEN).toFloat()
+                    Log.d("scontoooooooooooooooo", scontoArrotondato.toString())
                     if(_codice_sconto.value != "-"){
-                        prezzo_scontato = _prezzo_totale.value?.toFloat()?.minus(sconto!!)!!
+                        prezzo_scontato = _prezzo_totale.value?.toFloat()?.minus(scontoArrotondato)!!
                     }else{
-                        prezzo_scontato = _prezzo_totale.value?.toFloat()!!
+                        prezzo_scontato = BigDecimal((_prezzo_totale.value?.toFloat()!!).toString())
+                            .setScale(2, RoundingMode.HALF_EVEN).toFloat()
+
+                        Log.d("elseeeeeeeeeeee", prezzo_scontato.toString())
                     }
                     val nuovoScontrino = hashMapOf(
                         "data" to dataScontrino,
                         "valido" to true,
                         "prodotti" to _listaSpesa.value?.prodotti,
-                        "totale" to prezzo_scontato,
+                        "totale" to BigDecimal(prezzo_scontato.toString())
+                            .setScale(2, RoundingMode.HALF_EVEN).toFloat(),
                         "codiceSconto" to _codice_sconto.value,
                         "valoreSconto" to _valore_sconto.value
                     )

@@ -49,7 +49,7 @@ class DettaglioScontriniActivity : AppCompatActivity() {
 
         dettaglioScontriniViewModel.setTotale(totaleScontrino)
         dettaglioScontriniViewModel.totale_scontrino.observe(this) { totaleValue ->
-            totale.text = totaleValue.toString()
+            totale.text = "€$totaleValue"
         }
 
 

@@ -32,7 +32,7 @@ class DettaglioScontriniListAdapter(): RecyclerView.Adapter<DettaglioScontriniLi
         val currentProdotto = prodDettScontrList[position]
         holder.textView.text = currentProdotto.nome
         holder.textView2.text = "Quantità: "+ String.format("%.0f", currentProdotto.quantita).removeSuffix(".0")
-        holder.textView3.text = currentProdotto.prezzoTotale.toString()
+        holder.textView3.text = "€" + currentProdotto.prezzoTotale.toString()
     }
 
     override fun getItemCount(): Int {

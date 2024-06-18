@@ -32,9 +32,19 @@ class StoricoListAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentScontrino = listScontrini[position]
-        holder.textView.text = currentScontrino.data.toString()
-        holder.textView2.text = currentScontrino.prodotti.size.toString()
-        holder.textView3.text = currentScontrino.totale.toString()
+        holder.textView.text = currentScontrino.data
+        val prod = if (currentScontrino.prodotti.size == 1) {
+            "prodotto"
+        } else {
+            "prodotti"
+        }
+        val cs = if (currentScontrino.codiceSconto == "-") {
+            ""
+        } else {
+            " + 1 \uD83C\uDFAB"
+        }
+        holder.textView2.text = currentScontrino.prodotti.size.toString() + " $prod $cs"
+        holder.textView3.text = "€" + currentScontrino.totale.toString()
         holder.itemView.setOnClickListener { itemClickListener(currentScontrino) }
     }
 
