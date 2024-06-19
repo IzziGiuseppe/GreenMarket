@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
@@ -25,6 +26,8 @@ class AltroFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private val iT = InternetTest()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,17 +48,12 @@ class AltroFragment : Fragment() {
             val recyclerView = binding.rvAltro
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-            /*val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-            val dividerDrawable = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black))
-            dividerItemDecoration.setDrawable(dividerDrawable)
-            recyclerView.addItemDecoration(dividerItemDecoration)*/
         }
 
         return root
     }
 
-    fun sceltaListener(position: Int) {
+    private fun sceltaListener(position: Int) {
         when (position) {
             0 -> profiloUtente()
             1 -> storico()
@@ -84,12 +82,20 @@ class AltroFragment : Fragment() {
 
     private fun profiloUtente() {
         val intent = Intent(requireContext(), UserProfileActivity::class.java)
-        startActivity(intent)
+        if (iT.isInternetAvailable(requireContext())) {
+            startActivity(intent)
+        } else {
+            iT.toast(requireContext())
+        }
     }
 
     private fun storico() {
         val intent = Intent(requireContext(), StoricoActivity::class.java)
-        startActivity(intent)
+        if (iT.isInternetAvailable(requireContext())) {
+            startActivity(intent)
+        } else {
+            iT.toast(requireContext())
+        }
     }
 
     private fun chiSiamo() {
@@ -99,7 +105,11 @@ class AltroFragment : Fragment() {
 
     private fun stats() {
         val intent = Intent(requireContext(), StatsActivity::class.java)
-        startActivity(intent)
+        if (iT.isInternetAvailable(requireContext())) {
+            startActivity(intent)
+        } else {
+            iT.toast(requireContext())
+        }
     }
 
     private fun invito() {
