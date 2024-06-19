@@ -15,7 +15,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.FragmentListaSpesaBinding
+import com.example.greenmarket.databinding.FragmentNoInternetBinding
 import com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity
 import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -28,76 +30,110 @@ class ListaSpesaFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    //Nel caso non ci sia connessione
+    private var _bindingRiserva: FragmentNoInternetBinding? = null
+
+    private val bindingRiserva get() = _bindingRiserva!!
+
     private lateinit var listaSpesaViewModel: ListaSpesaViewModel
 
     @OptIn(UnstableApi::class)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val iT = InternetTest()
         listaSpesaViewModel = ViewModelProvider(this).get(ListaSpesaViewModel::class.java)
 
-        _binding = FragmentListaSpesaBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View
 
-        val adapter = ListaSpesaListAdapter(
-            itemClickListener = {
-                item -> item.nome.let { listaSpesaViewModel.readProdottoDettagliato(it) }
-                listaSpesaViewModel.setQuantita(item.quantita) },
-            imageClickListener = {
-                item -> item.nome.let { listaSpesaViewModel.deleteProdByNome(it) }
-            }
-        )
+        if (context?.let { iT.isInternetAvailable(it) } == true) {
 
-        val recyclerView = binding.rvListaSpesa
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            _binding = FragmentListaSpesaBinding.inflate(inflater, container, false)
+            root = binding.root
 
-        listaSpesaViewModel.readListaSpesa()
-        listaSpesaViewModel.lista_spesa.observe(viewLifecycleOwner, Observer {
-                prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
-        })
+            val adapter = ListaSpesaListAdapter(
+                itemClickListener = {
+                        item ->
+                    if (iT.isInternetAvailable(requireContext())) {
+                        item.nome.let { listaSpesaViewModel.readProdottoDettagliato(it) }
+                            listaSpesaViewModel.setQuantita(item.quantita)
+                    }else{
+                        iT.toast(requireContext())
+                    }
+                                    },
+                imageClickListener = {
+                        item ->
+                    if (iT.isInternetAvailable(requireContext())) {
+                        item.nome.let { listaSpesaViewModel.deleteProdByNome(it) }
+                    }else{
+                        iT.toast(requireContext())
+                    }
+                }
+            )
 
-        listaSpesaViewModel.lista_prodotti.observe(viewLifecycleOwner, Observer {
-            prodListaSpesa -> adapter.setData(prodListaSpesa)
-            listaSpesaViewModel.readPrezzoTotale()
-        })
+            val recyclerView = binding.rvListaSpesa
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        listaSpesaViewModel.prodotto.observe(viewLifecycleOwner) {
-            prodotto ->
-            prodotto?.let {
-                it.nome?.let { it1 ->
-                    it.descrizione?.let { it2 ->
-                        it.prezzo?.let { it3 ->
-                            it.foto?.let { it4 ->
-                                listaSpesaViewModel.quantita.value?.let { it5 ->
-                                    startProdotto(
-                                        it1,
-                                        it2, it3, it4, it5
-                                    )
+            listaSpesaViewModel.readListaSpesa()
+            listaSpesaViewModel.lista_spesa.observe(viewLifecycleOwner, Observer {
+                    prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
+            })
+
+            listaSpesaViewModel.lista_prodotti.observe(viewLifecycleOwner, Observer {
+                    prodListaSpesa -> adapter.setData(prodListaSpesa)
+                listaSpesaViewModel.readPrezzoTotale()
+            })
+
+            listaSpesaViewModel.prodotto.observe(viewLifecycleOwner) {
+                    prodotto ->
+                prodotto?.let {
+                    it.nome?.let { it1 ->
+                        it.descrizione?.let { it2 ->
+                            it.prezzo?.let { it3 ->
+                                it.foto?.let { it4 ->
+                                    listaSpesaViewModel.quantita.value?.let { it5 ->
+                                        startProdotto(
+                                            it1,
+                                            it2, it3, it4, it5
+                                        )
+                                    }
+                                    listaSpesaViewModel.resetProdotto()
                                 }
-                                listaSpesaViewModel.resetProdotto()
                             }
                         }
                     }
                 }
             }
-        }
 
-        val deleteBT: FloatingActionButton = binding.deleteAll
-        deleteBT.setOnClickListener {
-            listaSpesaViewModel.deleteListaSpesa()
-            /*listaSpesaViewModel.listaSpesa.observe(viewLifecycleOwner, Observer {
-                    prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
-            })*/
-        }
+            val deleteBT: FloatingActionButton = binding.deleteAll
+            deleteBT.setOnClickListener {
+                if (iT.isInternetAvailable(requireContext())) {
+                    listaSpesaViewModel.deleteListaSpesa()
+                }else{
+                    iT.toast(requireContext())
+                }
+            }
 
-        val confermaBT: Button = binding.confermaOrdine
-        confermaBT.setOnClickListener {
-            startConfermaOrdine(listaSpesaViewModel.prezzo_totale_view.value)
-        }
+            val confermaBT: Button = binding.confermaOrdine
+            confermaBT.setOnClickListener {
+                if (iT.isInternetAvailable(requireContext())) {
+                    startConfermaOrdine(listaSpesaViewModel.prezzo_totale_view.value)
+                }else{
+                    iT.toast(requireContext())
+                }
+            }
 
-        val totaleTV: TextView = binding.prezzoTotale
-        //listaSpesaViewModel.readPrezzoTotale()
-        listaSpesaViewModel.prezzo_totale_view.observe(viewLifecycleOwner) {
-            totaleTV.text = it
+            val totaleTV: TextView = binding.prezzoTotale
+            listaSpesaViewModel.prezzo_totale_view.observe(viewLifecycleOwner) {
+                totaleTV.text = it
+            }
+
+        } else {
+            _bindingRiserva = FragmentNoInternetBinding.inflate(inflater, container, false)
+            iT.toast(requireContext())
+            root = bindingRiserva.root
+
+            bindingRiserva.noInternetText.visibility = View.VISIBLE
+            bindingRiserva.noInternetImage.visibility = View.VISIBLE
         }
 
         return root

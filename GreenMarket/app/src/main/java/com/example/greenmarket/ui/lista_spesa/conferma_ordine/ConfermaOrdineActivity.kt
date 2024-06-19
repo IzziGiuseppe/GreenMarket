@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.R
 import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 import java.math.BigDecimal
@@ -34,6 +35,8 @@ class ConfermaOrdineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conferma_ordine)
+
+        val iT = InternetTest()
 
         val prezzoTotaleLista = intent.getStringExtra("prezzo_totale")
 
@@ -102,20 +105,25 @@ class ConfermaOrdineActivity : AppCompatActivity() {
         }
 
         confermaBT.setOnClickListener {
-            confermaOrdineViewModel.aggiornaSaldo()
-            confermaOrdineViewModel.codice_sconto.observe(this) {
-                codiceScontoUtilizzato = it
-                if (codiceScontoUtilizzato != "-") {
-                    confermaOrdineViewModel.deleteCodiceSconto(codiceScontoUtilizzato)
+            if(iT.isInternetAvailable(this)){
+                confermaOrdineViewModel.aggiornaSaldo()
+                confermaOrdineViewModel.codice_sconto.observe(this) {
+                    codiceScontoUtilizzato = it
+                    if (codiceScontoUtilizzato != "-") {
+                        confermaOrdineViewModel.deleteCodiceSconto(codiceScontoUtilizzato)
+                    }
                 }
-            }
-            //Implementare la funzione che gestisce la creazione di una scontrino
-            confermaOrdineViewModel.creaScontrino()
-            /*per notificare il cambiamento della lista della
+                //Implementare la funzione che gestisce la creazione di una scontrino
+                confermaOrdineViewModel.creaScontrino()
+                /*per notificare il cambiamento della lista della
             spesa e permettere l'aggiornamento dinamico*/
-            listaSpesaViewModel.deleteListaSpesa()
-            Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
-            finish()
+                listaSpesaViewModel.deleteListaSpesa()
+                Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
+                finish()
+            }else{
+                iT.toast(this)
+            }
+
         }
 
     }
