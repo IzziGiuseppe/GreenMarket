@@ -142,6 +142,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                         "codiceSconto" to _codice_sconto.value,
                         "valoreSconto" to _valore_sconto.value
                     )
+                    //ciao
 
                     if (it != null) {
                         Log.d("Nuovo scontrino", nuovoScontrino.toString())
