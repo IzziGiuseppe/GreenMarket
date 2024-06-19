@@ -125,14 +125,11 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                     val prezzo_scontato: Float
                     val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
                     val scontoArrotondato = BigDecimal(sconto.toString()).setScale(2, RoundingMode.HALF_EVEN).toFloat()
-                    Log.d("scontoooooooooooooooo", scontoArrotondato.toString())
                     if(_codice_sconto.value != "-"){
                         prezzo_scontato = _prezzo_totale.value?.toFloat()?.minus(scontoArrotondato)!!
                     }else{
                         prezzo_scontato = BigDecimal((_prezzo_totale.value?.toFloat()!!).toString())
                             .setScale(2, RoundingMode.HALF_EVEN).toFloat()
-
-                        Log.d("elseeeeeeeeeeee", prezzo_scontato.toString())
                     }
                     val nuovoScontrino = hashMapOf(
                         "data" to dataScontrino,
@@ -164,7 +161,6 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                                             }
                                         }
                                     }
-                                deleteListaSpesa()
                             }
                             .addOnFailureListener{
                                 Toast.makeText(getApplication(), "Errore durante lo svuotamente della lista della spesa", Toast.LENGTH_SHORT).show()
@@ -176,21 +172,6 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
-    private fun deleteListaSpesa() {
-        //Svuotiamo la lista della spesa nel database
-        val prodotti: Map<String?, List<Float>?> = emptyMap()
-        //Creazione lista della spesa associata all'utente
-        val updates = hashMapOf(
-            "data" to null,
-            "valido" to false,
-            "prodotti" to prodotti
-        )
-
-        currentUser?.let {
-            db.collection("users").document(it.uid).collection("historical")
-                .document("shoppingList").update(updates)
-        }
-    }
     fun readVia() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         // Ottenere l'ID dell'utente corrente

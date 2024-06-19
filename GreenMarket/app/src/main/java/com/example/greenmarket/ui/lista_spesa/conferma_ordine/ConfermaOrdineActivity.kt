@@ -111,6 +111,9 @@ class ConfermaOrdineActivity : AppCompatActivity() {
             }
             //Implementare la funzione che gestisce la creazione di una scontrino
             confermaOrdineViewModel.creaScontrino()
+            /*per notificare il cambiamento della lista della
+            spesa e permettere l'aggiornamento dinamico*/
+            listaSpesaViewModel.deleteListaSpesa()
             Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
             finish()
         }
