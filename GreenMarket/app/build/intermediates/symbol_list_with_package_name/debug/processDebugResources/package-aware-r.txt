@@ -3710,6 +3710,8 @@ id neverCompleteToStart
 id noScroll
 id noState
 id no_connessione
+id no_internet_image
+id no_internet_text
 id nome_domenico
 id nome_giuseppe
 id nome_peppe
@@ -4157,6 +4159,7 @@ layout design_text_input_start_icon
 layout fragment_altro
 layout fragment_home
 layout fragment_lista_spesa
+layout fragment_no_internet
 layout fragment_ricerca
 layout fragment_ricettario
 layout ime_base_split_test_activity
@@ -4358,6 +4361,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hai_gi_un_account
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string hint_prodotto_ricetta
 string ho_letto_e_accetto_i_termini_e_le_condizioni

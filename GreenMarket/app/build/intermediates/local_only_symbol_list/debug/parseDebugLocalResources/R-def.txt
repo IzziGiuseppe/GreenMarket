@@ -161,6 +161,8 @@ id navigation_lista_della_spesa
 id navigation_ricerca
 id navigation_ricettario
 id no_connessione
+id no_internet_image
+id no_internet_text
 id nome_domenico
 id nome_giuseppe
 id nome_peppe
@@ -280,6 +282,7 @@ layout activity_tessera_punti
 layout fragment_altro
 layout fragment_home
 layout fragment_lista_spesa
+layout fragment_no_internet
 layout fragment_ricerca
 layout fragment_ricettario
 layout item_altro_view
@@ -331,6 +334,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hai_gi_un_account
+string hello_blank_fragment
 string hint_prodotto_ricetta
 string ho_letto_e_accetto_i_termini_e_le_condizioni
 string il_tuo_cognome

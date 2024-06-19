@@ -18,8 +18,12 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.example.greenmarket.InternetTest
+import com.example.greenmarket.NoInternetActivity
 import com.example.greenmarket.R
+import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.databinding.FragmentHomeBinding
+import com.example.greenmarket.databinding.FragmentNoInternetBinding
 import com.example.greenmarket.db.model.Prodotto
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiActivity
@@ -37,13 +41,9 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private val prodottiRV = listOf(
-        Prodotto(nome = "Mele", descrizione = "Alta qualità e freschezza garantita.", prezzo = 1.99f, foto = "", "kg"),
-        Prodotto(nome = "Pere", descrizione = "Gustose e nutrienti.", prezzo = 2.49f, foto = "",   "kg"),
-        Prodotto(nome = "Noci", descrizione = "Frutta secca, fonte di grassi gustosa e adatta anche nelle insalate.", prezzo = 5.49f, foto = "",   "kg")
-    )
+    private var _bindingRiserva: FragmentNoInternetBinding? = null
 
-    private lateinit var navController: NavController
+    private val bindingRiserva get() = _bindingRiserva!!
 
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
@@ -52,6 +52,9 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        val iT = InternetTest()
+        val intentNoInternet = Intent(requireContext(), NoInternetActivity::class.java)
 
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
@@ -62,114 +65,124 @@ class HomeFragment : Fragment() {
         val prodottoViewModel =
             ViewModelProvider(this).get(RicercaViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View
 
+        if (context?.let { iT.isInternetAvailable(it) } == true) {
+            _binding = FragmentHomeBinding.inflate(inflater, container, false)
+            root = binding.root
 
-        val adapter = HomeProdottiListAdapter {
-            currentProdotto ->
-            currentProdotto.nome.let {
-                if (it != null) {
-                    prodottoViewModel.readProdottoDettagliato(it)
+            val adapter = HomeProdottiListAdapter {
+                    currentProdotto ->
+                currentProdotto.nome.let {
+                    if (it != null) {
+                        prodottoViewModel.readProdottoDettagliato(it)
+                    }
                 }
             }
-        }
 
-        val adapterRicette = HomeRicetteListAdapter {
-            currentRicetta ->
-            currentRicetta.nome.let {
-                if (it != null) {
-                    ricettarioViewModel.readRicettaDettagliata(it)
+            val adapterRicette = HomeRicetteListAdapter {
+                    currentRicetta ->
+                currentRicetta.nome.let {
+                    if (it != null) {
+                        ricettarioViewModel.readRicettaDettagliata(it)
+                    }
                 }
             }
-        }
 
-        val rv = binding.recyclerViewProdHomeeee
-        rv.adapter = adapter
-        rv.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            val rv = binding.recyclerViewProdHomeeee
+            rv.adapter = adapter
+            rv.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        val rvRicetteHome = binding.rvRicetteHome
-        rvRicetteHome.adapter = adapterRicette
-        rvRicetteHome.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            val rvRicetteHome = binding.rvRicetteHome
+            rvRicetteHome.adapter = adapterRicette
+            rvRicetteHome.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        homeViewModel.readRicetteRandom()
-        homeViewModel.listaRicette.observe(viewLifecycleOwner) {
-            adapterRicette.setData(it)
-        }
+            homeViewModel.readRicetteRandom()
+            homeViewModel.listaRicette.observe(viewLifecycleOwner) {
+                adapterRicette.setData(it)
+            }
 
-        homeViewModel.readProdottiRandom()
-        homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
-            adapter.setData(it)
-        }
+            homeViewModel.readProdottiRandom()
+            homeViewModel.listaProdotti.observe(viewLifecycleOwner) {
+                adapter.setData(it)
+            }
 
-        ricettarioViewModel.ricetta.observe(viewLifecycleOwner) { ricetta ->
-            ricetta?.let {
-                it.nome?.let { it1 ->
-                    it.descrizione?.let { it2 ->
-                        it.foto?.let { it3 ->
-                            it.ingredienti?.let { it4 ->
-                                startRicetta(
-                                    it1,
-                                    it2, it3, it4
-                                )
-                                ricettarioViewModel.resetRicetta()
+            ricettarioViewModel.ricetta.observe(viewLifecycleOwner) { ricetta ->
+                ricetta?.let {
+                    it.nome?.let { it1 ->
+                        it.descrizione?.let { it2 ->
+                            it.foto?.let { it3 ->
+                                it.ingredienti?.let { it4 ->
+                                    startRicetta(
+                                        it1,
+                                        it2, it3, it4
+                                    )
+                                    ricettarioViewModel.resetRicetta()
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        prodottoViewModel.prodotto.observe(viewLifecycleOwner) { prodotto ->
-            prodotto?.let {
-                it.nome?.let { it1 ->
-                    it.descrizione?.let { it2 ->
-                        it.prezzo?.let { it3 ->
-                            it.foto?.let { it4 ->
-                                startProdotto(
-                                    it1,
-                                    it2, it3, it4
-                                )
-                                prodottoViewModel.resetProdotto()
+            prodottoViewModel.prodotto.observe(viewLifecycleOwner) { prodotto ->
+                prodotto?.let {
+                    it.nome?.let { it1 ->
+                        it.descrizione?.let { it2 ->
+                            it.prezzo?.let { it3 ->
+                                it.foto?.let { it4 ->
+                                    startProdotto(
+                                        it1,
+                                        it2, it3, it4
+                                    )
+                                    prodottoViewModel.resetProdotto()
+                                }
                             }
                         }
                     }
                 }
             }
+
+            val stato: TextView = binding.apertoChiuso
+            homeViewModel.updateStatusRegularly(lifecycleScope)
+            homeViewModel.status.observe(viewLifecycleOwner) {
+                stato.text = it
+            }
+
+            val orario: TextView = binding.orarioChiusura
+            homeViewModel.updateStatusRegularly(lifecycleScope)
+            homeViewModel.orari.observe(viewLifecycleOwner) {
+                orario.text = it
+            }
+
+            val benvenuto: TextView = binding.textHome
+            val immagineProfilo: ImageView = binding.iconaProfiloUtente
+            homeViewModel.readNome(this, immagineProfilo)
+            homeViewModel.text.observe(viewLifecycleOwner) {
+                benvenuto.text = it
+            }
+
+            binding.iconaProfiloUtente.setOnClickListener {
+                val intent = Intent(requireContext(), UserProfileActivity::class.java)
+                startActivity(intent)
+            }
+
+            binding.tessPtBt.setOnClickListener {
+                val intent = Intent(requireContext(), TesseraPuntiActivity::class.java)
+                if (context?.let { it1 -> iT.isInternetAvailable(it1) } == true) {
+                    startActivity(intent)
+                } else {
+                    startActivity(intentNoInternet)
+                }
+            }
         }
+        else {
+            _bindingRiserva = FragmentNoInternetBinding.inflate(inflater, container, false)
+            Toast.makeText(context, "Connessione internet assente", Toast.LENGTH_SHORT).show()
+            root = bindingRiserva.root
 
-        /*val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }*/
-
-        val stato: TextView = binding.apertoChiuso
-        homeViewModel.updateStatusRegularly(lifecycleScope)
-        homeViewModel.status.observe(viewLifecycleOwner) {
-            stato.text = it
-        }
-
-        val orario: TextView = binding.orarioChiusura
-        homeViewModel.updateStatusRegularly(lifecycleScope)
-        homeViewModel.orari.observe(viewLifecycleOwner) {
-            orario.text = it
-        }
-
-        val benvenuto: TextView = binding.textHome
-        val immagineProfilo: ImageView = binding.iconaProfiloUtente
-        homeViewModel.readNome(this, immagineProfilo)
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            benvenuto.text = it
-        }
-
-        binding.iconaProfiloUtente.setOnClickListener {
-            val intent = Intent(requireContext(), UserProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.tessPtBt.setOnClickListener {
-            val intent = Intent(requireContext(), TesseraPuntiActivity::class.java)
-            startActivity(intent)
+            bindingRiserva.noInternetText.visibility = View.VISIBLE
+            bindingRiserva.noInternetImage.visibility = View.VISIBLE
         }
 
         return root
