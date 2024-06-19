@@ -164,6 +164,7 @@ class ListaSpesaFragment : Fragment() {
         }
     }
 
+    @OptIn(UnstableApi::class)
     override fun onResume() {
         super.onResume()
         // Rileggi la lista della spesa quando il frammento torna visibile

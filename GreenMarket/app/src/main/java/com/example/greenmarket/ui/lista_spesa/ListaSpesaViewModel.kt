@@ -68,6 +68,7 @@ class ListaSpesaViewModel : ViewModel() {
     }
 
     fun deleteListaSpesa() {
+        Log.d("Delete lista spesa", "Inizio delete")
         //Svuotiamo la lista della spesa nel database
         val prodotti: Map<String?, List<Float>?> = emptyMap()
         //Creazione lista della spesa associata all'utente
@@ -87,6 +88,7 @@ class ListaSpesaViewModel : ViewModel() {
                     Log.e("Firebase", "Error deleting shopping list", exception)
                 }
         }
+        Log.d("Delete lista spesa", "Fine delete")
     }
 
     private fun listaProdotti(map: Map<String?, List<Float>?>) : List<ProdottoInListaModel>{

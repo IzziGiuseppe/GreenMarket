@@ -115,12 +115,14 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
     @OptIn(UnstableApi::class)
     @RequiresApi(Build.VERSION_CODES.O)
     fun creaScontrino() {
+        Log.d("Crea scontrino", "Inizio crea scontrino")
         currentUser.let {
             db.collection("users").document(currentUser?.uid!!).collection("historical")
                 .document("shoppingList").get()
                 .addOnSuccessListener { documents ->
                     _listaSpesa.value = documents.toObject(ListaDellaSpesaModel::class.java)
                     _lista_prodotti.value = _listaSpesa.value?.let { it1 -> listaProdotti(it1.prodotti) }
+                    Log.d("Lista", _lista_prodotti.value.toString())
                     val dataScontrino = getCurrentDateTime()
                     val prezzo_scontato: Float
                     val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
@@ -142,6 +144,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                     )
 
                     if (it != null) {
+                        Log.d("Nuovo scontrino", nuovoScontrino.toString())
                         db.collection("users").document(it.uid).collection("historical")
                             .document(dataScontrino).set(nuovoScontrino)
                             .addOnSuccessListener {
@@ -161,6 +164,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                                             }
                                         }
                                     }
+                                deleteListaSpesa()
                             }
                             .addOnFailureListener{
                                 Toast.makeText(getApplication(), "Errore durante lo svuotamente della lista della spesa", Toast.LENGTH_SHORT).show()
@@ -169,6 +173,23 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                 }
 
 
+        }
+        Log.d("Crea scontrino", "Finito crea scontrino")
+    }
+
+    private fun deleteListaSpesa() {
+        //Svuotiamo la lista della spesa nel database
+        val prodotti: Map<String?, List<Float>?> = emptyMap()
+        //Creazione lista della spesa associata all'utente
+        val updates = hashMapOf(
+            "data" to null,
+            "valido" to false,
+            "prodotti" to prodotti
+        )
+
+        currentUser?.let {
+            db.collection("users").document(it.uid).collection("historical")
+                .document("shoppingList").update(updates)
         }
     }
 
@@ -252,12 +273,14 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         return currentDateTime.format(formatter)
     }
 
+    @OptIn(UnstableApi::class)
     private fun listaProdotti(map: Map<String?, List<Float>?>) : List<ProdottoInListaModel>{
         val listaProdotti = mutableListOf<ProdottoInListaModel>()
         map.forEach { (key, value) ->
             val prodotto = key?.let { ProdottoInListaModel(it, value?.get(0) ?: 0.5f, value?.get(1) ?: 0f, value?.get(2) ?: 0f) }
             if (prodotto != null) {
                 listaProdotti.add(prodotto)
+                Log.d("Quantitàààààààà", prodotto.quantita.toString())
             }
         }
         return listaProdotti

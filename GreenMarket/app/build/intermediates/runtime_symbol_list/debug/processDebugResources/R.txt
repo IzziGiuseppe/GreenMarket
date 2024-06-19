@@ -3101,7 +3101,6 @@ int drawable angoli_arrotondati_spinner 0x7f07007b
 int drawable assistenza 0x7f07007c
 int drawable avd_hide_password 0x7f07007d
 int drawable avd_show_password 0x7f07007e
-int drawable banane 0x7f07007f
 int drawable bird_dino 0x7f070080
 int drawable btn_checkbox_checked_mtrl 0x7f070081
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f070082
@@ -3195,7 +3194,6 @@ int drawable material_ic_keyboard_arrow_previous_black_24dp 0x7f0700d9
 int drawable material_ic_keyboard_arrow_right_black_24dp 0x7f0700da
 int drawable material_ic_menu_arrow_down_black_24dp 0x7f0700db
 int drawable material_ic_menu_arrow_up_black_24dp 0x7f0700dc
-int drawable mele 0x7f0700dd
 int drawable mtrl_bottomsheet_drag_handle 0x7f0700de
 int drawable mtrl_checkbox_button 0x7f0700df
 int drawable mtrl_checkbox_button_checked_unchecked 0x7f0700e0
@@ -3249,8 +3247,6 @@ int drawable notification_tile_bg 0x7f07010f
 int drawable notify_panel_notification_icon_bg 0x7f070110
 int drawable outlook 0x7f070111
 int drawable peppe 0x7f070112
-int drawable pere 0x7f070113
-int drawable plus 0x7f070114
 int drawable ricettario 0x7f070115
 int drawable stats 0x7f070116
 int drawable storico 0x7f070117

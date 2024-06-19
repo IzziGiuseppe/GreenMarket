@@ -31,7 +31,7 @@ class DettaglioScontriniListAdapter(): RecyclerView.Adapter<DettaglioScontriniLi
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentProdotto = prodDettScontrList[position]
         holder.textView.text = currentProdotto.nome
-        holder.textView2.text = "Quantità: "+ String.format("%.0f", currentProdotto.quantita).removeSuffix(".0")
+        holder.textView2.text = "Quantità: "+ currentProdotto.quantita
         holder.textView3.text = "€" + currentProdotto.prezzoTotale.toString()
     }
 

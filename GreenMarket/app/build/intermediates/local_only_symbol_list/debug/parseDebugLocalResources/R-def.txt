@@ -18,7 +18,6 @@ drawable angoli_arrotondati_edit_text
 drawable angoli_arrotondati_item
 drawable angoli_arrotondati_spinner
 drawable assistenza
-drawable banane
 drawable bird_dino
 drawable cactus_dino
 drawable chi_siamo
@@ -35,11 +34,8 @@ drawable ic_notifications_black_24dp
 drawable invita
 drawable linkedin
 drawable lista_spesa
-drawable mele
 drawable outlook
 drawable peppe
-drawable pere
-drawable plus
 drawable ricettario
 drawable stats
 drawable storico
