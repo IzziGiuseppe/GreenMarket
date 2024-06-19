@@ -13,6 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.ActivityProfiloUtenteBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -36,6 +37,7 @@ class UserProfileActivity : AppCompatActivity() {
     private var uri: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val iT = InternetTest()
 
         //Inizializzazione del binding
         binding = ActivityProfiloUtenteBinding.inflate(layoutInflater)
@@ -109,17 +111,29 @@ class UserProfileActivity : AppCompatActivity() {
 
         //Modifica i dati nel db Firestore
         binding.buttonSave.setOnClickListener {
-            saveData()
+            if (iT.isInternetAvailable(this)) {
+                saveData()
+            }else{
+                iT.toast(this)
+            }
         }
 
         //Ripristina i dati originali nel db Firestore
         binding.buttonCancel.setOnClickListener {
-            cancelChanges(originalData)
+            if (iT.isInternetAvailable(this)) {
+                cancelChanges(originalData)
+            }else{
+                iT.toast(this)
+            }
         }
 
         //Elimina un'account utente dal db Firestore
         binding.textViewEliminaAccount.setOnClickListener{
-            showDeleteAccountConfirmationDialog()
+            if (iT.isInternetAvailable(this)) {
+                showDeleteAccountConfirmationDialog()
+            }else{
+                iT.toast(this)
+            }
         }
     }
 
