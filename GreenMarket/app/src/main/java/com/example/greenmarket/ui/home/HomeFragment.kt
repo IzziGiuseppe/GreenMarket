@@ -69,19 +69,27 @@ class HomeFragment : Fragment() {
 
             val adapter = HomeProdottiListAdapter {
                     currentProdotto ->
-                currentProdotto.nome.let {
-                    if (it != null) {
-                        prodottoViewModel.readProdottoDettagliato(it)
+                if (iT.isInternetAvailable(requireContext())) {
+                    currentProdotto.nome.let {
+                        if (it != null) {
+                            prodottoViewModel.readProdottoDettagliato(it)
+                        }
                     }
+                } else {
+                    iT.toast(requireContext())
                 }
             }
 
             val adapterRicette = HomeRicetteListAdapter {
                     currentRicetta ->
-                currentRicetta.nome.let {
-                    if (it != null) {
-                        ricettarioViewModel.readRicettaDettagliata(it)
+                if (iT.isInternetAvailable(requireContext())) {
+                    currentRicetta.nome.let {
+                        if (it != null) {
+                            ricettarioViewModel.readRicettaDettagliata(it)
+                        }
                     }
+                } else {
+                    iT.toast(requireContext())
                 }
             }
 
@@ -160,7 +168,12 @@ class HomeFragment : Fragment() {
 
             binding.iconaProfiloUtente.setOnClickListener {
                 val intent = Intent(requireContext(), UserProfileActivity::class.java)
-                startActivity(intent)
+                if (context?.let { it1 -> iT.isInternetAvailable(it1) } == true) {
+                    startActivity(intent)
+                } else {
+                    //startActivity(intentNoInternet)
+                    iT.toast(requireContext())
+                }
             }
 
             binding.tessPtBt.setOnClickListener {
@@ -168,13 +181,14 @@ class HomeFragment : Fragment() {
                 if (context?.let { it1 -> iT.isInternetAvailable(it1) } == true) {
                     startActivity(intent)
                 } else {
+                    iT.toast(requireContext())
                     startActivity(intentNoInternet)
                 }
             }
         }
         else {
             _bindingRiserva = FragmentNoInternetBinding.inflate(inflater, container, false)
-            Toast.makeText(context, "Connessione internet assente", Toast.LENGTH_SHORT).show()
+            iT.toast(requireContext())
             root = bindingRiserva.root
 
             bindingRiserva.noInternetText.visibility = View.VISIBLE

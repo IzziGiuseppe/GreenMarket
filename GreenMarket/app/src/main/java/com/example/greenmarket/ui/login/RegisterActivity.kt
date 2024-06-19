@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.ActivityRegistrazioneBinding
 import com.example.greenmarket.ui.altro.statistiche.ProdottoInStatsModel
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
@@ -28,6 +29,8 @@ class RegisterActivity : AppCompatActivity() {
 
         binding = ActivityRegistrazioneBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val iT = InternetTest()
 
         firebaseAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
@@ -48,126 +51,130 @@ class RegisterActivity : AppCompatActivity() {
         password.addTextChangedListener(createTextWatcher { validatePassword(password) })
 
         binding.buttonRegister.setOnClickListener{
-            //Controlliamo i campi del form di registrazione
-            val isFirstNameValid = validateInputField(name)
-            val isLastNameValid = validateInputField(surname)
-            val isAddressValid = validateAddress(address)
-            val isEmailValid = validateEmail(email)
-            val isPasswordValid = validatePassword(password)
-            val isConfirmPasswordValid = validatePassword(confirmPassword)
+            if (iT.isInternetAvailable(this)) {
+                //Controlliamo i campi del form di registrazione
+                val isFirstNameValid = validateInputField(name)
+                val isLastNameValid = validateInputField(surname)
+                val isAddressValid = validateAddress(address)
+                val isEmailValid = validateEmail(email)
+                val isPasswordValid = validatePassword(password)
+                val isConfirmPasswordValid = validatePassword(confirmPassword)
 
-            if(isFirstNameValid && isLastNameValid && isAddressValid && isEmailValid && isPasswordValid
-                && isConfirmPasswordValid){
-                if(password == confirmPassword){
-                    if(binding.checkBox.isChecked){
-                        firebaseAuth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
-                            .addOnSuccessListener {
-                                val userID = firebaseAuth.currentUser?.uid
-                                if (userID != null) {
-                                    //Salvataggio dati utente
-                                    val userMap = hashMapOf(
-                                        "nome" to name,
-                                        "cognome" to surname,
-                                        "indirizzo" to address,
-                                        "foto" to photo
-                                    )
+                if(isFirstNameValid && isLastNameValid && isAddressValid && isEmailValid && isPasswordValid
+                    && isConfirmPasswordValid){
+                    if(password == confirmPassword){
+                        if(binding.checkBox.isChecked){
+                            firebaseAuth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
+                                .addOnSuccessListener {
+                                    val userID = firebaseAuth.currentUser?.uid
+                                    if (userID != null) {
+                                        //Salvataggio dati utente
+                                        val userMap = hashMapOf(
+                                            "nome" to name,
+                                            "cognome" to surname,
+                                            "indirizzo" to address,
+                                            "foto" to photo
+                                        )
 
-                                    val prodotti: Map<String?, List<Float>?> = emptyMap()
-                                    //Creazione lista della spesa associata all'utente
-                                    val listaSpesa = hashMapOf(
-                                        "data" to null,
-                                        "valido" to false,
-                                        "prodotti" to prodotti
-                                    )
+                                        val prodotti: Map<String?, List<Float>?> = emptyMap()
+                                        //Creazione lista della spesa associata all'utente
+                                        val listaSpesa = hashMapOf(
+                                            "data" to null,
+                                            "valido" to false,
+                                            "prodotti" to prodotti
+                                        )
 
-                                    val tesseraPunti = hashMapOf(
-                                        "saldo" to 0f,
-                                        "punti" to 0
-                                    )
+                                        val tesseraPunti = hashMapOf(
+                                            "saldo" to 0f,
+                                            "punti" to 0
+                                        )
 
-                                    //Statistiche
-                                    val mele = ProdottoInStatsModel("Mele", 0f)
-                                    val banane = ProdottoInStatsModel("Banane", 0f)
-                                    val pomodori = ProdottoInStatsModel("Pomodori", 0f)
-                                    val carote = ProdottoInStatsModel("Carote", 0f)
-                                    val pere = ProdottoInStatsModel("Pere", 0f)
-                                    val melanzane = ProdottoInStatsModel("Melanzane", 0f)
-                                    val spinaci = ProdottoInStatsModel("Spinaci", 0f)
-                                    val limoni = ProdottoInStatsModel("Limoni", 0f)
-                                    val arance = ProdottoInStatsModel("Arance", 0f)
-                                    val patate = ProdottoInStatsModel("Patate", 0f)
+                                        //Statistiche
+                                        val mele = ProdottoInStatsModel("Mele", 0f)
+                                        val banane = ProdottoInStatsModel("Banane", 0f)
+                                        val pomodori = ProdottoInStatsModel("Pomodori", 0f)
+                                        val carote = ProdottoInStatsModel("Carote", 0f)
+                                        val pere = ProdottoInStatsModel("Pere", 0f)
+                                        val melanzane = ProdottoInStatsModel("Melanzane", 0f)
+                                        val spinaci = ProdottoInStatsModel("Spinaci", 0f)
+                                        val limoni = ProdottoInStatsModel("Limoni", 0f)
+                                        val arance = ProdottoInStatsModel("Arance", 0f)
+                                        val patate = ProdottoInStatsModel("Patate", 0f)
 
-                                    val prodottiStats = mapOf(
-                                        "Mele" to mele.quantitaTot,
-                                        "Banane" to banane.quantitaTot,
-                                        "Pomodori" to pomodori.quantitaTot,
-                                        "Carote" to carote.quantitaTot,
-                                        "Pere" to pere.quantitaTot,
-                                        "Melanzane" to melanzane.quantitaTot,
-                                        "Spinaci" to spinaci.quantitaTot,
-                                        "Limoni" to limoni.quantitaTot,
-                                        "Arance" to arance.quantitaTot,
-                                        "Patate" to patate.quantitaTot
+                                        val prodottiStats = mapOf(
+                                            "Mele" to mele.quantitaTot,
+                                            "Banane" to banane.quantitaTot,
+                                            "Pomodori" to pomodori.quantitaTot,
+                                            "Carote" to carote.quantitaTot,
+                                            "Pere" to pere.quantitaTot,
+                                            "Melanzane" to melanzane.quantitaTot,
+                                            "Spinaci" to spinaci.quantitaTot,
+                                            "Limoni" to limoni.quantitaTot,
+                                            "Arance" to arance.quantitaTot,
+                                            "Patate" to patate.quantitaTot
 
-                                    )
+                                        )
 
-                                    val coupons = mutableListOf<String>()
-                                    val setCS = hashMapOf(
-                                        "codici sconto" to coupons
-                                    )
+                                        val coupons = mutableListOf<String>()
+                                        val setCS = hashMapOf(
+                                            "codici sconto" to coupons
+                                        )
 
-                                    db.collection("users").document(userID).set(userMap)
-                                        .addOnSuccessListener{
-                                            binding.editTextNome.text.clear()
-                                            binding.editTextCognome.text.clear()
-                                            binding.editTextIndirizzo.text.clear()
-                                            binding.editTextEmail.text.clear()
-                                            binding.editTextPassword.text.clear()
-                                            binding.editTextConfirmPassword.text.clear()
-                                            db.collection("users").document(userID).collection("historical").document("shoppingList").set(listaSpesa)
-                                                .addOnSuccessListener{
-                                                    db.collection("users").document(userID).collection("pointCard").document("wallet").set(tesseraPunti)
-                                                        .addOnSuccessListener{
-                                                            db.collection("users").document(userID).collection("pointCard").document("coupons").set(setCS)
-                                                                .addOnSuccessListener {
-                                                                    db.collection("users").document(userID).collection("stats").document("top_selling_products").set(prodottiStats)
-                                                                        .addOnSuccessListener {
-                                                                            Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
-                                                                            val intent = Intent(this, LoginActivity::class.java)
-                                                                            startActivity(intent)
-                                                                        }
-                                                                        .addOnFailureListener{
-                                                                            Toast.makeText(this, "Errore durante la creazione delle statistiche", Toast.LENGTH_SHORT).show()
-                                                                        }
-                                                                }
-                                                                .addOnFailureListener{
-                                                                    Toast.makeText(this, "Errore durante la creazione dei coupon", Toast.LENGTH_SHORT).show()
-                                                                }
-                                                        }
-                                                        .addOnFailureListener{
-                                                            Toast.makeText(this, "Errore durante la creazione della tessera a punti", Toast.LENGTH_SHORT).show()
-                                                        }
-                                                }
-                                                .addOnFailureListener{
-                                                    Toast.makeText(this, "Errore durante la creazione della lista della spesa", Toast.LENGTH_SHORT).show()
-                                                }
-                                        }
-                                        .addOnFailureListener{
-                                            Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
-                                        }
+                                        db.collection("users").document(userID).set(userMap)
+                                            .addOnSuccessListener{
+                                                binding.editTextNome.text.clear()
+                                                binding.editTextCognome.text.clear()
+                                                binding.editTextIndirizzo.text.clear()
+                                                binding.editTextEmail.text.clear()
+                                                binding.editTextPassword.text.clear()
+                                                binding.editTextConfirmPassword.text.clear()
+                                                db.collection("users").document(userID).collection("historical").document("shoppingList").set(listaSpesa)
+                                                    .addOnSuccessListener{
+                                                        db.collection("users").document(userID).collection("pointCard").document("wallet").set(tesseraPunti)
+                                                            .addOnSuccessListener{
+                                                                db.collection("users").document(userID).collection("pointCard").document("coupons").set(setCS)
+                                                                    .addOnSuccessListener {
+                                                                        db.collection("users").document(userID).collection("stats").document("top_selling_products").set(prodottiStats)
+                                                                            .addOnSuccessListener {
+                                                                                Toast.makeText(this, "Registrazione avvenuta con successo", Toast.LENGTH_SHORT).show()
+                                                                                val intent = Intent(this, LoginActivity::class.java)
+                                                                                startActivity(intent)
+                                                                            }
+                                                                            .addOnFailureListener{
+                                                                                Toast.makeText(this, "Errore durante la creazione delle statistiche", Toast.LENGTH_SHORT).show()
+                                                                            }
+                                                                    }
+                                                                    .addOnFailureListener{
+                                                                        Toast.makeText(this, "Errore durante la creazione dei coupon", Toast.LENGTH_SHORT).show()
+                                                                    }
+                                                            }
+                                                            .addOnFailureListener{
+                                                                Toast.makeText(this, "Errore durante la creazione della tessera a punti", Toast.LENGTH_SHORT).show()
+                                                            }
+                                                    }
+                                                    .addOnFailureListener{
+                                                        Toast.makeText(this, "Errore durante la creazione della lista della spesa", Toast.LENGTH_SHORT).show()
+                                                    }
+                                            }
+                                            .addOnFailureListener{
+                                                Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
+                                            }
+                                    }
                                 }
-                            }
-                            .addOnFailureListener{
-                                Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
-                            }
+                                .addOnFailureListener{
+                                    Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
+                                }
+                        }else{
+                            Toast.makeText(this, "Accetta termini e condizioni d'uso", Toast.LENGTH_SHORT).show()
+                        }
                     }else{
-                        Toast.makeText(this, "Accetta termini e condizioni d'uso", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Password non corrispondenti", Toast.LENGTH_SHORT).show()
                     }
                 }else{
-                    Toast.makeText(this, "Password non corrispondenti", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Compila tutti i campi correttamente", Toast.LENGTH_SHORT).show()
                 }
-            }else{
-                Toast.makeText(this, "Compila tutti i campi correttamente", Toast.LENGTH_SHORT).show()
+            } else {
+                iT.toast(this)
             }
         }
 

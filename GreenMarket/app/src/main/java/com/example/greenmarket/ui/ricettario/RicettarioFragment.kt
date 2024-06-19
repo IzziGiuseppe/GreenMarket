@@ -15,7 +15,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.R
+import com.example.greenmarket.databinding.FragmentNoInternetBinding
 import com.example.greenmarket.databinding.FragmentRicettarioBinding
 import com.example.greenmarket.ui.ricerca.RicercaListAdapter
 import com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity
@@ -28,81 +30,102 @@ class RicettarioFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private var _bindingRiserva: FragmentNoInternetBinding? = null
+
+    private val bindingRiserva get() = _bindingRiserva!!
+
     @SuppressLint("ClickableViewAccessibility")
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?): View {
+
+        val iT = InternetTest()
+
         val ricettarioViewModel = ViewModelProvider(this).get(RicettarioViewModel::class.java)
 
-        _binding = FragmentRicettarioBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View
 
-        val adapter = RicettarioListAdapter { currentRicetta ->
-            currentRicetta.nome?.let { ricettarioViewModel.readRicettaDettagliata(it) }
-        }
+        if (iT.isInternetAvailable(requireContext())) {
+            _binding = FragmentRicettarioBinding.inflate(inflater, container, false)
+            root = binding.root
 
-        val recyclerView = binding.rv
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            val adapter = RicettarioListAdapter { currentRicetta ->
+                if (iT.isInternetAvailable(requireContext())) {
+                    currentRicetta.nome?.let { ricettarioViewModel.readRicettaDettagliata(it) }
+                } else {
+                    iT.toast(requireContext())
+                }
+            }
 
-        /*val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        val dividerDrawable = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black))
-        dividerItemDecoration.setDrawable(dividerDrawable)
-        recyclerView.addItemDecoration(dividerItemDecoration)*/
+            val recyclerView = binding.rv
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        //ViewModel
-        ricettarioViewModel.readAllRicette()
-        ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
-            ricetta -> adapter.setData(ricetta)
-        })
-
-        binding.resetBt.setOnClickListener {
-            binding.ricercaRicettaEditText.setText("")
+            //ViewModel
             ricettarioViewModel.readAllRicette()
-            /* NON SO SE SERVE
             ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
                     ricetta -> adapter.setData(ricetta)
             })
-            */
-        }
 
-        binding.ricercaRicettaEditText.setOnTouchListener { _, motionEvent ->
-            if (motionEvent.action == MotionEvent.ACTION_UP) {
-                val drawableEnd = binding.ricercaRicettaEditText.compoundDrawables[2]
-
-                if (drawableEnd != null) {
-                    val bounds = drawableEnd.bounds
-                    val x = motionEvent.rawX.toInt()
-
-                    if (x >= (binding.ricercaRicettaEditText.right - bounds.width())) {
-                        val ricettaInput = binding.ricercaRicettaEditText.text.toString()
-                        ricettarioViewModel.ricetteByProdotto(ricettaInput)
-                        ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
-                                ricetta -> adapter.setData(ricetta)
-                        })
-                        return@setOnTouchListener true
-                    }
+            binding.resetBt.setOnClickListener {
+                if (iT.isInternetAvailable(requireContext())) {
+                    binding.ricercaRicettaEditText.setText("")
+                    ricettarioViewModel.readAllRicette()
+                } else {
+                    iT.toast(requireContext())
                 }
             }
-            false
-        }
 
-        ricettarioViewModel.ricetta.observe(viewLifecycleOwner) { ricetta ->
-            ricetta?.let {
-                it.nome?.let { it1 ->
-                    it.descrizione?.let { it2 ->
-                        it.foto?.let { it3 ->
-                            it.ingredienti?.let { it4 ->
-                                startRicetta(
-                                    it1,
-                                    it2, it3, it4
-                                )
-                                ricettarioViewModel.resetRicetta()
+            binding.ricercaRicettaEditText.setOnTouchListener { _, motionEvent ->
+                if (motionEvent.action == MotionEvent.ACTION_UP) {
+                    if (iT.isInternetAvailable(requireContext())) {
+                        val drawableEnd = binding.ricercaRicettaEditText.compoundDrawables[2]
+
+                        if (drawableEnd != null) {
+                            val bounds = drawableEnd.bounds
+                            val x = motionEvent.rawX.toInt()
+
+                            if (x >= (binding.ricercaRicettaEditText.right - bounds.width())) {
+                                val ricettaInput = binding.ricercaRicettaEditText.text.toString()
+                                ricettarioViewModel.ricetteByProdotto(ricettaInput)
+                                ricettarioViewModel.listaRicette.observe(viewLifecycleOwner, Observer {
+                                        ricetta -> adapter.setData(ricetta)
+                                })
+                                return@setOnTouchListener true
+                            }
+                        }
+                    } else {
+                        iT.toast(requireContext())
+                    }
+                }
+                false
+            }
+
+            ricettarioViewModel.ricetta.observe(viewLifecycleOwner) { ricetta ->
+                ricetta?.let {
+                    it.nome?.let { it1 ->
+                        it.descrizione?.let { it2 ->
+                            it.foto?.let { it3 ->
+                                it.ingredienti?.let { it4 ->
+                                    startRicetta(
+                                        it1,
+                                        it2, it3, it4
+                                    )
+                                    ricettarioViewModel.resetRicetta()
+                                }
                             }
                         }
                     }
                 }
             }
-        }
+        } else {
+            _bindingRiserva = FragmentNoInternetBinding.inflate(inflater, container, false)
+            iT.toast(requireContext())
+            root = bindingRiserva.root
 
+            bindingRiserva.noInternetText.visibility = View.VISIBLE
+            bindingRiserva.noInternetImage.visibility = View.VISIBLE
+        }
         return root
     }
 

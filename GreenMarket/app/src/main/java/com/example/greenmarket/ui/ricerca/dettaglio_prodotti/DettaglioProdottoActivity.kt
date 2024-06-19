@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.R
 
 class DettaglioProdottoActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dettaglio_prodotto)
+        val iT = InternetTest()
 
         val nome: TextView = findViewById(R.id.nome_prodotto)
         val prezzo: TextView = findViewById(R.id.prezzo_prodotto)
@@ -78,8 +80,12 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         }
 
         addList.setOnClickListener{
-            dettaglioProdottoViewModel.inserimentoProdottoInListaSpesa()
-            finish()
+            if (iT.isInternetAvailable(this)) {
+                dettaglioProdottoViewModel.inserimentoProdottoInListaSpesa()
+                finish()
+            } else {
+                iT.toast(this)
+            }
         }
 
     }

@@ -18,6 +18,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.greenmarket.InternetTest
 import com.example.greenmarket.R
 import com.example.greenmarket.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +30,8 @@ class TesseraPuntiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tessera_punti)
+
+        val iT = InternetTest()
 
         val saldo: TextView = findViewById(R.id.valore_spesa)
         val punti: TextView = findViewById(R.id.valore_punti)
@@ -55,11 +58,19 @@ class TesseraPuntiActivity : AppCompatActivity() {
         }
 
         converti.setOnClickListener{
-            tesseraPuntiViewModel.convertiSaldo()
+            if (iT.isInternetAvailable(this)) {
+                tesseraPuntiViewModel.convertiSaldo()
+            } else {
+                iT.toast(this)
+            }
         }
 
         riscatta.setOnClickListener{
-            tesseraPuntiViewModel.riscattaCodiceSconto()
+            if (iT.isInternetAvailable(this)) {
+                tesseraPuntiViewModel.riscattaCodiceSconto()
+            } else {
+                iT.toast(this)
+            }
         }
 
 
