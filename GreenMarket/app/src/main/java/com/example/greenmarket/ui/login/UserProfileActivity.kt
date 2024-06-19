@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide
 import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.ActivityProfiloUtenteBinding
 import com.example.greenmarket.ui.home.HomeViewModel
-import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,6 +48,11 @@ class UserProfileActivity : AppCompatActivity() {
         binding = ActivityProfiloUtenteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val name = binding.editTextNomeUP
+        val surname = binding.editTextCognomeUP
+        val address = binding.editTextIndirizzoUP
+        val photo = binding.imageViewProfile
+
         //Inizializzazione db Firestore
         db = FirebaseFirestore.getInstance()
 
@@ -60,49 +64,37 @@ class UserProfileActivity : AppCompatActivity() {
             ActivityResultContracts.GetContent(),
             ActivityResultCallback {
                 if (it != null) {
-                    binding.imageViewProfile.setImageURI(it)
+                    photo.setImageURI(it)
                     uri = it
                 }
             }
         )
 
-        // Ottenere l'ID dell'utente corrente
-        if (currentUser != null) {
-            val userID = currentUser.uid
-            Log.d("UserProfileActivity", "User ID: $userID")  // Log l'ID dell'utente corrente
+        currentUser?.let {
+            db.collection("users").document(it.uid).get()
+                .addOnSuccessListener {document->
+                    val nome = document.getString("nome")
+                    val cognome = document.getString("cognome")
+                    val indirizzo = document.getString("indirizzo")
+                    val foto = document.getString("foto")
 
-            db.collection("users").document(userID).get()
-                .addOnSuccessListener {
-                    if (it != null && it.exists()) {
-                        val name = it.getString("nome")
-                        val surname = it.getString("cognome")
-                        val address = it.getString("indirizzo")
-                        val photo = it.getString("foto")
-
-                        // Aggiorna le EditText con i dati recuperati
-                        binding.editTextNomeUP.setText(name)
-                        binding.editTextCognomeUP.setText(surname)
-                        binding.editTextIndirizzoUP.setText(address)
-                        if (!photo.isNullOrEmpty()) {
-                            Glide.with(this)
-                                .load(photo)
-                                .into(binding.imageViewProfile)
-                        } else {
-                            Toast.makeText(this, "Nessuna immagine trovata per l'utente", Toast.LENGTH_SHORT).show()
-                        }
-                        originalData = it.data
+                    // Aggiorna le EditText con i dati recuperati
+                    name.setText(nome)
+                    surname.setText(cognome)
+                    address.setText(indirizzo)
+                    if (!foto.isNullOrEmpty()) {
+                        Glide.with(this)
+                            .load(foto)
+                            .into(photo)
                     } else {
-                        // Documento non trovato
-                        Toast.makeText(this, "Dati non visualizzabili", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Nessuna immagine trovata per l'utente", Toast.LENGTH_SHORT).show()
                     }
+                    originalData = document.data
                 }
                 .addOnFailureListener {
                     // Gestisci l'errore
                     Toast.makeText(this, "Errore nel caricamneto dei dati", Toast.LENGTH_SHORT).show()
                 }
-        } else {
-            // Utente non loggato
-            Toast.makeText(this, "Utente non loggato", Toast.LENGTH_SHORT).show()
         }
 
         // Listener per la scelta dell'immagine
@@ -118,7 +110,7 @@ class UserProfileActivity : AppCompatActivity() {
         //Modifica i dati nel db Firestore
         binding.buttonSave.setOnClickListener {
             if (iT.isInternetAvailable(this)) {
-                saveData()
+                saveData(name, surname, address)
             }else{
                 iT.toast(this)
             }
@@ -145,46 +137,40 @@ class UserProfileActivity : AppCompatActivity() {
 
 
     //Funzione per aggiornare i dati nel db Firestore
-    private fun saveData() {
-        val nome = binding.editTextNomeUP
-        val cognome = binding.editTextCognomeUP
-        val indirizzo = binding.editTextIndirizzoUP
+    private fun saveData(name: EditText, surname: EditText, address: EditText) {
+        name.addTextChangedListener(createTextWatcher { validateInputField(name) })
+        surname.addTextChangedListener(createTextWatcher { validateInputField(surname) })
+        address.addTextChangedListener(createTextWatcher { validateAddress(address) })
 
-        nome.addTextChangedListener(createTextWatcher { validateInputField(nome) })
-        cognome.addTextChangedListener(createTextWatcher { validateInputField(cognome) })
-        indirizzo.addTextChangedListener(createTextWatcher { validateAddress(indirizzo) })
-
-        val isFirstNameValid = validateInputField(nome)
-        val isLastNameValid = validateInputField(cognome)
-        val isAddressValid = validateAddress(indirizzo)
+        val isFirstNameValid = validateInputField(name)
+        val isLastNameValid = validateInputField(surname)
+        val isAddressValid = validateAddress(address)
 
         currentUser?.let { user ->
             val updates = mutableMapOf<String, Any>()
             updates.clear()
             originalData?.let { original ->
-                if (original["nome"] != nome.text.toString() && isFirstNameValid) {
-                    updates["nome"] = nome.text.toString()
+                if (original["nome"] != name.text.toString() && isFirstNameValid) {
+                    updates["nome"] = name.text.toString()
                 }
-
-                if (original["cognome"] != cognome.text.toString() && isLastNameValid) {
-                    updates["cognome"] = cognome.text.toString()
+                if (original["cognome"] != surname.text.toString() && isLastNameValid) {
+                    updates["cognome"] = surname.text.toString()
                 }
-
-                if (original["indirizzo"] != indirizzo.text.toString() && isAddressValid) {
-                    updates["indirizzo"] = indirizzo.text.toString()
+                if (original["indirizzo"] != address.text.toString() && isAddressValid) {
+                    updates["indirizzo"] = address.text.toString()
                 }
             }
 
             originalData?.let { original ->
-                if (updates.isNotEmpty() && (original["nome"] != nome.text.toString() || original["cognome"] != cognome.text.toString() || original["indirizzo"] != indirizzo.text.toString())) {
+                if (updates.isNotEmpty() && (original["nome"] != name.text.toString() || original["cognome"] != surname.text.toString() || original["indirizzo"] != address.text.toString())) {
                     db.collection("users").document(user.uid).update(updates)
                         .addOnSuccessListener {
-                            homeViewModel.setNome(nome.text.toString())
-                            Toast.makeText(this, "Dati aggiornati con successo", Toast.LENGTH_SHORT).show()
+                            homeViewModel.setNome(name.text.toString())
+                            Toast.makeText(this, "Dati anagrafici aggiornati con successo", Toast.LENGTH_SHORT).show()
                             updates.clear()
                         }
                         .addOnFailureListener {
-                            Toast.makeText(this, "Errore nell'aggiornamento dei dati", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Errore nell'aggiornamento dei dati anagrafici", Toast.LENGTH_SHORT).show()
                         }
                 } else {
                     Toast.makeText(this, "Nessun dato anagrafico da aggiornare", Toast.LENGTH_SHORT).show()
@@ -212,7 +198,6 @@ class UserProfileActivity : AppCompatActivity() {
                                         val currentImageHash = URL(currentImageUrl).openStream().use { inputStream ->
                                             getHash(inputStream.readBytes())
                                         }
-
                                         if (newImageHash != currentImageHash) {
                                             withContext(Dispatchers.Main) {
                                                 uploadNewImage(imageUri, user, storageRef, db)

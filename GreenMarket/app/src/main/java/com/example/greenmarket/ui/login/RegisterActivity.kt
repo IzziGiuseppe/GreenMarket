@@ -62,7 +62,7 @@ class RegisterActivity : AppCompatActivity() {
 
                 if(isFirstNameValid && isLastNameValid && isAddressValid && isEmailValid && isPasswordValid
                     && isConfirmPasswordValid){
-                    if(password == confirmPassword){
+                    if(password.text.toString() == confirmPassword.text.toString()){
                         if(binding.checkBox.isChecked){
                             firebaseAuth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                                 .addOnSuccessListener {
@@ -70,9 +70,9 @@ class RegisterActivity : AppCompatActivity() {
                                     if (userID != null) {
                                         //Salvataggio dati utente
                                         val userMap = hashMapOf(
-                                            "nome" to name,
-                                            "cognome" to surname,
-                                            "indirizzo" to address,
+                                            "nome" to name.text.toString(),
+                                            "cognome" to surname.text.toString(),
+                                            "indirizzo" to address.text.toString(),
                                             "foto" to photo
                                         )
 
