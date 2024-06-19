@@ -21,11 +21,6 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 
 class ConfermaOrdineActivity : AppCompatActivity() {
-    //private var _binding: ActivityConfermaOrdineBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    //private val binding get() = _binding!!
 
     private val confermaOrdineViewModel: ConfermaOrdineViewModel by viewModels()
     private val listaSpesaViewModel: ListaSpesaViewModel by viewModels()
@@ -116,7 +111,7 @@ class ConfermaOrdineActivity : AppCompatActivity() {
                 //Implementare la funzione che gestisce la creazione di una scontrino
                 confermaOrdineViewModel.creaScontrino()
                 /*per notificare il cambiamento della lista della
-            spesa e permettere l'aggiornamento dinamico*/
+                spesa e permettere l'aggiornamento dinamico*/
                 listaSpesaViewModel.deleteListaSpesa()
                 Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
                 finish()

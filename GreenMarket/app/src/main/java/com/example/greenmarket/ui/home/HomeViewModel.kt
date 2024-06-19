@@ -30,6 +30,11 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     }
     val text: LiveData<String> = _text
 
+    private val _foto = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val foto: LiveData<String> = _text
+
     private val _orari = MutableLiveData<String>().apply {
         value = ""
     }
@@ -79,6 +84,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             }
     }
 
+    fun setNome(nome: String) {
+        _text.value = "Ciao $nome \uD83D\uDC4B"
+    }
+
+    fun setFoto(foto: String) {
+        _foto.value = foto
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun readNome(fragment: HomeFragment, imageProfilo: ImageView) {
         val currentUser = FirebaseAuth.getInstance().currentUser
@@ -93,6 +106,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                         val name = it.getString("nome")
                         _text.value = "Ciao $name \uD83D\uDC4B"
                         val photo = it.getString("foto")
+                        _foto.value = photo
 
                         if (!photo.isNullOrEmpty()) {
                             Glide.with(fragment)

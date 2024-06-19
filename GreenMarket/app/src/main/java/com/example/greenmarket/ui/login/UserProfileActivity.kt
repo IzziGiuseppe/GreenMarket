@@ -10,11 +10,14 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.ActivityProfiloUtenteBinding
+import com.example.greenmarket.ui.home.HomeViewModel
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,12 +32,15 @@ import kotlinx.coroutines.withContext
 
 
 class UserProfileActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityProfiloUtenteBinding
     private lateinit var db: FirebaseFirestore
     private val currentUser = FirebaseAuth.getInstance().currentUser
     private var originalData: Map<String, Any>? = null
     private var storageRef = FirebaseStorage.getInstance().reference
     private var uri: Uri? = null
+    private val homeViewModel: HomeViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val iT = InternetTest()
@@ -170,9 +176,10 @@ class UserProfileActivity : AppCompatActivity() {
             }
 
             originalData?.let { original ->
-                if (updates.isNotEmpty() && original["nome"] != nome.text.toString() && original["cognome"] != cognome.text.toString() && original["indirizzo"] != indirizzo.text.toString()) {
+                if (updates.isNotEmpty() && (original["nome"] != nome.text.toString() || original["cognome"] != cognome.text.toString() || original["indirizzo"] != indirizzo.text.toString())) {
                     db.collection("users").document(user.uid).update(updates)
                         .addOnSuccessListener {
+                            homeViewModel.setNome(nome.text.toString())
                             Toast.makeText(this, "Dati aggiornati con successo", Toast.LENGTH_SHORT).show()
                             updates.clear()
                         }
@@ -247,6 +254,7 @@ class UserProfileActivity : AppCompatActivity() {
                     .addOnSuccessListener { url ->
                         db.collection("users").document(user.uid).update("foto", url.toString())
                             .addOnSuccessListener {
+                                homeViewModel.setFoto(url.toString())
                                 Toast.makeText(this, "Foto caricata con successo", Toast.LENGTH_SHORT).show()
                             }
                             .addOnFailureListener { e ->

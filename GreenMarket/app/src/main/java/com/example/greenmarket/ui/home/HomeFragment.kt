@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.example.greenmarket.InternetTest
 import com.example.greenmarket.NoInternetActivity
 import com.example.greenmarket.R
@@ -27,6 +29,7 @@ import com.example.greenmarket.databinding.FragmentNoInternetBinding
 import com.example.greenmarket.db.model.Prodotto
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiActivity
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 import com.example.greenmarket.ui.login.UserProfileActivity
 import com.example.greenmarket.ui.ricerca.RicercaViewModel
 import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
@@ -45,6 +48,10 @@ class HomeFragment : Fragment() {
 
     private val bindingRiserva get() = _bindingRiserva!!
 
+    private lateinit var homeViewModel: HomeViewModel
+
+    private lateinit var immagineProfilo: ImageView
+
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -52,8 +59,7 @@ class HomeFragment : Fragment() {
         val iT = InternetTest()
         val intentNoInternet = Intent(requireContext(), NoInternetActivity::class.java)
 
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         val ricettarioViewModel =
             ViewModelProvider(this).get(RicettarioViewModel::class.java)
@@ -160,10 +166,15 @@ class HomeFragment : Fragment() {
             }
 
             val benvenuto: TextView = binding.textHome
-            val immagineProfilo: ImageView = binding.iconaProfiloUtente
+            immagineProfilo = binding.iconaProfiloUtente
             homeViewModel.readNome(this, immagineProfilo)
             homeViewModel.text.observe(viewLifecycleOwner) {
                 benvenuto.text = it
+            }
+            homeViewModel.foto.observe(viewLifecycleOwner) {
+                Glide.with(this)
+                    .load(it)
+                    .into(immagineProfilo)
             }
 
             binding.iconaProfiloUtente.setOnClickListener {
@@ -201,6 +212,12 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onResume() {
+        super.onResume()
+        homeViewModel.readNome(this, immagineProfilo)
     }
 
     fun startRicetta(nome: String, descrizione: String, foto: String, ingredienti: List<String>) {
