@@ -86,10 +86,10 @@ class DettaglioProdottoViewModel(application: Application): AndroidViewModel(app
     }
 
     fun decrementaQuantita() {
-        if(quantita_prodotto.value!! > 0){
+        if(quantita_prodotto.value!! > 0.5){
             _quantita_prodotto.value = _quantita_prodotto.value?.minus(0.5f)
         }else{
-            Toast.makeText(getApplication(), "La quantità non può essere negativa", Toast.LENGTH_SHORT).show()
+            Toast.makeText(getApplication(), "La quantità non può essere negativa/nulla", Toast.LENGTH_SHORT).show()
         }
 
     }

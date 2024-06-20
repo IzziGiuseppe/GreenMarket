@@ -52,7 +52,7 @@ class ChiSiamoViewModel(application: Application) : AndroidViewModel(application
                 "abbracciando l'innovazione. L'idea di un'app per fare la spesa online è nata per offrire " +
                 "ai clienti un servizio comodo e moderno, rispondendo così alle esigenze di chi vuole acquistare " +
                 "prodotti " +
-                "di qualità anche a distanza, permettendo inoltre di ottenere sconti e di creare liste" +
+                "di qualità anche a distanza, permettendo inoltre di ottenere sconti e di creare liste " +
                 "della spesa personalizzate"
     }
 
