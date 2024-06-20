@@ -51,6 +51,6 @@
     <string name="esci_dall_account">Esci dall\'account</string>
     <string name="elimina_account_utente">Elimina account utente</string>
     <string name="ricerca_prodotto">Ricerca prodotto</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

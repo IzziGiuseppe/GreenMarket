@@ -57,6 +57,7 @@ id bird_dino2
 id buttonAccediLogin
 id buttonAddList
 id buttonCancel
+id buttonDona
 id buttonRegister
 id buttonResetPass
 id buttonSave
@@ -91,6 +92,7 @@ id domenico_bt
 id editTextCognome
 id editTextCognomeUP
 id editTextConfirmPassword
+id editTextDonazioni
 id editTextEmail
 id editTextEmailLogin
 id editTextIndirizzo
@@ -214,6 +216,7 @@ id textViewAccedi
 id textViewAccount
 id textViewCognome
 id textViewConfirmPassword
+id textViewDonazioni
 id textViewEliminaAccount
 id textViewEmail
 id textViewEmailLogin
@@ -263,6 +266,7 @@ layout activity_conferma_ordine
 layout activity_dettaglio_prodotto
 layout activity_dettaglio_ricetta
 layout activity_dettaglio_scontrini
+layout activity_donazioni
 layout activity_login
 layout activity_main
 layout activity_no_internet

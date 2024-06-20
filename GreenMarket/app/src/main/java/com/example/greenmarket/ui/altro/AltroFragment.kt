@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenmarket.InternetTest
 import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
+import com.example.greenmarket.ui.altro.donazioni.DonazioniActivity
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
 import com.example.greenmarket.ui.altro.storico.StoricoActivity
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
@@ -132,8 +133,7 @@ class AltroFragment : Fragment() {
     }
 
     private fun donazione() {
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.setData(Uri.parse("https://www.gofundme.com/it-it/"))
+        val intent = Intent(requireContext(), DonazioniActivity::class.java)
         startActivity(intent)
     }
 

@@ -3379,6 +3379,7 @@ id browser_actions_menu_view
 id buttonAccediLogin
 id buttonAddList
 id buttonCancel
+id buttonDona
 id buttonPanel
 id buttonRegister
 id buttonResetPass
@@ -3488,6 +3489,7 @@ id edge
 id editTextCognome
 id editTextCognomeUP
 id editTextConfirmPassword
+id editTextDonazioni
 id editTextEmail
 id editTextEmailLogin
 id editTextIndirizzo
@@ -3905,6 +3907,7 @@ id textViewAccedi
 id textViewAccount
 id textViewCognome
 id textViewConfirmPassword
+id textViewDonazioni
 id textViewEliminaAccount
 id textViewEmail
 id textViewEmailLogin
@@ -4122,6 +4125,7 @@ layout activity_conferma_ordine
 layout activity_dettaglio_prodotto
 layout activity_dettaglio_ricetta
 layout activity_dettaglio_scontrini
+layout activity_donazioni
 layout activity_login
 layout activity_main
 layout activity_no_internet
