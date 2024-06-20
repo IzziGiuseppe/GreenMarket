@@ -8,12 +8,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.MainActivity
+import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -33,6 +35,26 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth.setLanguageCode(Locale.getDefault().language)
 
         val progressBar = binding.progressBarLogin
+
+        //Variabile utile per gestire la visualizzazione della password
+        var isPasswordVisible = false
+
+        binding.togglePasswordVisibility.setOnClickListener {
+            if (isPasswordVisible) {
+                // Nascondi password
+                binding.editTextPasswordLogin.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                //Cambia l'icona della visualizzazione
+                binding.togglePasswordVisibility.setImageResource(R.mipmap.ic_visibility_off)
+            } else {
+                // Mostra password
+                binding.editTextPasswordLogin.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                //Cambia l'icona della visualizzazione
+                binding.togglePasswordVisibility.setImageResource(R.mipmap.ic_visibility)
+            }
+            // Sposta il cursore alla fine del testo
+            binding.editTextPasswordLogin.setSelection(binding.editTextPasswordLogin.text.length)
+            isPasswordVisible = !isPasswordVisible
+        }
 
         binding.textViewRegistratiLogin.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)

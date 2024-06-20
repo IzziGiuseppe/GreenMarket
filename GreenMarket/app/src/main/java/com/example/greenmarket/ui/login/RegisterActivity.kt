@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputFilter
+import android.text.InputType
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.Toast
 import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenmarket.InternetTest
+import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityRegistrazioneBinding
 import com.example.greenmarket.ui.altro.statistiche.ProdottoInStatsModel
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
@@ -49,6 +51,45 @@ class RegisterActivity : AppCompatActivity() {
         address.addTextChangedListener(createTextWatcher { validateAddress(address) })
         email.addTextChangedListener(createTextWatcher { validateEmail(email) })
         password.addTextChangedListener(createTextWatcher { validatePassword(password) })
+
+        //Variabile utile per gestire la visualizzazione della password
+        var isPasswordVisible = false
+
+        binding.togglePasswordVisibilityReg.setOnClickListener {
+            if (isPasswordVisible) {
+                // Nascondi password
+                binding.editTextPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                //Cambia l'icona della visualizzazione
+                binding.togglePasswordVisibilityReg.setImageResource(R.mipmap.ic_visibility_off)
+            } else {
+                // Mostra password
+                binding.editTextPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                //Cambia l'icona della visualizzazione
+                binding.togglePasswordVisibilityReg.setImageResource(R.mipmap.ic_visibility)
+            }
+            // Sposta il cursore alla fine del testo
+            binding.editTextPassword.setSelection(binding.editTextPassword.text.length)
+            isPasswordVisible = !isPasswordVisible
+        }
+
+        binding.toggleConfPassVisibilityReg.setOnClickListener {
+            if (isPasswordVisible) {
+                // Nascondi password
+                binding.editTextConfirmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                //Cambia l'icona della visualizzazione
+                binding.toggleConfPassVisibilityReg.setImageResource(R.mipmap.ic_visibility_off)
+            } else {
+                // Mostra password
+                binding.editTextConfirmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                //Cambia l'icona della visualizzazione
+                binding.toggleConfPassVisibilityReg.setImageResource(R.mipmap.ic_visibility)
+            }
+            // Sposta il cursore alla fine del testo
+            binding.editTextConfirmPassword.setSelection(binding.editTextConfirmPassword.text.length)
+            isPasswordVisible = !isPasswordVisible
+        }
+
+
 
         binding.buttonRegister.setOnClickListener{
             if (iT.isInternetAvailable(this)) {

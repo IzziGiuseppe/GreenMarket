@@ -3958,6 +3958,9 @@ id titolo_soci
 id titolo_tc_txt
 id titolo_txt
 id toggle
+id toggleConfPassVisibilityReg
+id togglePasswordVisibility
+id togglePasswordVisibilityReg
 id top
 id topPanel
 id touch_outside
@@ -4259,6 +4262,12 @@ mipmap ic_launcher_round
 mipmap ic_user_profile
 mipmap ic_user_profile_adaptive_back
 mipmap ic_user_profile_adaptive_fore
+mipmap ic_visibility
+mipmap ic_visibility_adaptive_back
+mipmap ic_visibility_adaptive_fore
+mipmap ic_visibility_off
+mipmap ic_visibility_off_adaptive_back
+mipmap ic_visibility_off_adaptive_fore
 navigation mobile_navigation
 plurals mtrl_badge_content_description
 raw firebase_common_keep

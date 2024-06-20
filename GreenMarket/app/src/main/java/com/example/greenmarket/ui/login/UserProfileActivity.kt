@@ -162,12 +162,15 @@ class UserProfileActivity : AppCompatActivity() {
             }
 
             originalData?.let { original ->
-                if (updates.isNotEmpty() && (original["nome"] != name.text.toString() || original["cognome"] != surname.text.toString() || original["indirizzo"] != address.text.toString())) {
+                if (original["nome"] != name.text.toString() || original["cognome"] != surname.text.toString() || original["indirizzo"] != address.text.toString()) {
                     db.collection("users").document(user.uid).update(updates)
                         .addOnSuccessListener {
+                            db.collection("users").document(user.uid).get()
+                                .addOnSuccessListener {document->
+                                    originalData = document.data
+                                }
                             homeViewModel.setNome(name.text.toString())
                             Toast.makeText(this, "Dati anagrafici aggiornati con successo", Toast.LENGTH_SHORT).show()
-                            updates.clear()
                         }
                         .addOnFailureListener {
                             Toast.makeText(this, "Errore nell'aggiornamento dei dati anagrafici", Toast.LENGTH_SHORT).show()

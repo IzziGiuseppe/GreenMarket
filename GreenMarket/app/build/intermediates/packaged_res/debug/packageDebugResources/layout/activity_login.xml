@@ -75,17 +75,29 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextPasswordLogin"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
-            android:ems="10"
-            android:hint="@string/la_tua_password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:selectAllOnFocus="true"
-            app:passwordToggleEnabled="true" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextPasswordLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/angoli_arrotondati_edit_text"
+                android:ems="10"
+                android:hint="@string/la_tua_password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:selectAllOnFocus="true" />
+
+            <ImageView
+                android:id="@+id/togglePasswordVisibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_visibility_off" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/buttonAccediLogin"

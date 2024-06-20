@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -83,6 +84,12 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
   @NonNull
   public final TextView textViewTerminiCondizioni;
 
+  @NonNull
+  public final ImageView toggleConfPassVisibilityReg;
+
+  @NonNull
+  public final ImageView togglePasswordVisibilityReg;
+
   private ActivityRegistrazioneBinding(@NonNull ConstraintLayout rootView,
       @NonNull LinearLayout LinearLayoutRegistrazione, @NonNull Button buttonRegister,
       @NonNull CheckBox checkBox, @NonNull EditText editTextCognome,
@@ -93,7 +100,9 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
       @NonNull TextView textViewCognome, @NonNull TextView textViewConfirmPassword,
       @NonNull TextView textViewEmail, @NonNull TextView textViewIndirizzo,
       @NonNull TextView textViewNome, @NonNull TextView textViewPassword,
-      @NonNull TextView textViewRegister, @NonNull TextView textViewTerminiCondizioni) {
+      @NonNull TextView textViewRegister, @NonNull TextView textViewTerminiCondizioni,
+      @NonNull ImageView toggleConfPassVisibilityReg,
+      @NonNull ImageView togglePasswordVisibilityReg) {
     this.rootView = rootView;
     this.LinearLayoutRegistrazione = LinearLayoutRegistrazione;
     this.buttonRegister = buttonRegister;
@@ -115,6 +124,8 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
     this.textViewPassword = textViewPassword;
     this.textViewRegister = textViewRegister;
     this.textViewTerminiCondizioni = textViewTerminiCondizioni;
+    this.toggleConfPassVisibilityReg = toggleConfPassVisibilityReg;
+    this.togglePasswordVisibilityReg = togglePasswordVisibilityReg;
   }
 
   @Override
@@ -264,12 +275,24 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toggleConfPassVisibilityReg;
+      ImageView toggleConfPassVisibilityReg = ViewBindings.findChildViewById(rootView, id);
+      if (toggleConfPassVisibilityReg == null) {
+        break missingId;
+      }
+
+      id = R.id.togglePasswordVisibilityReg;
+      ImageView togglePasswordVisibilityReg = ViewBindings.findChildViewById(rootView, id);
+      if (togglePasswordVisibilityReg == null) {
+        break missingId;
+      }
+
       return new ActivityRegistrazioneBinding((ConstraintLayout) rootView,
           LinearLayoutRegistrazione, buttonRegister, checkBox, editTextCognome,
           editTextConfirmPassword, editTextEmail, editTextIndirizzo, editTextNome, editTextPassword,
           linearLayout5, textViewAccedi, textViewAccount, textViewCognome, textViewConfirmPassword,
           textViewEmail, textViewIndirizzo, textViewNome, textViewPassword, textViewRegister,
-          textViewTerminiCondizioni);
+          textViewTerminiCondizioni, toggleConfPassVisibilityReg, togglePasswordVisibilityReg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

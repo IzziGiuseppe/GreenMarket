@@ -63,13 +63,16 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final TextView textViewRegistratiLogin;
 
+  @NonNull
+  public final ImageView togglePasswordVisibility;
+
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull TextView PasswordLogin,
       @NonNull TextView accedi, @NonNull TextView benvenuto, @NonNull Button buttonAccediLogin,
       @NonNull EditText editTextEmailLogin, @NonNull EditText editTextPasswordLogin,
       @NonNull ImageView imageView, @NonNull LinearLayout linearLayout13,
       @NonNull LinearLayout linearLayout3, @NonNull ProgressBar progressBarLogin,
       @NonNull TextView textViewEmailLogin, @NonNull TextView textViewPassDimenticata,
-      @NonNull TextView textViewRegistratiLogin) {
+      @NonNull TextView textViewRegistratiLogin, @NonNull ImageView togglePasswordVisibility) {
     this.rootView = rootView;
     this.PasswordLogin = PasswordLogin;
     this.accedi = accedi;
@@ -84,6 +87,7 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.textViewEmailLogin = textViewEmailLogin;
     this.textViewPassDimenticata = textViewPassDimenticata;
     this.textViewRegistratiLogin = textViewRegistratiLogin;
+    this.togglePasswordVisibility = togglePasswordVisibility;
   }
 
   @Override
@@ -191,10 +195,16 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.togglePasswordVisibility;
+      ImageView togglePasswordVisibility = ViewBindings.findChildViewById(rootView, id);
+      if (togglePasswordVisibility == null) {
+        break missingId;
+      }
+
       return new ActivityLoginBinding((ConstraintLayout) rootView, PasswordLogin, accedi, benvenuto,
           buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, imageView, linearLayout13,
           linearLayout3, progressBarLogin, textViewEmailLogin, textViewPassDimenticata,
-          textViewRegistratiLogin);
+          textViewRegistratiLogin, togglePasswordVisibility);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

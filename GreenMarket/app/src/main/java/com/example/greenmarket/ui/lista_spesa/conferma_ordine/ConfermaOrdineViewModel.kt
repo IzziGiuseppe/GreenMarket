@@ -172,8 +172,6 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                             }
                     }
                 }
-
-
         }
         Log.d("Crea scontrino", "Finito crea scontrino")
     }
