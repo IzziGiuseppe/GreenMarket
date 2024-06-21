@@ -108,21 +108,18 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                         .set(updates)
                 }
         }
-
     }
 
 
     @OptIn(UnstableApi::class)
     @RequiresApi(Build.VERSION_CODES.O)
     fun creaScontrino() {
-        Log.d("Crea scontrino", "Inizio crea scontrino")
         currentUser.let {
             db.collection("users").document(currentUser?.uid!!).collection("historical")
                 .document("shoppingList").get()
                 .addOnSuccessListener { documents ->
                     _listaSpesa.value = documents.toObject(ListaDellaSpesaModel::class.java)
                     _lista_prodotti.value = _listaSpesa.value?.let { it1 -> listaProdotti(it1.prodotti) }
-                    Log.d("Lista", _lista_prodotti.value.toString())
                     val dataScontrino = getCurrentDateTime()
                     val prezzo_scontato: Float
                     val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
@@ -173,7 +170,6 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
                     }
                 }
         }
-        Log.d("Crea scontrino", "Finito crea scontrino")
     }
 
     private fun deleteListaSpesa() {
