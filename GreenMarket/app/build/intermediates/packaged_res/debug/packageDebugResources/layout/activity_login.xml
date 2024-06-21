@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:id="@+id/linearLayout13"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,6 +67,7 @@
             android:background="@drawable/angoli_arrotondati_edit_text"
             android:ems="10"
             android:hint="@string/il_tuo_indirizzo_email"
+            android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:selectAllOnFocus="true" />
@@ -76,20 +84,21 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/angoli_arrotondati_edit_text"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <EditText
                 android:id="@+id/editTextPasswordLogin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#00000000"
                 android:ems="10"
-                android:background="@color/white"
                 android:hint="@string/la_tua_password"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true" />
 
@@ -122,7 +131,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -139,6 +148,7 @@
                 android:id="@+id/textViewRegistratiLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:text="@string/registrati"
                 android:textAlignment="textEnd"
                 android:textStyle="bold" />
@@ -147,3 +157,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

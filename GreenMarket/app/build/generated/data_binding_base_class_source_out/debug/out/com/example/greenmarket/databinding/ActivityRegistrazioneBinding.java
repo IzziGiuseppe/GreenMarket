@@ -9,10 +9,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
@@ -22,7 +22,7 @@ import java.lang.String;
 
 public final class ActivityRegistrazioneBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final LinearLayout LinearLayoutRegistrazione;
@@ -90,7 +90,7 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
   @NonNull
   public final ImageView togglePasswordVisibilityReg;
 
-  private ActivityRegistrazioneBinding(@NonNull ConstraintLayout rootView,
+  private ActivityRegistrazioneBinding(@NonNull ScrollView rootView,
       @NonNull LinearLayout LinearLayoutRegistrazione, @NonNull Button buttonRegister,
       @NonNull CheckBox checkBox, @NonNull EditText editTextCognome,
       @NonNull EditText editTextConfirmPassword, @NonNull EditText editTextEmail,
@@ -130,7 +130,7 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -287,11 +287,11 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegistrazioneBinding((ConstraintLayout) rootView,
-          LinearLayoutRegistrazione, buttonRegister, checkBox, editTextCognome,
-          editTextConfirmPassword, editTextEmail, editTextIndirizzo, editTextNome, editTextPassword,
-          linearLayout5, textViewAccedi, textViewAccount, textViewCognome, textViewConfirmPassword,
-          textViewEmail, textViewIndirizzo, textViewNome, textViewPassword, textViewRegister,
+      return new ActivityRegistrazioneBinding((ScrollView) rootView, LinearLayoutRegistrazione,
+          buttonRegister, checkBox, editTextCognome, editTextConfirmPassword, editTextEmail,
+          editTextIndirizzo, editTextNome, editTextPassword, linearLayout5, textViewAccedi,
+          textViewAccount, textViewCognome, textViewConfirmPassword, textViewEmail,
+          textViewIndirizzo, textViewNome, textViewPassword, textViewRegister,
           textViewTerminiCondizioni, toggleConfPassVisibilityReg, togglePasswordVisibilityReg);
     }
     String missingId = rootView.getResources().getResourceName(id);

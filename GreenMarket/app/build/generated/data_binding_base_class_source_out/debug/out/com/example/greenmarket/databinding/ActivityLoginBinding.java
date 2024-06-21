@@ -9,10 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
@@ -22,7 +22,7 @@ import java.lang.String;
 
 public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final TextView PasswordLogin;
@@ -66,7 +66,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final ImageView togglePasswordVisibility;
 
-  private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull TextView PasswordLogin,
+  private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull TextView PasswordLogin,
       @NonNull TextView accedi, @NonNull TextView benvenuto, @NonNull Button buttonAccediLogin,
       @NonNull EditText editTextEmailLogin, @NonNull EditText editTextPasswordLogin,
       @NonNull ImageView imageView, @NonNull LinearLayout linearLayout13,
@@ -92,7 +92,7 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -201,7 +201,7 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, PasswordLogin, accedi, benvenuto,
+      return new ActivityLoginBinding((ScrollView) rootView, PasswordLogin, accedi, benvenuto,
           buttonAccediLogin, editTextEmailLogin, editTextPasswordLogin, imageView, linearLayout13,
           linearLayout3, progressBarLogin, textViewEmailLogin, textViewPassDimenticata,
           textViewRegistratiLogin, togglePasswordVisibility);

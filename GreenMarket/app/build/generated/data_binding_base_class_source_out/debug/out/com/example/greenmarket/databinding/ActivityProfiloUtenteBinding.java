@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.greenmarket.R;
@@ -23,7 +23,7 @@ import java.lang.String;
 
 public final class ActivityProfiloUtenteBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button buttonCancel;
@@ -70,8 +70,8 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   @NonNull
   public final TextView titleNome;
 
-  private ActivityProfiloUtenteBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonCancel, @NonNull Button buttonSave, @NonNull CardView cardImageProfilo,
+  private ActivityProfiloUtenteBinding(@NonNull ScrollView rootView, @NonNull Button buttonCancel,
+      @NonNull Button buttonSave, @NonNull CardView cardImageProfilo,
       @NonNull EditText editTextCognomeUP, @NonNull EditText editTextIndirizzoUP,
       @NonNull EditText editTextNomeUP, @NonNull FloatingActionButton floatingActionButtonModFoto,
       @NonNull ImageView imageViewProfile, @NonNull LinearLayout linearLayout14,
@@ -98,7 +98,7 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -213,7 +213,7 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProfiloUtenteBinding((ConstraintLayout) rootView, buttonCancel, buttonSave,
+      return new ActivityProfiloUtenteBinding((ScrollView) rootView, buttonCancel, buttonSave,
           cardImageProfilo, editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP,
           floatingActionButtonModFoto, imageViewProfile, linearLayout14, linearLayout4,
           textViewEliminaAccount, textViewLogout, titleCognome, titleIndirizzoProfilo, titleNome);
