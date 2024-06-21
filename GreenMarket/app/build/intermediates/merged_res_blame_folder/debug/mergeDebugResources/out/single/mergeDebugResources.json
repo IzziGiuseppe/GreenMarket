@@ -1,682 +1,682 @@
 [
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_off_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_off_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_visibility_off.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_visibility_off.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_dashboard_black_24dp.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_dashboard_black_24dp.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_altro.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_altro.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_diff_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_diff_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_user_profile_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_user_profile_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_diff.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_diff.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_altro.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\altro.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_add_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_add_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_storico.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_storico.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_add_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_add_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_profilo_utente.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_profilo_utente.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_term_cond.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_term_cond.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_off_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_off_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_diff.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_diff.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_user_profile_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_altro.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\altro.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_lista_spesa.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_lista_spesa.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_reset_password.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_reset_password.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_add_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_add_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_item_tc_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\item_tc_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_tc_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_tc_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_user_profile_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_ricette_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_ricette_home.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_assistenza.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\assistenza.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\navigation\\mobile_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_user_profile_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_user_profile_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_git.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\git.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_diff_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_diff_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_add_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_add_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_diff.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_diff.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_off_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_off_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_term_cond.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_term_cond.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_user_profile_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_visibility.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_visibility.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_assistenza.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\assistenza.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_user_profile.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_user_profile.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_diff.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_diff.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_dino.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\dino.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_off_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_off_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_user_profile.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_user_profile.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_angoli_arrotondati_edit_text.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\angoli_arrotondati_edit_text.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_altro.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_altro.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_no_internet.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_no_internet.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_diff_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_diff_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_outlook.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\outlook.jpg"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_add.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_add.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_diff_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_diff_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_user_profile_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_user_profile_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_stats.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\stats.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ricettario.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ricettario.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_no_internet.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_no_internet.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_altro_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_altro_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_home_black_24dp.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_home_black_24dp.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_ricerca.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_ricerca.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_add_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_add_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_user_profile_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_user_profile_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_user_profile_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_user_profile_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_diff_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_diff_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_add_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_add_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_term_cond.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_term_cond.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_off_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_off_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_storico.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\storico.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_storico_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_storico_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_user_profile.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_user_profile.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_giuseppe.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\giuseppe.jpg"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_term_cond.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\term_cond.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_off_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_off_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_term_cond.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_term_cond.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_add.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_add.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_ricette_home.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_ricette_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_off_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_off_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_user_profile_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_user_profile_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_prodotto_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_prodotto_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_user_profile.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_visibility_off.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_visibility_off.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_off_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_off_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_ricetta_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_ricetta_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_dettaglio_prodotto.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_dettaglio_prodotto.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_off.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_user_profile_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_user_profile_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_add_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_add_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_lista_spesa_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_lista_spesa_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_invita.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\invita.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_profilo_utente.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_profilo_utente.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_storico_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_storico_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_add.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_add.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_ricettario.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_ricettario.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_dettaglio_ricetta.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_dettaglio_ricetta.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_user_profile_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_user_profile_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_off_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_off_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\menu_bottom_nav_menu.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\menu\\bottom_nav_menu.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_conferma_ordine.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_conferma_ordine.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_reset_password.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_reset_password.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_peppe.jpg.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\peppe.jpg"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ricettario.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ricettario.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_lista_spesa.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\lista_spesa.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_user_profile_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_user_profile_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_soci.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_soci.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_dettaglio_ricetta.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_dettaglio_ricetta.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_cactus_dino.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\cactus_dino.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_dino.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\dino.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_stats.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\stats.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_stats_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_stats_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_add.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_add.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_diff_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_diff_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_tc_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_tc_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_user_profile.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_user_profile.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_off_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_off_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_user_profile_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_user_profile_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_diff.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_diff.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_diff.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_diff.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_diff_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_diff_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_diff_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_diff_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_off_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_off_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_angoli_arrotondati_edit_text.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\angoli_arrotondati_edit_text.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_chi_siamo.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_chi_siamo.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_lista_spesa.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\lista_spesa.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_dettaglio_ricetta.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_dettaglio_ricetta.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_diff_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_diff_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_donazione.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\donazione.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_image.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_image.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_tessera_punti.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_tessera_punti.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_add_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_add_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_diff.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_diff.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_dettaglio_prodotto.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_dettaglio_prodotto.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_chi_siamo.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_chi_siamo.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_diff.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_diff.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_ricettario.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_ricettario.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_domenico.jpg.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\domenico.jpg"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_add_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_add_adaptive_back.png"
     },
     {
-        "merged": "com.example.greenmarket.app-debug-71:/layout_activity_registrazione.xml.flat",
-        "source": "com.example.greenmarket.app-main-73:/layout/activity_registrazione.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_peppe.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\peppe.jpg"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_soci.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_soci.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_add_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_add_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_off_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_off_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_chi_siamo.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\chi_siamo.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_codice_sconto_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_codice_sconto_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_user_profile.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_user_profile.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_diff_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_diff_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_giuseppe.jpg.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\giuseppe.jpg"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_notifications_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_diff_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_diff_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_stats_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_stats_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_user_profile.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_user_profile.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_diff_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_diff_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_user_profile_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_user_profile_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_lista_spesa.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_lista_spesa.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_user_profile_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_user_profile_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_diff_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_diff_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_add.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_add.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_dettaglio_ricetta.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_dettaglio_ricetta.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_dettaglio_prodotto.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_dettaglio_prodotto.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_donazioni.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_donazioni.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_tessera_punti.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_tessera_punti.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_home_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_add_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_add_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_bird_dino.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\bird_dino.jpg"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_registrazione.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_registrazione.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_angoli_arrotondati_item.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\angoli_arrotondati_item.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_lista_spesa_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_lista_spesa_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_donazioni.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_donazioni.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_off_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_off_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_add.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_add.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_diff_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_diff_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_codice_sconto_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_codice_sconto_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_diff.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_diff.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_add_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_add_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_outlook.jpg.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\outlook.jpg"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_off_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_off_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_add_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_add_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_linkedin.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\linkedin.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_prodotto_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_prodotto_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_off_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_off_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_image.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_image.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_cactus_dino.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\cactus_dino.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_registrazione.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_registrazione.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_add.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_add.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_user_profile.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_diff_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_diff_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_diff.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_diff.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_invita.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\invita.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_add.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_add.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_dettaglio_scontrini.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_dettaglio_scontrini.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility.png"
+        "merged": "com.example.greenmarket.app-debug-71:/layout_activity_login.xml.flat",
+        "source": "com.example.greenmarket.app-main-73:/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_add_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_add_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_add_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_add_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_splash.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_user_profile_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_user_profile_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_ricetta_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_ricetta_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_prodotti_home.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_prodotti_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_term_cond.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\term_cond.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_off.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_add.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_add.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_add.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_add.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\navigation_mobile_navigation.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\navigation\\mobile_navigation.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_storico.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\storico.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_off_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_off_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_off_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_off_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_add.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_add.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_dettaglio_scontrino_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_dettaglio_scontrino_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_chi_siamo.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_chi_siamo.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_off_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_off_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_off.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_off_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_off_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_user_profile.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_user_profile.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_dettaglio_scontrini.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_dettaglio_scontrini.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_dettaglio_prodotto.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_dettaglio_prodotto.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_angoli_arrotondati_spinner.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\angoli_arrotondati_spinner.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_user_profile_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_user_profile_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_notifications_black_24dp.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_notifications_black_24dp.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_prodotti_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_prodotti_home.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_angoli_arrotondati_item.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\angoli_arrotondati_item.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_add_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_add_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_user_profile_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_user_profile_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_add_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_add_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_stats.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_stats.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_visibility_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_visibility_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_user_profile.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_user_profile.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_ricerca.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_ricerca.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_bird_dino.jpg.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\bird_dino.jpg"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_diff_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_diff_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_conferma_ordine.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_conferma_ordine.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_diff_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_diff_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_add_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_add_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_git.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\git.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_diff_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_diff_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_diff_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_diff_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_visibility_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_visibility_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_angoli_arrotondati_spinner.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\angoli_arrotondati_spinner.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_dettaglio_scontrino_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_dettaglio_scontrino_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_add_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_add_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_off_adaptive_fore.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_off_adaptive_fore.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_activity_chi_siamo.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\activity_chi_siamo.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_stats.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_stats.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_visibility.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_visibility.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_user_profile.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_user_profile.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_donazione.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\donazione.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout-v26_item_tc_view.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout-v26\\item_tc_view.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_fragment_no_internet.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\fragment_no_internet.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_storico.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_storico.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_no_internet.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_no_internet.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_chi_siamo.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\chi_siamo.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_add.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_add.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_visibility_off.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-anydpi-v26_ic_user_profile.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-anydpi-v26\\ic_user_profile.xml"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_diff_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_diff_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_item_altro_view.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\item_altro_view.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_user_profile_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_user_profile_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility_off.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_domenico.jpg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\domenico.jpg"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_add_adaptive_fore.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_add_adaptive_fore.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\drawable_linkedin.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\drawable\\linkedin.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-hdpi_ic_visibility_adaptive_back.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-hdpi\\ic_visibility_adaptive_back.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xhdpi_ic_diff.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xhdpi\\ic_diff.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-mdpi_ic_visibility.png.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-mdpi\\ic_visibility.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_user_profile_adaptive_back.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_user_profile_adaptive_back.png"
     },
     {
-        "merged": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\izzig\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-debug-71:\\mipmap-xxxhdpi_ic_diff.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.6\\com.example.greenmarket.app-main-73:\\mipmap-xxxhdpi\\ic_diff.png"
     }
 ]
