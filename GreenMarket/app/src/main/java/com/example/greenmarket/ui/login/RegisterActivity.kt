@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
@@ -141,6 +142,9 @@ class RegisterActivity : AppCompatActivity() {
                                         val limoni = ProdottoInStatsModel("Limoni", 0f)
                                         val arance = ProdottoInStatsModel("Arance", 0f)
                                         val patate = ProdottoInStatsModel("Patate", 0f)
+                                        val peperoni = ProdottoInStatsModel("Peperoni", 0f)
+                                        val fragole = ProdottoInStatsModel("Fragole", 0f)
+                                        val cicorie = ProdottoInStatsModel("Cicorie", 0f)
 
                                         val prodottiStats = mapOf(
                                             "Mele" to mele.quantitaTot,
@@ -152,8 +156,10 @@ class RegisterActivity : AppCompatActivity() {
                                             "Spinaci" to spinaci.quantitaTot,
                                             "Limoni" to limoni.quantitaTot,
                                             "Arance" to arance.quantitaTot,
-                                            "Patate" to patate.quantitaTot
-
+                                            "Patate" to patate.quantitaTot,
+                                            "Peperoni" to peperoni.quantitaTot,
+                                            "Fragole" to fragole.quantitaTot,
+                                            "Cicorie" to cicorie.quantitaTot
                                         )
 
                                         val coupons = mutableListOf<String>()

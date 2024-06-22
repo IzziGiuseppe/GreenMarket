@@ -14,8 +14,11 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenmarket.InternetTest
 import com.example.greenmarket.R
+import com.example.greenmarket.ui.lista_spesa.ListaSpesaListAdapter
 import com.example.greenmarket.ui.lista_spesa.ListaSpesaViewModel
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -118,8 +121,6 @@ class ConfermaOrdineActivity : AppCompatActivity() {
             }else{
                 iT.toast(this)
             }
-
         }
-
     }
 }
