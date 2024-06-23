@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -56,6 +57,9 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
   public final LinearLayout linearLayout4;
 
   @NonNull
+  public final ProgressBar progressBarProfilo;
+
+  @NonNull
   public final TextView textViewEliminaAccount;
 
   @NonNull
@@ -75,9 +79,10 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
       @NonNull EditText editTextCognomeUP, @NonNull EditText editTextIndirizzoUP,
       @NonNull EditText editTextNomeUP, @NonNull FloatingActionButton floatingActionButtonModFoto,
       @NonNull ImageView imageViewProfile, @NonNull LinearLayout linearLayout14,
-      @NonNull LinearLayout linearLayout4, @NonNull TextView textViewEliminaAccount,
-      @NonNull TextView textViewLogout, @NonNull TextView titleCognome,
-      @NonNull TextView titleIndirizzoProfilo, @NonNull TextView titleNome) {
+      @NonNull LinearLayout linearLayout4, @NonNull ProgressBar progressBarProfilo,
+      @NonNull TextView textViewEliminaAccount, @NonNull TextView textViewLogout,
+      @NonNull TextView titleCognome, @NonNull TextView titleIndirizzoProfilo,
+      @NonNull TextView titleNome) {
     this.rootView = rootView;
     this.buttonCancel = buttonCancel;
     this.buttonSave = buttonSave;
@@ -89,6 +94,7 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
     this.imageViewProfile = imageViewProfile;
     this.linearLayout14 = linearLayout14;
     this.linearLayout4 = linearLayout4;
+    this.progressBarProfilo = progressBarProfilo;
     this.textViewEliminaAccount = textViewEliminaAccount;
     this.textViewLogout = textViewLogout;
     this.titleCognome = titleCognome;
@@ -183,6 +189,12 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar_profilo;
+      ProgressBar progressBarProfilo = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarProfilo == null) {
+        break missingId;
+      }
+
       id = R.id.textViewEliminaAccount;
       TextView textViewEliminaAccount = ViewBindings.findChildViewById(rootView, id);
       if (textViewEliminaAccount == null) {
@@ -216,7 +228,8 @@ public final class ActivityProfiloUtenteBinding implements ViewBinding {
       return new ActivityProfiloUtenteBinding((ScrollView) rootView, buttonCancel, buttonSave,
           cardImageProfilo, editTextCognomeUP, editTextIndirizzoUP, editTextNomeUP,
           floatingActionButtonModFoto, imageViewProfile, linearLayout14, linearLayout4,
-          textViewEliminaAccount, textViewLogout, titleCognome, titleIndirizzoProfilo, titleNome);
+          progressBarProfilo, textViewEliminaAccount, textViewLogout, titleCognome,
+          titleIndirizzoProfilo, titleNome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

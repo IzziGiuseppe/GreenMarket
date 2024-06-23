@@ -61,6 +61,7 @@ id buttonDona
 id buttonRegister
 id buttonResetPass
 id buttonSave
+id buttonSearchRicetta
 id buttonUP
 id cactus_dino
 id cardView
@@ -183,6 +184,8 @@ id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto
 id progressBar_login
+id progressBar_profilo
+id progressBar_registrazione
 id punti
 id quantita_prod_dett_scontrino
 id quantita_prod_lista_spesa

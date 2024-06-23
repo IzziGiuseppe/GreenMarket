@@ -38,6 +38,8 @@ class RegisterActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        val progressBar = binding.progressBarRegistrazione
+
         val name = binding.editTextNome
         val surname = binding.editTextCognome
         val address = binding.editTextIndirizzo
@@ -106,6 +108,10 @@ class RegisterActivity : AppCompatActivity() {
                     && isConfirmPasswordValid){
                     if(password.text.toString() == confirmPassword.text.toString()){
                         if(binding.checkBox.isChecked){
+
+                            binding.buttonRegister.visibility = View.GONE
+                            progressBar.visibility = View.VISIBLE
+
                             firebaseAuth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                                 .addOnSuccessListener {
                                     val userID = firebaseAuth.currentUser?.uid
@@ -188,27 +194,39 @@ class RegisterActivity : AppCompatActivity() {
                                                                                 startActivity(intent)
                                                                             }
                                                                             .addOnFailureListener{
+                                                                                binding.buttonRegister.visibility = View.VISIBLE
+                                                                                binding.progressBarRegistrazione.visibility = View.GONE
                                                                                 Toast.makeText(this, "Errore durante la creazione delle statistiche", Toast.LENGTH_SHORT).show()
                                                                             }
                                                                     }
                                                                     .addOnFailureListener{
+                                                                        binding.buttonRegister.visibility = View.VISIBLE
+                                                                        binding.progressBarRegistrazione.visibility = View.GONE
                                                                         Toast.makeText(this, "Errore durante la creazione dei coupon", Toast.LENGTH_SHORT).show()
                                                                     }
                                                             }
                                                             .addOnFailureListener{
+                                                                binding.buttonRegister.visibility = View.VISIBLE
+                                                                binding.progressBarRegistrazione.visibility = View.GONE
                                                                 Toast.makeText(this, "Errore durante la creazione della tessera a punti", Toast.LENGTH_SHORT).show()
                                                             }
                                                     }
                                                     .addOnFailureListener{
+                                                        binding.buttonRegister.visibility = View.VISIBLE
+                                                        binding.progressBarRegistrazione.visibility = View.GONE
                                                         Toast.makeText(this, "Errore durante la creazione della lista della spesa", Toast.LENGTH_SHORT).show()
                                                     }
                                             }
                                             .addOnFailureListener{
+                                                binding.buttonRegister.visibility = View.VISIBLE
+                                                binding.progressBarRegistrazione.visibility = View.GONE
                                                 Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
                                             }
                                     }
                                 }
                                 .addOnFailureListener{
+                                    binding.buttonRegister.visibility = View.VISIBLE
+                                    binding.progressBarRegistrazione.visibility = View.GONE
                                     Toast.makeText(this, "Errore durante la registrazione", Toast.LENGTH_SHORT).show()
                                 }
                         }else{
