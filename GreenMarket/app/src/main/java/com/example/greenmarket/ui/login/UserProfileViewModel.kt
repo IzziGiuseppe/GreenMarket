@@ -50,6 +50,9 @@ class UserProfileViewModel(application: Application) : AndroidViewModel(applicat
     private val _updatePhotoSuccess = MutableLiveData<Boolean>()
     val updatePhotoSuccess: LiveData<Boolean> get() = _updatePhotoSuccess
 
+    private val _deleteAccountSuccess = MutableLiveData<Boolean>()
+    val deleteAccountSuccess: LiveData<Boolean> get() = _deleteAccountSuccess
+
     private val _nomeUtente = MutableLiveData<String>()
     val nomeUtente: LiveData<String> get() = _nomeUtente
 
@@ -205,6 +208,25 @@ class UserProfileViewModel(application: Application) : AndroidViewModel(applicat
             .addOnFailureListener {
                 _putFileSuccess.value = false
             }
+    }
+
+    //Funzione per eliminare un'account utente dal db Firestore
+    fun deleteAccount(){
+        currentUser?.let {currentUser ->
+            Log.d("ViewModel", "APPENA DENTRO IL METODO")
+            db.collection("users").document(currentUser.uid).delete()
+                .addOnSuccessListener {userData ->
+                    Log.d("ViewModel", "DATI UTENTE ELIMINATI")
+                    currentUser.delete()
+                        .addOnSuccessListener {
+                            _deleteAccountSuccess.value = true
+                            Log.d("ViewModel", "EMAIL E PASS ELIMINATE")
+                        }
+                        .addOnFailureListener {
+                            _deleteAccountSuccess.value = false
+                        }
+                }
+        }
     }
 
     //Funzione che calcola l'hash di un'array di byte

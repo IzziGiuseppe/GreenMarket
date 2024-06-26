@@ -163,155 +163,12 @@ class UserProfileActivity : AppCompatActivity() {
         //Elimina un'account utente dal db Firestore
         binding.textViewEliminaAccount.setOnClickListener{
             if (iT.isInternetAvailable(this)) {
+                Log.d("Acitvity", "AVVIO METODO")
                 showDeleteAccountConfirmationDialog()
             }else{
                 iT.toast(this)
             }
         }
-    }
-
-
-    //Funzione per aggiornare i dati nel db Firestore
-    private fun saveData(name: EditText, surname: EditText, address: EditText) {
-        name.addTextChangedListener(createTextWatcher { validateInputField(name) })
-        surname.addTextChangedListener(createTextWatcher { validateInputField(surname) })
-        address.addTextChangedListener(createTextWatcher { validateAddress(address) })
-
-        val isFirstNameValid = validateInputField(name)
-        val isLastNameValid = validateInputField(surname)
-        val isAddressValid = validateAddress(address)
-
-        currentUser?.let { user ->
-            val updates = mutableMapOf<String, Any>()
-            updates.clear()
-            originalData?.let { original ->
-                if (original["nome"] != name.text.toString() && isFirstNameValid) {
-                    updates["nome"] = name.text.toString()
-                }
-                if (original["cognome"] != surname.text.toString() && isLastNameValid) {
-                    updates["cognome"] = surname.text.toString()
-                }
-                if (original["indirizzo"] != address.text.toString() && isAddressValid) {
-                    updates["indirizzo"] = address.text.toString()
-                }
-            }
-
-            originalData?.let { original ->
-                if (original["nome"] != name.text.toString() || original["cognome"] != surname.text.toString() || original["indirizzo"] != address.text.toString()) {
-                    db.collection("users").document(user.uid).update(updates)
-                        .addOnSuccessListener {
-                            db.collection("users").document(user.uid).get()
-                                .addOnSuccessListener {document->
-                                    originalData = document.data
-                                }
-                            homeViewModel.setNome(name.text.toString())
-                            Toast.makeText(this, "Dati anagrafici aggiornati con successo", Toast.LENGTH_SHORT).show()
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this, "Errore nell'aggiornamento dei dati anagrafici", Toast.LENGTH_SHORT).show()
-                        }
-                } else {
-                    Toast.makeText(this, "Nessun dato anagrafico da aggiornare", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            uri?.let { imageUri ->
-                CoroutineScope(Dispatchers.IO).launch {
-                    try {
-                        val newImageStream = contentResolver.openInputStream(imageUri)
-                        val newImageHash = newImageStream?.use { stream -> getHash(stream.readBytes()) }
-
-                        if (newImageHash == null) {
-                            withContext(Dispatchers.Main) {
-                                Toast.makeText(this@UserProfileActivity, "Errore nel calcolo dell'hash della nuova immagine", Toast.LENGTH_SHORT).show()
-                            }
-                            return@launch
-                        }
-
-                        db.collection("users").document(user.uid).get()
-                            .addOnSuccessListener { document ->
-                                CoroutineScope(Dispatchers.IO).launch {
-                                    val currentImageUrl = document.getString("foto")
-                                    if (currentImageUrl != null) {
-                                        val currentImageHash = URL(currentImageUrl).openStream().use { inputStream ->
-                                            getHash(inputStream.readBytes())
-                                        }
-                                        if (newImageHash != currentImageHash) {
-                                            withContext(Dispatchers.Main) {
-                                                uploadNewImage(imageUri, user, storageRef, db)
-                                            }
-                                        } else {
-                                            withContext(Dispatchers.Main) {
-                                                Toast.makeText(this@UserProfileActivity, "L'immagine è già presente nel database", Toast.LENGTH_SHORT).show()
-                                            }
-                                        }
-                                    } else {
-                                        withContext(Dispatchers.Main) {
-                                            uploadNewImage(imageUri, user, storageRef, db)
-                                        }
-                                    }
-                                }
-                            }
-                            .addOnFailureListener {
-                                CoroutineScope(Dispatchers.Main).launch {
-                                    Toast.makeText(this@UserProfileActivity, "Errore nel recupero dell'immagine corrente", Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                    } catch (e: Exception) {
-                        withContext(Dispatchers.Main) {
-                            Log.e("UserProfileActivity", "Errore durante il calcolo dell'hash dell'immagine", e)
-                            Toast.makeText(this@UserProfileActivity, "Errore durante il calcolo dell'hash dell'immagine", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    //Funzione per gestire l'inserimento della nuova immagine
-    private fun uploadNewImage(uri: Uri, user: FirebaseUser, storageRef: StorageReference, db: FirebaseFirestore) {
-        binding.linearLayout4.visibility = View.GONE
-        binding.progressBarProfilo.visibility = View.VISIBLE
-
-        val userImageRef = storageRef.child("users/${user.uid}.jpg")
-        userImageRef.putFile(uri)
-            .addOnSuccessListener {
-                userImageRef.downloadUrl
-                    .addOnSuccessListener { url ->
-                        db.collection("users").document(user.uid).update("foto", url.toString())
-                            .addOnSuccessListener {
-                                homeViewModel.setFoto(url.toString())
-                                Toast.makeText(this, "Foto caricata con successo", Toast.LENGTH_SHORT).show()
-                                binding.linearLayout4.visibility = View.VISIBLE
-                                binding.progressBarProfilo.visibility = View.GONE
-                            }
-                            .addOnFailureListener { e ->
-                                Log.e("UserProfileActivity", "Errore nel salvataggio della foto", e)
-                                Toast.makeText(this, "Errore nel salvataggio della foto", Toast.LENGTH_SHORT).show()
-                                binding.linearLayout4.visibility = View.VISIBLE
-                                binding.progressBarProfilo.visibility = View.GONE
-                            }
-                    }
-                    .addOnFailureListener { e ->
-                        Log.e("UserProfileActivity", "Errore nel recupero dell'URL della foto", e)
-                        Toast.makeText(this, "Errore nel recupero dell'URL della foto", Toast.LENGTH_SHORT).show()
-                        binding.linearLayout4.visibility = View.VISIBLE
-                        binding.progressBarProfilo.visibility = View.GONE
-                    }
-            }
-            .addOnFailureListener { e ->
-                Log.e("UserProfileActivity", "Errore nel caricamento della foto", e)
-                Toast.makeText(this, "Errore nel caricamento della foto", Toast.LENGTH_SHORT).show()
-                binding.linearLayout4.visibility = View.VISIBLE
-                binding.progressBarProfilo.visibility = View.GONE
-            }
-    }
-
-    //Funzione che calcola l'hash di un'array di byte
-    private fun getHash(bytes: ByteArray): String {
-        val digest = MessageDigest.getInstance("SHA-256")
-        val hashBytes = digest.digest(bytes)
-        return hashBytes.joinToString("") { "%02x".format(it) }
     }
 
     //Funzione per ripristinare i dati nel db Firestore
@@ -320,22 +177,6 @@ class UserProfileActivity : AppCompatActivity() {
             binding.editTextNomeUP.setText(it["nome"] as String)
             binding.editTextCognomeUP.setText(it["cognome"] as String)
             binding.editTextIndirizzoUP.setText(it["indirizzo"] as String)
-        }
-    }
-
-    //Funzione per eliminare un'account utente dal db Firestore
-    private fun deleteAccount(){
-        currentUser?.let {it ->
-            db.collection("users").document(it.uid).delete()
-                .addOnSuccessListener {userData ->
-                    it.delete()
-                        .addOnSuccessListener {
-                            Toast.makeText(this, "Utente eliminato con successo", Toast.LENGTH_SHORT).show()
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this, "Errore durante l'eliminazione dell'utente", Toast.LENGTH_SHORT).show()
-                        }
-                }
         }
     }
 
@@ -362,66 +203,32 @@ class UserProfileActivity : AppCompatActivity() {
 
     //Funzione che mostra un messaggio di alert in fase di eliminazione dell'account
     private fun showDeleteAccountConfirmationDialog() {
+        Log.d("Acitvity", "DENTRO IL METODO")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Conferma Eliminazione Account")
         builder.setMessage("Sei sicuro di voler eliminare l'account?")
 
         builder.setPositiveButton("Sì") { _, _ ->
-            deleteAccount()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+            Log.d("Acitvity", "APPENA ENTRATI NEL METODO")
 
-        builder.setNegativeButton("No") { dialog, _ ->
-            dialog.dismiss()
-        }
-
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
-
-    private fun createTextWatcher(validationFunction: () -> Boolean): TextWatcher {
-        return object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun afterTextChanged(s: Editable?) {
-                validationFunction()
+            userProfileViewModel.deleteAccount()
+            userProfileViewModel.deleteAccountSuccess.observe(this) { deleteAccountSuccess ->
+                if (deleteAccountSuccess) {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    Toast.makeText(this, "Account eliminato con successo", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, "Errore nell'eliminazione dell'account", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-    }
 
-    //Funzione che verifica se il nome inserito è valido
-    private fun validateInputField(editText: EditText): Boolean {
-        val inputField = editText.text.toString().trim()
-        return if (inputField.isEmpty()) {
-            editText.error = "Questo campo è obbligatorio"
-            false
-        } else if (!inputField.matches(Regex("^[A-Za-zàèéìòù'\\s]+$"))) {
-            editText.error = "Campo non valido"
-            false
-        } else if (inputField.length > 30) {
-            editText.error = "Il campo può contenere al massimo 30 caratteri"
-            false
-        } else {
-            true
-        }
-    }
+            builder.setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
 
-    //Funzione che verifica se l'indirizzo inserito è valido
-    private fun validateAddress(editText: EditText): Boolean {
-        val address = editText.text.toString().trim()
-        return if (address.isEmpty()) {
-            editText.error = "Questo campo è obbligatorio"
-            false
-        }else if (!address.matches(Regex("^[A-Za-zàèéìòù0-9,.'\\s]+$"))) {
-            editText.error = "Campo non valido"
-            false
-        } else if(address.length > 30){
-            editText.error = "Il campo può contenere al massimo 30 caratteri"
-            false
-        } else{
-            true
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
-    }
 }
