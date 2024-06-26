@@ -4,7 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.db.model.ListaDellaSpesaModel
+import com.example.greenmarket.db.model.ProdottoInListaModel
+import com.example.greenmarket.db.model.ProdottoModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal

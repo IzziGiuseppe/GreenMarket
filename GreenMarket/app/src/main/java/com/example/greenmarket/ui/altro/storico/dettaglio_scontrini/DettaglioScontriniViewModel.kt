@@ -3,10 +3,7 @@ package com.example.greenmarket.ui.altro.storico.dettaglio_scontrini
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.greenmarket.db.model.ComposizioneScontrini
-import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
-import com.google.firebase.firestore.FirebaseFirestore
-import java.sql.Timestamp
+import com.example.greenmarket.db.model.ProdottoInListaModel
 
 class DettaglioScontriniViewModel : ViewModel() {
 

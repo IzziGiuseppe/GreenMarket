@@ -5,13 +5,9 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.greenmarket.db.model.Scontrino
 import com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.ScontrinoModel
-import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
-import com.example.greenmarket.ui.ricerca.ProdottoModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import java.sql.Timestamp
 
 class StoricoViewModel(application: Application): AndroidViewModel(application) {
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()

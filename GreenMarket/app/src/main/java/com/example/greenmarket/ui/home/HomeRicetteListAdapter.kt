@@ -9,11 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.Prodotto
-import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
-import com.example.greenmarket.ui.ricettario.RicettaModel
-import kotlinx.coroutines.currentCoroutineContext
-import kotlinx.coroutines.withContext
+import com.example.greenmarket.db.model.RicettaModel
 
 class HomeRicetteListAdapter(
     private val itemClickListener: (RicettaModel) -> Unit

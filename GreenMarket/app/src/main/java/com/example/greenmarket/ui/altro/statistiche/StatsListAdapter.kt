@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.Prodotto
-import com.example.greenmarket.db.model.Scontrino
+import com.example.greenmarket.db.model.ProdottoInStatsModel
 
 class StatsListAdapter(): RecyclerView.Adapter<StatsListAdapter.MyViewHolder>() {
 

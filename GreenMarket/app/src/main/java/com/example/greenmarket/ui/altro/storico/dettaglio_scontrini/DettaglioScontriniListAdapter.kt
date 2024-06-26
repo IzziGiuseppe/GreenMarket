@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.ComposizioneScontrini
-import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
+import com.example.greenmarket.db.model.ProdottoInListaModel
 
 class DettaglioScontriniListAdapter(): RecyclerView.Adapter<DettaglioScontriniListAdapter.MyViewHolder>() {
 

@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.greenmarket.db.model.ProdottoModel
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Locale
 

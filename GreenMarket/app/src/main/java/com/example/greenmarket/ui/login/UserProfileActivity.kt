@@ -38,6 +38,7 @@ class UserProfileActivity : AppCompatActivity() {
     private var originalData: Map<String, Any>? = null
     private var storageRef = FirebaseStorage.getInstance().reference
     private var uri: Uri? = null
+    private val userProfileViewModel: UserProfileViewModel by viewModels()
     private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,9 @@ class UserProfileActivity : AppCompatActivity() {
         val surname = binding.editTextCognomeUP
         val address = binding.editTextIndirizzoUP
         val photo = binding.imageViewProfile
+
+
+
 
         //Inizializzazione db Firestore
         db = FirebaseFirestore.getInstance()
@@ -70,31 +74,31 @@ class UserProfileActivity : AppCompatActivity() {
             }
         )
 
-        currentUser?.let {
-            db.collection("users").document(it.uid).get()
-                .addOnSuccessListener {document->
-                    val nome = document.getString("nome")
-                    val cognome = document.getString("cognome")
-                    val indirizzo = document.getString("indirizzo")
-                    val foto = document.getString("foto")
+        //Recupera i dati dal db Firestore
+        userProfileViewModel.loadUserData()
+        userProfileViewModel.nomeUtente.observe(this) {nome->
+            name.setText(nome)
+        }
+        userProfileViewModel.cognomeUtente.observe(this) {cognome->
+            surname.setText(cognome)
+        }
+        userProfileViewModel.indirizzoUtente.observe(this) {indirizzo->
+            address.setText(indirizzo)
+        }
+        userProfileViewModel.fotoUtente.observe(this) {foto->
+            if (!foto.isNullOrEmpty()) {
+                Glide.with(this)
+                    .load(foto)
+                    .into(photo)
+            } else {
+                Toast.makeText(this, "Nessuna immagine trovata per l'utente", Toast.LENGTH_SHORT).show()
+            }
+        }
 
-                    // Aggiorna le EditText con i dati recuperati
-                    name.setText(nome)
-                    surname.setText(cognome)
-                    address.setText(indirizzo)
-                    if (!foto.isNullOrEmpty()) {
-                        Glide.with(this)
-                            .load(foto)
-                            .into(photo)
-                    } else {
-                        Toast.makeText(this, "Nessuna immagine trovata per l'utente", Toast.LENGTH_SHORT).show()
-                    }
-                    originalData = document.data
-                }
-                .addOnFailureListener {
-                    // Gestisci l'errore
-                    Toast.makeText(this, "Errore nel caricamneto dei dati", Toast.LENGTH_SHORT).show()
-                }
+        userProfileViewModel.loadUserDataSuccess.observe(this){loadSuccess->
+            if (!loadSuccess){
+                Toast.makeText(this, "Errore nel caricamneto dei dati", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Listener per la scelta dell'immagine
@@ -110,7 +114,37 @@ class UserProfileActivity : AppCompatActivity() {
         //Modifica i dati nel db Firestore
         binding.buttonSave.setOnClickListener {
             if (iT.isInternetAvailable(this)) {
-                saveData(name, surname, address)
+                userProfileViewModel.saveData(name, surname, address, uri, contentResolver)
+                userProfileViewModel.uploadUserDataSuccess.observe(this){uploadSuccess->
+                    if(uploadSuccess){
+                        homeViewModel.setNome(name.text.toString())
+                        //Poco chiaro perchè venga chiamato più volte il Toast
+                        Toast.makeText(this, "Dati anagrafici aggiornati con successo", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this, "Errore nell'aggiornamento dei dati anagrafici", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                userProfileViewModel.putFileSuccess.observe(this){putFileSuccess->
+                    if(putFileSuccess){
+                        userProfileViewModel.downloadUrlSuccess.observe(this){downloadUrlSuccess->
+                            if(downloadUrlSuccess){
+                                userProfileViewModel.updatePhotoSuccess.observe(this) { updatePhotoSuccess ->
+                                    if (updatePhotoSuccess) {
+                                        homeViewModel.setFoto(userProfileViewModel.urlFotoUtente.value.toString())
+                                        Toast.makeText(this, "Foto caricata con successo", Toast.LENGTH_SHORT).show()
+                                    }else{
+                                        Toast.makeText(this, "Errore nel salvataggio della foto", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }else{
+                                Toast.makeText(this, "Errore nel recupero dell'URL della foto", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }else{
+                        Toast.makeText(this, "Errore nel caricamento della foto", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
             }else{
                 iT.toast(this)
             }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.CodiceSconto
 
 class CodiciScontoListAdapter(
 ): RecyclerView.Adapter<CodiciScontoListAdapter.MyViewHolder>() {

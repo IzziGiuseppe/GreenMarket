@@ -8,7 +8,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.greenmarket.databinding.ActivityMainBinding
-import com.example.greenmarket.db.GMDatabase
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
-
-        GMDatabase.populateDatabase(this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
