@@ -4,6 +4,7 @@ package com.example.greenmarket.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -24,6 +25,22 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout activityDr;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-v26/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final Button buttonSearchRicetta;
 
   /**
    * This binding is not available in all configurations.
@@ -112,12 +129,14 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
   public final View view;
 
   private ActivityDettaglioRicettaBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout activityDr, @Nullable CardView cardImageRicetta,
-      @NonNull TextView descrizioneRicetta, @Nullable TextView descrizioneTitle,
-      @Nullable ImageView fotoRicetta, @NonNull TextView nomeRicetta,
-      @Nullable ScrollView scroolViewDescrizione, @Nullable View view) {
+      @NonNull ConstraintLayout activityDr, @Nullable Button buttonSearchRicetta,
+      @Nullable CardView cardImageRicetta, @NonNull TextView descrizioneRicetta,
+      @Nullable TextView descrizioneTitle, @Nullable ImageView fotoRicetta,
+      @NonNull TextView nomeRicetta, @Nullable ScrollView scroolViewDescrizione,
+      @Nullable View view) {
     this.rootView = rootView;
     this.activityDr = activityDr;
+    this.buttonSearchRicetta = buttonSearchRicetta;
     this.cardImageRicetta = cardImageRicetta;
     this.descrizioneRicetta = descrizioneRicetta;
     this.descrizioneTitle = descrizioneTitle;
@@ -156,6 +175,9 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
     missingId: {
       ConstraintLayout activityDr = (ConstraintLayout) rootView;
 
+      id = R.id.buttonSearchRicetta;
+      Button buttonSearchRicetta = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.card_image_ricetta;
       CardView cardImageRicetta = ViewBindings.findChildViewById(rootView, id);
 
@@ -184,8 +206,8 @@ public final class ActivityDettaglioRicettaBinding implements ViewBinding {
       View view = ViewBindings.findChildViewById(rootView, id);
 
       return new ActivityDettaglioRicettaBinding((ConstraintLayout) rootView, activityDr,
-          cardImageRicetta, descrizioneRicetta, descrizioneTitle, fotoRicetta, nomeRicetta,
-          scroolViewDescrizione, view);
+          buttonSearchRicetta, cardImageRicetta, descrizioneRicetta, descrizioneTitle, fotoRicetta,
+          nomeRicetta, scroolViewDescrizione, view);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

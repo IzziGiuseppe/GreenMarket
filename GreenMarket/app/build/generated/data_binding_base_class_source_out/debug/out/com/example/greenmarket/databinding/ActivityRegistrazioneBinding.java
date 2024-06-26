@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -55,6 +56,9 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
   public final LinearLayout linearLayout5;
 
   @NonNull
+  public final ProgressBar progressBarRegistrazione;
+
+  @NonNull
   public final TextView textViewAccedi;
 
   @NonNull
@@ -96,12 +100,12 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
       @NonNull EditText editTextConfirmPassword, @NonNull EditText editTextEmail,
       @NonNull EditText editTextIndirizzo, @NonNull EditText editTextNome,
       @NonNull EditText editTextPassword, @NonNull LinearLayout linearLayout5,
-      @NonNull TextView textViewAccedi, @NonNull TextView textViewAccount,
-      @NonNull TextView textViewCognome, @NonNull TextView textViewConfirmPassword,
-      @NonNull TextView textViewEmail, @NonNull TextView textViewIndirizzo,
-      @NonNull TextView textViewNome, @NonNull TextView textViewPassword,
-      @NonNull TextView textViewRegister, @NonNull TextView textViewTerminiCondizioni,
-      @NonNull ImageView toggleConfPassVisibilityReg,
+      @NonNull ProgressBar progressBarRegistrazione, @NonNull TextView textViewAccedi,
+      @NonNull TextView textViewAccount, @NonNull TextView textViewCognome,
+      @NonNull TextView textViewConfirmPassword, @NonNull TextView textViewEmail,
+      @NonNull TextView textViewIndirizzo, @NonNull TextView textViewNome,
+      @NonNull TextView textViewPassword, @NonNull TextView textViewRegister,
+      @NonNull TextView textViewTerminiCondizioni, @NonNull ImageView toggleConfPassVisibilityReg,
       @NonNull ImageView togglePasswordVisibilityReg) {
     this.rootView = rootView;
     this.LinearLayoutRegistrazione = LinearLayoutRegistrazione;
@@ -114,6 +118,7 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
     this.editTextNome = editTextNome;
     this.editTextPassword = editTextPassword;
     this.linearLayout5 = linearLayout5;
+    this.progressBarRegistrazione = progressBarRegistrazione;
     this.textViewAccedi = textViewAccedi;
     this.textViewAccount = textViewAccount;
     this.textViewCognome = textViewCognome;
@@ -215,6 +220,12 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar_registrazione;
+      ProgressBar progressBarRegistrazione = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarRegistrazione == null) {
+        break missingId;
+      }
+
       id = R.id.textViewAccedi;
       TextView textViewAccedi = ViewBindings.findChildViewById(rootView, id);
       if (textViewAccedi == null) {
@@ -289,10 +300,11 @@ public final class ActivityRegistrazioneBinding implements ViewBinding {
 
       return new ActivityRegistrazioneBinding((ScrollView) rootView, LinearLayoutRegistrazione,
           buttonRegister, checkBox, editTextCognome, editTextConfirmPassword, editTextEmail,
-          editTextIndirizzo, editTextNome, editTextPassword, linearLayout5, textViewAccedi,
-          textViewAccount, textViewCognome, textViewConfirmPassword, textViewEmail,
-          textViewIndirizzo, textViewNome, textViewPassword, textViewRegister,
-          textViewTerminiCondizioni, toggleConfPassVisibilityReg, togglePasswordVisibilityReg);
+          editTextIndirizzo, editTextNome, editTextPassword, linearLayout5,
+          progressBarRegistrazione, textViewAccedi, textViewAccount, textViewCognome,
+          textViewConfirmPassword, textViewEmail, textViewIndirizzo, textViewNome, textViewPassword,
+          textViewRegister, textViewTerminiCondizioni, toggleConfPassVisibilityReg,
+          togglePasswordVisibilityReg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

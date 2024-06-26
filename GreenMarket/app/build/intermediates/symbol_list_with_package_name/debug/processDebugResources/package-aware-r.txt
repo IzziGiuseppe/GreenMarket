@@ -3384,6 +3384,7 @@ id buttonPanel
 id buttonRegister
 id buttonResetPass
 id buttonSave
+id buttonSearchRicetta
 id buttonUP
 id cache_measures
 id cactus_dino
@@ -3773,6 +3774,8 @@ id prezzo_totale
 id prezzo_totale_no_sconto
 id prezzo_totale_si_sconto
 id progressBar_login
+id progressBar_profilo
+id progressBar_registrazione
 id progress_circular
 id progress_horizontal
 id punti

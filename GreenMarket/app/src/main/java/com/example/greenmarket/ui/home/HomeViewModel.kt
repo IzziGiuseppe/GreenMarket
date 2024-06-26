@@ -54,7 +54,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     fun readRicetteRandom() {
         dbf.collection("recipes").get()
             .addOnSuccessListener { documents ->
-                _listaRicette.value = documents.toObjects(RicettaModel::class.java).randomElements(2)
+                _listaRicette.value = documents.toObjects(RicettaModel::class.java).randomElements(3)
             }
             .addOnFailureListener { exception ->
                 Log.e("Firebase", "Error getting products", exception)

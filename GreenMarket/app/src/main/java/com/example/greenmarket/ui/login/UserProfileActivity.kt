@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
@@ -269,6 +270,9 @@ class UserProfileActivity : AppCompatActivity() {
 
     //Funzione per gestire l'inserimento della nuova immagine
     private fun uploadNewImage(uri: Uri, user: FirebaseUser, storageRef: StorageReference, db: FirebaseFirestore) {
+        binding.linearLayout4.visibility = View.GONE
+        binding.progressBarProfilo.visibility = View.VISIBLE
+
         val userImageRef = storageRef.child("users/${user.uid}.jpg")
         userImageRef.putFile(uri)
             .addOnSuccessListener {
@@ -278,20 +282,28 @@ class UserProfileActivity : AppCompatActivity() {
                             .addOnSuccessListener {
                                 homeViewModel.setFoto(url.toString())
                                 Toast.makeText(this, "Foto caricata con successo", Toast.LENGTH_SHORT).show()
+                                binding.linearLayout4.visibility = View.VISIBLE
+                                binding.progressBarProfilo.visibility = View.GONE
                             }
                             .addOnFailureListener { e ->
                                 Log.e("UserProfileActivity", "Errore nel salvataggio della foto", e)
                                 Toast.makeText(this, "Errore nel salvataggio della foto", Toast.LENGTH_SHORT).show()
+                                binding.linearLayout4.visibility = View.VISIBLE
+                                binding.progressBarProfilo.visibility = View.GONE
                             }
                     }
                     .addOnFailureListener { e ->
                         Log.e("UserProfileActivity", "Errore nel recupero dell'URL della foto", e)
                         Toast.makeText(this, "Errore nel recupero dell'URL della foto", Toast.LENGTH_SHORT).show()
+                        binding.linearLayout4.visibility = View.VISIBLE
+                        binding.progressBarProfilo.visibility = View.GONE
                     }
             }
             .addOnFailureListener { e ->
                 Log.e("UserProfileActivity", "Errore nel caricamento della foto", e)
                 Toast.makeText(this, "Errore nel caricamento della foto", Toast.LENGTH_SHORT).show()
+                binding.linearLayout4.visibility = View.VISIBLE
+                binding.progressBarProfilo.visibility = View.GONE
             }
     }
 

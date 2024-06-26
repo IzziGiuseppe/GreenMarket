@@ -1,5 +1,6 @@
 package com.example.greenmarket.ui.lista_spesa
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -107,7 +108,19 @@ class ListaSpesaFragment : Fragment() {
             val deleteBT: FloatingActionButton = binding.deleteAll
             deleteBT.setOnClickListener {
                 if (iT.isInternetAvailable(requireContext())) {
-                    listaSpesaViewModel.deleteListaSpesa()
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setTitle("Conferma Eliminazione Lista Spesa")
+                    builder.setMessage("Sei sicuro di voler svuotare il carrello?")
+
+                    builder.setPositiveButton("Sì") { _, _ ->
+                        listaSpesaViewModel.deleteListaSpesa()
+                    }
+                    builder.setNegativeButton("No") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
                 }else{
                     iT.toast(requireContext())
                 }
