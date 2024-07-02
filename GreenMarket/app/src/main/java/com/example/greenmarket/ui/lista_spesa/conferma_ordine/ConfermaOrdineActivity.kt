@@ -104,19 +104,15 @@ class ConfermaOrdineActivity : AppCompatActivity() {
 
         confermaBT.setOnClickListener {
             if(iT.isInternetAvailable(this)){
-                confermaOrdineViewModel.aggiornaSaldo()
-                confermaOrdineViewModel.codice_sconto.observe(this) {
+                //confermaOrdineViewModel.aggiornaSaldo()
+                /*confermaOrdineViewModel.codice_sconto.observe(this) {
                     codiceScontoUtilizzato = it
                     if (codiceScontoUtilizzato != "-") {
                         confermaOrdineViewModel.deleteCodiceSconto(codiceScontoUtilizzato)
                     }
-                }
+                }*/
                 //Implementare la funzione che gestisce la creazione di una scontrino
-                confermaOrdineViewModel.creaScontrino()
-                /*per notificare il cambiamento della lista della
-                spesa e permettere l'aggiornamento dinamico*/
-                //listaSpesaViewModel.deleteListaSpesa()
-                Toast.makeText(this, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
+                confermaOrdineViewModel.creaScontrino(this)
                 finish()
             }else{
                 iT.toast(this)

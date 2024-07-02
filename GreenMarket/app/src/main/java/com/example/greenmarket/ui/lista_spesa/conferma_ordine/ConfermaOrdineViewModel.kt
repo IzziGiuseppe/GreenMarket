@@ -1,6 +1,7 @@
 package com.example.greenmarket.ui.lista_spesa.conferma_ordine
 
 import android.app.Application
+import android.content.Context
 import android.os.Build
 import android.widget.Toast
 import androidx.annotation.OptIn
@@ -113,60 +114,69 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
 
     @OptIn(UnstableApi::class)
     @RequiresApi(Build.VERSION_CODES.O)
-    fun creaScontrino() {
+    fun creaScontrino(c: Context) {
         currentUser.let {
             db.collection("users").document(currentUser?.uid!!).collection("historical")
                 .document("shoppingList").get()
                 .addOnSuccessListener { documents ->
                     _listaSpesa.value = documents.toObject(ListaDellaSpesaModel::class.java)
                     _lista_prodotti.value = _listaSpesa.value?.let { it1 -> listaProdotti(it1.prodotti) }
-                    val dataScontrino = getCurrentDateTime()
-                    val prezzo_scontato: Float
-                    val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
-                    val scontoArrotondato = BigDecimal(sconto.toString()).setScale(2, RoundingMode.HALF_EVEN).toFloat()
-                    if(_codice_sconto.value != "-"){
-                        prezzo_scontato = _prezzo_totale.value?.toFloat()?.minus(scontoArrotondato)!!
-                    }else{
-                        prezzo_scontato = BigDecimal((_prezzo_totale.value?.toFloat()!!).toString())
-                            .setScale(2, RoundingMode.HALF_EVEN).toFloat()
+                    if (_lista_prodotti.value?.isEmpty() == true) {
+                        Toast.makeText(c, "Lista vuota, impossibile proseguire con l'acquisto!", Toast.LENGTH_SHORT).show()
                     }
-                    val nuovoScontrino = hashMapOf(
-                        "data" to dataScontrino,
-                        "valido" to true,
-                        "prodotti" to _listaSpesa.value?.prodotti,
-                        "totale" to BigDecimal(prezzo_scontato.toString())
-                            .setScale(2, RoundingMode.HALF_EVEN).toFloat(),
-                        "codiceSconto" to _codice_sconto.value,
-                        "valoreSconto" to _valore_sconto.value
-                    )
-                    //ciao
+                    else {
+                        aggiornaSaldo()
+                        if (_codice_sconto.value != "-") {
+                            _codice_sconto.value?.let { it1 -> deleteCodiceSconto(it1) }
+                        }
+                        val dataScontrino = getCurrentDateTime()
+                        val prezzo_scontato: Float
+                        val sconto = (_prezzo_totale.value?.toFloat()?.times(5))?.div(100)
+                        val scontoArrotondato = BigDecimal(sconto.toString()).setScale(2, RoundingMode.HALF_EVEN).toFloat()
+                        if(_codice_sconto.value != "-"){
+                            prezzo_scontato = _prezzo_totale.value?.toFloat()?.minus(scontoArrotondato)!!
+                        }else{
+                            prezzo_scontato = BigDecimal((_prezzo_totale.value?.toFloat()!!).toString())
+                                .setScale(2, RoundingMode.HALF_EVEN).toFloat()
+                        }
+                        val nuovoScontrino = hashMapOf(
+                            "data" to dataScontrino,
+                            "valido" to true,
+                            "prodotti" to _listaSpesa.value?.prodotti,
+                            "totale" to BigDecimal(prezzo_scontato.toString())
+                                .setScale(2, RoundingMode.HALF_EVEN).toFloat(),
+                            "codiceSconto" to _codice_sconto.value,
+                            "valoreSconto" to _valore_sconto.value
+                        )
 
-                    if (it != null) {
-                        Log.d("Nuovo scontrino", nuovoScontrino.toString())
-                        db.collection("users").document(it.uid).collection("historical")
-                            .document(dataScontrino).set(nuovoScontrino)
-                            .addOnSuccessListener {
-                                //Gestiamo le statistiche
-                                db.collection("users").document(currentUser.uid).collection("stats").document("top_selling_products").get()
-                                    .addOnSuccessListener { document->
-                                        val prodottiMap = document.data
-                                        if (prodottiMap != null) {
-                                            for(prodotto in _lista_prodotti.value!!){
-                                                for((key, value) in prodottiMap){
-                                                    if (key == prodotto.nome && value is Number) {
-                                                        var floatValue = value.toFloat()
-                                                        floatValue += prodotto.quantita
-                                                        db.collection("users").document(currentUser.uid).collection("stats").document("top_selling_products").update(prodotto.nome, floatValue)
+                        if (it != null) {
+                            Log.d("Nuovo scontrino", nuovoScontrino.toString())
+                            db.collection("users").document(it.uid).collection("historical")
+                                .document(dataScontrino).set(nuovoScontrino)
+                                .addOnSuccessListener {
+                                    //Gestiamo le statistiche
+                                    db.collection("users").document(currentUser.uid).collection("stats").document("top_selling_products").get()
+                                        .addOnSuccessListener { document->
+                                            val prodottiMap = document.data
+                                            if (prodottiMap != null) {
+                                                for(prodotto in _lista_prodotti.value!!){
+                                                    for((key, value) in prodottiMap){
+                                                        if (key == prodotto.nome && value is Number) {
+                                                            var floatValue = value.toFloat()
+                                                            floatValue += prodotto.quantita
+                                                            db.collection("users").document(currentUser.uid).collection("stats").document("top_selling_products").update(prodotto.nome, floatValue)
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                    }
-                                deleteListaSpesa()
-                            }
-                            .addOnFailureListener{
-                                Toast.makeText(getApplication(), "Errore durante lo svuotamente della lista della spesa", Toast.LENGTH_SHORT).show()
-                            }
+                                    deleteListaSpesa()
+                                    Toast.makeText(c, "Acquisto effettuato con successo", Toast.LENGTH_SHORT).show()
+                                }
+                                .addOnFailureListener{
+                                    Toast.makeText(getApplication(), "Errore durante lo svuotamente della lista della spesa", Toast.LENGTH_SHORT).show()
+                                }
+                        }
                     }
                 }
         }
