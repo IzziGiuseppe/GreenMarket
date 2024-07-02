@@ -11,9 +11,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
-import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiModel
-import com.example.greenmarket.ui.lista_spesa.ListaDellaSpesaModel
-import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
+import com.example.greenmarket.db.model.TesseraPuntiModel
+import com.example.greenmarket.db.model.ListaDellaSpesaModel
+import com.example.greenmarket.db.model.ProdottoInListaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore

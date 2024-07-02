@@ -6,8 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.greenmarket.db.model.CodiceSconto
-import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.db.model.TesseraPuntiModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal

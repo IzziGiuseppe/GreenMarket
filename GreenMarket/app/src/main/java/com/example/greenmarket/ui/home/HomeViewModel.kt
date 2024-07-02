@@ -10,10 +10,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
-import com.example.greenmarket.db.GMDatabase
-import com.example.greenmarket.db.model.Prodotto
-import com.example.greenmarket.ui.ricerca.ProdottoModel
-import com.example.greenmarket.ui.ricettario.RicettaModel
+import com.example.greenmarket.db.model.ProdottoModel
+import com.example.greenmarket.db.model.RicettaModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +19,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.time.LocalTime
 import java.time.LocalDateTime
-import kotlin.random.Random
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -40,13 +37,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     }
     val orari: LiveData<String> = _orari
 
-    private val db:GMDatabase = GMDatabase.getInstance(application)
-
     private var dbf: FirebaseFirestore = FirebaseFirestore.getInstance()
-
-    private var _prodotto = MutableLiveData(Prodotto("", "", 0f, "", ""))
-    val prodotto: LiveData<Prodotto>
-        get() = _prodotto
 
     private var _listaProdotti = MutableLiveData(listOf<ProdottoModel>())
     val listaProdotti: MutableLiveData<List<ProdottoModel>>
@@ -59,10 +50,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         value = ""
     }
     var status: LiveData<String> = _status
-
-    fun insert(vararg prodotto: Prodotto){
-        db.ProdottoDao().insert(*prodotto)
-    }
 
     fun readRicetteRandom() {
         dbf.collection("recipes").get()

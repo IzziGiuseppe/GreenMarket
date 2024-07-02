@@ -7,9 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
-import com.example.greenmarket.db.GMDatabase
-import com.example.greenmarket.db.model.Prodotto
-import com.example.greenmarket.db.model.Scontrino
+import com.example.greenmarket.db.model.ProdottoInStatsModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

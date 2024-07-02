@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
+import com.example.greenmarket.db.model.ProdottoModel
 
 class RicercaListAdapter(private val itemClickListener: (ProdottoModel) -> Unit): RecyclerView.Adapter<RicercaListAdapter.MyViewHolder>() {
 

@@ -9,9 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.greenmarket.R
-import com.example.greenmarket.db.model.Prodotto
-import com.example.greenmarket.ui.lista_spesa.ProdottoInListaModel
-import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.db.model.ProdottoModel
 
 class HomeProdottiListAdapter(
     private val itemClickListener: (ProdottoModel) -> Unit

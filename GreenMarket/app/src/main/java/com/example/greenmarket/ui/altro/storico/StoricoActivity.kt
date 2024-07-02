@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.common.util.UnstableApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.greenmarket.InternetTest
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.R
 import com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity
 

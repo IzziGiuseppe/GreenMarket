@@ -13,12 +13,12 @@ import androidx.annotation.OptIn
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.media3.common.util.Log
 import androidx.media3.common.util.UnstableApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greenmarket.InternetTest
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.databinding.FragmentListaSpesaBinding
 import com.example.greenmarket.databinding.FragmentNoInternetBinding
+import com.example.greenmarket.db.model.ProdottoInListaModel
 import com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity
 import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton

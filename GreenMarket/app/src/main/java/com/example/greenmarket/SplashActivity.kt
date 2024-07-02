@@ -1,14 +1,13 @@
 package com.example.greenmarket
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.greenmarket.ui.internet.InternetTest
+import com.example.greenmarket.ui.internet.NoInternetActivity
 import com.example.greenmarket.ui.login.LoginActivity
 
 @SuppressLint("CustomSplashScreen")

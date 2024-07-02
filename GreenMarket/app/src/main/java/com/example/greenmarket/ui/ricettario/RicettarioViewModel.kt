@@ -6,10 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.greenmarket.db.GMDatabase
-import com.example.greenmarket.db.model.ProdottiInRicette
-import com.example.greenmarket.db.model.Ricetta
-import com.example.greenmarket.ui.ricerca.ProdottoModel
+import com.example.greenmarket.db.model.RicettaModel
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Locale
 
@@ -18,10 +15,6 @@ class RicettarioViewModel(application: Application) : AndroidViewModel(applicati
 
     private var _ricetta = MutableLiveData<RicettaModel>()
     val ricetta: LiveData<RicettaModel> = _ricetta
-
-    private var _ricettaDettagliata = MutableLiveData(Ricetta("", "", ""))
-    val ricettaDettagliata: LiveData<Ricetta>
-        get() = _ricettaDettagliata
 
     private var _listaRicette = MutableLiveData<List<RicettaModel>>()
     val listaRicette: LiveData<List<RicettaModel>> = _listaRicette

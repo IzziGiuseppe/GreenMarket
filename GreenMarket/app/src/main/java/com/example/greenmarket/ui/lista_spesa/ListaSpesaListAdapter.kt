@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
+import com.example.greenmarket.db.model.ProdottoInListaModel
 
 class ListaSpesaListAdapter(
     private val itemClickListener: (ProdottoInListaModel) -> Unit,

@@ -18,7 +18,6 @@ import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoAc
 class StatsActivity : AppCompatActivity() {
 
     private val statsViewModel: StatsViewModel by viewModels()
-    private val ricercaViewModel: RicercaViewModel by viewModels()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,13 +40,5 @@ class StatsActivity : AppCompatActivity() {
                 prodotto -> adapter.setData(prodotto)
         })
 
-    }
-
-    fun startProdotto(nome: String, descrizione: String, prezzo: Float, foto: String) {
-        val intent = Intent(this, DettaglioProdottoActivity::class.java)
-        intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
-        intent.putExtra("descrizione_prodotto", descrizione)
-        intent.putExtra("foto_prodotto", foto)
-        startActivity(intent)
     }
 }
