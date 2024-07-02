@@ -15,12 +15,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.greenmarket.InternetTest
-import com.example.greenmarket.NoInternetActivity
+import com.example.greenmarket.ui.internet.InternetTest
+import com.example.greenmarket.ui.internet.NoInternetActivity
 import com.example.greenmarket.databinding.FragmentHomeBinding
 import com.example.greenmarket.databinding.FragmentNoInternetBinding
 import com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiActivity
-import com.example.greenmarket.ui.login.UserProfileActivity
+import com.example.greenmarket.ui.login.profilo_utente.UserProfileActivity
 import com.example.greenmarket.ui.ricerca.RicercaViewModel
 import com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity
 import com.example.greenmarket.ui.ricettario.RicettarioViewModel

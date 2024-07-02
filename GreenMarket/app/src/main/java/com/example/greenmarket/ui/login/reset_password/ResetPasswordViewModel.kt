@@ -1,10 +1,9 @@
-package com.example.greenmarket.ui.login
+package com.example.greenmarket.ui.login.reset_password
 
 import android.app.Application
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.greenmarket.InternetTest
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.R
 
 class DettaglioProdottoActivity : AppCompatActivity() {

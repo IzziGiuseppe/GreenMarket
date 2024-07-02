@@ -20,13 +20,7 @@ class TermCondActivity : AppCompatActivity() {
         val termCondViewModel: TermCondViewModel by viewModels()
 
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
         setContentView(R.layout.activity_term_cond)
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
 
         val adapter = TermCondListAdapter()
         val rv = findViewById<RecyclerView>(R.id.rv_tc)
@@ -36,11 +30,5 @@ class TermCondActivity : AppCompatActivity() {
         termCondViewModel.text.observe(this, Observer {
             txt -> adapter.setData(txt)
         })
-
-        /*val testo = findViewById<TextView>(R.id.testo_tc_txt)
-        termCondViewModel.text.observe(this) {
-            testo.text = it
-        }*/
-
     }
 }

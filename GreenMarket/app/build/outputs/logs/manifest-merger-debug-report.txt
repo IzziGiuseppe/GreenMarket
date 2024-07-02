@@ -305,12 +305,12 @@ ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:1
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:18:13-65
-activity#com.example.greenmarket.NoInternetActivity
+activity#com.example.greenmarket.ui.internet.NoInternetActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:22:13-47
+		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:22:13-59
 activity#com.example.greenmarket.ui.altro.chi_siamo.soci.SociActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:24:9-27:81
 	android:parentActivityName
@@ -399,12 +399,12 @@ ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:6
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:68:13-37
 	android:name
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:67:13-64
-activity#com.example.greenmarket.ui.login.ResetPasswordActivity
+activity#com.example.greenmarket.ui.login.reset_password.ResetPasswordActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:70:9-72:40
 	android:exported
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:72:13-37
 	android:name
-		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:71:13-59
+		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:71:13-74
 activity#com.example.greenmarket.SplashActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:73:9-83:20
 	android:label
@@ -431,20 +431,20 @@ ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:8
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:86:13-37
 	android:name
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:85:13-51
-activity#com.example.greenmarket.ui.login.RegisterActivity
+activity#com.example.greenmarket.ui.login.registrazione.RegisterActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:87:9-89:40
 	android:exported
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:89:13-37
 	android:name
-		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:88:13-54
-activity#com.example.greenmarket.ui.login.UserProfileActivity
+		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:88:13-68
+activity#com.example.greenmarket.ui.login.profilo_utente.UserProfileActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:90:9-93:46
 	android:label
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:93:13-43
 	android:exported
 		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:92:13-37
 	android:name
-		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:91:13-57
+		ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:91:13-72
 activity#com.example.greenmarket.MainActivity
 ADDED from C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:94:9-96:39
 	android:exported

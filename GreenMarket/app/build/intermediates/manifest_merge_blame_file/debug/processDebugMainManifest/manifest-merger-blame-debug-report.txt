@@ -94,8 +94,8 @@
 53-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:19:13-39
 54        <activity
 54-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:21:9-23:40
-55            android:name="com.example.greenmarket.NoInternetActivity"
-55-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:22:13-47
+55            android:name="com.example.greenmarket.ui.internet.NoInternetActivity"
+55-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:22:13-59
 56            android:exported="false" />
 56-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:23:13-37
 57        <activity
@@ -190,8 +190,8 @@
 102-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:69:13-38
 103        <activity
 103-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:70:9-72:40
-104            android:name="com.example.greenmarket.ui.login.ResetPasswordActivity"
-104-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:71:13-59
+104            android:name="com.example.greenmarket.ui.login.reset_password.ResetPasswordActivity"
+104-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:71:13-74
 105            android:exported="false" />
 105-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:72:13-37
 106        <activity
@@ -223,14 +223,14 @@
 119-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:86:13-37
 120        <activity
 120-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:87:9-89:40
-121            android:name="com.example.greenmarket.ui.login.RegisterActivity"
-121-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:88:13-54
+121            android:name="com.example.greenmarket.ui.login.registrazione.RegisterActivity"
+121-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:88:13-68
 122            android:exported="false" />
 122-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:89:13-37
 123        <activity
 123-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:90:9-93:46
-124            android:name="com.example.greenmarket.ui.login.UserProfileActivity"
-124-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:91:13-57
+124            android:name="com.example.greenmarket.ui.login.profilo_utente.UserProfileActivity"
+124-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:91:13-72
 125            android:exported="false"
 125-->C:\Users\izzig\EsamePM\GreenMarket\app\src\main\AndroidManifest.xml:92:13-37
 126            android:label="Profilo utente" />

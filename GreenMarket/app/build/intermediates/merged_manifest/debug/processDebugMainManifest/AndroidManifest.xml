@@ -52,7 +52,7 @@
             android:exported="false"
             android:label="Supportaci" />
         <activity
-            android:name="com.example.greenmarket.NoInternetActivity"
+            android:name="com.example.greenmarket.ui.internet.NoInternetActivity"
             android:exported="false" />
         <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.soci.SociActivity"
@@ -101,7 +101,7 @@
             android:exported="false"
             android:label="Chi siamo" />
         <activity
-            android:name="com.example.greenmarket.ui.login.ResetPasswordActivity"
+            android:name="com.example.greenmarket.ui.login.reset_password.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name="com.example.greenmarket.SplashActivity"
@@ -118,10 +118,10 @@
             android:name="com.example.greenmarket.ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.greenmarket.ui.login.RegisterActivity"
+            android:name="com.example.greenmarket.ui.login.registrazione.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.greenmarket.ui.login.UserProfileActivity"
+            android:name="com.example.greenmarket.ui.login.profilo_utente.UserProfileActivity"
             android:exported="false"
             android:label="Profilo utente" />
         <activity

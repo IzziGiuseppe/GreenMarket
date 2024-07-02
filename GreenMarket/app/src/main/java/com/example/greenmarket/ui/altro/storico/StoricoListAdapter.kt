@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenmarket.R
-import com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.ScontrinoModel
+import com.example.greenmarket.db.model.ScontrinoModel
 
 class StoricoListAdapter(
     private val itemClickListener: (ScontrinoModel) -> Unit

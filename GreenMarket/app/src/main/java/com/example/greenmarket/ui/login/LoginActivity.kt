@@ -9,10 +9,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.greenmarket.InternetTest
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.MainActivity
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityLoginBinding
+import com.example.greenmarket.ui.login.registrazione.RegisterActivity
+import com.example.greenmarket.ui.login.reset_password.ResetPasswordActivity
 
 class LoginActivity : AppCompatActivity() {
 

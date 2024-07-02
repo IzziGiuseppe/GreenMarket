@@ -1,19 +1,16 @@
-package com.example.greenmarket.ui.login
+package com.example.greenmarket.ui.login.registrazione
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.text.InputType
-import android.text.TextWatcher
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.greenmarket.InternetTest
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityRegistrazioneBinding
-import com.example.greenmarket.db.model.ProdottoInStatsModel
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
+import com.example.greenmarket.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

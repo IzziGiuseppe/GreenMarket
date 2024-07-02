@@ -11,14 +11,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greenmarket.InternetTest
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.databinding.FragmentAltroBinding
 import com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity
 import com.example.greenmarket.ui.altro.donazioni.DonazioniActivity
 import com.example.greenmarket.ui.altro.statistiche.StatsActivity
 import com.example.greenmarket.ui.altro.storico.StoricoActivity
 import com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity
-import com.example.greenmarket.ui.login.UserProfileActivity
+import com.example.greenmarket.ui.login.profilo_utente.UserProfileActivity
 
 class AltroFragment : Fragment() {
 

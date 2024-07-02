@@ -1,20 +1,16 @@
-package com.example.greenmarket.ui.login
+package com.example.greenmarket.ui.login.profilo_utente
 
 import android.app.Application
 import android.content.ContentResolver
-import android.content.Context
-import android.content.Intent
 import android.net.Uri
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore

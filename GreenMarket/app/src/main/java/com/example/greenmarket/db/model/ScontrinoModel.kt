@@ -1,4 +1,4 @@
-package com.example.greenmarket.ui.altro.storico.dettaglio_scontrini
+package com.example.greenmarket.db.model
 
 import java.sql.Timestamp
 

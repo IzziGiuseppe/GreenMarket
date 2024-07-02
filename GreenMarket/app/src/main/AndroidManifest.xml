@@ -19,7 +19,7 @@
             android:label="Supportaci"
             android:exported="false" />
         <activity
-            android:name=".NoInternetActivity"
+            android:name=".ui.internet.NoInternetActivity"
             android:exported="false" />
         <activity
             android:name=".ui.altro.chi_siamo.soci.SociActivity"
@@ -68,7 +68,7 @@
             android:exported="false"
             android:label="Chi siamo" />
         <activity
-            android:name=".ui.login.ResetPasswordActivity"
+            android:name=".ui.login.reset_password.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
@@ -85,10 +85,10 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.RegisterActivity"
+            android:name=".ui.login.registrazione.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.UserProfileActivity"
+            android:name=".ui.login.profilo_utente.UserProfileActivity"
             android:exported="false"
             android:label="Profilo utente" />
         <activity

@@ -1,4 +1,4 @@
-package com.example.greenmarket
+package com.example.greenmarket.ui.internet
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -22,5 +22,4 @@ class InternetTest()  {
     fun toast(context: Context){
         Toast.makeText(context , "Connessione internet assente", Toast.LENGTH_SHORT).show()
     }
-
 }

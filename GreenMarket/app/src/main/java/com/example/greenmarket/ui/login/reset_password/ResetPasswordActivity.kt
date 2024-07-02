@@ -1,15 +1,12 @@
-package com.example.greenmarket.ui.login
+package com.example.greenmarket.ui.login.reset_password
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityResetPasswordBinding
+import com.example.greenmarket.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class ResetPasswordActivity : AppCompatActivity() {
