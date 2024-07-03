@@ -127,12 +127,23 @@ class UserProfileViewModel(application: Application) : AndroidViewModel(applicat
             }
 
             uri?.let { imageUri ->
+                /*
+                Blocco di codice gestito con le coroutine (task particolarmente oneroso)
+                e per questo inserito all'interno di un CoroutineScope.
+                Dispatchers.IO indica il Thread che si deve occupare di questa operazione.
+                Il metodo launch serve a lanciare la coroutine
+                */
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
                         val newImageStream = contentResolver.openInputStream(imageUri)
                         val newImageHash = newImageStream?.use { stream -> getHash(stream.readBytes()) }
 
                         if (newImageHash == null) {
+                            /*
+                            withContext(Dispatchers.Main) indica che il blocco di codice al suo interno
+                            deve essere eseguito dal Thread principale (solo lui può lavorare con la
+                            UI e quindi con la visualizzazione dei Toast)
+                             */
                             withContext(Dispatchers.Main) {
                                 Toast.makeText(getApplication(), "Errore nel calcolo dell'hash della nuova immagine", Toast.LENGTH_SHORT).show()
                             }

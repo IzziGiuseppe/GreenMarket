@@ -3096,9 +3096,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable altro
-drawable angoli_arrotondati_edit_text
-drawable angoli_arrotondati_item
-drawable angoli_arrotondati_spinner
+drawable angoli_arrotondati
 drawable assistenza
 drawable avd_hide_password
 drawable avd_show_password

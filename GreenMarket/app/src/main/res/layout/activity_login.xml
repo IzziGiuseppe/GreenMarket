@@ -64,7 +64,7 @@
             android:id="@+id/editTextEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:ems="10"
             android:hint="@string/il_tuo_indirizzo_email"
             android:importantForAutofill="no"
@@ -86,7 +86,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:orientation="horizontal"
             android:padding="10dp">
 

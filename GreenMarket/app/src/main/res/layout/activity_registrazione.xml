@@ -42,7 +42,7 @@
             android:id="@+id/editTextNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:ems="10"
             android:hint="@string/il_tuo_nome"
             android:inputType="textPersonName"
@@ -60,7 +60,7 @@
             android:id="@+id/editTextCognome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:ems="10"
             android:hint="@string/il_tuo_cognome"
             android:inputType="textPersonName"
@@ -78,7 +78,7 @@
             android:id="@+id/editTextIndirizzo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:ems="10"
             android:hint="@string/il_tuo_indirizzo"
             android:inputType="text"
@@ -96,7 +96,7 @@
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:ems="10"
             android:hint="@string/il_tuo_indirizzo_email"
             android:inputType="textEmailAddress"
@@ -114,7 +114,7 @@
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:orientation="horizontal">
 
             <EditText
@@ -147,7 +147,7 @@
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/angoli_arrotondati_edit_text"
+            android:background="@drawable/angoli_arrotondati"
             android:orientation="horizontal">
 
             <EditText

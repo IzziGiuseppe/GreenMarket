@@ -21,7 +21,7 @@
         android:longClickable="false"
         android:textAlignment="textStart"
         android:padding="10dp"
-        android:background="@drawable/angoli_arrotondati_edit_text"
+        android:background="@drawable/angoli_arrotondati"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/resetProd"
         app:layout_constraintStart_toStartOf="parent"

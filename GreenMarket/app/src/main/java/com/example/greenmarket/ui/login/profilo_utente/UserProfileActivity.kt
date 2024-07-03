@@ -54,15 +54,17 @@ class UserProfileActivity : AppCompatActivity() {
         storageRef = FirebaseStorage.getInstance().reference.child("images")
 
         //Accesso alla galleria
+        //Registra una callback per gestire i risultati della selezione di un'immagine dalla galleria
         val galleryImage = registerForActivityResult(
-            ActivityResultContracts.GetContent(),
-            ActivityResultCallback {
-                if (it != null) {
-                    photo.setImageURI(it)
-                    uri = it
-                }
-            }
+            ActivityResultContracts.GetContent()
         )
+        //lambda function chiamata quando l'utente ha selezionato il contenuto
+        {
+            if (it != null) {
+                photo.setImageURI(it)
+                uri = it
+            }
+        }
 
         //Recupera i dati dal db Firestore
         userProfileViewModel.loadUserData()
