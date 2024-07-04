@@ -21,14 +21,14 @@
             android:id="@+id/nome_prod_lista_spesa_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mela"
+            android:text=""
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/quantita_prod_lista_spesa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantità: 3"
+            android:text=""
             android:textSize="16sp" />
     </LinearLayout>
 

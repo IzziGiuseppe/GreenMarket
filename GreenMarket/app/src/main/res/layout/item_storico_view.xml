@@ -22,22 +22,22 @@
                 android:id="@+id/data_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="06 giugno 2024"
+                android:text=""
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/num_prodotti"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="5 prodotti" />
+                android:text="" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/prezzo_item"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="$20.00"
+            android:text=""
             android:textColor="#FF0000"
             android:textAlignment="textEnd"
             android:textSize="18sp" />

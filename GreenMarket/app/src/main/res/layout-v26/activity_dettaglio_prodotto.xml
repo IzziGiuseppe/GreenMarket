@@ -36,7 +36,7 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:layout_marginTop="8dp"
-      android:text="1kg"
+      android:text="@string/_1kg"
       android:textColor="#787878"
       android:textSize="16sp"
       app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:layout_marginTop="16dp"
-      android:text="Descrizione"
+      android:text="@string/descrizione"
       android:textSize="24sp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/linearLayout12" />
@@ -112,7 +112,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginBottom="32dp"
-      android:text="Aggiungi alla lista della spesa"
+      android:text="@string/aggiungi_alla_lista_della_spesa"
       android:textColor="@color/white"
       android:backgroundTint="@android:color/holo_green_light"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -144,7 +144,7 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="1"
+        android:text="@string/_1"
         android:textAlignment="center"
         android:textSize="24sp" />
 

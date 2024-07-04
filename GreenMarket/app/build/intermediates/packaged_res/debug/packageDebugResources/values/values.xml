@@ -13,28 +13,54 @@
     <color name="your_status_bar_color">#FF99CC00</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="_04_06_2024">04/06/2024</string>
+    <string name="_1">1</string>
+    <string name="_1kg">1kg</string>
+    <string name="_25">$25</string>
+    <string name="_30">$30</string>
+    <string name="_5">$5</string>
+    <string name="_50">€50</string>
     <string name="accedi">Accedi</string>
     <string name="accediButton">Accedi</string>
     <string name="accediRegister">Accedi</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="aggiungi_alla_lista_della_spesa">Aggiungi alla lista della spesa</string>
     <string name="annulla">Annulla</string>
+    <string name="aperto">Aperto</string>
     <string name="app_name">GreenMarket</string>
     <string name="benuvenuto_in_greenmarket">Benuvenuto in GreenMarket!</string>
+    <string name="cerca_video_ricetta">Cerca video ricetta</string>
+    <string name="chiude_alle_ore_20_30">Chiude alle ore 20:30</string>
+    <string name="ciao_domenico">Ciao Domenico!</string>
+    <string name="codice_sconto">Codice sconto</string>
+    <string name="codice_sconto_">CODICE SCONTO</string>
+    <string name="codici_sconto">Codici sconto</string>
     <string name="cognome">Cognome</string>
     <string name="conferma_la_tua_password">Conferma la tua password</string>
+    <string name="conferma_ordine">Conferma ordine</string>
     <string name="conferma_password">Conferma Password</string>
+    <string name="connessione_internet_assente">Connessione internet assente</string>
     <string name="continua">Continua</string>
+    <string name="converti_in_punti">Converti in punti</string>
+    <string name="descrizione">Descrizione</string>
+    <string name="descrizione_">DESCRIZIONE</string>
+    <string name="domenico_nla_porta">Domenico\nLa Porta</string>
+    <string name="effettua_donazione">Effettua donazione</string>
     <string name="elimina_account_utente">Elimina account utente</string>
     <string name="email">Email</string>
     <string name="emailRegister">Email</string>
     <string name="emailRegistrazione">Email</string>
     <string name="esci_dall_account">Esci dall\'account</string>
     <string name="gcm_defaultSenderId" translatable="false">61890797320</string>
+    <string name="github">GitHub</string>
+    <string name="giuseppe_nizzi">Giuseppe\nIzzi</string>
     <string name="google_api_key" translatable="false">AIzaSyBWZUBiRxI7N0eZ7ufrZ-YGHZ7t6mFYHsU</string>
     <string name="google_app_id" translatable="false">1:61890797320:android:c3ed3a7ce51cab9a3056bd</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWZUBiRxI7N0eZ7ufrZ-YGHZ7t6mFYHsU</string>
     <string name="google_storage_bucket" translatable="false">greenmarket-1f99c.appspot.com</string>
+    <string name="greenmarket_ti_consiglia">GreenMarket ti consiglia</string>
+    <string name="greenmarket_ti_premia">GreenMarket ti premia!</string>
     <string name="hai_gi_un_account">Hai già un account?</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_prodotto_ricetta">Aggiungi ingrediente…</string>
@@ -43,27 +69,50 @@
     <string name="il_tuo_indirizzo">Il tuo indirizzo</string>
     <string name="il_tuo_indirizzo_email">Il tuo indirizzo email</string>
     <string name="il_tuo_nome">Il tuo nome</string>
+    <string name="importo">Importo [€]</string>
     <string name="indirizzo">Indirizzo</string>
     <string name="inserici_l_indirizzo_email_associato_al_tuo_account">Inserici l\'indirizzo email associato al tuo account</string>
+    <string name="inserisci_l_importo_con_cui_ci_vuoi_supportare">Inserisci l\'importo con cui ci vuoi supportare</string>
+    <string name="inserisci_qui_il_tuo_codice_sconto">Inserisci qui il tuo codice sconto</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="invalid_username">Not a valid username</string>
+    <string name="l_ordine_sar_spedito_all_indirizzo_indicato">L\'ordine sarà spedito all\'indirizzo indicato</string>
     <string name="la_tua_password">La tua password</string>
+    <string name="linkedin">Linkedin</string>
     <string name="login_failed">"Login failed"</string>
     <string name="modifica_immagine_di_profilo">Modifica immagine di profilo</string>
     <string name="nome">Nome</string>
+    <string name="outlook">Outlook</string>
     <string name="password">Password</string>
     <string name="passwordRegister">Password</string>
     <string name="password_dimenticata">Password dimenticata?</string>
+    <string name="peppe_nizzi">Peppe\nIzzi</string>
+    <string name="preparazione">Preparazione</string>
+    <string name="prezzo_euro">PREZZO(€)</string>
+    <string name="prezzo_scontato">Prezzo scontato:</string>
+    <string name="prezzo_totale">Prezzo totale:</string>
+    <string name="prodotti_in_evidenza">Prodotti in evidenza</string>
+    <string name="prodotto">Prodotto</string>
     <string name="profilo_utente">Profilo utente</string>
     <string name="project_id" translatable="false">greenmarket-1f99c</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
+    <string name="punti">Punti: </string>
+    <string name="quantit_kg">Quantità [kg]</string>
     <string name="recupara_password">Recupara Password</string>
     <string name="recupera_password">Recupera Password</string>
     <string name="registrati">Registrati</string>
     <string name="ricerca_prodotto">Ricerca prodotto</string>
+    <string name="riepilogo_acquisto">RIEPILOGO ACQUISTO</string>
+    <string name="riepilogo_ordine">Riepilogo ordine</string>
+    <string name="riscatta_codici_sconto">Riscatta codici sconto</string>
+    <string name="saldo">Saldo: </string>
     <string name="salva">Salva</string>
+    <string name="scopri_subito_la_tua">Scopri subito la tua</string>
+    <string name="soci">Soci</string>
     <string name="termini_e_condizioni"> Termini e condizioni d\'uso</string>
+    <string name="tessera_punti">Tessera Punti</string>
+    <string name="textview">TextView</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_altro">Altro</string>
     <string name="title_home">Home</string>
@@ -71,6 +120,9 @@
     <string name="title_ricerca">Ricerca</string>
     <string name="title_ricettario">Ricettario</string>
     <string name="torna_al_login">Torna al Login</string>
+    <string name="totale_">Totale: </string>
+    <string name="up">UP</string>
+    <string name="valore_sconto">Valore sconto:</string>
     <string name="welcome">"Welcome !"</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         

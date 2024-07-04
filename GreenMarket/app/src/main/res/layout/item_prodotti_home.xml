@@ -39,14 +39,14 @@
                     android:id="@+id/image_nome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome"
+                    android:text=""
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/image_prezzo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Prezzo"
+                    android:text=""
                     android:textAlignment="textEnd"
                     android:textSize="14sp" />
             </LinearLayout>

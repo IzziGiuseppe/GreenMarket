@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="Ciao Domenico!"
+                    android:text="@string/ciao_domenico"
                     android:textAlignment="center"
                     android:textSize="24sp"
                     tools:ignore="RtlCompat" />
@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Aperto"
+                        android:text="@string/aperto"
                         android:textAlignment="center"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -70,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Chiude alle ore 20:30"
+                        android:text="@string/chiude_alle_ore_20_30"
                         android:textAlignment="center"
                         android:textSize="14sp" />
 
@@ -135,7 +135,7 @@
                     android:id="@+id/scopri_subito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Scopri subito la tua"
+                    android:text="@string/scopri_subito_la_tua"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -145,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#4CAF50"
-                    android:text="Tessera Punti"
+                    android:text="@string/tessera_punti"
                     android:textColor="@color/white"
                     tools:ignore="MissingConstraints" />
             </LinearLayout>
@@ -191,7 +191,7 @@
                 android:id="@+id/title_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prodotti in evidenza"
+                android:text="@string/prodotti_in_evidenza"
                 android:textAlignment="textStart"
                 android:textSize="24sp" />
 
@@ -224,7 +224,7 @@
                 android:id="@+id/title_ricette_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="GreenMarket ti consiglia"
+                android:text="@string/greenmarket_ti_consiglia"
                 android:textAlignment="textStart"
                 android:textSize="24sp" />
 

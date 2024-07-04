@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="GreenMarket ti premia!"
+        android:text="@string/greenmarket_ti_premia"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,15 +55,16 @@
                         android:id="@+id/hai_speso"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Saldo: "
+                        android:text="@string/saldo"
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 
                     <TextView
+                        android:layout_marginStart="4dp"
                         android:id="@+id/valore_spesa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="€50"
+                        android:text=""
                         android:textColor="@color/white"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -75,7 +76,7 @@
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#4CAF50"
                     android:textColor="@color/white"
-                    android:text="Converti in punti" />
+                    android:text="@string/converti_in_punti" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -87,15 +88,16 @@
                         android:id="@+id/punti"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Punti: "
+                        android:text="@string/punti"
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 
                     <TextView
+                        android:layout_marginStart="4dp"
                         android:id="@+id/valore_punti"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5"
+                        android:text=""
                         android:textColor="@color/white"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -107,7 +109,7 @@
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#4CAF50"
                     android:textColor="@color/white"
-                    android:text="Riscatta codici sconto" />
+                    android:text="@string/riscatta_codici_sconto" />
 
             </LinearLayout>
 
@@ -142,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Codici sconto"
+        android:text="@string/codici_sconto"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_codici_sconto"
         app:layout_constraintStart_toStartOf="parent"

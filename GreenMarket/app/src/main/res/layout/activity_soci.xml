@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Linkedin"
+                android:text="@string/linkedin"
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textSize="24sp" />
@@ -89,7 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="GitHub"
+                android:text="@string/github"
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textSize="24sp" />
@@ -112,7 +112,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Outlook"
+                android:text="@string/outlook"
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textSize="24sp" />

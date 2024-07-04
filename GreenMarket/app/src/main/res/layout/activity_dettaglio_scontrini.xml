@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="RIEPILOGO ACQUISTO"
+        android:text="@string/riepilogo_acquisto"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="04/06/2024"
+        android:text="@string/_04_06_2024"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="DESCRIZIONE"
+            android:text="@string/descrizione_"
             android:textSize="20sp" />
 
         <TextView
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="PREZZO(€)"
+            android:text="@string/prezzo_euro"
             android:textAlignment="textEnd"
             android:textSize="20sp" />
     </LinearLayout>
@@ -141,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CODICE SCONTO"
+            android:text="@string/codice_sconto_"
             android:textColor="#3F51B5"
             android:textSize="18sp" />
 
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="5"
+            android:text="@string/_5"
             android:textAlignment="textEnd"
             android:textColor="#3F51B5"
             android:textSize="18sp" />

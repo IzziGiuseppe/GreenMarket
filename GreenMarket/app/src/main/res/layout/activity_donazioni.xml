@@ -19,7 +19,7 @@
             android:id="@+id/textViewDonazioni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inserisci l'importo con cui ci vuoi supportare"
+            android:text="@string/inserisci_l_importo_con_cui_ci_vuoi_supportare"
             android:textAlignment="center" />
 
         <EditText
@@ -31,7 +31,7 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/angoli_arrotondati"
             android:ems="10"
-            android:hint="Importo [€]"
+            android:hint="@string/importo"
             android:inputType="numberDecimal"
             android:padding="10dp"
             android:textColorHint="#9A9A9A" />
@@ -44,7 +44,7 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="@android:color/holo_green_light"
             android:textColor="@color/white"
-            android:text="Effettua donazione" />
+            android:text="@string/effettua_donazione" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

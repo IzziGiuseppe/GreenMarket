@@ -21,21 +21,21 @@
             android:id="@+id/nome_prod_dett_scontr_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mela"
+            android:text=""
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/quantita_prod_dett_scontrino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantità: 3"
+            android:text=""
             android:textSize="16sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/prezzo_dett_scontrino"
         android:textSize="18sp"
-        android:text="$5"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
