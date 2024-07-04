@@ -50,19 +50,23 @@
         <activity
             android:name="com.example.greenmarket.ui.altro.donazioni.DonazioniActivity"
             android:exported="false"
-            android:label="Supportaci" />
+            android:label="Supportaci"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.internet.NoInternetActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.soci.SociActivity"
             android:exported="false"
-            android:parentActivityName="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity" />
+            android:parentActivityName="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity"
             android:exported="false"
             android:label="Dettaglio scontrino"
-            android:parentActivityName="com.example.greenmarket.ui.altro.storico.StoricoActivity" />
+            android:parentActivityName="com.example.greenmarket.ui.altro.storico.StoricoActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -71,43 +75,53 @@
         <activity
             android:name="com.example.greenmarket.ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity"
             android:exported="false"
-            android:label="Riepilogo ordine" />
+            android:label="Riepilogo ordine"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity"
             android:exported="false"
-            android:label="Dettaglio prodotto" />
+            android:label="Dettaglio prodotto"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.home.tessera_punti.TesseraPuntiActivity"
             android:exported="false"
-            android:label="Tessera Punti" />
+            android:label="Tessera Punti"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity"
             android:exported="false"
-            android:label="Dettaglio ricetta" />
+            android:label="Dettaglio ricetta"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.altro.termini_condizioni.TermCondActivity"
             android:exported="false"
-            android:label="Termini e condizioni d&apos;uso" />
+            android:label="Termini e condizioni d&apos;uso"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.altro.storico.StoricoActivity"
             android:exported="false"
-            android:label="Storico scontrini" />
+            android:label="Storico scontrini"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.altro.statistiche.StatsActivity"
             android:exported="false"
-            android:label="Statistiche" />
+            android:label="Statistiche"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.altro.chi_siamo.ChiSiamoActivity"
             android:exported="false"
-            android:label="Chi siamo" />
+            android:label="Chi siamo"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.login.reset_password.ResetPasswordActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.SplashActivity"
             android:exported="true"
             android:label="GreenMarket"
-            android:noHistory="true" >
+            android:noHistory="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -116,17 +130,21 @@
         </activity>
         <activity
             android:name="com.example.greenmarket.ui.login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.login.registrazione.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.ui.login.profilo_utente.UserProfileActivity"
             android:exported="false"
-            android:label="Profilo utente" />
+            android:label="Profilo utente"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.greenmarket.MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"

@@ -17,17 +17,21 @@
         <activity
             android:name=".ui.altro.donazioni.DonazioniActivity"
             android:label="Supportaci"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.internet.NoInternetActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.altro.chi_siamo.soci.SociActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:parentActivityName=".ui.altro.chi_siamo.ChiSiamoActivity" />
         <activity
             android:name=".ui.altro.storico.dettaglio_scontrini.DettaglioScontriniActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Dettaglio scontrino"
             android:parentActivityName=".ui.altro.storico.StoricoActivity" />
 
@@ -38,41 +42,51 @@
         <activity
             android:name=".ui.lista_spesa.conferma_ordine.ConfermaOrdineActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Riepilogo ordine" />
         <activity
             android:name=".ui.ricerca.dettaglio_prodotti.DettaglioProdottoActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Dettaglio prodotto" />
         <activity
             android:name=".ui.home.tessera_punti.TesseraPuntiActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Tessera Punti" />
         <activity
             android:name=".ui.ricettario.dettaglio_ricette.DettaglioRicettaActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Dettaglio ricetta" />
         <activity
             android:name=".ui.altro.termini_condizioni.TermCondActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Termini e condizioni d&apos;uso" />
         <activity
             android:name=".ui.altro.storico.StoricoActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Storico scontrini" />
         <activity
             android:name=".ui.altro.statistiche.StatsActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Statistiche" />
         <activity
             android:name=".ui.altro.chi_siamo.ChiSiamoActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Chi siamo" />
         <activity
             android:name=".ui.login.reset_password.ResetPasswordActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:label="GreenMarket"
             android:noHistory="true">
             <intent-filter>
@@ -83,17 +97,21 @@
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.login.registrazione.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.login.profilo_utente.UserProfileActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:label="Profilo utente" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
