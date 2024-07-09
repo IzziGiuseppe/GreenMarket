@@ -55,9 +55,9 @@ class RicercaFragment : Fragment() {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
             ricercaViewModel.readAllProdotti()
-            ricercaViewModel.listaProdotti.observe(viewLifecycleOwner, Observer { prodotti ->
+            ricercaViewModel.listaProdotti.observe(viewLifecycleOwner) { prodotti ->
                 adapter.setData(prodotti)
-            })
+            }
 
             binding.resetProd.setOnClickListener {
                 if (context?.let { it1 -> iT.isInternetAvailable(it1) } == true) {
@@ -68,6 +68,7 @@ class RicercaFragment : Fragment() {
                 }
             }
 
+            //funzione per gestire il click sia sull'edit text che su un pulsante
             binding.ricercaProdottoEditText.setOnTouchListener { _, motionEvent ->
                 if (motionEvent.action == MotionEvent.ACTION_UP) {
                     if (context?.let { it1 -> iT.isInternetAvailable(it1) } == true) {
@@ -120,9 +121,6 @@ class RicercaFragment : Fragment() {
 
     fun startProdotto(nome: String, descrizione: String, prezzo: Float, foto: String) {
         val intent = Intent(requireContext(), DettaglioProdottoActivity::class.java)
-        /*MOMENTANEAMENTE COMMENTATO
-        intent.putExtra("nome_prezzo_prodotto", "$nome \n$$prezzo")
-         */
         intent.putExtra("nome_prodotto", nome)
         intent.putExtra("prezzo_prodotto", prezzo)
         intent.putExtra("descrizione_prodotto", descrizione)

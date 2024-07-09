@@ -18,8 +18,10 @@ class SplashActivity : AppCompatActivity() {
 
         val internetTest = InternetTest()
 
+        //posticipa l'esecuzione della funzione passata a postDelayed() dopo 3000ms
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, LoginActivity::class.java).apply {
+                //serve per evitare che dal Login si possa ritornare indietro alla SPlash Activity
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
             val intentNoInternet = Intent(this, NoInternetActivity::class.java)

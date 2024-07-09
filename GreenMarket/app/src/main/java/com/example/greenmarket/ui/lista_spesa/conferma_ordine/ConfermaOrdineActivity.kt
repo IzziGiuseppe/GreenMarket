@@ -51,20 +51,24 @@ class ConfermaOrdineActivity : AppCompatActivity() {
             editTextCS.adapter = adapter
         }
 
+        //funzione per la gestione del codice sconto selezionato
         editTextCS.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 if (position != 0) { // Ignora il primo elemento
                     val selectedItem = parent.getItemAtPosition(position).toString()
+                    //prende il codice sconto selezionato dallo Spinner
                     confermaOrdineViewModel.setCodiceSconto(selectedItem)
-                    //Toast.makeText(this@ConfermaOrdineActivity, "Selected: $selectedItem", Toast.LENGTH_SHORT).show()
                     if (prezzoTotaleLista != null) {
                         val valSconto = BigDecimal(((prezzoTotaleLista.toFloat() * 5)/100).toString()).setScale(2, RoundingMode.HALF_DOWN)
                         val prezzoScontatoFinale = BigDecimal((prezzoTotaleLista.toFloat() - valSconto.toFloat()).toString()).setScale(2, RoundingMode.HALF_DOWN)
+                        //Imposta valore sconto e prezzo scontato
                         confermaOrdineViewModel.setValoreSconto("€$valSconto")
                         confermaOrdineViewModel.setPrezzoScontato(prezzoScontatoFinale.toString())
                     }
                 }
                 else {
+                    //gestione quando non viene selezionato nessun codice sconto
+                    //nonostante ce ne siano a disposizione
                     confermaOrdineViewModel.setValoreSconto("-")
                     confermaOrdineViewModel.prezzo_totale.value?.let {
                         confermaOrdineViewModel.setPrezzoScontato(
@@ -101,14 +105,9 @@ class ConfermaOrdineActivity : AppCompatActivity() {
 
         confermaBT.setOnClickListener {
             if(iT.isInternetAvailable(this)){
-                //confermaOrdineViewModel.aggiornaSaldo()
-                /*confermaOrdineViewModel.codice_sconto.observe(this) {
-                    codiceScontoUtilizzato = it
-                    if (codiceScontoUtilizzato != "-") {
-                        confermaOrdineViewModel.deleteCodiceSconto(codiceScontoUtilizzato)
-                    }
-                }*/
-                //Implementare la funzione che gestisce la creazione di una scontrino
+                //Implementa la funzione che gestisce la creazione di una scontrino,
+                //l'aggiornamento delle statistiche e del saldo della tessera punti
+                //e lo svuotamento della lista della spesa
                 confermaOrdineViewModel.creaScontrino(this)
                 finish()
             }else{

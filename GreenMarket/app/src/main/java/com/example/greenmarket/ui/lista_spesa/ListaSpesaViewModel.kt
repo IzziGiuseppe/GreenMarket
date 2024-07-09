@@ -91,6 +91,7 @@ class ListaSpesaViewModel : ViewModel() {
         }
     }
 
+    //funzione che converte una mappa in una lista di oggetti ProdottoInListaModel
     private fun listaProdotti(map: Map<String?, List<Float>?>) : List<ProdottoInListaModel>{
         val listaProdotti = mutableListOf<ProdottoInListaModel>()
         map.forEach { (key, value) ->

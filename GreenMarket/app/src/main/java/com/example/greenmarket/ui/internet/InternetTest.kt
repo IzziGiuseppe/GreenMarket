@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.widget.Toast
 
+//classe per il monitoraggio della connessione internet
 class InternetTest()  {
 
     fun isInternetAvailable(context: Context): Boolean {

@@ -4,17 +4,7 @@
             "outputFile": "com.example.greenmarket.app-mergeDebugResources-69:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\4337a71c13d8369939e0ea5dbe7b6800\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\DELL\\Desktop\\ProgettoProgrammazioneMobile\\GreenMarket\\GreenMarket\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "source": "C:\\Users\\DELL\\Desktop\\GreenMarketAndroid\\GreenMarket\\GreenMarket\\app\\src\\main\\res\\values-land\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "264",
                         "endColumns": "57",
                         "endOffsets": "317"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-4\\4337a71c13d8369939e0ea5dbe7b6800\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
                     }
                 },
                 {

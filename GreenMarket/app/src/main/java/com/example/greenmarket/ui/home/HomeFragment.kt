@@ -49,6 +49,7 @@ class HomeFragment : Fragment() {
         val iT = InternetTest()
         val intentNoInternet = Intent(requireContext(), NoInternetActivity::class.java)
 
+        //stesso funzionamento di by viewModels(), ma con una sintassi più verbosa
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         val ricettarioViewModel =
@@ -63,6 +64,7 @@ class HomeFragment : Fragment() {
             _binding = FragmentHomeBinding.inflate(inflater, container, false)
             root = binding.root
 
+            //adapter per gestire la visualizzazione e il click su un prodotto
             val adapter = HomeProdottiListAdapter {
                     currentProdotto ->
                 if (iT.isInternetAvailable(requireContext())) {
@@ -76,6 +78,7 @@ class HomeFragment : Fragment() {
                 }
             }
 
+            //adapter per gestire la visualizzazione e il click su una ricetta
             val adapterRicette = HomeRicetteListAdapter {
                     currentRicetta ->
                 if (iT.isInternetAvailable(requireContext())) {

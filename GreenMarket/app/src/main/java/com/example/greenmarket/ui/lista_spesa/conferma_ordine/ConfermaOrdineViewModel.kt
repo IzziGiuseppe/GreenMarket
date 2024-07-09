@@ -228,6 +228,7 @@ class ConfermaOrdineViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
+    //lettura codici sconto nel caso ce ne siano o meno a disposizione
     fun readCodiciSconto() {
         currentUser?.let {
             db.collection("users").document(it.uid).collection("pointCard").document("coupons")

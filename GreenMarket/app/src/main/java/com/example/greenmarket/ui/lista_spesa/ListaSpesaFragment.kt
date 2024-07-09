@@ -50,6 +50,7 @@ class ListaSpesaFragment : Fragment() {
             _binding = FragmentListaSpesaBinding.inflate(inflater, container, false)
             root = binding.root
 
+            //adapter per la gestione del click sia sull'item sia sull'icon delete
             val adapter = ListaSpesaListAdapter(
                 itemClickListener = {
                         item ->
@@ -75,14 +76,14 @@ class ListaSpesaFragment : Fragment() {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
             listaSpesaViewModel.readListaSpesa()
-            listaSpesaViewModel.lista_spesa.observe(viewLifecycleOwner, Observer {
-                    prodListaSpesa -> adapter.setData(listaProdotti(prodListaSpesa.prodotti))
-            })
+            listaSpesaViewModel.lista_spesa.observe(viewLifecycleOwner) { prodListaSpesa ->
+                adapter.setData(listaProdotti(prodListaSpesa.prodotti))
+            }
 
-            listaSpesaViewModel.lista_prodotti.observe(viewLifecycleOwner, Observer {
-                    prodListaSpesa -> adapter.setData(prodListaSpesa)
+            listaSpesaViewModel.lista_prodotti.observe(viewLifecycleOwner) { prodListaSpesa ->
+                adapter.setData(prodListaSpesa)
                 listaSpesaViewModel.readPrezzoTotale()
-            })
+            }
 
             listaSpesaViewModel.prodotto.observe(viewLifecycleOwner) {
                     prodotto ->
@@ -189,6 +190,7 @@ class ListaSpesaFragment : Fragment() {
         _binding = null
     }
 
+    //funzione che converte una mappa in una lista di oggetti ProdottoInListaModel
     private fun listaProdotti(map: Map<String?, List<Float>?>) : List<ProdottoInListaModel>{
 
         val listaProdotti = mutableListOf<ProdottoInListaModel>()

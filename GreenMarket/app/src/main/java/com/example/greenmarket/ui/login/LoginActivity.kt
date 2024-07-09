@@ -18,6 +18,9 @@ import com.example.greenmarket.ui.login.reset_password.ResetPasswordActivity
 
 class LoginActivity : AppCompatActivity() {
 
+    //serve per ottenere un'istanza di LoginViewModel che è associata
+    //al ciclo di vita dell'Activity; in questo modo il ciclo di vita del view model
+    //verrà correttamente conservato durante i cambiamenti di configurazione
     private val loginViewModel: LoginViewModel by viewModels()
 
     private lateinit var binding: ActivityLoginBinding
@@ -63,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.editTextEmailLogin
         val pass = binding.editTextPasswordLogin
 
+        //servono per la validazione del contenuto delle EditText
         email.addTextChangedListener(loginViewModel.createTextWatcher { loginViewModel.validateEmail(email) })
         pass.addTextChangedListener(loginViewModel.createTextWatcher { loginViewModel.validatePassword(pass) })
 
@@ -97,6 +101,8 @@ class LoginActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 binding.buttonAccediLogin.visibility = View.VISIBLE
                 if (success) {
+                    //rimuove l'azione posticipata (evita che spunti il messaggio
+                    //di connessione instabile se avviene correttamente il login)
                     handler.removeCallbacks(timeoutRunnable)
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()

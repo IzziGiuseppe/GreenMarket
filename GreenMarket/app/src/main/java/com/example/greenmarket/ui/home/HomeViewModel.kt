@@ -79,6 +79,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         _foto.value = foto
     }
 
+    //funzione per leggere il nome e la foto dell'utente
     @RequiresApi(Build.VERSION_CODES.O)
     fun readNome(fragment: HomeFragment, imageProfilo: ImageView) {
         val currentUser = FirebaseAuth.getInstance().currentUser
@@ -120,6 +121,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    //funzione per la gestione dello stato del negozio (aperto/chiuso)
     @RequiresApi(Build.VERSION_CODES.O)
     fun updateStatus() {
         val currentTime = LocalDateTime.now().toLocalTime()
@@ -140,6 +142,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    //funzione per aggiornare periodicamente lo stato del negozio
     @RequiresApi(Build.VERSION_CODES.O)
     fun updateStatusRegularly(scope: CoroutineScope) {
         scope.launch {

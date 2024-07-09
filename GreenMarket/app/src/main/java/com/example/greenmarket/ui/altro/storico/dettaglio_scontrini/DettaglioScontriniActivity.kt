@@ -28,6 +28,7 @@ class DettaglioScontriniActivity : AppCompatActivity() {
         val data: TextView = findViewById(R.id.data_dettaglio_scontrino)
         val totale: TextView = findViewById(R.id.prezzo_totale)
 
+        //recupero valori dettaglio scontrino
         val dataScontrino = intent.getStringExtra("data")
         val totaleScontrino = intent.getFloatExtra("totale", 0f)
         // Recupero mappa

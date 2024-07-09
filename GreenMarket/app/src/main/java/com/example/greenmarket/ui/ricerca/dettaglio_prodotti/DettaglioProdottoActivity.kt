@@ -20,6 +20,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dettaglio_prodotto)
         val iT = InternetTest()
 
+        //prendo le view dal layout
         val nome: TextView = findViewById(R.id.nome_prodotto)
         val prezzo: TextView = findViewById(R.id.prezzo_prodotto)
         val descrizione: TextView = findViewById(R.id.descrizione_prodotto)
@@ -29,6 +30,7 @@ class DettaglioProdottoActivity : AppCompatActivity() {
         val quantita: TextView = findViewById(R.id.textViewQuantita)
         val addList: Button = findViewById(R.id.buttonAddList)
 
+        //recupero gli elementi passati attraverso il lancio tramite Intent
         val nomeProdotto = intent.getStringExtra("nome_prodotto")
         val prezzoProdotto = intent.getFloatExtra("prezzo_prodotto", 0f)
         val descrizioneProdotto = intent.getStringExtra("descrizione_prodotto")

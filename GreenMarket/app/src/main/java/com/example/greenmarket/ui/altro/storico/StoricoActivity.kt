@@ -25,7 +25,7 @@ class StoricoActivity : AppCompatActivity() {
 
         val iT = InternetTest()
 
-        val adapter = StoricoListAdapter() { item ->
+        val adapter = StoricoListAdapter { item ->
             if (iT.isInternetAvailable(this)) {
                 item.data.let { storicoViewModel.readScontrinoDettagliato(it) }
             } else {
