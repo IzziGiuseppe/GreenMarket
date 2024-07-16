@@ -5,20 +5,20 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.greenmarket.ui.internet.InternetTest
+import com.bumptech.glide.request.RequestOptions
+import com.example.greenmarket.R
 import com.example.greenmarket.databinding.ActivityProfiloUtenteBinding
 import com.example.greenmarket.ui.home.HomeViewModel
+import com.example.greenmarket.ui.internet.InternetTest
 import com.example.greenmarket.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-
 
 class UserProfileActivity : AppCompatActivity() {
 
@@ -44,9 +44,6 @@ class UserProfileActivity : AppCompatActivity() {
         val address = binding.editTextIndirizzoUP
         val photo = binding.imageViewProfile
 
-
-
-
         //Inizializzazione db Firestore
         db = FirebaseFirestore.getInstance()
 
@@ -57,10 +54,8 @@ class UserProfileActivity : AppCompatActivity() {
         //Registra una callback per gestire i risultati della selezione di un'immagine dalla galleria
         val galleryImage = registerForActivityResult(
             ActivityResultContracts.GetContent()
-        )
-        //lambda function chiamata quando l'utente ha selezionato il contenuto
-        {
-            if (it != null) {
+        ) { uriResult ->
+            uriResult?.let {
                 photo.setImageURI(it)
                 uri = it
             }
@@ -68,28 +63,35 @@ class UserProfileActivity : AppCompatActivity() {
 
         //Recupera i dati dal db Firestore
         userProfileViewModel.loadUserData()
-        userProfileViewModel.nomeUtente.observe(this) {nome->
+        userProfileViewModel.nomeUtente.observe(this) { nome ->
             name.setText(nome)
         }
-        userProfileViewModel.cognomeUtente.observe(this) {cognome->
+        userProfileViewModel.cognomeUtente.observe(this) { cognome ->
             surname.setText(cognome)
         }
-        userProfileViewModel.indirizzoUtente.observe(this) {indirizzo->
+        userProfileViewModel.indirizzoUtente.observe(this) { indirizzo ->
             address.setText(indirizzo)
         }
-        userProfileViewModel.fotoUtente.observe(this) {foto->
+        userProfileViewModel.fotoUtente.observe(this) { foto ->
             if (!foto.isNullOrEmpty()) {
                 Glide.with(this)
                     .load(foto)
+                    .apply(
+                        RequestOptions()
+                            .placeholder(R.drawable.ic_launcher_background)
+                            .error(R.drawable.ic_launcher_background)
+                    )
                     .into(photo)
             } else {
                 Toast.makeText(this, "Nessuna immagine trovata per l'utente", Toast.LENGTH_SHORT).show()
             }
         }
 
-        userProfileViewModel.loadUserDataSuccess.observe(this){loadSuccess->
-            if (!loadSuccess){
-                Toast.makeText(this, "Errore nel caricamneto dei dati", Toast.LENGTH_SHORT).show()
+        userProfileViewModel.loadUserDataSuccess.observe(this) { loadSuccess ->
+            if (loadSuccess) {
+                originalData = userProfileViewModel.originalData
+            } else {
+                Toast.makeText(this, "Errore nel caricamento dei dati", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -103,66 +105,88 @@ class UserProfileActivity : AppCompatActivity() {
             showLogoutConfirmationDialog()
         }
 
-        //Modifica i dati nel db Firestore
+        // Modifica i dati nel db Firestore
         binding.buttonSave.setOnClickListener {
             if (iT.isInternetAvailable(this)) {
-                userProfileViewModel.saveData(name, surname, address, uri, contentResolver)
-                userProfileViewModel.uploadUserDataSuccess.observe(this){uploadSuccess->
-                    if(uploadSuccess){
-                        homeViewModel.setNome(name.text.toString())
-                        //Poco chiaro perchè venga chiamato più volte il Toast
-                        Toast.makeText(this, "Dati anagrafici aggiornati con successo", Toast.LENGTH_SHORT).show()
-                    }else{
-                        Toast.makeText(this, "Errore nell'aggiornamento dei dati anagrafici", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                userProfileViewModel.putFileSuccess.observe(this){putFileSuccess->
-                    if(putFileSuccess){
-                        userProfileViewModel.downloadUrlSuccess.observe(this){downloadUrlSuccess->
-                            if(downloadUrlSuccess){
-                                userProfileViewModel.updatePhotoSuccess.observe(this) { updatePhotoSuccess ->
-                                    if (updatePhotoSuccess) {
-                                        homeViewModel.setFoto(userProfileViewModel.urlFotoUtente.value.toString())
-                                        Toast.makeText(this, "Foto caricata con successo", Toast.LENGTH_SHORT).show()
-                                    }else{
-                                        Toast.makeText(this, "Errore nel salvataggio della foto", Toast.LENGTH_SHORT).show()
-                                    }
-                                }
-                            }else{
-                                Toast.makeText(this, "Errore nel recupero dell'URL della foto", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }else{
-                        Toast.makeText(this, "Errore nel caricamento della foto", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-            }else{
+                userProfileViewModel.saveData(name.text.toString(), surname.text.toString(), address.text.toString(), uri, contentResolver)
+            } else {
                 iT.toast(this)
             }
         }
 
-        //Ripristina i dati originali nel db Firestore
+        // Osserva i LiveData per i messaggi Toast
+        observeViewModelLiveData()
+
+        // Ripristina i dati originali nel db Firestore
         binding.buttonCancel.setOnClickListener {
             if (iT.isInternetAvailable(this)) {
                 cancelChanges(originalData)
-            }else{
+            } else {
                 iT.toast(this)
             }
         }
 
-        //Elimina un'account utente dal db Firestore
-        binding.textViewEliminaAccount.setOnClickListener{
+        // Elimina un account utente dal db Firestore
+        binding.textViewEliminaAccount.setOnClickListener {
             if (iT.isInternetAvailable(this)) {
-                Log.d("Acitvity", "AVVIO METODO")
+                Log.d("Activity", "AVVIO METODO")
                 showDeleteAccountConfirmationDialog()
-            }else{
+            } else {
                 iT.toast(this)
             }
         }
     }
 
-    //Funzione per ripristinare i dati nel db Firestore
+    // Funzione per osservare i LiveData per i messaggi Toast
+    private fun observeViewModelLiveData() {
+        userProfileViewModel.uploadUserDataSuccess.observe(this) { uploadSuccess ->
+            if (uploadSuccess) {
+                originalData = mapOf(
+                    "nome" to (userProfileViewModel.nomeUtente.value ?: ""),
+                    "cognome" to (userProfileViewModel.cognomeUtente.value ?: ""),
+                    "indirizzo" to (userProfileViewModel.indirizzoUtente.value ?: "")
+                )
+                homeViewModel.setNome(binding.editTextNomeUP.text.toString())
+                Toast.makeText(this, "Dati anagrafici aggiornati con successo", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Errore nell'aggiornamento dei dati anagrafici", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        userProfileViewModel.putFileSuccess.observe(this) { putFileSuccess ->
+            if (putFileSuccess) {
+                userProfileViewModel.downloadUrlSuccess.observe(this) { downloadUrlSuccess ->
+                    if (downloadUrlSuccess) {
+                        userProfileViewModel.updatePhotoSuccess.observe(this) { updatePhotoSuccess ->
+                            if (updatePhotoSuccess) {
+                                homeViewModel.setFoto(userProfileViewModel.urlFotoUtente.value.toString())
+                                Toast.makeText(this, "Foto caricata con successo", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this, "Errore nel salvataggio della foto", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    } else {
+                        Toast.makeText(this, "Errore nel recupero dell'URL della foto", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(this, "Errore nel caricamento della foto", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        userProfileViewModel.deleteAccountSuccess.observe(this) { deleteAccountSuccess ->
+            if (deleteAccountSuccess) {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+                Toast.makeText(this, "Account eliminato con successo", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Errore nell'eliminazione dell'account", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    // Funzione per ripristinare i dati nel db Firestore
     private fun cancelChanges(originalData: Map<String, Any>?) {
         originalData?.let {
             binding.editTextNomeUP.setText(it["nome"] as String)
@@ -171,7 +195,7 @@ class UserProfileActivity : AppCompatActivity() {
         }
     }
 
-    //Funzione che mostra un messaggio di alert in fase di logout
+    // Funzione che mostra un messaggio di alert in fase di logout
     private fun showLogoutConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Conferma Logout")
@@ -192,34 +216,24 @@ class UserProfileActivity : AppCompatActivity() {
         dialog.show()
     }
 
-    //Funzione che mostra un messaggio di alert in fase di eliminazione dell'account
+    // Funzione che mostra un messaggio di alert in fase di eliminazione dell'account
     private fun showDeleteAccountConfirmationDialog() {
-        Log.d("Acitvity", "DENTRO IL METODO")
+        Log.d("Activity", "DENTRO IL METODO")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Conferma Eliminazione Account")
         builder.setMessage("Sei sicuro di voler eliminare l'account?")
 
         builder.setPositiveButton("Sì") { _, _ ->
-            Log.d("Acitvity", "APPENA ENTRATI NEL METODO")
+            Log.d("Activity", "APPENA ENTRATI NEL METODO")
 
             userProfileViewModel.deleteAccount()
-            userProfileViewModel.deleteAccountSuccess.observe(this) { deleteAccountSuccess ->
-                if (deleteAccountSuccess) {
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                    Toast.makeText(this, "Account eliminato con successo", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this, "Errore nell'eliminazione dell'account", Toast.LENGTH_SHORT).show()
-                }
-            }
         }
 
-            builder.setNegativeButton("No") { dialog, _ ->
-                dialog.dismiss()
-            }
-
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
         }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
 }
